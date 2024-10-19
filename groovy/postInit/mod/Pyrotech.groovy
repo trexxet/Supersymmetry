@@ -710,6 +710,7 @@ def anvil_recipes = [
         ["charcoal_flakes", ore('charcoal'), item('pyrotech:material', 15) * 8, 2],
         ["cobblestone_to_rocks", ore('cobblestone'), item('pyrotech:rock') * 8, 2, false],
         ["limestone_to_cobbled", ore('stoneLimestone'), item('susy:susy_stone_cobble', 2), 2],
+        ["pig_iron_shearing", ore('ingotPigIron'), metaitem('ingotWroughtIron'), 2],
         ["limestone_dust", item('susy:susy_stone_cobble', 2), metaitem('dustLimestone'), 2],
         ["pottery_shard_to_dust", item('pyrotech:material', 7), metaitem('dustSmallBrick') * 2, 1],
         ["pottery_fragments_to_dust", item('pyrotech:material', 6), metaitem('dustSmallBrick') * 2, 1]
