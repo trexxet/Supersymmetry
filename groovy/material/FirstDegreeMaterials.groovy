@@ -3424,7 +3424,7 @@ public class FirstDegreeMaterials {
                 .components(Argon, Water)
                 .colorAverage()
                 .build()
-                .setFormula("(Ar)(H20)")
+                .setFormula("(Ar)(H2O)")
 
         ArgonHydrogenMixture = new Material.Builder(8628, SuSyUtility.susyId("argon_hydrogen_mixture"))
                 .gas()
