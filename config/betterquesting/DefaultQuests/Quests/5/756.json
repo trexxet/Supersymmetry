@@ -25,7 +25,7 @@
         "0:10": {
           "Count:3": 64,
           "Damage:2": 15014,
-          "id:8": "gregtech:meta_wire_fine"
+          "id:8": "gregtech:meta_thread"
         }
       },
       "taskID:8": "bq_standard:retrieval"
