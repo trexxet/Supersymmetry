@@ -1,11 +1,13 @@
 package postInit.mod
 
-import com.codetaylor.mc.pyrotech.modules.tech.basic.ModuleTechBasic;
-import com.codetaylor.mc.pyrotech.modules.tech.basic.block.BlockKilnPit;
-import com.cleanroommc.groovyscript.api.IIngredient;
-import net.minecraft.util.EnumHand;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.event.world.BlockEvent;
+import com.cleanroommc.groovyscript.api.IIngredient
+import com.codetaylor.mc.pyrotech.modules.tech.basic.ModuleTechBasic
+import com.codetaylor.mc.pyrotech.modules.tech.basic.block.BlockKilnPit
+import globals.Globals
+import globals.RecyclingHelper
+import net.minecraft.util.EnumHand
+import net.minecraftforge.event.entity.player.PlayerInteractEvent
+import net.minecraftforge.event.world.BlockEvent
 
 log.infoMC("Running Pyrotech.groovy...")
 
@@ -212,6 +214,8 @@ mods.jei.ingredient.yeet(
         item('pyrotech:material', 5),
         item('pyrotech:material', 8),
         item('pyrotech:material', 9),
+        item('pyrotech:material', 18),
+        item('pyrotech:material', 19),
         item('pyrotech:material', 20),
         item('pyrotech:material', 22),
         item('pyrotech:material', 23),
@@ -220,6 +224,7 @@ mods.jei.ingredient.yeet(
         item('pyrotech:material', 28),
         item('pyrotech:material', 31),
         item('pyrotech:material', 33),
+        item('pyrotech:material', 34),
         item('pyrotech:material', 35),
         item('pyrotech:material', 36),
         item('pyrotech:material', 37),
@@ -522,6 +527,29 @@ crafting.replaceShaped("pyrotech:bucket/bucket_clay_unfired", item('pyrotech:buc
         [null, metaitem('compressed.clay'), null]
 ])
 
+// Gears
+RecyclingHelper.addShapeless("susy:cog_stone", item('pyrotech:cog_stone'), [metaitem('gearStone')])
+RecyclingHelper.replaceShapeless("pyrotech:tech/machine/cog_iron", item('pyrotech:cog_iron'), [metaitem('gearIron')])
+RecyclingHelper.replaceShapeless("pyrotech:tech/machine/cog_gold", item('pyrotech:cog_gold'), [metaitem('gearGold')])
+RecyclingHelper.replaceShapeless("pyrotech:tech/machine/cog_diamond", item('pyrotech:cog_diamond'), [metaitem('gearDiamond')])
+
+oreDict.add("gearStone", item('pyrotech:cog_stone'))
+oreDict.add("gearIron", item('pyrotech:cog_iron'))
+oreDict.add("gearGold", item('pyrotech:cog_gold'))
+oreDict.add("gearDiamond", item('pyrotech:cog_diamond'))
+
+crafting.addShapeless("susy:cog_stone_to_gear", metaitem('gearStone'), [item('pyrotech:cog_stone')])
+crafting.addShapeless("susy:cog_iron_to_gear", metaitem('gearIron'), [item('pyrotech:cog_iron')])
+crafting.addShapeless("susy:cog_gold_to_gear", metaitem('gearGold'), [item('pyrotech:cog_gold')])
+crafting.addShapeless("susy:cog_diamond_to_gear", metaitem('gearDiamond'), [item('pyrotech:cog_diamond')])
+
+// Slag Heap
+crafting.addShaped("susy:slag_heap", item('pyrotech:pile_slag'), [
+        [item('pyrotech:slag'), item('pyrotech:slag'), item('pyrotech:slag')],
+        [item('pyrotech:slag'), item('pyrotech:slag'), item('pyrotech:slag')],
+        [item('pyrotech:slag'), item('pyrotech:slag'), item('pyrotech:slag')]
+])
+
 // Mechanical hopper
 crafting.replaceShaped("pyrotech:tech/machine/mechanical_hopper", item('pyrotech:mechanical_hopper'), [
         [item('pyrotech:material', 16), null, item('pyrotech:material', 16)],
@@ -703,9 +731,6 @@ def anvil_recipes = [
         ["stick_stone", item('pyrotech:material', 16), item('pyrotech:material', 27) * 2, 2, false],
         ["bone_shard", ore('bone'), item('pyrotech:material', 11) * 3, 2],
         ["flint_shard", ore('gemFlint'), item('pyrotech:material', 10) * 3, 2],
-        ["iron_shard", ore('ingotIron'), item('pyrotech:material', 19) * 9, 2],
-        ["gold_shard", ore('ingotGold'), item('pyrotech:material', 34) * 9, 2],
-        ["diamond_shard", ore('gemDiamond'), item('pyrotech:material', 18) * 9, 4],
         ["coal_pieces", ore('gemCoal'), item('pyrotech:material', 21) * 8, 2],
         ["charcoal_flakes", ore('charcoal'), item('pyrotech:material', 15) * 8, 2],
         ["cobblestone_to_rocks", ore('cobblestone'), item('pyrotech:rock') * 8, 2, false],
