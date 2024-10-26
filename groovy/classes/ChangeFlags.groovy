@@ -143,6 +143,7 @@ class ChangeFlags {
         BisphenolA.addFlags("no_unification");
         Phosphorus.addFlags("no_smelting");
         Tetrahedrite.addFlags("no_smelting");
+        Gold.addFlags("generate_gear");
 
         /*
         ManganesePhosphide.addFlags("no_smashing", "no_smelting")
