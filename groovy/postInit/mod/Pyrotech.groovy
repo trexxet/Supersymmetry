@@ -1099,7 +1099,7 @@ alloying_recipes = [
         // SnFe
         ["TinAlloy", 2, 100, ["Iron", 1, "Tin", 1]],
         // Potin
-        ["Potin", 9, 100, ["Copper", 6, "Tin", 2, "Lead", 1]],
+        ["Potin", 9, 100, ["Bronze", 8, "Lead", 1]],
         // Kovar
         ["Kovar", 2, 100, ["Iron", 2, "Nickel", 1, "CobaltMatte", 1]]
 ]
