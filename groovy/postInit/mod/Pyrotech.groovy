@@ -941,7 +941,7 @@ class Ore {
     }
 
     ItemStack getByproduct(Prefix prefix) {
-        int amount = prefix.byproduct_amount * output_multiplier * (byproduct == "pyrotech:slag" ? 1 : 8)
+        int amount = prefix.byproduct_amount * output_multiplier * (byproduct == "pyrotech:slag" ? 2 : 8)
         return (byproduct == null || amount == 0) ? null : (item(byproduct) * amount)
     }
 }
