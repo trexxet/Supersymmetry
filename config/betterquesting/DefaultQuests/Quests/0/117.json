@@ -1,6 +1,11 @@
 {
+  "preRequisiteTypes:7": [
+    0,
+    2
+  ],
   "preRequisites:11": [
-    58115670
+    58115670,
+    1677924297
   ],
   "properties:10": {
     "betterquesting:10": {
@@ -12,6 +17,7 @@
       },
       "ignoresview:1": 0,
       "name:8": "susy.quest.db.117.title",
+      "questlogic:8": "OR",
       "visibility:8": "ALWAYS"
     }
   },
