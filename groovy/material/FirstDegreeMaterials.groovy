@@ -162,6 +162,13 @@ public class FirstDegreeMaterials {
                 .colorAverage()
                 .build();
 
+        CobaltMatte = new Material.Builder(8106, SuSyUtility.susyId("cobalt_matte"))
+                .ingot()
+                .flags(NO_UNIFICATION)
+                .color(0x7070d6)
+                .build()
+                .setFormula("(Co)(?)")
+
         AmmoniumNitrate = new Material.Builder(8107, SuSyUtility.susyId('ammonium_nitrate'))
                 .dust()
                 .components(Nitrogen * 2, Oxygen * 3, Hydrogen * 4)
