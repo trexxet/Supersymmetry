@@ -731,8 +731,6 @@ def anvil_recipes = [
         ["stick_stone", item('pyrotech:material', 16), item('pyrotech:material', 27) * 2, 2, false],
         ["bone_shard", ore('bone'), item('pyrotech:material', 11) * 3, 2],
         ["flint_shard", ore('gemFlint'), item('pyrotech:material', 10) * 3, 2],
-        ["coal_pieces", ore('gemCoal'), item('pyrotech:material', 21) * 8, 2],
-        ["charcoal_flakes", ore('charcoal'), item('pyrotech:material', 15) * 8, 2],
         ["cobblestone_to_rocks", ore('cobblestone'), item('pyrotech:rock') * 8, 2, false],
         ["limestone_to_cobbled", ore('stoneLimestone'), item('susy:susy_stone_cobble', 2), 2],
         ["pig_iron_shearing", ore('ingotPigIron'), metaitem('ingotWroughtIron'), 2],
@@ -764,32 +762,32 @@ crafting.replaceShaped("pyrotech:tech/machine/stone_kiln", item('pyrotech:stone_
 
 // Primitive smelter
 // Controller
-crafting.addShaped("susy:primitive_smelter", item('gregtech:machine', 14800), [
+crafting.addShaped("susy:primitive_smelter", metaitem('primitive_smelter'), [
         [ore('craftingToolHardHammer')],
         [item('pyrotech:masonry_brick_block')]
 ])
 
 // Export
-crafting.addShaped("susy:primitive_item_export_bus", item('gregtech:machine', 14802), [
+crafting.addShaped("susy:primitive_item_export_bus", metaitem('primitive_item_export'), [
         [item('pyrotech:masonry_brick_block')],
         [item('pyrotech:mechanical_hopper')]
 ])
 
 // Import
-crafting.addShaped("susy:primitive_item_import_bus", item('gregtech:machine', 14801), [
+crafting.addShaped("susy:primitive_item_import_bus", metaitem('primitive_item_import'), [
         [item('pyrotech:mechanical_hopper')],
         [item('pyrotech:masonry_brick_block')]
 ])
 
 // Interconversion
-crafting.addShaped("susy:primitive_bus_import_to_export", item('gregtech:machine', 14802), [
+crafting.addShaped("susy:primitive_bus_import_to_export", metaitem('primitive_item_export'), [
         [ore('craftingToolHardHammer')],
-        [item('gregtech:machine', 14801)]
+        [metaitem('primitive_item_import')]
 ])
 
-crafting.addShaped("susy:primitive_bus_export_to_import", item('gregtech:machine', 14801), [
+crafting.addShaped("susy:primitive_bus_export_to_import", metaitem('primitive_item_import'), [
         [ore('craftingToolHardHammer')],
-        [item('gregtech:machine', 14802)]
+        [metaitem('primitive_item_export')]
 ])
 
 // Misc machines
@@ -890,9 +888,6 @@ def materials = [
 // Smelter recipes
 // Ore metallurgy
 
-oreDict.add("flakeCoal", item('pyrotech:material', 15))
-oreDict.add("flakeCharcoal", item('pyrotech:material', 21))
-
 class Reductant {
     String name
     int consumption
@@ -946,7 +941,7 @@ class Ore {
     }
 
     ItemStack getByproduct(Prefix prefix) {
-        int amount = prefix.byproduct_amount * output_multiplier * 8
+        int amount = prefix.byproduct_amount * output_multiplier * (byproduct == "pyrotech:slag" ? 1 : 8)
         return (byproduct == null || amount == 0) ? null : (item(byproduct) * amount)
     }
 }
@@ -961,9 +956,7 @@ def reductants = [
         new Reductant("dustCoal", 10, 0.9),
         new Reductant("dustLigniteCoke", 12, 1),
         new Reductant("dustCoke", 8, 0.75),
-        new Reductant("dustAnthracite", 8, 0.7),
-        new Reductant("flakeCharcoal", 96, 0.95),
-        new Reductant("flakeCoal", 80, 0.9)
+        new Reductant("dustAnthracite", 8, 0.7)
 ]
 
 def prefix_ore = new Prefix("ore", 1, 2)
@@ -990,6 +983,7 @@ def ores = [
         new Ore("Chalcocite", "Copper"),
 
         // Lead ores
+        new Ore("Anglesite", "Lead"),
         new Ore("Cerussite", "Lead"),
         new Ore("Galena", "Lead"),
 
@@ -998,8 +992,10 @@ def ores = [
         new Ore("Sphalerite", "Zinc"),
 
         // Tin ores
-        new Ore("CassiteriteSand", "Tin", 2),
-        new Ore("Cassiterite", "Tin", 2)
+        new Ore("Cassiterite", "Tin", 2),
+
+        // Silver ores
+        new Ore("Silver", "Silver")
 ]
 
 // Ore smashing
@@ -1102,6 +1098,8 @@ alloying_recipes = [
         ["Brass", 4, 200, ["Copper", 3, "Zinc", 1]],
         // SnFe
         ["TinAlloy", 2, 100, ["Iron", 1, "Tin", 1]],
+        // Potin
+        ["Potin", 9, 100, ["Copper", 6, "Tin", 2, "Lead", 1]],
         // Kovar
         ["Kovar", 2, 100, ["Iron", 2, "Nickel", 1, "CobaltMatte", 1]]
 ]
