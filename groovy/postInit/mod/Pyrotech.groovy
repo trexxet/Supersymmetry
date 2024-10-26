@@ -1167,3 +1167,22 @@ mods.gregtech.coke_oven.recipeBuilder()
         .fluidOutputs(fluid('creosote') * 2250)
         .duration(900)
         .buildAndRegister()
+
+ALLOY_SMELTER = recipemap('alloy_smelter')
+
+// Slag glass
+ALLOY_SMELTER.recipeBuilder()
+        .inputs(item('pyrotech:slag') * 9)
+        .notConsumable(metaitem('shape.mold.block'))
+        .outputs(item('pyrotech:slag_glass'))
+        .duration(100)
+        .EUt(Globals.voltAmps[1])
+        .buildAndRegister();
+
+ALLOY_SMELTER.recipeBuilder()
+        .inputs(item('pyrotech:pile_slag'))
+        .notConsumable(metaitem('shape.mold.block'))
+        .outputs(item('pyrotech:slag_glass'))
+        .duration(100)
+        .EUt(Globals.voltAmps[1])
+        .buildAndRegister();
