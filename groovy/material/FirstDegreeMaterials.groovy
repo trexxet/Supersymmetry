@@ -3431,13 +3431,13 @@ public class FirstDegreeMaterials {
                 .components(Argon, Water)
                 .colorAverage()
                 .build()
-                .setFormula("(Ar)(H2O)")
+                .setFormula("(Ar)(H2O)", true)
 
         ArgonHydrogenMixture = new Material.Builder(8628, SuSyUtility.susyId("argon_hydrogen_mixture"))
                 .gas()
                 .components(Argon, Hydrogen * 4)
                 .color(0x20a291)
                 .build()
-                .setFormula("(Ar)(H)")
+                .setFormula("(Ar)(H)", true)
     }
 }

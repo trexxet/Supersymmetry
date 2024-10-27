@@ -487,20 +487,20 @@ class ThermodynamicsMaterials {
                 .components(Argon, Hydrogen, Ammonia)
                 .colorAverage()
                 .build()
-                .setFormula("(Ar)(NH3)(H)")
+                .setFormula("(Ar)(NH3)(H)", true)
 
         ColdArgonHydrogenMixture = new Material.Builder(22845, SuSyUtility.susyId('cold_argon_hydrogen_mixture'))
                 .gas(new FluidBuilder().temperature(220))
                 .components(Argon, Hydrogen)
                 .color(0x20a591)
                 .build()
-                .setFormula("(Ar)(H)")
+                .setFormula("(Ar)(H)", true)
 
         PartiallyLiquefiedArgonHydrogenMixture = new Material.Builder(22846, SuSyUtility.susyId('partially_liquefied_argon_hydrogen_mixture'))
                 .liquid(new FluidBuilder().temperature(73))
                 .components(Argon, Hydrogen)
                 .color(0x20aa91)
                 .build()
-                .setFormula("(Ar)(H)")
+                .setFormula("(Ar)(H)", true)
     }
 }
