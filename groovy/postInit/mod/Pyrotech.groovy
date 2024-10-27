@@ -1,13 +1,19 @@
 package postInit.mod
 
 import com.cleanroommc.groovyscript.api.IIngredient
+import com.codetaylor.mc.pyrotech.library.spi.block.IBlockIgnitableWithIgniterItem
 import com.codetaylor.mc.pyrotech.modules.tech.basic.ModuleTechBasic
 import com.codetaylor.mc.pyrotech.modules.tech.basic.block.BlockKilnPit
 import globals.Globals
 import globals.RecyclingHelper
+import gregtech.api.items.metaitem.MetaItem
+import gregtech.api.items.metaitem.stats.IItemBehaviour
+import gregtech.api.util.GTUtility
+import gregtech.common.items.behaviors.LighterBehaviour
 import net.minecraft.util.EnumHand
 import net.minecraftforge.event.entity.player.PlayerInteractEvent
 import net.minecraftforge.event.world.BlockEvent
+import net.minecraftforge.fml.common.eventhandler.Event
 
 log.infoMC("Running Pyrotech.groovy...")
 
@@ -40,6 +46,42 @@ event_manager.listen { BlockEvent.HarvestDropsEvent event ->
     if (event.getState().getBlock() instanceof BlockKilnPit) {
         event.getDrops().replaceAll(stack -> stack.isItemEqual(item('pyrotech:kiln_pit')) ? (item('pyrotech:material', 2) * stack.getCount()) :
                 stack.isItemEqual(item('pyrotech:thatch')) ? (item('pyrotech:material', 2) * (3 * stack.getCount())) : stack); // Yeah I know this is caused but it works so :clueless:
+    }
+}
+
+// Allow igniting pyrotech furnaces with GT items
+eventManager.listen { PlayerInteractEvent.RightClickBlock event ->
+
+    World world = event.getWorld()
+    BlockPos pos = event.getPos()
+    EnumFacing facing = event.getFace()
+    EntityPlayer player = event.getEntityPlayer()
+    IBlockState blockState = world.getBlockState(pos)
+    Block block = blockState.getBlock()
+
+    if (block instanceof IBlockIgnitableWithIgniterItem) {
+        def ignitable = (IBlockIgnitableWithIgniterItem) block
+        ItemStack stack = event.getItemStack()
+        Item item = stack.getItem()
+
+        if (item instanceof MetaItem) {
+            def metaItem = (MetaItem) item
+            for (IItemBehaviour behaviour : metaItem.getBehaviours(stack)) {
+                if (behaviour instanceof LighterBehaviour) {
+                    NBTTagCompound compound = GTUtility.getOrCreateNbtCompound(stack)
+                    if (stack.isItemEqual(metaitem('tool.matches'))     // Special checks for non-openable igniters
+                            || stack.isItemEqual(metaitem('tool.matchbox')) // WTF why is canOpen field privite
+                            || compound.getBoolean(LighterBehaviour.LIGHTER_OPEN)) {
+                        def lighterBehaviour = (LighterBehaviour) behaviour
+                        lighterBehaviour.consumeFuel(player, stack)
+                        ignitable.igniteWithIgniterItem(world, pos, blockState, facing)
+                        event.setUseItem(Event.Result.DENY)
+                        return
+                    }
+                    break
+                }
+            }
+        }
     }
 }
 
