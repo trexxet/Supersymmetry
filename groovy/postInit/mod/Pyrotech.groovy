@@ -1057,20 +1057,11 @@ def alloying_prefixes = [
         prefix_dust
 ]
 
-def fuels = [
-        "gemCoal",
-        "fuelCoke",
-        "gemAnthracite",
-        "dustCoal",
-        "dustCoke",
-        "dustAnthracite"
-]
-
 def alloy_add = {String output, int amount, int duration, ArrayList inputs ->
         int recipe_multiplier = Math.ceil(8 / amount)
         def size = inputs.size().intdiv(2)
         def real = ([alloying_prefixes] * size).combinations()
-        fuels.forEach { fuel ->
+        reductants.forEach { reductant ->
             real.forEach { bad ->
                 def builder = SMELTER.recipeBuilder()
                 double multiplier_sum = 0
@@ -1081,7 +1072,7 @@ def alloy_add = {String output, int amount, int duration, ArrayList inputs ->
                     count += amountIn
                     builder.inputs(ore(bad[i].name + inputs[ 2 * i ]) * (amountIn * recipe_multiplier))
                 }
-                builder.inputs(ore(fuel) * (count * recipe_multiplier))
+                builder.inputs(ore(reductant.name) * (count * recipe_multiplier))
                         .outputs(metaitem("ingot" + output) * (amount * recipe_multiplier))
                         .duration((int) (duration *  multiplier_sum / count) * recipe_multiplier)
                         .buildAndRegister()
