@@ -512,7 +512,7 @@ crafting.addShaped("industrialrenewal:column_to_pillar", item('industrialrenewal
 
 crafting.addShaped("industrialrenewal:alarm_custom", item('industrialrenewal:alarm'), [
 	[null, ore('stickSteel'), null],
-	[ore('stickSteel'), item('industrialrenewal:alarm'), ore('stickSteel')],
+	[ore('stickSteel'), item('minecraft:noteblock'), ore('stickSteel')],
 	[null, ore('stickSteel'), null]
 ])
 
