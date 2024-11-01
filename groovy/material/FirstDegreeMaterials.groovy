@@ -216,6 +216,7 @@ public class FirstDegreeMaterials {
 
         PigIron = new Material.Builder(8115, SuSyUtility.susyId('pig_iron'))
                 .ingot().dust()
+                .flags(DISABLE_DECOMPOSITION)
                 .components(Iron)
                 .color(0x99918A)
                 .build();
