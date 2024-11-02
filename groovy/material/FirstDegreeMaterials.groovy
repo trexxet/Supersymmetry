@@ -167,7 +167,7 @@ public class FirstDegreeMaterials {
                 .flags(NO_UNIFICATION)
                 .color(0x7070d6)
                 .build()
-                .setFormula("(Co)(?)")
+                .setFormula("(Co)(?)", true)
 
         AmmoniumNitrate = new Material.Builder(8107, SuSyUtility.susyId('ammonium_nitrate'))
                 .dust()
