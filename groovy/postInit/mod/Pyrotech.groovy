@@ -17,6 +17,12 @@ import net.minecraftforge.fml.common.eventhandler.Event
 
 log.infoMC("Running Pyrotech.groovy...")
 
+SMELTER = recipemap('primitive_smelter')
+ALLOY_SMELTER = recipemap('alloy_smelter')
+CUTTER = recipemap('cutter')
+ASSEMBLER = recipemap('assembler')
+CHEMICAL_BATH = recipemap('chemical_bath')
+
 // Make it easier to create a pit kiln
 event_manager.listen { PlayerInteractEvent.RightClickBlock event ->
     EnumFacing facing = event.getFace();
@@ -99,7 +105,20 @@ def name_removals = [
         "pyrotech:bucket/bucket_stone",
         "pyrotech:ignition/matchstick",
         "pyrotech:stone_hammer",
+        "pyrotech:flint_hammer",
+        "pyrotech:flint_hammer_durable",
+        "pyrotech:bone_hammer",
+        "pyrotech:bone_hammer_durable",
+        "pyrotech:iron_hammer",
+        "pyrotech:gold_hammer",
+        "pyrotech:diamond_hammer",
         "pyrotech:obsidian_hammer",
+        "pyrotech:tech/bloomery/tongs_stone",
+        "pyrotech:tech/bloomery/tongs_flint",
+        "pyrotech:tech/bloomery/tongs_bone",
+        "pyrotech:tech/bloomery/tongs_iron",
+        "pyrotech:tech/bloomery/tongs_gold",
+        "pyrotech:tech/bloomery/tongs_diamond",
         "pyrotech:tech/bloomery/tongs_obsidian",
         "pyrotech:tech/machine/sawmill_blade_stone",
         "pyrotech:tech/machine/sawmill_blade_flint",
@@ -119,6 +138,13 @@ def name_removals = [
         "pyrotech:tech/machine/mechanical_spreader",
         "pyrotech:tech/machine/stone_crucible",
         "pyrotech:tech/machine/brick_crucible",
+        "pyrotech:saddle",
+        "pyrotech:leather_helmet",
+        "pyrotech:leather_chestplate",
+        "pyrotech:leather_leggings",
+        "pyrotech:leather_boots",
+        "pyrotech:item_frame",
+        "pyrotech:book",
         "pyrotech:boat_spruce",
         "pyrotech:boat_oak",
         "pyrotech:boat_jungle",
@@ -227,7 +253,20 @@ mods.jei.ingredient.yeet(
         item('pyrotech:anvil_iron_plated'),
         item('pyrotech:crude_hammer'),
         item('pyrotech:stone_hammer'),
+        item('pyrotech:flint_hammer'),
+        item('pyrotech:flint_hammer_durable'),
+        item('pyrotech:bone_hammer'),
+        item('pyrotech:bone_hammer_durable'),
+        item('pyrotech:iron_hammer'),
+        item('pyrotech:gold_hammer'),
+        item('pyrotech:diamond_hammer'),
         item('pyrotech:obsidian_hammer'),
+        item('pyrotech:tongs_stone'),
+        item('pyrotech:tongs_flint'),
+        item('pyrotech:tongs_bone'),
+        item('pyrotech:tongs_iron'),
+        item('pyrotech:tongs_gold'),
+        item('pyrotech:tongs_diamond'),
         item('pyrotech:tongs_obsidian'),
         item('pyrotech:sawmill_blade_stone'),
         item('pyrotech:sawmill_blade_flint'),
@@ -544,10 +583,17 @@ crafting.replaceShaped("pyrotech:straw", item('pyrotech:material', 2) * 4, [
         [item('pyrotech:material', 13), item('pyrotech:material', 13), item('pyrotech:material', 13)]
 ])
 
+// Durable Bow Drill
+crafting.replaceShaped("pyrotech:bow_drill_durable", item('pyrotech:bow_drill_durable'), [
+        [ore('string'), ore('stickWood'), ore('craftingToolKnife')],
+        [ore('string'), item('pyrotech:material', 39), ore('stickStone')],
+        [ore('string'), ore('stickWood'), null]
+])
+
 // Durable spindle
 crafting.replaceShaped("pyrotech:bow_drill_durable_stick", item('pyrotech:material', 48), [
-        [item('pyrotech:material', 39)],
-        [ore('stickLongWood')]
+        [ore('craftingToolKnife'), item('pyrotech:material', 39)],
+        [null, ore('stickLongWood')]
 ])
 
 // Bow drill
@@ -584,6 +630,121 @@ crafting.addShapeless("susy:cog_stone_to_gear", metaitem('gearStone'), [item('py
 crafting.addShapeless("susy:cog_iron_to_gear", metaitem('gearIron'), [item('pyrotech:cog_iron')])
 crafting.addShapeless("susy:cog_gold_to_gear", metaitem('gearGold'), [item('pyrotech:cog_gold')])
 crafting.addShapeless("susy:cog_diamond_to_gear", metaitem('gearDiamond'), [item('pyrotech:cog_diamond')])
+
+// Leather ingredients
+// Leather Sheet
+crafting.addShaped("susy:leather_sheet", item('pyrotech:material', 38), [
+        [ore('craftingToolKnife')],
+        [ore('leather')]
+])
+
+CUTTER.recipeBuilder()
+        .inputs(ore('leather'))
+        .outputs(item('pyrotech:material', 38))
+        .chancedOutput(item('pyrotech:material', 38), 5000, 0)
+        .duration(80)
+        .EUt(7)
+        .buildAndRegister()
+
+// Leather Strap
+crafting.addShaped("susy:leather_strap", item('pyrotech:material', 39) * 2, [
+        [ore('craftingToolKnife'), item('pyrotech:material', 38)]
+])
+
+CUTTER.recipeBuilder()
+        .inputs(item('pyrotech:material', 38))
+        .outputs(item('pyrotech:material', 39) * 4)
+        .duration(50)
+        .EUt(7)
+        .buildAndRegister()
+
+// Leather Cord
+crafting.addShaped("susy:leather_cord", item('pyrotech:material', 40), [
+        [item('pyrotech:material', 39)],
+        [item('pyrotech:material', 39)],
+        [item('pyrotech:material', 39)]
+])
+
+ASSEMBLER.recipeBuilder()
+        .inputs(item('pyrotech:material', 39) * 2)
+        .outputs(item('pyrotech:material', 40))
+        .duration(100)
+        .EUt(7)
+        .buildAndRegister()
+
+// Durable Leather ingredients
+// Durable Leather
+CHEMICAL_BATH.recipeBuilder()
+        .inputs(ore('leather'))
+        .fluidInputs(fluid('creosote') * 200)
+        .outputs(item('pyrotech:material', 41))
+        .duration(100)
+        .EUt(30)
+        .buildAndRegister()
+
+// Durable Leather Sheet
+crafting.addShaped("susy:leather_sheet_durable", item('pyrotech:material', 42), [
+        [ore('craftingToolKnife')],
+        [ore('leatherDurable')]
+])
+
+CUTTER.recipeBuilder()
+        .inputs(ore('leatherDurable'))
+        .outputs(item('pyrotech:material', 42))
+        .chancedOutput(item('pyrotech:material', 42), 5000, 0)
+        .duration(100)
+        .EUt(16)
+        .buildAndRegister()
+
+CHEMICAL_BATH.recipeBuilder()
+        .inputs(item('pyrotech:material', 38))
+        .fluidInputs(fluid('creosote') * 200)
+        .outputs(item('pyrotech:material', 42))
+        .duration(80)
+        .EUt(30)
+        .buildAndRegister()
+
+// Durable Leather Strap
+crafting.addShaped("susy:leather_strap_durable", item('pyrotech:material', 43) * 2, [
+        [ore('craftingToolKnife'), item('pyrotech:material', 42)]
+])
+
+CUTTER.recipeBuilder()
+        .inputs(item('pyrotech:material', 42))
+        .outputs(item('pyrotech:material', 43) * 4)
+        .duration(80)
+        .EUt(16)
+        .buildAndRegister()
+
+CHEMICAL_BATH.recipeBuilder()
+        .inputs(item('pyrotech:material', 39))
+        .fluidInputs(fluid('creosote') * 50)
+        .outputs(item('pyrotech:material', 43))
+        .duration(50)
+        .EUt(7)
+        .buildAndRegister()
+
+// Durable Leather Cord
+crafting.addShaped("susy:leather_cord_durable", item('pyrotech:material', 44), [
+        [item('pyrotech:material', 43)],
+        [item('pyrotech:material', 43)],
+        [item('pyrotech:material', 43)]
+])
+
+ASSEMBLER.recipeBuilder()
+        .inputs(item('pyrotech:material', 43) * 2)
+        .outputs(item('pyrotech:material', 44))
+        .duration(120)
+        .EUt(16)
+        .buildAndRegister()
+
+CHEMICAL_BATH.recipeBuilder()
+        .inputs(item('pyrotech:material', 40))
+        .fluidInputs(fluid('creosote') * 100)
+        .outputs(item('pyrotech:material', 44))
+        .duration(80)
+        .EUt(16)
+        .buildAndRegister()
 
 // Slag Heap
 crafting.addShaped("susy:slag_heap", item('pyrotech:pile_slag'), [
@@ -1050,7 +1211,6 @@ ores.forEach { oreIn ->
 }
 
 // Actual ore smelting
-SMELTER = recipemap('primitive_smelter')
 
 reductants.forEach { reductant ->
     ores.forEach { oreIn ->
@@ -1197,8 +1357,6 @@ mods.gregtech.coke_oven.recipeBuilder()
         .fluidOutputs(fluid('creosote') * 1125)
         .duration(900)
         .buildAndRegister()
-
-ALLOY_SMELTER = recipemap('alloy_smelter')
 
 // Slag glass
 ALLOY_SMELTER.recipeBuilder()
