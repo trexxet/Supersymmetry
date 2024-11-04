@@ -9,18 +9,19 @@
       "desc:8": "susy.quest.db.718.desc",
       "frame:8": "GATE",
       "icon:10": {
-        "Count:3": 1,
         "id:8": "forge:bucketfilled",
         "tag:10": {
           "Amount:3": 1000,
           "FluidName:8": "supreme_gasoline"
         }
       },
+      "ignoresview:1": 0,
       "ismain:1": 1,
-      "name:8": "susy.quest.db.718.title"
+      "name:8": "susy.quest.db.718.title",
+      "visibility:8": "ALWAYS"
     }
   },
-  "questID:3": 718,
+  "rewards:9": {},
   "tasks:9": {
     "0:10": {
       "index:3": 1,

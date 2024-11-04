@@ -8,18 +8,20 @@
       "desc:8": "susy.quest.db.458.desc",
       "frame:8": "GATE",
       "icon:10": {
-        "Count:3": 1,
         "Damage:2": 591,
         "id:8": "gregtech:meta_item_1"
       },
+      "ignoresview:1": 0,
       "ismain:1": 1,
-      "name:8": "susy.quest.db.458.title"
+      "name:8": "susy.quest.db.458.title",
+      "visibility:8": "ALWAYS"
     }
   },
-  "questID:3": 458,
+  "rewards:9": {},
   "tasks:9": {
     "0:10": {
-      "index:3": 0,
+      "entryLogic:8": "AND",
+      "partialMatch:1": 1,
       "requiredItems:9": {
         "0:10": {
           "Count:3": 1,

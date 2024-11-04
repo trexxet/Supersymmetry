@@ -7,22 +7,22 @@
       "desc:8": "susy.quest.db.651.desc",
       "frame:8": "GATE",
       "icon:10": {
-        "Count:3": 1,
         "id:8": "forge:bucketfilled",
         "tag:10": {
           "Amount:3": 1000,
           "FluidName:8": "ammonia"
         }
       },
+      "ignoresview:1": 0,
       "ismain:1": 1,
       "name:8": "susy.quest.db.651.title",
-      "tasklogic:8": "OR"
+      "tasklogic:8": "OR",
+      "visibility:8": "ALWAYS"
     }
   },
-  "questID:3": 651,
+  "rewards:9": {},
   "tasks:9": {
     "0:10": {
-      "index:3": 0,
       "requiredFluids:9": {
         "0:10": {
           "Amount:3": 1000,

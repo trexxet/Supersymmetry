@@ -7,21 +7,21 @@
       "desc:8": "susy.quest.db.748.desc",
       "frame:8": "GATE",
       "icon:10": {
-        "Count:3": 1,
         "id:8": "immersiverailroading:item_rolling_stock",
         "tag:10": {
           "defID:8": "rolling_stock/freight/monorail_item.json",
           "gauge:6": 1.435
         }
       },
+      "ignoresview:1": 0,
       "ismain:1": 1,
-      "name:8": "susy.quest.db.748.title"
+      "name:8": "susy.quest.db.748.title",
+      "visibility:8": "ALWAYS"
     }
   },
-  "questID:3": 748,
+  "rewards:9": {},
   "tasks:9": {
     "0:10": {
-      "index:3": 0,
       "taskID:8": "bq_standard:checkbox"
     }
   }

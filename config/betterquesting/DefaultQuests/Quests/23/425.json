@@ -7,18 +7,17 @@
       "desc:8": "susy.quest.db.425.desc",
       "frame:8": "GATE",
       "icon:10": {
-        "Count:3": 1,
         "Damage:2": 274,
         "id:8": "gregtechfoodoption:gtfo_meta_item"
       },
+      "ignoresview:1": 0,
       "ismain:1": 1,
-      "name:8": "susy.quest.db.425.title"
+      "name:8": "susy.quest.db.425.title",
+      "visibility:8": "ALWAYS"
     }
   },
-  "questID:3": 425,
   "rewards:9": {
     "0:10": {
-      "index:3": 0,
       "rewardID:8": "bq_standard:item",
       "rewards:9": {
         "0:10": {
@@ -31,7 +30,6 @@
   },
   "tasks:9": {
     "0:10": {
-      "index:3": 0,
       "taskID:8": "bq_standard:checkbox"
     }
   }

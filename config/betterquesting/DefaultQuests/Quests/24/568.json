@@ -7,17 +7,19 @@
       "desc:8": "susy.quest.db.568.desc",
       "frame:8": "GATE",
       "icon:10": {
-        "Count:3": 1,
         "id:8": "opencomputers:assembler"
       },
+      "ignoresview:1": 0,
       "ismain:1": 1,
-      "name:8": "susy.quest.db.568.title"
+      "name:8": "susy.quest.db.568.title",
+      "visibility:8": "ALWAYS"
     }
   },
-  "questID:3": 568,
+  "rewards:9": {},
   "tasks:9": {
     "0:10": {
-      "index:3": 0,
+      "entryLogic:8": "AND",
+      "partialMatch:1": 1,
       "requiredItems:9": {
         "0:10": {
           "Count:3": 1,
