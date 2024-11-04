@@ -55,7 +55,7 @@ uselessProps = {
     "groupDetect:1": 0,
     "ignoreNBT:1": 0,
     "index:3": 0,
-    "consume:1": 0,
+    #"consume:1": 0,
 
     # task: location
     "visible:1": 0,
