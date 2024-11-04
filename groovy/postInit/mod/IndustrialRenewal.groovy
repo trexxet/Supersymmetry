@@ -661,7 +661,7 @@ mods.gregtech.assembler.recipeBuilder()
 	.buildAndRegister()
 
 mods.gregtech.assembler.recipeBuilder()
-	.inputs(ore('circuitLV') * 4)
+	.inputs(ore('circuitLv') * 4)
 	.inputs(metaitem('transformer.adjustable.lv'))
 	.inputs(item('industrialrenewal:energy_level'))
 	.inputs(item('gregtech:metal_casing', 4) * 8)
