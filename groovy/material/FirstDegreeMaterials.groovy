@@ -162,6 +162,13 @@ public class FirstDegreeMaterials {
                 .colorAverage()
                 .build();
 
+        CobaltMatte = new Material.Builder(8106, SuSyUtility.susyId("cobalt_matte"))
+                .ingot()
+                .flags(NO_UNIFICATION)
+                .color(0x7070d6)
+                .build()
+                .setFormula("(Co)(?)", true)
+
         AmmoniumNitrate = new Material.Builder(8107, SuSyUtility.susyId('ammonium_nitrate'))
                 .dust()
                 .components(Nitrogen * 2, Oxygen * 3, Hydrogen * 4)
@@ -3423,13 +3430,13 @@ public class FirstDegreeMaterials {
                 .components(Argon, Water)
                 .colorAverage()
                 .build()
-                .setFormula("(Ar)(H20)")
+                .setFormula("(Ar)(H2O)", true)
 
         ArgonHydrogenMixture = new Material.Builder(8628, SuSyUtility.susyId("argon_hydrogen_mixture"))
                 .gas()
                 .components(Argon, Hydrogen * 4)
                 .color(0x20a291)
                 .build()
-                .setFormula("(Ar)(H)")
+                .setFormula("(Ar)(H)", true)
     }
 }

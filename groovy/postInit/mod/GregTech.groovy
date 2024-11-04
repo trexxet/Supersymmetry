@@ -302,7 +302,7 @@ mods.gregtech.assembler.recipeBuilder()
         .duration(100)
         .EUt(30)
         .buildAndRegister();
-		
+
 //Steam Conveyor (no recipe for now)
 
 
@@ -349,13 +349,13 @@ RecyclingHelper.replaceShaped("gregtech:gregtech.machine.macerator.lv", metaitem
 ])
 
 RecyclingHelper.replaceShaped("gregtech:gregtech.machine.cutter.lv", metaitem('gregtech:cutter.lv'), [
-    [metaitem('cableGtSingleTin'), ore('circuitLv'), item('minecraft:glass')],
+    [metaitem('cableGtSingleTin'), ore('circuitLv'), ore('blockGlass')],
 	[metaitem('conveyor.module.lv'), metaitem('gregtech:hull.lv'), metaitem('toolHeadBuzzSawSteel')],
 	[ore('circuitLv'), metaitem('cableGtSingleTin'), metaitem('electric.motor.lv')]
 ])
 
 RecyclingHelper.replaceShaped("gregtech:gregtech.machine.cutter.mv", metaitem('gregtech:cutter.mv'), [
-    [metaitem('cableGtSingleCopper'), ore('circuitMv'), item('minecraft:glass')],
+    [metaitem('cableGtSingleCopper'), ore('circuitMv'), ore('blockGlass')],
 	[metaitem('conveyor.module.mv'), metaitem('gregtech:hull.mv'), metaitem('toolHeadBuzzSawAluminium')],
 	[ore('circuitMv'), metaitem('cableGtSingleCopper'), metaitem('electric.motor.mv')]
 ])
@@ -367,13 +367,13 @@ RecyclingHelper.replaceShaped("gregtech:gregtech.machine.cutter.hv", metaitem('g
 ])
 
 RecyclingHelper.replaceShaped("gregtech:gregtech.machine.electrolyzer.lv", metaitem('gregtech:electrolyzer.lv'), [
-		[metaitem('wireGtSingleSilver'), item('minecraft:glass'), metaitem('wireGtSingleSilver')],
+		[metaitem('wireGtSingleSilver'), ore('blockGlass'), metaitem('wireGtSingleSilver')],
 		[metaitem('wireGtSingleSilver'), metaitem('gregtech:hull.lv'), metaitem('wireGtSingleSilver')],
 		[ore('circuitLv'), metaitem('cableGtSingleTin'), ore('circuitLv')]
 ])
 
 RecyclingHelper.replaceShaped("gregtech:gregtech.machine.electrolyzer.mv", metaitem('gregtech:electrolyzer.mv'), [
-		[metaitem('wireGtSingleGold'), item('minecraft:glass'), metaitem('wireGtSingleGold')],
+		[metaitem('wireGtSingleGold'), ore('blockGlass'), metaitem('wireGtSingleGold')],
 		[metaitem('wireGtSingleGold'), metaitem('gregtech:hull.mv'), metaitem('wireGtSingleGold')],
 		[ore('circuitMv'), metaitem('cableGtSingleCopper'), ore('circuitMv')]
 ])
@@ -1418,7 +1418,7 @@ mods.gregtech.assembler.removeByInput(7, [metaitem('hull.ulv'), item('minecraft:
 mods.gregtech.assembler.removeByInput(7, [metaitem('hull.ulv'), item('minecraft:glass'), metaitem('circuit.integrated').withNbt(["Configuration": 1])], [fluid('polybenzimidazole') * 4])
 
 crafting.addShaped("gregtech:fluid_hatch.import.ulv", metaitem('fluid_hatch.import.ulv'), [
-		[null, item('minecraft:glass'), null],
+		[null, ore('blockGlass'), null],
 		[null, metaitem('hull.ulv'), null],
 		[null, null, null]
 ])
@@ -1432,7 +1432,7 @@ mods.gregtech.assembler.removeByInput(7, [metaitem('hull.ulv'), item('minecraft:
 crafting.addShaped("gregtech:fluid_hatch.export.ulv", metaitem('fluid_hatch.export.ulv'), [
 		[null, null, null],
 		[null, metaitem('hull.ulv'), null],
-		[null, item('minecraft:glass'), null]
+		[null, ore('blockGlass'), null]
 ])
 
 // Black Granite Dust * 1

@@ -1141,7 +1141,7 @@ public class UnknownCompositionMaterials {
                 .color(0x74561d)
                 .build();
 
-        TitanylSulfateSolution.setFormula('(H20)(TiO[SO4])(?)', true);
+        TitanylSulfateSolution.setFormula('(H2O)(TiO[SO4])(?)', true);
 
         AcidicWastewater = new Material.Builder(4233, SuSyUtility.susyId('acidic_wastewater'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
@@ -1936,12 +1936,6 @@ public class UnknownCompositionMaterials {
         CaesiumRubidiumAlumMixture = new Material.Builder(4423, SuSyUtility.susyId("caesium_rubidium_alum_mixture"))
                 .dust()
                 .color(0x631a87)
-                .build()
-
-        CobaltMatte = new Material.Builder(4424, SuSyUtility.susyId("cobalt_matte"))
-                .ingot()
-                .flags(NO_UNIFICATION)
-                .color(0x7070d6)
                 .build()
     }
 }

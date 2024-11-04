@@ -719,13 +719,13 @@ public class SecondDegreeMaterials {
                 .components(Argon, Hydrogen * 4, HydrogenChloride)
                 .colorAverage()
                 .build()
-                .setFormula("(Ar)(HCl)(H)");
+                .setFormula("(Ar)(HCl)(H)", true);
 
         AmmoniacalArgonHydrogenMixture = new Material.Builder(8627, SuSyUtility.susyId("ammoniacal_argon_hydrogen_mixture"))
                 .gas()
                 .components(Argon, Hydrogen * 4, Ammonia)
                 .colorAverage()
                 .build()
-                .setFormula("(Ar)(NH3)(H)")
+                .setFormula("(Ar)(NH3)(H)", true)
     }
 }
