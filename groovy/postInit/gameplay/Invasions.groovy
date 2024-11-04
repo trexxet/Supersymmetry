@@ -7,7 +7,7 @@ import techguns.entities.npcs.Bandit;
 new MobHordeEvent((player) -> {EntityZombie zombie = new EntityZombie(player.world);
 			        zombie.addPotionEffect(new PotionEffect(MobEffects.SPEED, 999999, 1));
 				return zombie;}, 5, 10, "zombie_medium")
-	.setAdvancementUnlock(new ResourceLocation("gregtech:steam/4_bronze_boiler"))
+	.setAdvancementUnlock(new ResourceLocation("gregtech:steam/1_first_tools"))
 	.setNightOnly(true)
 	.setTimer(144000, 216000)		// 2 - 3 hours
 	.setCanUsePods(false)
