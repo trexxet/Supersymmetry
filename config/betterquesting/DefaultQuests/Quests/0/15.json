@@ -7,6 +7,7 @@
       "desc:8": "susy.quest.db.15.desc",
       "frame:8": "GATE",
       "icon:10": {
+        "Count:3": 1,
         "id:8": "gregtech:mortar",
         "tag:10": {
           "DisallowContainerItem:1": 0,
@@ -21,18 +22,15 @@
           "HideFlags:3": 2
         }
       },
-      "ignoresview:1": 0,
       "ismain:1": 1,
-      "name:8": "susy.quest.db.15.title",
-      "visibility:8": "ALWAYS"
+      "name:8": "susy.quest.db.15.title"
     }
   },
-  "rewards:9": {},
+  "questID:3": 15,
   "tasks:9": {
     "0:10": {
       "entryLogic:8": "OR",
       "index:3": 1,
-      "partialMatch:1": 1,
       "requiredItems:9": {
         "0:10": {
           "Count:3": 1,
