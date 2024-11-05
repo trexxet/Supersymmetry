@@ -5,6 +5,11 @@ CRACKER = recipemap("cracker")
 ROASTER = recipemap("roaster")
 DT = recipemap("distillation_tower")
 
+/* Data:
+- Slurry oil: 40 carbons
+- Catalytic overheads: 1.825 carbons
+*/
+
 // Standard FCC
 
 crackables.each { _, crackable -> {
@@ -50,22 +55,22 @@ DT.recipeBuilder()
 
 DT.recipeBuilder()
     .fluidInputs(fluid('catalytically_cracked_atmospheric_oil_residue') * 1000)
-    .fluidOutputs(fluid('slurry_oil') * 100)
-    .fluidOutputs(crackables.heavy_cycle_oil.getSulfuric(80))
-    .fluidOutputs(crackables.light_cycle_oil.getSulfuric(120))
-    .fluidOutputs(fractions.naphtha.getSulfuric(400))
-    .fluidOutputs(fluid('sulfuric_catalytic_overheads') * 300)
+    .fluidOutputs(fluid('slurry_oil') * 380)
+    .fluidOutputs(crackables.heavy_cycle_oil.getSulfuric(300))
+    .fluidOutputs(crackables.light_cycle_oil.getSulfuric(450))
+    .fluidOutputs(fractions.naphtha.getSulfuric(1510))
+    .fluidOutputs(fluid('sulfuric_catalytic_overheads') * 1130)
     .duration(200)
     .EUt(Globals.voltAmps[1] * 2)
     .buildAndRegister()
 
 DT.recipeBuilder()
     .fluidInputs(fluid('catalytically_cracked_vacuum_oil_residue') * 1000)
-    .fluidOutputs(fluid('slurry_oil') * 150)
-    .fluidOutputs(crackables.heavy_cycle_oil.getSulfuric(100))
-    .fluidOutputs(crackables.light_cycle_oil.getSulfuric(150))
-    .fluidOutputs(fractions.naphtha.getSulfuric(300))
-    .fluidOutputs(fluid('sulfuric_catalytic_overheads') * 300)
+    .fluidOutputs(fluid('slurry_oil') * 430)
+    .fluidOutputs(crackables.heavy_cycle_oil.getSulfuric(280))
+    .fluidOutputs(crackables.light_cycle_oil.getSulfuric(430))
+    .fluidOutputs(fractions.naphtha.getSulfuric(850))
+    .fluidOutputs(fluid('sulfuric_catalytic_overheads') * 850)
     .duration(200)
     .EUt(Globals.voltAmps[1] * 2)
     .buildAndRegister()
