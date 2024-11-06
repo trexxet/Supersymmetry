@@ -22,7 +22,7 @@
   "rewards:9": {},
   "tasks:9": {
     "0:10": {
-      "consume:1": 0,
+      "consume:1": 1,
       "requiredFluids:9": {
         "0:10": {
           "Amount:3": 1000,

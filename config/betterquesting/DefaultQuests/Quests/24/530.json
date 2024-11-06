@@ -238,7 +238,7 @@
   },
   "tasks:9": {
     "0:10": {
-      "consume:1": 0,
+      "consume:1": 1,
       "entryLogic:8": "AND",
       "partialMatch:1": 1,
       "requiredItems:9": {
