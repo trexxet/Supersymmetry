@@ -1327,33 +1327,6 @@ mods.gregtech.assembler.recipeBuilder()
         .duration(50)
         .buildAndRegister()
 
-// Steel Frame Box * 1
-mods.gregtech.assembler.removeByInput(7, [metaitem('stickSteel') * 4, metaitem('circuit.integrated').withNbt(["Configuration": 4])], null)
-
-RecyclingHelper.replaceShaped("gregtech:frame_steel", metaitem('frameSteel') * 4, [
-        [ore('stickSteel'), ore('stickSteel'), ore('stickSteel')],
-        [ore('stickSteel'), ore('craftingToolWrench'), ore('stickSteel')],
-        [ore('stickSteel'), ore('stickSteel'), ore('stickSteel')]
-])
-
-// Steel frame recycling via an extractor
-mods.gregtech.extractor.recipeBuilder()
-		.inputs(metaitem('frameSteel'))
-		.fluidOutputs(fluid('steel') * 144)
-		.duration(56)
-		.EUt(Globals.voltAmps[2])
-		.category(RecipeCategories.EXTRACTOR_RECYCLING)
-		.buildAndRegister();
-	
-
-mods.gregtech.assembler.recipeBuilder()
-        .circuitMeta(4)
-        .inputs(ore('stickSteel') * 4)
-        .outputs(metaitem('frameSteel') * 2)
-        .EUt(7)
-        .duration(60)
-        .buildAndRegister()
-
 //Steel Pipe Casing
 RecyclingHelper.replaceShaped("gregtech:casing_steel_pipe", item('gregtech:boiler_casing', 1) * 4, [
         [ore('plateSteel'), ore('pipeNormalFluidSteel'), ore('plateSteel')],

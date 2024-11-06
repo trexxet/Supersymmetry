@@ -578,7 +578,7 @@ public class SecondDegreeMaterials {
 
         DilutedZincChlorideSolution = new Material.Builder(13095, SuSyUtility.susyId("diluted_zinc_chloride_solution"))
                 .liquid()
-                .components(ZincChloride * 1, Water * 2)
+                .components(ZincChloride * 1, Water * 3)
                 .colorAverage()
                 .build();
 
