@@ -1,4 +1,4 @@
-import classes. * ;
+import classes.*;
 import globals.Globals
 
 LARGE_WEAPON_FACTORY = recipemap('large_weapons_factory');
@@ -144,6 +144,11 @@ crafting.addShaped("icbm_exp_1_0_tnp", item('icbmclassic:explosives:0'), [
     [null, ore('dustPicricAcid'), null]
 ]);
 
+/*crafting.addShaped("icbm_exp_1_1", item('icbmclassic:explosives:1'), [
+        [ore('roundLead'), ore('roundLead'), ore('roundLead')],
+        [ore('roundLead'), item('icbmclassic:explosives:0'), ore('roundLead')],
+        [ore('roundLead'), ore('roundLead'), ore('roundLead')]
+]);*/
 / * 
 crafting.addShaped("icbm_exp_1_1", item('icbmclassic:explosives:1'), [
     [ore('roundLead'), ore('roundLead'), ore('roundLead')],
