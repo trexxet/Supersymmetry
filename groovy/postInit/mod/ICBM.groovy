@@ -149,13 +149,6 @@ crafting.addShaped("icbm_exp_1_0_tnp", item('icbmclassic:explosives:0'), [
         [ore('roundLead'), item('icbmclassic:explosives:0'), ore('roundLead')],
         [ore('roundLead'), ore('roundLead'), ore('roundLead')]
 ]);*/
-/ * 
-crafting.addShaped("icbm_exp_1_1", item('icbmclassic:explosives:1'), [
-    [ore('roundLead'), ore('roundLead'), ore('roundLead')],
-    [ore('roundLead'), item('icbmclassic:explosives:0'), ore('roundLead')],
-    [ore('roundLead'), ore('roundLead'), ore('roundLead')]
-]);
- * /
 
 def flammable_liquids = [
     liquid('naphtha') * 1000,
