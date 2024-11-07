@@ -1,3 +1,10 @@
+import petrochemistry.Petrochemistry
+
+DT = recipemap("sieve_distillation_tower")
+FLUID_HEATER = recipemap("fluid_heater")
+FBR = recipemap("fixed_bed_reactor")
+BCR = recipemap("bubble_column_reactor")
+
 fractions.each { _, fraction -> {
         if fraction.sulfuric {
             FLUID_HEATER.recipeBuilder()

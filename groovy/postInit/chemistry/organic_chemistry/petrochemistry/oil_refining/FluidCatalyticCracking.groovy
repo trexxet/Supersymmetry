@@ -3,7 +3,7 @@ import petrochemistry.Petrochemistry
 BCR = recipemap("bubble_column_reactor")
 CRACKER = recipemap("cracker")
 ROASTER = recipemap("roaster")
-DT = recipemap("distillation_tower")
+DT = recipemap("sieve_distillation_tower")
 
 /* Data:
 - Slurry oil: 40 carbons

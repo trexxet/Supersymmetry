@@ -5,7 +5,6 @@ ELECTROSTATIC_SEPARATOR = recipemap('electrostatic_separator')
 CENTRIFUGE = recipemap('centrifuge')
 FLUID_HEATER = recipemap('fluid_heater')
 
-
 oils.each { _, oil -> {
         // Desalting
         MIXER.recipeBuilder()

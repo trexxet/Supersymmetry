@@ -1,6 +1,6 @@
 import petrochemistry.Petrochemistry
 
-DT = recipemap('distillation_tower')
+DT = recipemap('sieve_distillation_tower')
 PHASE_SEPARATOR = recipemap('phase_separator')
 
 // Atmospheric distillation

@@ -52,24 +52,12 @@ byNames(['dustLignite', 'gemLignite']).each { input ->
         .buildAndRegister()
 }
 
-byNames(['dustCoke', 'dustGreenCoke', 'gemCoke']).each { input ->
-    def output = byName(input.pyrolysis_product)
-    PYROLYSE_OVEN.recipeBuilder()
-        .inputs(ore(input.name) * 16)
-        .outputs(metaitem(output.name) * 12)
-        .fluidInputs(fluid('steam') * 15000)
-        .fluidOutputs(fluid('syngas') * 12000)
-        .duration(320)
-        .EUt(60)
-        .buildAndRegister()
-}
-
 byNames(['dustLigniteCoke', 'gemLigniteCoke']).each { input ->
     def output = byName(input.pyrolysis_product)
     PYROLYSE_OVEN.recipeBuilder()
         .inputs(ore(input.name) * 16)
         .outputs(metaitem(output.name) * 9)
-        .fluidInputs(fluid('steam') * 15000)
+        .fluidInputs(fluid('dense_steam') * 15000)
         .fluidOutputs(fluid('syngas') * 12000)
         .duration(320)
         .EUt(60)

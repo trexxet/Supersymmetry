@@ -2,7 +2,7 @@ import petrochemistry.Petrochemistry
 
 ROASTER = recipemap('roaster')
 CRACKER = recipemap('cracker')
-DT = recipemap('distillation_tower')
+DT = recipemap('sieve_distillation_tower')
 
 crackables.each { _, crackable -> {
     if (crackable.steam_crackable) {

@@ -657,6 +657,11 @@ class SuSyMaterials {
         public static Material CFiveFraction;
         public static Material DimerizedCFiveFraction;
         public static Material PyrolysisGasoline;
+        public static Material CokingResidue;
+        public static Material HeatedCokingResidue;
+        public static Material CokeFines;
+        public static Material FluidCrackedVacuumOilResidue;
+        public static Material CokingEffluents;
 
         // First Degree Materials
 
@@ -711,6 +716,7 @@ class SuSyMaterials {
         public static Material Fluix;
         public static Material PigIron;
         public static Material GreenCoke;
+        public static Material HeatedGreenCoke;
         public static Material IronIIISulfate;
         public static Material AluminiumHydroxide;
         public static Material AluminiumTrifluoride;

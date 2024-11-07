@@ -1769,7 +1769,12 @@ public class FirstDegreeMaterials {
                 .colorAverage()
                 .build();
 
-        //FREE ID: 8360
+        HeatedGreenCoke = new Material.Builder(8360, SuSyUtility.susyId('heated_green_coke'))
+                .gem(1, 2000).ore(2, 1)
+                .color(0x7b8752).iconSet(LIGNITE)
+                .components(Carbon)
+                .flags(FLAMMABLE, NO_SMELTING, NO_SMASHING, MORTAR_GRINDABLE)
+                .build();
 
         CrudeTin = new Material.Builder(8361, SuSyUtility.susyId('crude_tin'))
                 .liquid(new FluidBuilder().temperature(600))

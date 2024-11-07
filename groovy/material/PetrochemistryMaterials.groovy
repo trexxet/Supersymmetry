@@ -677,7 +677,7 @@ public class PetrochemistryMaterials {
                 .build();
 
         SulfuricVacuumOilResidue = new Material.Builder(20114, SuSyUtility.susyId('sulfuric_vacuum_oil_residue'))
-                .liquid(new FluidBuilder().temperature(770))x
+                .liquid(new FluidBuilder().temperature(770))
                 .color(0x24241a)
                 .flags(FLAMMABLE)
                 .build();
@@ -715,6 +715,36 @@ public class PetrochemistryMaterials {
         VisbreakingResidue = new Material.Builder(20120, SuSyUtility.susyId('visbreaking_residue'))
                 .liquid()
                 .color(0x1a190b)
+                .flags(FLAMMABLE)
+                .build();
+
+        CokingResidue = new Material.Builder(20121, SuSyUtility.susyId('coking_residue'))
+                .liquid()
+                .color(0x121109)
+                .flags(FLAMMABLE)
+                .build();
+
+        HeatedCokingResidue = new Material.Builder(20122, SuSyUtility.susyId('heated_coking_residue'))
+                .liquid(new Fluid.Builder().temperature(766))
+                .color(0x362e1b)
+                .flags(FLAMMABLE)
+                .build();
+
+        CokeFines = new Material.Builder(20123, SuSyUtility.susyId('coke_fines'))
+                .gas(new Fluid.Builder().temperature(766))
+                .color(0x1c1b03)
+                .flags(FLAMMABLE)
+                .build();
+
+        FluidCrackedVacuumOilResidue = new Material.Builder(20124, SuSyUtility.susyId('fluid_cracked_vacuum_oil_residue'))
+                .liquid(new Fluid.Builder().temperature(766))
+                .color(0x1a1909)
+                .flags(FLAMMABLE)
+                .build();
+
+        CokingEffluents = new Material.Builder(20125, SuSyUtility.susyId('coking_effluents'))
+                .gas(new Fluid.Builer().temperature(766))
+                .color(0x75682e)
                 .flags(FLAMMABLE)
                 .build();
     }

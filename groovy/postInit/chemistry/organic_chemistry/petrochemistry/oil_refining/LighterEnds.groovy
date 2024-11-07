@@ -1,6 +1,6 @@
 import petrochemistry.Petrochemistry
 
-DT = recipemap('distillation_tower')
+DT = recipemap('sieve_distillation_tower')
 BCR = recipemap('bubble_column_reactor')
 SINGLE_COLUMN_CRYOGENIC_DISTILLATION_PLANT = recipemap('single_column_cryogenic_distillation')
 
