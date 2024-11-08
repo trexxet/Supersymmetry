@@ -1093,3 +1093,9 @@ RecyclingHelper.addShaped('gregtech:large_fluid_pump', metaitem('large_fluid_pum
 ])
 
 crafting.addShapeless("gregtech:ocean_pumper_switching", metaitem('large_fluid_pump'), [metaitem('ocean_pumper')]);
+
+RecyclingHelper.addShaped("gregtech:sieve_distillation_tower", metaitem('sieve_distillation_tower'), [
+	[metaitem('frameStainlessSteel'),ore('circuitHv'),metaitem('frameStainlessSteel')],
+	[metaitem('frameStainlessSteel'),metaitem('hull.Hv'),metaitem('frameStainlessSteel')],
+	[metaitem('frameStainlessSteel'),metaitem('electric.pump.hv'),metaitem('frameStainlessSteel')]
+])
