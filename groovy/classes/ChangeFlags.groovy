@@ -1,7 +1,10 @@
+package classes
+
 import net.minecraftforge.fml.common.eventhandler.EventPriority
 
 import gregtech.api.unification.material.Material;
 import gregtech.api.GregTechAPI;
+import gregtech.api.GTValues;
 
 import static gregtech.api.unification.material.info.MaterialFlags.*;
 import static gregtech.api.unification.material.Materials.*;
@@ -29,41 +32,34 @@ import supersymmetry.api.unification.material.properties.FiberProperty;
 class ChangeFlags {
 	private static void setupSlurries(Material mat) {
 		def property = new FluidProperty()
-		property.getStorage().enqueueRegistration(SusyFluidStorageKeys.SLURRY, new FluidBuilder())
-		property.getStorage().enqueueRegistration(SusyFluidStorageKeys.IMPURE_SLURRY, new FluidBuilder())
+		property.enqueueRegistration(SusyFluidStorageKeys.SLURRY, new FluidBuilder())
+		property.enqueueRegistration(SusyFluidStorageKeys.IMPURE_SLURRY, new FluidBuilder())
 
-		property.getStorage().enqueueRegistration(FluidStorageKeys.LIQUID, new FluidBuilder())
 		mat.setProperty(PropertyKey.FLUID, property)
 	}
 	
 	private static void setupFluidType(Material mat, FluidStorageKey key, int temp) {
         if (mat.getProperty(PropertyKey.FLUID) == null) {
             def property = new FluidProperty();
-		    property.getStorage().enqueueRegistration(key, new FluidBuilder().temperature(temp))
+		    property.enqueueRegistration(key, new FluidBuilder().temperature(temp))
 		    mat.setProperty(PropertyKey.FLUID, property)
         } else {
             def property = mat.getProperty(PropertyKey.FLUID)
-            if (property.getStorage().getQueuedBuilder(key) != null) {
-                property.getStorage().getQueuedBuilder(key).temperature(temp)
+            if (property.getQueuedBuilder(key) != null) {
+                property.getQueuedBuilder(key).temperature(temp)
             } else {
-                property.getStorage().enqueueRegistration(key, new FluidBuilder().temperature(temp))
+                property.enqueueRegistration(key, new FluidBuilder().temperature(temp))
             }
-        }
-        if (mat.getProperty(PropertyKey.FLUID).getStorage().getQueuedBuilder(FluidStorageKeys.LIQUID) == null) {
-            setupFluidType(mat, FluidStorageKeys.LIQUID, temp)
         }
 	}
 	private static void setupFluidType(Material mat, FluidStorageKey key) {
         if (mat.getProperty(PropertyKey.FLUID) == null) {
             def property = new FluidProperty();
-		    property.getStorage().enqueueRegistration(key, new FluidBuilder())
+		    property.enqueueRegistration(key, new FluidBuilder())
 		    mat.setProperty(PropertyKey.FLUID, property)
         } else {
             def property = mat.getProperty(PropertyKey.FLUID)
-		    property.getStorage().enqueueRegistration(key, new FluidBuilder())
-        }
-        if (mat.getProperty(PropertyKey.FLUID).getStorage().getQueuedBuilder(FluidStorageKeys.LIQUID) == null) {
-            setupFluidType(mat, FluidStorageKeys.LIQUID)
+		    property.enqueueRegistration(key, new FluidBuilder())
         }
 	}
 
@@ -103,7 +99,7 @@ class ChangeFlags {
 
         Polybenzimidazole.setProperty(SuSyPropertyKey.FIBER, new FiberProperty(false, true, true))
         Polytetrafluoroethylene.setProperty(SuSyPropertyKey.FIBER, new FiberProperty(false, true, false))
-        Polydimethylsiloxane.setProperty(PropertyKey.FLUID, new FluidProperty());
+        Polydimethylsiloxane.setProperty(PropertyKey.FLUID, new FluidProperty(FluidStorageKeys.LIQUID, new FluidBuilder()));
 
         Tantalum.setProperty(PropertyKey.BLAST, new BlastProperty(3293, GasTier.MID, 480, 240, -1, -1));
         Molybdenum.setProperty(PropertyKey.BLAST, new BlastProperty(2890, GasTier.MID, 480, 240, -1, -1));
@@ -112,6 +108,17 @@ class ChangeFlags {
         Cobalt.setProperty(PropertyKey.BLAST, new BlastProperty(1750, GasTier.LOW, 120, 200, -1, -1));
         Beryllium.setProperty(PropertyKey.BLAST, new BlastProperty(1560, GasTier.LOW, 120, 200, -1, -1));
         Nickel.setProperty(PropertyKey.BLAST, new BlastProperty(1728, GasTier.LOW, 120, 120, -1, -1));
+
+        // Supercons, max amps multiplied by 4.
+        ManganesePhosphide.getProperty(PropertyKey.WIRE).setAmperage(8);
+        MagnesiumDiboride.getProperty(PropertyKey.WIRE).setAmperage(16);
+        MercuryBariumCalciumCuprate.getProperty(PropertyKey.WIRE).setAmperage(16);
+        UraniumTriplatinum.getProperty(PropertyKey.WIRE).setAmperage(24);
+        SamariumIronArsenicOxide.getProperty(PropertyKey.WIRE).setAmperage(24);
+        IndiumTinBariumTitaniumCuprate.getProperty(PropertyKey.WIRE).setAmperage(32);
+        UraniumRhodiumDinaquadide.getProperty(PropertyKey.WIRE).setAmperage(32);
+        EnrichedNaquadahTriniumEuropiumDuranide.getProperty(PropertyKey.WIRE).setAmperage(64);
+        RutheniumTriniumAmericiumNeutronate.getProperty(PropertyKey.WIRE).setAmperage(96);
 
         // Flags
 
@@ -139,6 +146,7 @@ class ChangeFlags {
         BisphenolA.addFlags("no_unification");
         Phosphorus.addFlags("no_smelting");
         Tetrahedrite.addFlags("no_smelting");
+        Gold.addFlags("generate_gear");
 
         /*
         ManganesePhosphide.addFlags("no_smashing", "no_smelting")

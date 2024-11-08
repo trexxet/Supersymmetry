@@ -1159,7 +1159,7 @@ public class UnknownCompositionMaterials {
                 .color(0x74561d)
                 .build();
 
-        TitanylSulfateSolution.setFormula('(H20)(TiO[SO4])(?)', true);
+        TitanylSulfateSolution.setFormula('(H2O)(TiO[SO4])(?)', true);
 
         AcidicWastewater = new Material.Builder(4233, SuSyUtility.susyId('acidic_wastewater'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))

@@ -113,6 +113,8 @@ class SuSyMaterials {
         public static Material HydrothermalDeposit;
         public static Material AlluvialDeposit;
         public static Material MagmaticHydrothermalDeposit;
+        public static Material CoalDeposit;
+        public static Material NativeCopperDeposit;
 
         // Roasted Ores
 
@@ -517,6 +519,7 @@ class SuSyMaterials {
         public static Material SourWater;
         public static Material TypeYZeoliteSolution;
         public static Material TypeYZeolite;
+        public static Material CobaltMatte;
 
         // Petrochem Materials   
 
@@ -823,7 +826,7 @@ class SuSyMaterials {
         public static Material IronPentacarbonyl;
         public static Material DilutedPhosphoricAcid;
         public static Material MonocalciumPhosphate;
-        public static Material CalciumPhosphite;
+        public static Material CalciumMetaphosphate;
         public static Material AluminiumSulfate;
         public static Material DemineralizedWater;
         public static Material DeaeratedWater;
@@ -1142,6 +1145,13 @@ class SuSyMaterials {
         public static Material PotassiumPermanganate;
         public static Material LeadFreeSolder;
         public static Material CryogenicSolder;
+        public static Material Kovar;
+        public static Material ImpureLithiumCarbonate;
+        public static Material WashedGraphene;
+        public static Material DistilledGraphene;
+        public static Material DriedGraphene;
+        public static Material MoistArgon;
+        public static Material ArgonHydrogenMixture;
 
         // HP Materials
 
@@ -1329,6 +1339,11 @@ class SuSyMaterials {
         public static Material OxidizedManganateSolution;
         public static Material SupportedNickel;
         public static Material CobaltNitrateSolution;
+        public static Material GalvanizedSteel;
+        public static Material ImpureLithiumCarbonateSolution;
+        public static Material LithiumCarbonateSolution;
+        public static Material AcidicArgonHydrogenMixture;
+        public static Material AmmoniacalArgonHydrogenMixture;
 
         // Organic Chemistry Materials
 
@@ -1834,7 +1849,6 @@ class SuSyMaterials {
         public static Material OxalicAcidSolution;
         public static Material GalliumSulfateSolution;
         public static Material FormicAcidWaterAzeotrope;
-
         // Thermodynamics Materials
 
         public static Material EarthlikeAir;
@@ -1870,6 +1884,10 @@ class SuSyMaterials {
         public static Material LiquidDeoxygenatedArgon;
         public static Material LiquidWasteNitrogen;
         public static Material PartiallyLiquefiedArgon;
+        public static Material SupercriticalCarbonDioxide;
+        public static Material ColdAmmoniacalArgonHydrogenMixture;
+        public static Material ColdArgonHydrogenMixture;
+        public static Material PartiallyLiquefiedArgonHydrogenMixture;
 
         public static void changeFormulas() {
             log.infoMC("Changing Formulas!");

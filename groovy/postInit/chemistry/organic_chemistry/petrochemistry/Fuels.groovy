@@ -594,7 +594,7 @@ for (pair in oxygenatePairs) {
         .buildAndRegister()
 }
 
-println("Registered oxygenate pairs")
+log.infoMC("Registered oxygenate pairs")
 
 // Gasoline final blending
 

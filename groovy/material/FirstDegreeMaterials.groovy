@@ -162,6 +162,13 @@ public class FirstDegreeMaterials {
                 .colorAverage()
                 .build();
 
+        CobaltMatte = new Material.Builder(8106, SuSyUtility.susyId("cobalt_matte"))
+                .ingot()
+                .flags(NO_UNIFICATION)
+                .color(0x7070d6)
+                .build()
+                .setFormula("(Co)(?)", true)
+
         AmmoniumNitrate = new Material.Builder(8107, SuSyUtility.susyId('ammonium_nitrate'))
                 .dust()
                 .components(Nitrogen * 2, Oxygen * 3, Hydrogen * 4)
@@ -2295,14 +2302,14 @@ public class FirstDegreeMaterials {
 
         MonocalciumPhosphate.setFormula("Ca(H2PO4)2", true)
 
-        CalciumPhosphite = new Material.Builder(8439, SuSyUtility.susyId('calcium_phosphite'))
+        CalciumMetaphosphate = new Material.Builder(8439, SuSyUtility.susyId('calcium_metaphosphate'))
                 .dust()
-                .components(Calcium * 3, Phosphorus * 2, Oxygen * 6)
+                .components(Calcium * 1, Phosphorus * 2, Oxygen * 6)
                 .color(0xa2a832)
                 .iconSet(CERTUS)
                 .build()
 
-        CalciumPhosphite.setFormula("Ca3(PO3)2", true)
+        CalciumMetaphosphate.setFormula("Ca(PO3)2", true)
 
         SulfurTrioxideReactionMixture = new Material.Builder(8440, SuSyUtility.susyId('sulfur_trioxide_reaction_mixture'))
                 .gas()
@@ -2962,7 +2969,7 @@ public class FirstDegreeMaterials {
 
         FerroniobiumTantalum = new Material.Builder(8552, SuSyUtility.susyId('ferroniobium_tantalum'))
                 .dust()
-                .components(Iron * 30, Niobium * 65, Tantalum * 5)
+                .components(Iron * 2, Niobium * 7, Tantalum * 1)
                 .flags(DISABLE_DECOMPOSITION)
                 .colorAverage()
                 .build();
@@ -3388,7 +3395,56 @@ public class FirstDegreeMaterials {
                 .color(0xbf54bb)
                 .build()
 
-        CobaltNitrateSolution = new Material.Builder(8619, SuSyUtility.susyId('cobalt_nitrate_solution'))
+        Kovar = new Material.Builder(8619, SuSyUtility.susyId('kovar'))
+                .ingot()
+                .iconSet(SHINY)
+                .flags(GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_RING, GENERATE_PLATE, NO_UNIFICATION)
+                .components(Iron * 2, Nickel * 1, Cobalt * 1)
+                .colorAverage()
+                .build();
+
+        Kovar.setFormula("Fe10Ni5Co3", true)
+
+        ImpureLithiumCarbonate = new Material.Builder(8621, SuSyUtility.susyId("impure_lithium_carbonate"))
+                .dust().liquid(new FluidBuilder().temperature(1000))
+                .components(Carbon * 2, Lithium * 2, Oxygen * 3)
+                .color(0x4f5c6c)
+                .build()
+                .setFormula("(C)(Li2CO3)", true);
+
+        WashedGraphene = new Material.Builder(8622, SuSyUtility.susyId("washed_graphene"))
+                .dust()
+                .components(Carbon)
+                .color(0x595999)
+                .build();
+
+        DistilledGraphene = new Material.Builder(8623, SuSyUtility.susyId("distilled_graphene"))
+                .dust()
+                .components(Carbon)
+                .color(0x595959)
+                .build();
+
+        DriedGraphene = new Material.Builder(8624, SuSyUtility.susyId("dried_graphene"))
+                .dust()
+                .components(Carbon)
+                .color(0x797979)
+                .build();
+
+        MoistArgon = new Material.Builder(8625, SuSyUtility.susyId("moist_argon"))
+                .gas()
+                .components(Argon, Water)
+                .colorAverage()
+                .build()
+                .setFormula("(Ar)(H2O)", true)
+
+        ArgonHydrogenMixture = new Material.Builder(8628, SuSyUtility.susyId("argon_hydrogen_mixture"))
+                .gas()
+                .components(Argon, Hydrogen * 4)
+                .color(0x20a291)
+                .build()
+                .setFormula("(Ar)(H)", true)
+
+        CobaltNitrateSolution = new Material.Builder(8629, SuSyUtility.susyId('cobalt_nitrate_solution'))
                 .liquid()
                 .components(Cobalt, 1, Nitrogen, 2, Oxygen, 6, Water, 1)
                 .colorAverage()
