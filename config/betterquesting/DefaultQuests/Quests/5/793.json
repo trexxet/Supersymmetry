@@ -7,19 +7,17 @@
       "desc:8": "susy.quest.db.793.desc",
       "frame:8": "GATE",
       "icon:10": {
+        "Count:3": 1,
         "id:8": "susy:separator_rotor"
       },
-      "ignoresview:1": 0,
       "ismain:1": 1,
-      "name:8": "susy.quest.db.793.title",
-      "visibility:8": "ALWAYS"
+      "name:8": "susy.quest.db.793.title"
     }
   },
-  "rewards:9": {},
+  "questID:3": 793,
   "tasks:9": {
     "0:10": {
-      "entryLogic:8": "AND",
-      "partialMatch:1": 1,
+      "index:3": 0,
       "requiredItems:9": {
         "0:10": {
           "Count:3": 1,
