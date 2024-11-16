@@ -208,8 +208,6 @@ eventManager.listen {
         customMetaItems.addItem(5005, "stencil.pcb")
         customMetaItems.addItem(5006, "stencil.ulpic")
         customMetaItems.addItem(5007, "stencil.lpic")
-        customMetaItems.addItem(5008, "stencil.op_amp")
-        customMetaItems.addItem(5009, "stencil.voltage_regulator")
         customMetaItems.addItem(5020, "mask.blank")
         customMetaItems.addItem(5021, "mask.ic");
         customMetaItems.addItem(5022, "mask.cpu");
@@ -220,8 +218,6 @@ eventManager.listen {
         customMetaItems.addItem(5027, "mask.nand");
         customMetaItems.addItem(5028, "mask.nor");
         customMetaItems.addItem(5029, "mask.advanced");
-        customMetaItems.addItem(5030, "mask.op_amp")
-        customMetaItems.addItem(5031, "mask.voltage_regulator")
         customMetaItems.addItem(5100, "patterned.ic");
         customMetaItems.addItem(5101, "patterned.cpu");
         customMetaItems.addItem(5102, "patterned.ram");
@@ -232,8 +228,6 @@ eventManager.listen {
         customMetaItems.addItem(5107, "patterned.silicon_nitride");
         customMetaItems.addItem(5108, "patterned.nand");
         customMetaItems.addItem(5109, "patterned.nor");
-        customMetaItems.addItem(5110, "patterned.op_amp");
-        customMetaItems.addItem(5111, "patterned.voltage_regulator");
         customMetaItems.addItem(5150, "patterned.board.phenolic");
         customMetaItems.addItem(5151, "patterned.board.plastic");
         customMetaItems.addItem(5200, "laminated.board.phenolic");
@@ -245,8 +239,6 @@ eventManager.listen {
         customMetaItems.addItem(5305, "etched.silicon_dioxide");
         customMetaItems.addItem(5306, "etched.polysilicon");
         customMetaItems.addItem(5307, "etched.silicon_nitride");
-        customMetaItems.addItem(5308, "etched.op_amp");
-        customMetaItems.addItem(5309, "etched.voltage_regulator");
         
         //Good Circuit Components 5900-6000
         customMetaItems.addItem(5900, "op_amp");

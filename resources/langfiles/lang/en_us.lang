@@ -2369,6 +2369,15 @@ metaitem.tunnelbore.axle.name=Drilling Axle
 metaitem.tunnelbore.engine.name=Heavy Duty Drilling Engine
 metaitem.tunnelbore.drillhead.name=Tunnel Bore Drill Head
 
+metaitem.op_amp.name=Op Amp
+metaitem.heat_sink.name=Heat Sink
+metaitem.protector_chip.name=Protector Chip
+metaitem.zener_diode.name=Zener Diode
+metaitem.fuse.hv.name=High-Voltage Fuse
+metaitem.voltage_regulator.hv.unsealed.name=Unsealed HV Voltage Regulator
+metaitem.voltage_regulator.mv.name=MV Voltage Regulator
+metaitem.voltage_regulator.hv.name=HV Voltage Regulator
+
 # Vanilla MC
 tile.hellsand.name=Mineral-Rich Sand
 tile.magma.name=Magma-Infused Netherrack

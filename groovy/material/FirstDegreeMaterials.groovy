@@ -3389,6 +3389,7 @@ public class FirstDegreeMaterials {
                 .flags(GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_RING, GENERATE_PLATE, DISABLE_DECOMPOSITION)
                 .components(Iron * 2, Nickel * 1, Cobalt * 1)
                 .colorAverage()
+                .blastTemp(1723, GasTier.LOW, 120, 24)
                 .build();
 
         Kovar.setFormula("Fe10Ni5Co3", true)
