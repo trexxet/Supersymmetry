@@ -114,7 +114,9 @@ CIRCUIT_ASSEMBLER.recipeBuilder()
         .buildAndRegister()
 
 // Integrated Logic Circuit * 2
-mods.gregtech.circuit_assembler.removeByInput(16, [metaitem('circuit_board.basic'), metaitem('plate.integrated_logic_circuit'), metaitem('component.resistor') * 2, metaitem('component.diode') * 2, metaitem('wireFineCopper') * 2, metaitem('boltTin') * 2], [fluid('soldering_alloy') * 72 * 72])
+mods.gregtech.circuit_assembler.removeByInput(16, [metaitem('circuit_board.basic'), metaitem('plate.integrated_logic_circuit'), metaitem('component.resistor') * 2, metaitem('component.diode') * 2, metaitem('wireFineCopper') * 2, metaitem('boltTin') * 2], [fluid('soldering_alloy') * 72])
+mods.gregtech.circuit_assembler.removeByInput(16, [metaitem('circuit_board.basic'), metaitem('plate.integrated_logic_circuit'), metaitem('component.resistor') * 2, metaitem('component.diode') * 2, metaitem('wireFineCopper') * 2, metaitem('boltTin') * 2], [fluid('tin') * 144])
+
 
 CIRCUIT_ASSEMBLER.recipeBuilder()
         .inputs(metaitem('circuit_board.basic'), metaitem('component.resistor') * 2, metaitem('component.diode') * 2, metaitem('wireFineCopper') * 2, metaitem('boltTin') * 2)
@@ -126,7 +128,8 @@ CIRCUIT_ASSEMBLER.recipeBuilder()
         .buildAndRegister()
 
 // Good Integrated Circuit * 2
-mods.gregtech.circuit_assembler.removeByInput(24, [metaitem('circuit_board.good'), metaitem('circuit.basic_integrated') * 2, metaitem('component.resistor') * 2, metaitem('component.diode') * 2, metaitem('wireFineGold') * 4, metaitem('boltSilver') * 4], [fluid('soldering_alloy') * 72 * 72])
+mods.gregtech.circuit_assembler.removeByInput(24, [metaitem('circuit_board.good'), metaitem('circuit.basic_integrated') * 2, metaitem('component.resistor') * 2, metaitem('component.diode') * 2, metaitem('wireFineGold') * 4, metaitem('boltSilver') * 4], [fluid('soldering_alloy') * 72])
+mods.gregtech.circuit_assembler.removeByInput(24, [metaitem('circuit_board.good'), metaitem('circuit.basic_integrated') * 2, metaitem('component.resistor') * 2, metaitem('component.diode') * 2, metaitem('wireFineGold') * 4, metaitem('boltSilver') * 4], [fluid('tin') * 144])
 
 CIRCUIT_ASSEMBLER.recipeBuilder()
         .inputs(metaitem('circuit.basic_integrated') * 2, metaitem('component.resistor') * 2, metaitem('component.diode') * 2, metaitem('wireFineAnnealedCopper') * 4)
@@ -138,7 +141,9 @@ CIRCUIT_ASSEMBLER.recipeBuilder()
         .buildAndRegister()
 
 // Advanced Integrated Circuit * 1
-mods.gregtech.circuit_assembler.removeByInput(30, [metaitem('circuit.good_integrated') * 2, metaitem('plate.integrated_logic_circuit') * 2, metaitem('plate.random_access_memory') * 2, metaitem('component.transistor') * 4, metaitem('wireFineElectrum') * 8, metaitem('boltAnnealedCopper') * 8], [fluid('soldering_alloy') * 72 * 72])
+mods.gregtech.circuit_assembler.removeByInput(30, [metaitem('circuit.good_integrated') * 2, metaitem('plate.integrated_logic_circuit') * 2, metaitem('plate.random_access_memory') * 2, metaitem('component.transistor') * 4, metaitem('wireFineElectrum') * 8, metaitem('boltAnnealedCopper') * 8], [fluid('soldering_alloy') * 72])
+mods.gregtech.circuit_assembler.removeByInput(30, [metaitem('circuit.good_integrated') * 2, metaitem('plate.integrated_logic_circuit') * 2, metaitem('plate.random_access_memory') * 2, metaitem('component.transistor') * 4, metaitem('wireFineElectrum') * 8, metaitem('boltAnnealedCopper') * 8], [fluid('tin') * 144])
+
 
 CIRCUIT_ASSEMBLER.recipeBuilder()
         .inputs(metaitem('circuit.good_integrated') * 2, metaitem('component.resistor') * 2, metaitem('component.diode') * 2, metaitem('boltElectrum') * 8)

@@ -2378,6 +2378,11 @@ metaitem.voltage_regulator.hv.unsealed.name=Unsealed HV Voltage Regulator
 metaitem.voltage_regulator.mv.name=MV Voltage Regulator
 metaitem.voltage_regulator.hv.name=HV Voltage Regulator
 
+metaitem.circuit.basic_integrated.name=Miniaturized Electronic Circuit
+metaitem.circuit.good_integrated.name=Advanced Electronic Circuit
+metaitem.circuit.advanced_integrated.name=High-Voltage Electronic Circuit
+
+
 # Vanilla MC
 tile.hellsand.name=Mineral-Rich Sand
 tile.magma.name=Magma-Infused Netherrack
