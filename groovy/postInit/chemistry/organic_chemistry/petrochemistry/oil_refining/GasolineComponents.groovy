@@ -56,7 +56,7 @@ PHASE_SEPARATOR = recipemap('phase_separator')
         .EUt(Globals.voltAmps[2])
         .buildAndRegister()
 
-/* Alkylation
+// Alkylation
     CSTR.recipeBuilder()
         .fluidInputs(fluid('hydrofluoric_acid') * 50)
         .fluidInputs(fluid('isobutane') * 1000)
@@ -90,9 +90,8 @@ PHASE_SEPARATOR = recipemap('phase_separator')
         .duration(10)
         .EUt(Globals.voltAmps[2])
         .buildAndRegister()
-*/
 
-/* Polymerization
+// Polymerization
     FBR.recipeBuilder()
         .notConsumable(ore('catalystBedSolidPhosphoricAcid'))
         .fluidInputs(fluid('catalytic_olefin_rich_mixture') * 1000)
@@ -104,10 +103,9 @@ PHASE_SEPARATOR = recipemap('phase_separator')
     PHASE_SEPARATOR.recipeBuilder()
         .fluidInputs(fluid('raw_polymerate') * 500)
         .fluidOutputs(fluid('polymerate') * 250)
-        .fluidOutputs(fluid('lpg') * 250)
+        .fluidOutputs(fluid('fuel_gas') * 250)
         .duration(50)
         .buildAndRegister()
-*/
 
 // Reforming
     REFORMER.recipeBuilder()

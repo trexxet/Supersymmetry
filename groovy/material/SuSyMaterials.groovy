@@ -645,6 +645,9 @@ class SuSyMaterials {
         public static Material Alkylate;
         public static Material CrudeIsobutane;
 
+        public static Material RawGasolinePolymerate;
+        public static Material Polymerate;
+
         public static Material OilyBrine;
         public static Material LightOilyBrine;
         public static Material HeavyOilyBrine;

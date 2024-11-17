@@ -770,6 +770,18 @@ public class PetrochemistryMaterials {
                 .gas()
                 .color(0x736154)
                 .flags()
-                .build();    
+                .build();
+
+        RawGasolinePolymerate = new Material.Builder(2013, SuSyUtility.susyId('polymerate'))
+                .liquid()
+                .color(0xa7b510)
+                .flags(FLAMMABLE)
+                .build();
+
+        Polymerate = new Material.Builder(2013, SuSyUtility.susyId('polymerate'))
+                .liquid()
+                .color(0xc9d91a)
+                .flags(FLAMMABLE)
+                .build();
     }
 }          
