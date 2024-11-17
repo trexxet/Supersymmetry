@@ -747,5 +747,29 @@ public class PetrochemistryMaterials {
                 .color(0x75682e)
                 .flags(FLAMMABLE)
                 .build();
+
+        AcidicAlkylateMixture = new Material.Builder(20126, SuSyUtility.susyId('acidic_alkylate_mixture'))
+                .liquid()
+                .color(0xc27234)
+                .flags()
+                .build();
+                
+        AlkylateMixture = new Material.Builder(20127, SuSyUtility.susyId('alkylate_mixture'))
+                .liquid()
+                .color(0x994a23)
+                .flags()
+                .build();
+                
+        Alkylate = new Material.Builder(20128, SuSyUtility.susyId('alkylate'))
+                .liquid()
+                .color(0xd69f47)
+                .flags(FLAMMABLE)
+                .build();
+                
+        CrudeIsobutane = new Material.Builder(20129, SuSyUtility.susyId('crude_isobutane'))
+                .gas()
+                .color(0x736154)
+                .flags()
+                .build();    
     }
 }          

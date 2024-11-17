@@ -640,6 +640,11 @@ class SuSyMaterials {
         public static Material IsohexaneRichStream;
         public static Material Isomerate;
 
+        public static Material AcidicAlkylateMixture;
+        public static Material AlkylateMixture;
+        public static Material Alkylate;
+        public static Material CrudeIsobutane;
+
         public static Material OilyBrine;
         public static Material LightOilyBrine;
         public static Material HeavyOilyBrine;
