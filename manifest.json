@@ -11,7 +11,7 @@
   "manifestType": "minecraftModpack",
   "manifestVersion": 1,
   "name": "Supersymmetry",
-  "version": "0.1.13.2",
+  "version": "0.1.13.3",
   "author": "SymmetricDevs",
   "externalDeps": [],
   "files": [
@@ -112,12 +112,12 @@
     },
     {
       "projectID": 557549,
-      "fileID": 5726160,
+      "fileID": 5906628,
       "required": true
     },
     {
       "projectID": 419286,
-      "fileID": 5079135,
+      "fileID": 5906634,
       "required": true
     },
     {
@@ -142,7 +142,7 @@
     },
     {
       "projectID": 223150,
-      "fileID": 4643434,
+      "fileID": 5615733,
       "required": true
     },
     {
@@ -182,7 +182,7 @@
     },
     {
       "projectID": 623955,
-      "fileID": 5533542,
+      "fileID": 5751930,
       "required": true
     },
     {
@@ -217,7 +217,7 @@
     },
     {
       "projectID": 633806,
-      "fileID": 5717275,
+      "fileID": 5745976,
       "required": true
     },
     {
@@ -287,7 +287,7 @@
     },
     {
       "projectID": 477021,
-      "fileID": 5778294,
+      "fileID": 5910187,
       "required": true
     },
     {
@@ -337,7 +337,7 @@
     },
     {
       "projectID": 297038,
-      "fileID": 5290565,
+      "fileID": 5798179,
       "required": true
     },
     {
@@ -367,7 +367,7 @@
     },
     {
       "projectID": 223008,
-      "fileID": 5274236,
+      "fileID": 5741939,
       "required": true
     },
     {
@@ -397,7 +397,7 @@
     },
     {
       "projectID": 846224,
-      "fileID": 5870351,
+      "fileID": 5915789,
       "required": true
     },
     {
@@ -412,7 +412,7 @@
     },
     {
       "projectID": 306676,
-      "fileID": 4415746,
+      "fileID": 5822040,
       "required": true
     },
     {
@@ -657,11 +657,6 @@
       "required": true
     },
     {
-      "projectID": 254284,
-      "fileID": 3516274,
-      "required": true
-    },
-    {
       "projectID": 237167,
       "fileID": 2985811,
       "required": true
@@ -698,7 +693,7 @@
     },
     {
       "projectID": 244451,
-      "fileID": 5452674,
+      "fileID": 5770085,
       "required": true
     },
     {
@@ -713,7 +708,7 @@
     },
     {
       "projectID": 229302,
-      "fileID": 3769828,
+      "fileID": 5825891,
       "required": true
     },
     {
@@ -723,7 +718,7 @@
     },
     {
       "projectID": 873867,
-      "fileID": 5403908,
+      "fileID": 5892019,
       "required": true
     },
     {
@@ -854,7 +849,7 @@
     },
     {
       "projectID": 995393,
-      "fileID": 5767950,
+      "fileID": 5844968,
       "required": true
     },
     {
