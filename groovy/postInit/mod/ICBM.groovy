@@ -242,7 +242,7 @@ for (fuel in thermobaric_fuels) {
         .buildAndRegister();
 }
 
-/ * WEAPON_FACTORY.recipeBuilder()
+/* WEAPON_FACTORY.recipeBuilder()
         .inputs([
             item('icbmclassic:explosives:1'),
             ore('plateSteel') * 8
@@ -250,9 +250,9 @@ for (fuel in thermobaric_fuels) {
         .outputs(item('icbmclassic:explosives:8'))
         .duration(400)
         .EUt(60)
-        .buildAndRegister(); * /
+        .buildAndRegister();
 
-/ * WEAPON_FACTORY.recipeBuilder()
+WEAPON_FACTORY.recipeBuilder()
     .inputs([
         metaitem('fluid_cell') * 8,
         item('icbmclassic:explosives:6'),
@@ -263,7 +263,7 @@ for (fuel in thermobaric_fuels) {
     .outputs(item('icbmclassic:explosives:9'))
     .duration(400)
     .EUt(60)
-    .buildAndRegister(); * /
+    .buildAndRegister(); */
 
 //Explosives tier 3
 
