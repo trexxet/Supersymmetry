@@ -7,18 +7,16 @@
       "desc:8": "susy.quest.db.18799598.desc",
       "frame:8": "GATE",
       "icon:10": {
+        "Count:3": 1,
         "id:8": "pyrotech:soaking_pot"
       },
-      "ignoresview:1": 0,
-      "name:8": "susy.quest.db.18799598.title",
-      "visibility:8": "ALWAYS"
+      "name:8": "susy.quest.db.18799598.title"
     }
   },
-  "rewards:9": {},
+  "questID:3": 18799598,
   "tasks:9": {
     "0:10": {
-      "entryLogic:8": "AND",
-      "partialMatch:1": 1,
+      "index:3": 0,
       "requiredItems:9": {
         "0:10": {
           "Count:3": 1,

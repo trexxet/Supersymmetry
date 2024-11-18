@@ -7,6 +7,7 @@
       "desc:8": "susy.quest.db.30.desc",
       "frame:8": "GATE",
       "icon:10": {
+        "Count:3": 1,
         "OreDict:8": "ingotSteel",
         "id:8": "betterquesting:placeholder",
         "tag:10": {
@@ -14,17 +15,14 @@
           "orig_meta:3": 0
         }
       },
-      "ignoresview:1": 0,
       "ismain:1": 1,
-      "name:8": "susy.quest.db.30.title",
-      "visibility:8": "ALWAYS"
+      "name:8": "susy.quest.db.30.title"
     }
   },
-  "rewards:9": {},
+  "questID:3": 30,
   "tasks:9": {
     "0:10": {
-      "entryLogic:8": "AND",
-      "partialMatch:1": 1,
+      "index:3": 0,
       "requiredItems:9": {
         "0:10": {
           "Count:3": 8,

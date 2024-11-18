@@ -8,21 +8,19 @@
       "desc:8": "susy.quest.db.210.desc",
       "frame:8": "GATE",
       "icon:10": {
+        "Count:3": 1,
         "id:8": "littletiles:container"
       },
-      "ignoresview:1": 0,
       "ismain:1": 1,
       "name:8": "susy.quest.db.210.title",
-      "questlogic:8": "OR",
-      "visibility:8": "ALWAYS"
+      "questlogic:8": "OR"
     }
   },
-  "rewards:9": {},
+  "questID:3": 210,
   "tasks:9": {
     "0:10": {
-      "entryLogic:8": "AND",
       "ignoreNBT:1": 1,
-      "partialMatch:1": 1,
+      "index:3": 0,
       "requiredItems:9": {
         "0:10": {
           "Count:3": 1,

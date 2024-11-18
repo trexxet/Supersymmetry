@@ -5,6 +5,7 @@
     "betterquesting:10": {
       "desc:8": "susy.quest.ql.24.desc",
       "icon:10": {
+        "Count:3": 1,
         "Damage:2": 1,
         "id:8": "opencomputers:storage",
         "tag:10": {
@@ -15,8 +16,7 @@
           "oc:lootFactory:8": "openglasses:wavefront objects"
         }
       },
-      "name:8": "susy.quest.ql.24.title",
-      "visibility:8": "ALWAYS"
+      "name:8": "susy.quest.ql.24.title"
     }
   },
   "quests:9": {
