@@ -1097,7 +1097,7 @@ public class FirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .colorAverage()
                 .build()
-                .setFormula("(Na[Ag(CN)2])5(NaCl)2(H2O)20", true)
+                .setFormula("(Na[Ag(CN)2])5(NaCl)3(H2O)20", true)
 
         ProustiteThiosulfateLeachSolution = new Material.Builder(8256, SuSyUtility.susyId('proustite_thiosulfate_leach_solution'))
                 .liquid()
