@@ -134,7 +134,7 @@ BR.recipeBuilder()
         .buildAndRegister()
 
 BR.recipeBuilder()
-        .inputs(ore('dustCalciumChloride') * 6)
+        .inputs(ore('dustCalciumChloride') * 3)
         .fluidInputs(fluid('zirconium_sulfate_solution') * 3000)
         .outputs(metaitem('dustCalciumSulfate') * 6)
         .fluidOutputs(fluid('zirconyl_chloride_solution') * 2000)
