@@ -178,7 +178,8 @@ BATCH_REACTOR.recipeBuilder()
         .inputs(ore('dustProustite') * 7)
         .inputs(ore('dustSalt') * 6)
         .fluidInputs(fluid('sodium_hydroxide_solution') * 1000)
-        .fluidInputs(fluid('distilled_water') * 5000)
+        .fluidInputs(fluid('distilled_water') * 5000) 
+		//where does the distilled water go in the fluid output? 
         .outputs(metaitem('dustSilverChloride') * 6) //TO SILVER PROCESSING
         .fluidOutputs(fluid('proustite_alkaline_leach_solution') * 1000)
         .duration(240)
