@@ -1031,10 +1031,11 @@ public class FirstDegreeMaterials {
 
         SulfidicSilverCyanideSolution = new Material.Builder(8247, SuSyUtility.susyId('sulfidic_silver_cyanide_solution'))
                 .liquid()
-                .components(Silver * 2, Carbon * 4, Nitrogen * 4, Sodium * 4, Sulfur, Water * 4)
+                .components(Silver * 2, Carbon * 4, Nitrogen * 4, Sodium * 4, Sulfur, Water * 8)
                 .flags(DISABLE_DECOMPOSITION)
                 .colorAverage()
                 .build()
+                .setFormula("(Na[Ag(CN)2])2(Na2S)(H2O)8", true)
 
         SilverCyanideSolution = new Material.Builder(8248, SuSyUtility.susyId('silver_cyanide_solution'))
                 .liquid()
@@ -1046,11 +1047,11 @@ public class FirstDegreeMaterials {
 
         SulfidicPyrargyriteCyanideLeachSolution = new Material.Builder(8249, SuSyUtility.susyId('sulfidic_pyrargyrite_cyanide_leach_solution'))
                 .liquid()
-                .components(Sodium * 6, Silver * 3, Carbon * 6, Nitrogen * 6, Antimony, Sulfur * 3, Water * 6)
+                .components(Sodium * 6, Silver * 3, Carbon * 6, Nitrogen * 6, Antimony, Sulfur * 3, Water * 12)
                 .flags(DISABLE_DECOMPOSITION)
                 .colorAverage()
                 .build()
-                .setFormula("(Na[Ag(CN)2])3(Na3SbS3)(H2O)6", true)
+                .setFormula("(Na[Ag(CN)2])3(Na3SbS3)(H2O)12", true)
 
         PyrargyriteCyanideLeachSolution = new Material.Builder(8250, SuSyUtility.susyId('pyrargyrite_cyanide_leach_solution'))
                 .liquid()
@@ -1058,7 +1059,7 @@ public class FirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .colorAverage()
                 .build()
-                .setFormula("(Na[Ag(CN)2])3(NaCl)2(NaSbCl4)(H2O)6", true)
+                .setFormula("(Na[Ag(CN)2])3(NaCl)3(H2O)12", true)
 
         PyrargyriteThiosulfateLeachSolution = new Material.Builder(8251, SuSyUtility.susyId('pyrargyrite_thiosulfate_leach_solution'))
                 .liquid()
@@ -1084,19 +1085,19 @@ public class FirstDegreeMaterials {
 
         SulfidicStephaniteCyanideLeachSolution = new Material.Builder(8254, SuSyUtility.susyId('sulfidic_stephanite_cyanide_leach_solution'))
                 .liquid()
-                .components(Sodium * 10, Silver * 5, Carbon * 10, Nitrogen * 10, Antimony, Sulfur * 4, Water * 12)
+                .components(Sodium * 10, Silver * 5, Carbon * 10, Nitrogen * 10, Antimony, Sulfur * 4, Water * 10)
                 .flags(DISABLE_DECOMPOSITION)
                 .colorAverage()
                 .build()
-                .setFormula("(Na[Ag(CN)2])5(Na3SbS3)(Na2S)(H2O)12", true)
+                .setFormula("(Na[Ag(CN)2])5(Na3SbS3)(Na2S)(H2O)20", true)
 
         StephaniteCyanideLeachSolution = new Material.Builder(8255, SuSyUtility.susyId('stephanite_cyanide_leach_solution'))
                 .liquid()
-                .components(Sodium * 10, Silver * 5, Carbon * 10, Nitrogen * 10, Chlorine * 5, Water * 20)
+                .components(Sodium * 10, Silver * 5, Carbon * 10, Nitrogen * 10, Chlorine * 5, Water * 10)
                 .flags(DISABLE_DECOMPOSITION)
                 .colorAverage()
                 .build()
-                .setFormula("(Na[Ag(CN)2])5(NaCl)2(NaSbCl6)(H2O)20", true)
+                .setFormula("(Na[Ag(CN)2])5(NaCl)2(H2O)20", true)
 
         ProustiteThiosulfateLeachSolution = new Material.Builder(8256, SuSyUtility.susyId('proustite_thiosulfate_leach_solution'))
                 .liquid()
