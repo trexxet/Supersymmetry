@@ -3447,8 +3447,9 @@ public class FirstDegreeMaterials {
 
         CobaltNitrateSolution = new Material.Builder(8629, SuSyUtility.susyId('cobalt_nitrate_solution'))
                 .liquid()
-                .components(Cobalt, 1, Nitrogen, 2, Oxygen, 6, Water, 1)
+                .components(Cobalt, Nitrogen * 2, Oxygen * 6, Water)
                 .colorAverage()
-                .setFormula("(Co(NO3)2)(H2O)", true)
+
+        CobaltNitrateSolution.setFormula("(Co(NO3)2)(H2O)", true)
     }
 }

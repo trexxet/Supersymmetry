@@ -319,13 +319,13 @@ public class PetrochemistryMaterials {
                 .build()
 
         HydrocrackedDeasphaltedOil = new Material.Builder(20051, SuSyUtility,susyId('hydrocracked_deasphalted_oil'))
-                .liquid(new Fluid.Builder().temperature(573))
+                .liquid(new FluidBuilder().temperature(573))
                 .color(0x24262a)
                 .flags(FLAMMABLE)
                 .build()
 
         HydrocrackedSlurryOil = new Material.Builder(20052, SuSyUtility.susyId('hydrocracked_slurry_oil'))
-                .liquid(new Fluid.Builder().temperature(573))
+                .liquid(new FluidBuilder().temperature(573))
                 .color(0x29212c)
                 .flags(FLAMMABLE)
                 .build()
@@ -725,25 +725,25 @@ public class PetrochemistryMaterials {
                 .build();
 
         HeatedCokingResidue = new Material.Builder(20122, SuSyUtility.susyId('heated_coking_residue'))
-                .liquid(new Fluid.Builder().temperature(766))
+                .liquid(new FluidBuilder().temperature(766))
                 .color(0x362e1b)
                 .flags(FLAMMABLE)
                 .build();
 
         CokeFines = new Material.Builder(20123, SuSyUtility.susyId('coke_fines'))
-                .gas(new Fluid.Builder().temperature(766))
+                .gas(new FluidBuilder().temperature(766))
                 .color(0x1c1b03)
                 .flags(FLAMMABLE)
                 .build();
 
         FluidCrackedVacuumOilResidue = new Material.Builder(20124, SuSyUtility.susyId('fluid_cracked_vacuum_oil_residue'))
-                .liquid(new Fluid.Builder().temperature(766))
+                .liquid(new FluidBuilder().temperature(766))
                 .color(0x1a1909)
                 .flags(FLAMMABLE)
                 .build();
 
         CokingEffluents = new Material.Builder(20125, SuSyUtility.susyId('coking_effluents'))
-                .gas(new Fluid.Builer().temperature(766))
+                .gas(new FluidBuilder().temperature(766))
                 .color(0x75682e)
                 .flags(FLAMMABLE)
                 .build();

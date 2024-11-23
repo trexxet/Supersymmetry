@@ -585,6 +585,7 @@ class SuSyMaterials {
         public static Material CrudeCatalyticallyCrackedAtmosphericOilResidue;
         public static Material HydrocrackedAtmosphericOilResidue;
         public static Material ThermallyCrackedAtmosphericOilResidue;
+        public static Material QuenchedAtmosphericOilResidue;
 
         public static Material VacuumOilResidue;
         public static Material SulfuricVacuumOilResidue;
@@ -592,6 +593,7 @@ class SuSyMaterials {
         public static Material CrudeCatalyticallyCrackedVacuumOilResidue;
         public static Material HydrocrackedVacuumOilResidue;
         public static Material ThermallyCrackedVacuumOilResidue;
+        public static Material QuenchedVacuumOilResidue;
 
         public static Material FuelGas;
         public static Material SulfuricFuelGas;
@@ -615,7 +617,7 @@ class SuSyMaterials {
         public static Material HydrocrackedLightCycleOil;
 
         public static Material HeavyCycleOil;
-        public static Material HydricrackedHeavyCycleOil;
+        public static Material HydrocrackedHeavyCycleOil;
 
         public static Material SlurryOil;
         public static Material HydrocrackedSlurryOil;
@@ -668,6 +670,7 @@ class SuSyMaterials {
         public static Material CFiveFraction;
         public static Material DimerizedCFiveFraction;
         public static Material PyrolysisGasoline;
+        public static Material VisbreakingResidue;
         public static Material CokingResidue;
         public static Material HeatedCokingResidue;
         public static Material CokeFines;
@@ -1761,6 +1764,7 @@ class SuSyMaterials {
         public static Material DiethylEtherSolution;
         public static Material LithiumSolution;
         public static Material DimethylacetamideSolution;
+        public static Material AcidicFurfuralSolution;
         public static Material WackerCatalystSolution;
         public static Material TwoEthylanthraquinoneSolution;
         public static Material AcetamideSolution;

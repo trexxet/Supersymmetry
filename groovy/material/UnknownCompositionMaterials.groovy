@@ -51,11 +51,11 @@ public class UnknownCompositionMaterials {
                 .color(0x5c5c5c)
                 .build();
 
-        ChloridedAlumina = new Material.Builder(4005, SuSyUtility,susyId('chlorided_alumina'))
+        ChloridedAlumina = new Material.Builder(4005, SuSyUtility.susyId('chlorided_alumina'))
                 .dust()
                 .color(0x86bf99)
                 .flags(GENERATE_CATALYST_BED)
-                build();
+                .build();
 
         FlueGas = new Material.Builder(4006, SuSyUtility.susyId('flue_gas'))
                 .gas(new FluidBuilder().temperature(1000))
@@ -187,7 +187,7 @@ public class UnknownCompositionMaterials {
                 .color(0x4f2f27)
                 .build();
 
-        SulfatedMetalOxide = new Material.BUilder(4032, SuSyUtility.susyId('sulfated_metal_oxide'))
+        SulfatedMetalOxide = new Material.Builder(4032, SuSyUtility.susyId('sulfated_metal_oxide'))
                 .dust()
                 .color(0xc7f089)
                 .flags(GENERATE_CATALYST_BED)
@@ -842,7 +842,7 @@ public class UnknownCompositionMaterials {
 
         AmorphousSilicaAlumina = new Material.Builder(4160, SuSyUtility.susyId('amorphous_silica_alumina'))
                 .dust()
-                .color(0x)
+                .color(0x7ea3ed)
                 .iconSet(DULL)
                 .build()
 

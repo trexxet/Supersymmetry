@@ -69,7 +69,7 @@ class SinteringGlobals {
         new Combustible('methane', false, 25, 50, 'carbon_dioxide', 25),
         new Combustible('natural_gas', false, 8, 50, 'carbon_dioxide', 25),
         new Combustible('refinery_gas', false, 8, 50, 'carbon_dioxide', 25),
-        new Combustible('light_gas_oil', false, 4, 50, 'carbon_dioxide', 25)
+        new Combustible('light_gas_oil', false, 4, 50, 'carbon_dioxide', 25),
         new Combustible('heavy_gas_oil', false, 3, 50, 'carbon_dioxide', 25)
     ]
 
