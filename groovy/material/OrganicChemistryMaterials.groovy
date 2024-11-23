@@ -363,7 +363,7 @@ public class OrganicChemistryMaterials {
 
         Cyclohexanone = new Material.Builder(15060, SuSyUtility.susyId('cyclohexanone'))
                 .liquid()
-                .components(Hydrogen * 3, Nitrogen * 1, Oxygen * 1)
+                .components(Carbon * 6, Hydrogen * 10, Oxygen * 1)
                 .color(0x2b1e11)
                 .build();
 

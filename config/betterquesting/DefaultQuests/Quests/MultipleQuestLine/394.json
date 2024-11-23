@@ -10,17 +10,17 @@
       "desc:8": "susy.quest.db.394.desc",
       "frame:8": "GATE",
       "icon:10": {
+        "Count:3": 1,
         "id:8": "susy:turbine_rotor"
       },
-      "ignoresview:1": 0,
       "ismain:1": 1,
-      "name:8": "susy.quest.db.394.title",
-      "visibility:8": "ALWAYS"
+      "name:8": "susy.quest.db.394.title"
     }
   },
-  "rewards:9": {},
+  "questID:3": 394,
   "tasks:9": {
     "0:10": {
+      "index:3": 0,
       "taskID:8": "bq_standard:checkbox"
     }
   }
