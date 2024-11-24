@@ -1,3 +1,4 @@
+import globals.Globals
 import static globals.Petrochemistry.*
 
 ROASTER = recipemap('roaster')

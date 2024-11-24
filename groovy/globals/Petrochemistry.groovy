@@ -26,7 +26,7 @@ class Petrochemistry {
         }
 
         def getBrine(int amount) {
-            return this.brine
+            return fluid(this.brine) * amount
         }
 
         def get(int amount) {
@@ -53,7 +53,7 @@ class Petrochemistry {
             return fluid('thermally_cracked_' + this.name) * amount
         }
 
-        def getQuenched(int amouunt) {
+        def getQuenched(int amount) {
             return fluid('quenched_' + this.name) * amount
         }
     }
@@ -145,18 +145,14 @@ class Petrochemistry {
     */
 
     public static fractions = [
-        vacuum_oil_residue : new OilFraction('vacuum_oil_residue').withTraits(Sulfuric),
-        atmospheric_oil_residue : new OilFraction('atmospheric_oil_residue').withTraits(Sulfuric),
-        lubricating_oil : new OilFraction('lubricating_oil').withTraits(Sulfuric, Crude),
         heavy_gas_oil : new OilFraction('heavy_gas_oil').withTraits(Sulfuric, Heatable, Strippable),
         light_gas_oil : new OilFraction('light_gas_oil').withTraits(Sulfuric, Heatable, Strippable),
         kerosene : new OilFraction('kerosene').withTraits(Sulfuric, Heatable, Strippable),
         heavy_naphtha : new OilFraction('heavy_naphtha').withTraits(Sulfuric, Heatable),
-        heavy_cycle_oil : new OilFraction('heavy_cycle_oil').withTraits(Sulfuric),
-        light_cycle_oil : new OilFraction('light_cycle_oil').withTraits(Sulfuric),
+        heavy_cycle_oil : new OilFraction('heavy_cycle_oil').withTraits(Sulfuric, Heatable),
+        light_cycle_oil : new OilFraction('light_cycle_oil').withTraits(Sulfuric, Heatable),
         naphtha : new OilFraction('naphtha').withTraits(Crude),
         light_naphtha : new OilFraction('light_naphtha').withTraits(Sulfuric, Heatable),
-        fuel_gas : new OilFraction('fuel_gas').withTraits(Sulfuric)
     ]
 
     public static crackables = [

@@ -11,7 +11,6 @@ mods.gregtech.steam_turbine.removeByInput(32, null, [fluid('steam') * 640])
 mods.gregtech.gas_turbine.removeByInput(32, null, [fluid('coal_gas')])
 mods.gregtech.gas_turbine.removeByInput(32, null, [fluid('ethylene')])
 mods.gregtech.gas_turbine.removeByInput(32, null, [fluid('natural_gas') * 8])
-mods.gregtech.gas_turbine.removeByInput(32, null, [fluid('refinery_gas')])
 mods.gregtech.gas_turbine.removeByInput(32, null, [fluid('sulfuric_naphtha') * 4])
 mods.gregtech.gas_turbine.removeByInput(32, null, [fluid('propene')])
 mods.gregtech.gas_turbine.removeByInput(32, null, [fluid('wood_gas') * 8])
@@ -505,11 +504,6 @@ def Ethylene = new IFluidFuel('ethylene', 'flue_gas');
 Ethylene.setDuration(85);
 Ethylene.setAmountToBurn(160);
 Ethylene.setByproductAmount(500);
-
-def RefineryGas = new IFluidFuel('refinery_gas', 'flue_gas');
-RefineryGas.setDuration(100);
-RefineryGas.setAmountToBurn(160);
-RefineryGas.setByproductAmount(750);
 
 def Ammonia = new IFluidFuel('ammonia', 'nitrogen');
 Ammonia.setDuration(70);

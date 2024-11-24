@@ -560,6 +560,7 @@ class SuSyMaterials {
         public static Material Kerosene;
         public static Material CrudeKerosene;
         public static Material SulfuricKerosene;
+        public static Material HeatedKerosene;
         public static Material TreatedSulfuricKerosene;
 
         public static Material LightGasOil;
@@ -617,11 +618,13 @@ class SuSyMaterials {
 
         public static Material LightCycleOil;
         public static Material SulfuricLightCycleOil;
+        public static Material HeatedLightCycleOil;
         public static Material TreatedSulfuricLightCycleOil;
         public static Material HydrocrackedLightCycleOil;
 
         public static Material HeavyCycleOil;
         public static Material SulfuricHeavyCycleOil;
+        public static Material HeatedHeavyCycleOil;
         public static Material TreatedSulfuricHeavyCycleOil;
         public static Material HydrocrackedHeavyCycleOil;
 

@@ -8,8 +8,8 @@ crackables.each { _, crackable ->
 
         CRACKER.recipeBuilder()
             .fluidInputs(crackable.get(1000))
-            .fluidInputs(fluid('hot_hp_steam') * 1000)
-            .fluidOutputs(crackable.getSteam(1000))
+            .fluidInputs(fluid('hot_hp_hydrogen') * 1000)
+            .fluidOutputs(crackable.getHydro(1000))
             .duration(80)
             .EUt(Globals.voltAmps[2])
             .buildAndRegister()  

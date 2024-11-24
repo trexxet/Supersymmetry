@@ -1,3 +1,4 @@
+import globals.Globals
 import static globals.Petrochemistry.*
 
 VACUUM_DT = recipemap('vacuum_distillation')
@@ -12,7 +13,7 @@ ROTARY_KILN = recipemap('rotary_kiln')
 VACUUM_DT.recipeBuilder()
     .fluidInputs(fluid('atmospheric_oil_residue') * 1000)
     .fluidOutputs(fluid('vacuum_oil_residue') * 1000)
-    .fluidOutputs(fractions.lubricating_oil.getCrude(300))
+    .fluidOutputs(fluid('crude_lubricating_oil') * 300)
     .fluidOutputs(fractions.heavy_gas_oil.getSulfuric(250))
     .fluidOutputs(fractions.light_gas_oil.getSulfuric(150))
     .duration(100)

@@ -98,11 +98,7 @@ public class PetrochemistryMaterials {
                 .flags(FLAMMABLE)
                 .build();
 
-        TreatedSulfuricRefineryGas = new Material.Builder(20014, SuSyUtility.susyId('treated_sulfuric_refinery_gas'))
-                .gas()
-                .color(0xe3e3d8)
-                .flags(FLAMMABLE)
-                .build();
+        // FREE ID: 20014
 
         SourGas = new Material.Builder(20015, SuSyUtility.susyId('sour_gas'))
                 .gas()
@@ -376,11 +372,7 @@ public class PetrochemistryMaterials {
                 .build()
                 .setFormula('(H2)4(CO2)', true);
 
-        SulfuricRefineryGas = new Material.Builder(20063, SuSyUtility.susyId('sulfuric_refinery_gas'))
-                .gas()
-                .color(0xe3e3d8)
-                .flags(FLAMMABLE)
-                .build();
+        // FREE ID: 20063
 
         TreatedSulfuricNaphtha = new Material.Builder(20064, SuSyUtility.susyId('treated_sulfuric_naphtha'))
                 .gas()
@@ -598,7 +590,7 @@ public class PetrochemistryMaterials {
                 .flags(FLAMMABLE)
                 .build();
 
-        SulfuricDebutanizedNaphtha = new Material.Builder(20101, SuSyUtility.susyId('sulfuric_ebutanized_naphtha'))
+        SulfuricDebutanizedNaphtha = new Material.Builder(20101, SuSyUtility.susyId('sulfuric_debutanized_naphtha'))
                 .liquid(new FluidBuilder().temperature(450))
                 .color(0xeaff00)
                 .flags(FLAMMABLE)
@@ -822,7 +814,7 @@ public class PetrochemistryMaterials {
                 .flags(FLAMMABLE)
                 .build();
 
-        TreatedSulfuricLightNaphtha = new Material.Builder(20140, SuSyUtility.susyId('treated_sulfuric_heavy_naphtha'))
+        TreatedSulfuricLightNaphtha = new Material.Builder(20140, SuSyUtility.susyId('treated_sulfuric_light_naphtha'))
                 .liquid()
                 .color(0xfff508)
                 .flags(FLAMMABLE)
@@ -831,6 +823,24 @@ public class PetrochemistryMaterials {
         TreatedSulfuricHeavyNaphtha = new Material.Builder(20141, SuSyUtility.susyId('treated_sulfuric_heavy_naphtha'))
                 .liquid()
                 .color(0xdbd200)
+                .flags(FLAMMABLE)
+                .build();
+
+        HeatedKerosene = new Material.Builder(20142, SuSyUtility.susyId('heated_kerosene'))
+                .liquid(new FluidBuilder().temperature(450))
+                .color(0xcfbc32)
+                .flags(FLAMMABLE)
+                .build();
+
+        HeatedLightCycleOil = new Material.Builder(20143, SuSyUtility.susyId('heated_light_cycle_oil'))
+                .liquid(new FluidBuilder().temperature(470))
+                .color(0xd1af77)
+                .flags(FLAMMABLE)
+                .build();
+
+        HeatedHeavyCycleOil = new Material.Builder(20144, SuSyUtility.susyId('heated_heavy_cycle_oil'))
+                .liquid(new FluidBuilder().temperature(570))
+                .color(0xb59862)
                 .flags(FLAMMABLE)
                 .build();
     }

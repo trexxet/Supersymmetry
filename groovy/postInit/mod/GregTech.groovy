@@ -1208,13 +1208,6 @@ mods.gregtech.centrifuge.recipeBuilder()
 mods.gregtech.semi_fluid_generator.removeByInput(32, null, [fluid('sulfuric_heavy_fuel') * 16])
 mods.gregtech.semi_fluid_generator.removeByInput(32, null, [fluid('heavy_fuel') * 8])
 
-
-mods.gregtech.semi_fluid_generator.recipeBuilder()
-		.fluidInputs(fluid('sulfuric_diesel') * 16)
-		.duration(5)
-		.EUt(-32)
-		.buildAndRegister();
-
 mods.gregtech.semi_fluid_generator.recipeBuilder()
 		.fluidInputs(fluid('diesel') * 8)
 		.duration(15)
@@ -1232,19 +1225,7 @@ mods.gregtech.semi_fluid_generator.recipeBuilder()
 		.duration(21)
 		.EUt(-32)
 		.buildAndRegister();
-
-mods.gregtech.semi_fluid_generator.recipeBuilder()
-		.fluidInputs(fluid('sulfuric_refinery_gas') * 16)
-		.duration(4)
-		.EUt(-32)
-		.buildAndRegister();
-
-mods.gregtech.semi_fluid_generator.recipeBuilder()
-		.fluidInputs(fluid('refinery_gas') * 8)
-		.duration(12)
-		.EUt(-32)
-		.buildAndRegister();
-
+                
 mods.gregtech.semi_fluid_generator.recipeBuilder()
 		.fluidInputs(fluid('sulfuric_natural_gas') * 16)
 		.duration(4)

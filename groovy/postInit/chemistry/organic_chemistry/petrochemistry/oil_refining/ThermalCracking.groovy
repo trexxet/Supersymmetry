@@ -1,15 +1,16 @@
+import globals.Globals
 import static globals.Petrochemistry.*
 
 CRACKER = recipemap('cracker')
 DT = recipemap('distillation_tower')
 COKING = recipemap('coking_tower')
 TUBE_FURNACE = recipemap('tube_furnace')
-FLBR = recipemap('fluidized_bed_reactors')
+FLBR = recipemap('fluidized_bed_reactor')
 PHASE_SEPARATOR = recipemap('phase_separator')
 
 // Thermal Cracking
 crackables.each { _, crackable -> 
-    if crackable.thermal_crackable {
+    if (crackable.thermal_crackable) {
         ROASTER.recipeBuilder()
             .fluidInputs(crackable.get(1000))
             .fluidOutputs(crackable.getThermallyCracked(700))
@@ -43,7 +44,7 @@ crackables.each { _, crackable ->
         .fluidOutputs(fractions.heavy_gas_oil.getCrude(150))
         .fluidOutputs(fractions.light_gas_oil.getCrude(260))
         .fluidOutputs(fractions.naphtha.getCrude(370))
-        .fluidOutputs(fractions.refinery_gas.getSulfuric(300))
+        .fluidOutputs(fluid('sulfuric_fuel_gas') * 300)
         .duration(200)
         .EUt(30)
         .buildAndRegister()
@@ -54,7 +55,7 @@ crackables.each { _, crackable ->
         .fluidOutputs(fractions.heavy_gas_oil.getCrude(150))
         .fluidOutputs(fractions.light_gas_oil.getCrude(320))
         .fluidOutputs(fractions.naphtha.getCrude(320))
-        .fluidOutputs(fractions.refinery_gas.getSulfuric(260))
+        .fluidOutputs(fluid('sulfuric_fuel_gas') * 1480)
         .duration(200)
         .EUt(30)
         .buildAndRegister()
@@ -68,7 +69,7 @@ crackables.each { _, crackable ->
             .fluidOutputs(fractions.heavy_gas_oil.getCrude(345))
             .fluidOutputs(fractions.light_gas_oil.getCrude(200))
             .fluidOutputs(fractions.naphtha.getCrude(1510))
-            .fluidOutputs(fractions.refinery_gas.getSulfuric(1630))
+            .fluidOutputs(fluid('sulfuric_fuel_gas') * 1630)
             .duration(400)
             .EUt(30)
             .buildAndRegister()
@@ -80,7 +81,7 @@ crackables.each { _, crackable ->
             .fluidOutputs(fractions.heavy_gas_oil.getCrude(345))
             .fluidOutputs(fractions.light_gas_oil.getCrude(200))
             .fluidOutputs(fractions.naphtha.getCrude(1510))
-            .fluidOutputs(fractions.refinery_gas.getSulfuric(1630))
+            .fluidOutputs(fluid('sulfuric_fuel_gas') * 1630)
             .duration(400)
             .EUt(30)
             .buildAndRegister()
@@ -137,7 +138,7 @@ crackables.each { _, crackable ->
             .fluidOutputs(fractions.heavy_gas_oil.getCrude(485))
             .fluidOutputs(fractions.light_gas_oil.getCrude(730))
             .fluidOutputs(fractions.naphtha.getCrude(1460))
-            .fluidOutputs(fractions.refinery_gas.getSulfuric(1480))
+            .fluidOutputs(fluid('sulfuric_fuel_gas') * 1480)
             .duration(200)
             .EUt(30)
             .buildAndRegister()
