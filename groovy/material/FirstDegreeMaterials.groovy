@@ -3449,7 +3449,7 @@ public class FirstDegreeMaterials {
                 .liquid()
                 .components(Cobalt, Nitrogen * 2, Oxygen * 6, Water)
                 .colorAverage()
-
-        CobaltNitrateSolution.setFormula("(Co(NO3)2)(H2O)", true)
+                .build()
+                .setFormula("(Co(NO3)2)(H2O)", true)
     }
 }

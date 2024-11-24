@@ -1,6 +1,6 @@
-import petrochemistry.Petrochemistry
+import static globals.Petrochemistry.*
 
-DT = recipemap('sieve_distillation_tower')
+DT = recipemap('sieve_distillation')
 PHASE_SEPARATOR = recipemap('phase_separator')
 
 // Atmospheric distillation
@@ -8,7 +8,7 @@ PHASE_SEPARATOR = recipemap('phase_separator')
 DT.recipeBuilder()
     .fluidInputs(fluid('dense_steam') * 10000)
     .fluidInputs(oils.oil.getHeated(10000))
-    .fluidOutputs(fractions.atmospheric_oil_residue.getSulfuric(2000))
+    .fluidOutputs(fluid('atmospheric_oil_residue') * 2000)
     .fluidOutputs(fractions.heavy_gas_oil.getCrude(500))
     .fluidOutputs(fractions.light_gas_oil.getCrude(1250))
     .fluidOutputs(fractions.kerosene.getCrude(1250))
@@ -20,7 +20,7 @@ DT.recipeBuilder()
 DT.recipeBuilder()
     .fluidInputs(fluid('dense_steam') * 10000)
     .fluidInputs(oils.oil_heavy.getHeated(10000))
-    .fluidOutputs(fractions.atmospheric_oil_residue.getSulfuric(3500))
+    .fluidOutputs(fluid('atmospheric_oil_residue') * 3500)
     .fluidOutputs(fractions.heavy_gas_oil.getCrude(1250))
     .fluidOutputs(fractions.light_gas_oil.getCrude(1250))
     .fluidOutputs(fractions.kerosene.getCrude(500))
@@ -32,7 +32,7 @@ DT.recipeBuilder()
 DT.recipeBuilder()
     .fluidInputs(fluid('dense_steam') * 10000)
     .fluidInputs(oils.oil_light.getHeated(10000))
-    .fluidOutputs(fractions.atmospheric_oil_residue.getSulfuric(1000))
+    .fluidOutputs(fluid('atmospheric_oil_residue') * 1000)
     .fluidOutputs(fractions.heavy_gas_oil.getCrude(250))
     .fluidOutputs(fractions.light_gas_oil.getCrude(1000))
     .fluidOutputs(fractions.kerosene.getCrude(1750))
@@ -43,17 +43,16 @@ DT.recipeBuilder()
 
 // Stripping of contaminants using steam
 
-fractions.each { _, fraction -> {
-        if fraction.strippable {
-            DT.recipeBuilder()
-            .fluidInputs(fraction.getCrude(1000))
-            .fluidInputs(fluid('dense_steam') * 1000)
-            .fluidOutputs(fraction.getSulfuric(1000))
-            .fluidOutputs(fluid('sour_water') * 1000)
-            .duration(20)
-            .EUt(30)
-            .buildAndRegister()
-        }
+fractions.each { _, fraction ->
+    if (fraction.strippable) {
+        DT.recipeBuilder()
+        .fluidInputs(fraction.getCrude(1000))
+        .fluidInputs(fluid('dense_steam') * 1000)
+        .fluidOutputs(fraction.getSulfuric(1000))
+        .fluidOutputs(fluid('sour_water') * 1000)
+        .duration(20)
+        .EUt(30)
+        .buildAndRegister()
     }
 }
 

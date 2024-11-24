@@ -1,5 +1,10 @@
-/* Aromatics
-    DT.recipeBuilder()
+import globals.Globals
+
+DT = recipemap('distillation_tower')
+SIEVE_DT = recipemap('sieve_distillation')
+
+// Aromatics
+    SIEVE_DT.recipeBuilder()
         .fluidInputs(fluid('reformate') * 1000)
         .fluidInputs(fluid('furfural') * 100)
         .fluidOutputs(fluid('btex_extract') * 800)
@@ -8,7 +13,7 @@
         .EUt(Globals.voltAmps[1])
         .buildAndRegister()
     
-    DT.recipeBuilder()
+    SIEVE_DT.recipeBuilder()
         .fluidInputs(fluid('btex_extract') * 1000)
         .fluidInputs(fluid('dense_steam') * 100)
         .fluidOutputs(fluid('furfural_solution') * 200)
@@ -58,7 +63,6 @@
         .duration(5)
         .EUt(30)
         .buildAndRegister()
-*/
 
 // Steam-cracked naphtha C5-fraction separation
 
@@ -88,7 +92,7 @@
         .buildAndRegister()
 
 // Butenes separation
-DISTILLATION_TOWER.recipeBuilder()
+DT.recipeBuilder()
         .fluidInputs(fluid('butene') * 1000)
         .fluidOutputs(fluid('isobutylene') * 500)
         .fluidOutputs(fluid('one_butene') * 300)

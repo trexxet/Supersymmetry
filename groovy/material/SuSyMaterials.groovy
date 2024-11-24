@@ -544,11 +544,15 @@ class SuSyMaterials {
 
         public static Material LightNaphtha;
         public static Material SulfuricLightNaphtha;
+        public static Material HeatedLightNaphtha;
+        public static Material TreatedSulfuricLightNaphtha;
         public static Material SteamcrackedLightNaphtha;
         public static Material HydrocrackedLightNaphtha;
 
         public static Material HeavyNaphtha;
         public static Material SulfuricHeavyNaphtha;
+        public static Material HeatedHeavyNaphtha;
+        public static Material TreatedSulfuricHeavyNaphtha;
         public static Material SteamcrackedHeavyNaphtha;
         public static Material HydrocrackedHeavyNaphtha;
         public static Material NaphthaReformate;
@@ -561,6 +565,7 @@ class SuSyMaterials {
         public static Material LightGasOil;
         public static Material CrudeLightGasOil;
         public static Material SulfuricLightGasOil;
+        public static Material HeatedLightGasOil;
         public static Material TreatedSulfuricLightGasOil;
         public static Material SteamcrackedLightGasOil;
         public static Material HydrocrackedLightGasOil;
@@ -568,6 +573,7 @@ class SuSyMaterials {
         public static Material HeavyGasOil;
         public static Material CrudeHeavyGasOil;
         public static Material SulfuricHeavyGasOil;
+        public static Material HeatedHeavyGasOil;
         public static Material TreatedSulfuricHeavyGasOil;
         public static Material CatalyticallyCrackedHeavyGasOil;
         public static Material CrudeCatalyticallyCrackedHeavyGasOil;
@@ -602,10 +608,6 @@ class SuSyMaterials {
         public static Material ButaneFuelGas;
         public static Material PropaneFuelGas;
 
-        public static Material SteamcrackedEthane;
-        public static Material SteamcrackedPropane;
-        public static Material SteamcrackedButane;
-
         public static Material AtmosphericOverheads;
         public static Material HeavyAtmosphericOverheads;
         public static Material LightAtmosphericOverheads;
@@ -614,9 +616,13 @@ class SuSyMaterials {
         public static Material TreatedSulfuricLubricatingOil;
 
         public static Material LightCycleOil;
+        public static Material SulfuricLightCycleOil;
+        public static Material TreatedSulfuricLightCycleOil;
         public static Material HydrocrackedLightCycleOil;
 
         public static Material HeavyCycleOil;
+        public static Material SulfuricHeavyCycleOil;
+        public static Material TreatedSulfuricHeavyCycleOil;
         public static Material HydrocrackedHeavyCycleOil;
 
         public static Material SlurryOil;

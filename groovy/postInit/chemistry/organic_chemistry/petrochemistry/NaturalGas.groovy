@@ -1,3 +1,5 @@
+import globals.Globals
+
 MIXER = recipemap('mixer')
 FLUID_HEATER = recipemap('fluid_heater')
 BCR = recipemap('bubble_column_reactor')
@@ -32,7 +34,7 @@ BCR.recipeBuilder()
 .EUt(120)
 .buildAndRegister()
 
-BCR.recipeBuilder()
+DT.recipeBuilder()
 .fluidInputs(fluid('acidic_rich_amine') * 1000)
 .fluidOutputs(fluid('hydrogen_sulfide') * 1000)
 .fluidOutputs(fluid('carbon_dioxide') * 1000)
@@ -49,7 +51,7 @@ DT.recipeBuilder()
 .fluidOutputs(fluid('propane') * 100)
 .fluidOutputs(fluid('ethane') * 100)
 .fluidOutputs(fluid('methane') * 750)
-.duration(200)
+.duration(400)
 .EUt(Globals.voltAmps[1] * 2)
 .buildAndRegister()
 

@@ -1,10 +1,10 @@
-import petrochemistry.Petrochemistry
+import static globals.Petrochemistry.*
 
 ROASTER = recipemap('roaster')
 CRACKER = recipemap('cracker')
-DT = recipemap('sieve_distillation_tower')
+DT = recipemap('sieve_distillation')
 
-crackables.each { _, crackable -> {
+crackables.each { _, crackable -> 
     if (crackable.steam_crackable) {
 
         ROASTER.recipeBuilder()
@@ -24,7 +24,7 @@ crackables.each { _, crackable -> {
             .buildAndRegister()  
         
     }
-}}
+}
 
 /* ASSUMPTIONS:
 - Pyrolysis gas: 7 carbons per mol

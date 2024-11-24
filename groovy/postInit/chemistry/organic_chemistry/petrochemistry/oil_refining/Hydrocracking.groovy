@@ -1,7 +1,9 @@
-import petrochemistry.Petrochemistry
+import globals.Globals
+import static globals.Petrochemistry.*
+
 CRACKER = recipemap('cracker')
 
-crackables.each { _, crackable -> {
+crackables.each { _, crackable ->
     if (crackable.hydro_crackable) {
 
         CRACKER.recipeBuilder()
@@ -13,4 +15,4 @@ crackables.each { _, crackable -> {
             .buildAndRegister()  
         
     }
-}}
+}

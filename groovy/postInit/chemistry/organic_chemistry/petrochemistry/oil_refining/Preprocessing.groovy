@@ -1,4 +1,4 @@
-import petrochemistry.Petrochemistry
+import static globals.Petrochemistry.*
 
 MIXER = recipemap('mixer')
 ELECTROSTATIC_SEPARATOR = recipemap('electrostatic_separator')

@@ -666,7 +666,7 @@ def FluidFuels = [
         Methanol,
         Ethanol,
         LiquidNaturalGas,
-        HeavyFuelOil,
+        HeavyGasOil,
         BioDiesel,
         Diesel,
         MidgradeDiesel,
@@ -863,9 +863,9 @@ recipemap('heat_exchanger').recipeBuilder()
 
 for (scfluid in SupercriticalFluids) {
         recipemap('fluid_compressor').recipeBuilder()
-            .fluidInputs(gas(scfluid.getStartingGas()) * 1280)
+            .fluidInputs(fluid(scfluid.getStartingGas()) * 1280)
             .fluidOutputs(fluid(scfluid.getSupercriticalFluid()) * 20)
             .EUt(scfluid.getPowerToCompress())
-            .duration(refrigerant.getDurationToCompress())
+            .duration(scfluid.getDurationToCompress())
             .buildAndRegister();
 }

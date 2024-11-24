@@ -1,6 +1,6 @@
-package petrochemistry
+package globals
 
-class Petrochemistry = {
+class Petrochemistry {
 
     public static void main (String[] args) {}
 
@@ -35,7 +35,7 @@ class Petrochemistry = {
     }
 
     trait CatalyticCrackable {
-        catalytic_crackable = true
+        boolean catalytic_crackable = true
 
         def getCatalyticallyCracked(int amount) {
             return fluid('catalytically_cracked_' + this.name) * amount
@@ -47,7 +47,7 @@ class Petrochemistry = {
     }
 
     trait ThermalCrackable {
-        thermal_crackable = true
+        boolean thermal_crackable = true
 
         def getThermallyCracked(int amount) {
             return fluid('thermally_cracked_' + this.name) * amount
@@ -59,7 +59,7 @@ class Petrochemistry = {
     }
 
     trait HydroCrackable {
-        hydro_crackable = true
+        boolean hydro_crackable = true
 
         def getHydro(int amount) {
             return fluid('hydrocracked_' + this.name) * amount
@@ -67,7 +67,7 @@ class Petrochemistry = {
     }
 
     trait SteamCrackable {
-        steam_crackable = true
+        boolean steam_crackable = true
 
         def getSteam(int amount) {
             return fluid('steamcracked_' + this.name) * amount
@@ -81,7 +81,7 @@ class Petrochemistry = {
     }
 
     trait Sulfuric {
-        sulfuric = true
+        boolean sulfuric = true
 
         def getTreatedSulfuric(int amount) {
             return fluid('treated_sulfuric_' + this.name) * amount
@@ -99,13 +99,13 @@ class Petrochemistry = {
     }
 
     trait Strippable extends Crude {
-        strippable = true
+        boolean strippable = true
     }
 
     public static class OilFraction {
         String name
-        String strippable = false
-        String sulfuric = false
+        boolean strippable = false
+        boolean sulfuric = false
 
         OilFraction(String name) {
             this.name = name
@@ -118,10 +118,10 @@ class Petrochemistry = {
 
     public static class Crackable {
         String name
-        String thermal_crackable = false
-        String hydro_crackable = false
-        String steam_crackable = false
-        String catalytic_crackable = false
+        boolean thermal_crackable = false
+        boolean hydro_crackable = false
+        boolean steam_crackable = false
+        boolean catalytic_crackable = false
 
         Crackable(String name) {
             this.name = name
@@ -145,22 +145,24 @@ class Petrochemistry = {
     */
 
     public static fractions = [
-        vacuum_oil_residue : new OilFraction('vacuum_oil_residue').withTraits(Sulfuric),
-        atmospheric_oil_residue : new OilFraction('atmospheric_oil_residue').withTraits(Sulfuric),
+        vacuum_oil_residue : new Crackable('vacuum_oil_residue').withTraits(Sulfuric),
+        atmospheric_oil_residue : new Crackable('atmospheric_oil_residue').withTraits(Sulfuric),
         lubricating_oil : new OilFraction('lubricating_oil').withTraits(Sulfuric, Crude),
         heavy_gas_oil : new OilFraction('heavy_gas_oil').withTraits(Sulfuric, Heatable, Strippable),
         light_gas_oil : new OilFraction('light_gas_oil').withTraits(Sulfuric, Heatable, Strippable),
-        kerosene : new OilFractionCrackable('kerosene').withTraits(Sulfuric, Heatable, Strippable),
-        heavy_naphtha : new OilFractionCrackable('heavy_naphtha').withTraits(Sulfuric, Heatable),
-        naphtha : new OilFractionCrackable('naphtha').withTraits(Crude),
-        light_naphtha : new OilFractionCrackable('light_naphtha').withTraits(Sulfuric, Heatable),
+        kerosene : new OilFraction('kerosene').withTraits(Sulfuric, Heatable, Strippable),
+        heavy_naphtha : new OilFraction('heavy_naphtha').withTraits(Sulfuric, Heatable),
+        heavy_cycle_oil : new OilFraction('heavy_cycle_oil').withTraits(Sulfuric),
+        light_cycle_oil : new OilFraction('light_cycle_oil').withTraits(Sulfuric),
+        naphtha : new OilFraction('naphtha').withTraits(Crude),
+        light_naphtha : new OilFraction('light_naphtha').withTraits(Sulfuric, Heatable),
         fuel_gas : new OilFraction('fuel_gas').withTraits(Sulfuric)
     ]
 
     public static crackables = [
         vacuum_oil_residue : new Crackable('vacuum_oil_residue').withTraits(CatalyticCrackable, HydroCrackable, ThermalCrackable),
         atmospheric_oil_residue : new Crackable('atmospheric_oil_residue').withTraits(CatalyticCrackable, HydroCrackable, ThermalCrackable),
-        light_gas_oil : new Crackable('light_gas_oil').withTraits(HydroCrackable, SteamCrackable)
+        light_gas_oil : new Crackable('light_gas_oil').withTraits(HydroCrackable, SteamCrackable),
         heavy_gas_oil : new Crackable('heavy_gas_oil').withTraits(CatalyticCrackable, HydroCrackable, SteamCrackable),
         ethane : new Crackable('ethane').withTraits(SteamCrackable),
         propane : new Crackable('propane').withTraits(SteamCrackable),

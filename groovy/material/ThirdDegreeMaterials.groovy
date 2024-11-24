@@ -625,5 +625,11 @@ public class ThirdDegreeMaterials {
                 .components(FormicAcid * 6, Water * 4)
                 .color(0xbf3983)
                 .build();
+
+        FurfuralSolution = new Material.Builder(24100, SuSyUtility.susyId('furfural_solution'))
+                .liquid()
+                .components(Furfural * 1, Water * 1)
+                .colorAverage()
+                .build();
     }
 }

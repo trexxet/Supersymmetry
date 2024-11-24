@@ -1,4 +1,4 @@
-import petrochemistry.Petrochemistry
+import globals.Globals
 
 REACTION_FURNACE = recipemap('reaction_furnace')
 FBR = recipemap('fixed_bed_reactor')
@@ -101,7 +101,7 @@ PHASE_SEPARATOR = recipemap('phase_separator')
         .buildAndRegister()
 
     PHASE_SEPARATOR.recipeBuilder()
-        .fluidInputs(fluid('raw_polymerate') * 500)
+        .fluidInputs(fluid('raw_gasoline_polymerate') * 500)
         .fluidOutputs(fluid('polymerate') * 250)
         .fluidOutputs(fluid('fuel_gas') * 250)
         .duration(50)

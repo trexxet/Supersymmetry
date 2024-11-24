@@ -1366,7 +1366,7 @@ public class OrganicChemistryMaterials {
 
         TriethyleneGlycol = new Material.Builder(15226, SuSyUtility.susyId('triethylene_glycol'))
                 .liquid()
-                .components(Carbon, 6, Hydrogen, 14, Oxygen, 4)
+                .components(Carbon * 6, Hydrogen * 14, Oxygen * 4)
                 .color(0x27a8a2)
                 .build()
 
@@ -1425,7 +1425,7 @@ public class OrganicChemistryMaterials {
                 .color(0xd13485)
                 .build();
 
-        AcidicRichAmine = new Material.Builder(15114, SuSyUtility.susyId('acidic_rich_amine'))
+        AcidicRichAmine = new Material.Builder(15235, SuSyUtility.susyId('acidic_rich_amine'))
                 .liquid()
                 .color(0x6ca0ab)
                 .build();
