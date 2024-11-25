@@ -650,7 +650,6 @@ def FluidFuels = [
         CoalGas,
         Syngas,
         Ethylene,
-        RefineryGas,
         Ammonia,
         Propene,
         Butene,

@@ -100,7 +100,7 @@ crackables.each { _, crackable ->
             .EUt(480)
             .buildAndRegister()
 
-        COKER.recipeBuilder()
+        COKING.recipeBuilder()
             .fluidInputs(fluid('heated_coking_residue') * 1000)
             .fluidInputs(fluid('water') * 1000)
             .outputs(metaitem('dustGreenCoke') * 32)
@@ -147,7 +147,7 @@ crackables.each { _, crackable ->
         PYROLYSE_OVEN.recipeBuilder()
             .inputs(ore('dustGreenCoke') * 15)
             .fluidInputs(fluid('dense_steam') * 10000)
-            .outputs(ore('dustHeatedGreenCoke') * 5)
+            .outputs(metaitem('dustHeatedGreenCoke') * 5)
             .fluidOutputs(fluid('syngas') * 7500)
             .duration(200)
             .EUt(30)

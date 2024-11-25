@@ -1221,7 +1221,7 @@ mods.gregtech.semi_fluid_generator.recipeBuilder()
 		.buildAndRegister();
 
 mods.gregtech.semi_fluid_generator.recipeBuilder()
-		.fluidInputs(fluid('heavy_fuel_oil') * 8)
+		.fluidInputs(fluid('heavy_gas_oil') * 8)
 		.duration(21)
 		.EUt(-32)
 		.buildAndRegister();
