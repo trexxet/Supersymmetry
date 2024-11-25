@@ -511,6 +511,9 @@ class SuSyMaterials {
         public static Material CaesiumRubidiumAlumMixture;
         public static Material NetherMolecularSieve;
         public static Material CobaltMatte;
+        public static Material OrthoCresylicAcidMixture;
+        public static Material CresolNovolacsOligomer;
+        public static Material EpoxyCresolNovolacs;
 
         // Petrochem Materials
 
@@ -1659,6 +1662,8 @@ class SuSyMaterials {
         public static Material HydrolyzedMethylFormateSolution;
         public static Material FormicAcid;
         public static Material MethylFormateSolution;
+        public static Material TwoSixXylenol;
+        public static Material TwoFourFiveXylenolMixture;
 
         // Third Degree Materials
 

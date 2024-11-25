@@ -1396,7 +1396,7 @@ susy.material.dirty_molecular_sieve=Dirty Molecular Sieve
 susy.material.cold_gaseous_nitrogen=Cold Gaseous Nitrogen
 susy.material.tert_butyl_alcohol=tert-Butyl Alcohol
 susy.material.butylated_hydroxytoluene=Butylated Hydroxytoluene
-susy.material.dimethyl_tert_butylphenol=2,4-Dimethyl-6-tert-butylphenol
+susy.material.dimethyl_tert_butylphenol=2,4/5-Dimethyl-6-tert-butylphenol
 susy.material.aluminium_phenolate=Aluminium Phenolate
 susy.material.di_tert_butylphenol=2,6-Di-tert-butylphenol
 susy.material.isooctane=iso-Octane
@@ -1981,7 +1981,12 @@ susy.material.lead_free_solder=Lead-Free Solder
 susy.material.cryogenic_solder=Cryogenic Solder
 susy.material.oxidized_manganate_solution=Oxidized Manganate Solution
 susy.material.galvanized_steel=Galvanized Steel
-susy.material.hexamethylenetetramine_solution=Hexamethylenetetramine Solution 
+susy.material.hexamethylenetetramine_solution=Hexamethylenetetramine Solution
+susy.material.ortho_cresylic_acid_mixture=o-Cresylic Acid Mixture
+susy.material.two_six_xylenol=2,6-Xylenol
+susy.material.two_four_five_xylenol_mixture=2,4/5-Xylenol Mixture
+susy.material.cresol_novolacs_oligomer=Cresol Novolacs Oligomer
+susy.material.epoxy_cresol_novolacs=Epoxy Cresol Novolacs (ECN)
 
 # Isotopes
 

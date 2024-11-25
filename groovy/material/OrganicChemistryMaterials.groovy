@@ -403,7 +403,11 @@ public class OrganicChemistryMaterials {
 
         Methyltrichlorosilane.setFormula("CH3SiCl3", true)
 
-        //FREE ID: 15066
+        TwoSixXylenol = new Material.Builder(15066, SuSyUtility.susyId('two_six_xylenol'))
+                .liquid(new FluidBuilder().temperature(400))
+                .components(Carbon * 8, Hydrogen * 10, Oxygen * 1)
+                .color(0x572d2a)
+                .build();
 
         VinylChlorideSuspension = new Material.Builder(15067, SuSyUtility.susyId('vinyl_chloride_suspension'))
                 .liquid()
@@ -477,7 +481,11 @@ public class OrganicChemistryMaterials {
                 .colorAverage()
                 .build();
 
-        //FREE ID: 15080
+        TwoFourFiveXylenolMixture = new Material.Builder(15080, SuSyUtility.susyId('two_four_five_xylenol_mixture'))
+                .liquid(new FluidBuilder().temperature(400))
+                .components(Carbon * 8, Hydrogen * 10, Oxygen * 1)
+                .color(0x6e3632)
+                .build();
 
         Butyllithium = new Material.Builder(15081, SuSyUtility.susyId('butyllithium'))
                 .liquid()

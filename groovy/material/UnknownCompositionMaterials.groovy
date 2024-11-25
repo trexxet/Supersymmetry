@@ -1020,14 +1020,26 @@ public class UnknownCompositionMaterials {
                 .color(0x662e2e)
                 .build();
 
-        //FREE IDs: 4199-4200
+        CresolNovolacsOligomer = new Material.Builder(4199, SuSyUtility.susyId('cresol_novolacs_oligomer'))
+                .liquid(new FluidBuilder().temperature(488))
+                .color(0x9c745c)
+                .build();
+
+        EpoxyCresolNovolacs = new Material.Builder(4200, SuSyUtility.susyId('epoxy_cresol_novolacs'))
+                .polymer()
+                .color(0xe8cda5)
+                .flags(GENERATE_WET_DUST)
+                .build();
 
         SiliconDioxideSlurry = new Material.Builder(4201, SuSyUtility.susyId('silicon_dioxide_slurry'))
                 .liquid()
                 .color(0x69675b)
                 .build();
 
-        //FREE IDs: 4202
+        OrthoCresylicAcidMixture = new Material.Builder(4202, SuSyUtility.susyId('ortho_cresylic_acid_mixture'))
+                .liquid()
+                .color(0xb5a991)
+                .build();
 
         VTSlag = new Material.Builder(4203, SuSyUtility.susyId('vt_slag'))
                 .dust()
