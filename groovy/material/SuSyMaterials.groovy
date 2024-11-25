@@ -1470,6 +1470,7 @@ class SuSyMaterials {
         public static Material IsoOctane;
         public static Material PurifiedIsoprene;
         public static Material Cyclopentadiene;
+        public static Material HexamethylenetetramineSolution;
         public static Material Ferrocene;
         public static Material Polyisoprene;
         public static Material Chloroethane;

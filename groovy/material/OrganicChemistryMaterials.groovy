@@ -1364,7 +1364,12 @@ public class OrganicChemistryMaterials {
                 .color(0x403c32)
                 .build();
 
-        //FREE ID: 15226
+        HexamethylenetetramineSolution = new Material.Builder(15226, SuSyUtility.susyId('hexamethylenetetramine_solution'))
+                .liquid()
+                .components(Carbon * 6, Hydrogen * 12, Nitrogen * 4, Water * 4)
+                .colorAverage()
+                .build()
+                .setFormula("(C6H12N4)(H2O)4", true)
 
         Ferrocene = new Material.Builder(15227, SuSyUtility.susyId('ferrocene'))
                 .dust()

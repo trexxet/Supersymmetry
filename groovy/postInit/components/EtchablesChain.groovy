@@ -317,9 +317,19 @@ def generateCuttingRecipes(input, product, productMultiplier, voltageTier, boole
 //NOVOLACS
 
 CSTR.recipeBuilder()
-        .fluidInputs(fluid('formaldehyde')*50)
-        .fluidInputs(fluid('phenol')*50)
-        .fluidOutputs(fluid('novolacs')*100)
+        .fluidInputs(fluid('formaldehyde') * 75)
+        .fluidInputs(fluid('ammonia_solution') * 50)
+        .fluidOutputs(fluid('hexamethylenetetramine_solution') * 50)
+        .duration(50)
+        .EUt(7)
+        .buildAndRegister()
+
+CSTR.recipeBuilder()
+        .fluidInputs(fluid('formaldehyde') * 50)
+        .fluidInputs(fluid('phenol') * 50)
+        .fluidInputs(fluid('hexamethylenetetramine_solution') * 5)
+        .notConsumable(fluid('sodium_hydroxide_solution') * 50)
+        .fluidOutputs(fluid('novolacs') * 100)
         .duration(10)
         .EUt(7)
         .buildAndRegister()
