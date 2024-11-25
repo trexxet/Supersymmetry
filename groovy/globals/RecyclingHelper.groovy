@@ -70,10 +70,8 @@ class RecyclingHelper {
     }
 
     static final void handleRecycling(ItemStack output, List<?> inputs) {
-        ItemStack copiedOutput = output.copy();
-        List<?> copiedInputs = inputs.stream().map(ItemStack::copy).collect(Collectors.toList());
         RecyclingRecipes.registerRecyclingRecipes(output.withAmount(1),
-                getRecyclingIngredients(copiedOutput.getAmount(), copiedInputs.flatten()).getMaterials(),
+                getRecyclingIngredients(output.getAmount(), inputs.flatten()).getMaterials(),
                 false, /*OreDictUnifier.getPrefix(output)*/ null) // See the comment at the top of this class
     }
 
