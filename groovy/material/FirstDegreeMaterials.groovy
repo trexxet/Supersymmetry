@@ -1778,7 +1778,7 @@ public class FirstDegreeMaterials {
                 .build();
 
         HeatedGreenCoke = new Material.Builder(8360, SuSyUtility.susyId('heated_green_coke'))
-                .gem(1, 2000).ore(2, 1)
+                .gem(1, 2000)
                 .color(0x7b8752).iconSet(LIGNITE)
                 .components(Carbon)
                 .flags(FLAMMABLE, NO_SMELTING, NO_SMASHING, MORTAR_GRINDABLE)
