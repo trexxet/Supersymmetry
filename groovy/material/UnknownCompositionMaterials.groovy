@@ -1028,7 +1028,7 @@ public class UnknownCompositionMaterials {
         EpoxyCresolNovolacs = new Material.Builder(4200, SuSyUtility.susyId('epoxy_cresol_novolacs'))
                 .polymer()
                 .color(0xe8cda5)
-                .flags(GENERATE_WET_DUST)
+                .flags(GENERATE_WET_DUST, GENERATE_PLATE)
                 .build();
 
         SiliconDioxideSlurry = new Material.Builder(4201, SuSyUtility.susyId('silicon_dioxide_slurry'))

@@ -298,7 +298,7 @@ BR.recipeBuilder()
     .buildAndRegister()
 
 VACUUM_CHAMBER.recipeBuilder()
-    .inputs(ore('dustEpoxyCresolNovolacs'))
+    .inputs(ore('dustWetEpoxyCresolNovolacs'))
     .notConsumable(ore('springNichrome'))
     .outputs(metaitem('dustEpoxyCresolNovolacs'))
     .duration(25)
