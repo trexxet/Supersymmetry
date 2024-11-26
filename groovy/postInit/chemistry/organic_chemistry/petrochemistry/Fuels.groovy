@@ -717,3 +717,14 @@ BLENDER.recipeBuilder()
     .duration(10)
     .EUt(120)
     .buildAndRegister()
+
+// RP-1
+
+FBR.recipeBuilder()
+    .fluidInputs(fluid('supreme_kerosene') * 1000)
+    .fluidInputs(fluid('hydrogen') * 1000)
+    .notConsumable(metaitem('catalystBedHydrotreatingCatalyst'))
+    .fluidOutputs(fluid('rp_one') * 1000)
+    .duration(100)
+    .EUt(480)
+    .buildAndRegister()

@@ -2060,7 +2060,7 @@ susy.material.heated_heavy_cycle_oil=Heated Heavy Cycle Oil
 susy.material.hot_hp_fuel_gas=Hot High Pressure Fuel Gas
 susy.material.hp_fuel_gas=High Pressure Fuel Gas
 susy.material.cold_hp_fuel_gas=Cold High Pressure Fuel Gas
-
+susy.material.rp_one=RP-1
 
 # Graphene Chain
 susy.material.moist_argon=Moist Argon

@@ -98,7 +98,11 @@ public class PetrochemistryMaterials {
                 .flags(FLAMMABLE)
                 .build();
 
-        // FREE ID: 20014
+        RPOne = new Material.Builder(20014, SuSyUtility.susyId('rp_one'))
+                .liquid()
+                .color(0xe04526)
+                .flags(FLAMMABLE)
+                .build();
 
         SourGas = new Material.Builder(20015, SuSyUtility.susyId('sour_gas'))
                 .gas()

@@ -685,6 +685,7 @@ class SuSyMaterials {
         public static Material CokeFines;
         public static Material FluidCrackedVacuumOilResidue;
         public static Material CokingEffluents;
+        public static Material RPOne;
 
         // First Degree Materials
 
