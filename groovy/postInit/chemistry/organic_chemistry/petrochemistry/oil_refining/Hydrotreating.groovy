@@ -15,7 +15,7 @@ fractions.each { _, fraction ->
             .buildAndRegister()
     
         FBR.recipeBuilder()
-            .fluidInputs(fraction.getSulfuric(1000))
+            .fluidInputs(fraction.getHeated(1000))
             .fluidInputs(fluid('hydrogen') * 100)
             .notConsumable(metaitem('catalystBedHydrotreatingCatalyst'))
             .fluidOutputs(fraction.getTreatedSulfuric(1000))

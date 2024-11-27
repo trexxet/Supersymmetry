@@ -16,6 +16,7 @@ VACUUM_DT.recipeBuilder()
     .fluidOutputs(fluid('crude_lubricating_oil') * 300)
     .fluidOutputs(fractions.heavy_gas_oil.getSulfuric(250))
     .fluidOutputs(fractions.light_gas_oil.getSulfuric(150))
+    .circuitMeta(1)
     .duration(100)
     .EUt(30)
     .buildAndRegister()
@@ -78,3 +79,6 @@ MIXER.recipeBuilder()
     .duration(30)
     .EUt(16)
     .buildAndRegister()
+
+// Visbreaking residue treatment
+salicylaldehyde

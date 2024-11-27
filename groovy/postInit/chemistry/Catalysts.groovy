@@ -64,6 +64,24 @@ ROASTER.recipeBuilder()
     .EUt(Globals.voltAmps[1])
     .buildAndRegister()
 
+// Tungsten source
+
+ROASTER.recipeBuilder()
+    .inputs(ore('dustAmmoniumParatungstate'))
+    .fluidInputs(fluid('distilled_water') * 2000)
+    .fluidOutputs(fluid('ammonium_metatungstate_solution') * 4000)
+    .duration(100)
+    .EUt(Globals.voltAmps[1])
+    .buildAndRegister()
+
+DISTILLERY.recipeBuilder()
+    .fluidInputs(fluid('ammonium_metatungstate_solution') * 4000)
+    .outputs(metaitem('dustAmmoniumMetatungstate'))
+    .fluidOutputs(fluid('ammonia_solution') * 4000)
+    .duration(100)
+    .EUt(Globals.voltAmps[1])
+    .buildAndRegister()
+
 // Isomerization catalysts
 
 BR.recipeBuilder()
@@ -321,10 +339,10 @@ ROASTER.recipeBuilder()
         .buildAndRegister()
 
     ROASTER.recipeBuilder()
-        .inputs(ore('dustAmorphousSilicaAlumina') * 5)
-        .fluidInputs(fluid('ammonium_isopolytungstate_solution') * 1000)
-        .fluidInputs(fluid('cobalt_nitrate_solution') * 1000)
-        .outputs(metaitem('dustHydrocrackingCatalyst') * 5)
+        .inputs(ore('dustAmorphousSilicaAlumina') * 10)
+        .inputs(ore('dustAmmoniumMetatungstate'))
+        .fluidInputs(fluid('cobalt_nitrate_solution') * 2000)
+        .outputs(metaitem('dustHydrocrackingCatalyst') * 10)
         .duration(200)
         .EUt(Globals.voltAmps[3])
         .buildAndRegister()

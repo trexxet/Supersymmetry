@@ -457,7 +457,13 @@ public class SecondDegreeMaterials {
                 .flags(GENERATE_CATALYST_BED)
                 .build()
 
-        //FREE IDs: 13073-13074
+        AmmoniumMetatungstateSolution = new Material.Builder(13073, SuSyUtility.susyId('ammonium_metatungstate_solution'))
+                .liquid()
+                .components(AmmoniumMetatungstate, Ammonia * 4, Water * 4)
+                .color(0x340959)
+                .build()
+
+        //FREE IDs: 13074
 
         DilutedAmmoniumSulfateSolution = new Material.Builder(13075, SuSyUtility.susyId('diluted_ammonium_sulfate_solution'))
                 .liquid()

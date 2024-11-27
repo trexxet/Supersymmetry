@@ -1086,6 +1086,7 @@ class SuSyMaterials {
         public static Material HydrogenSilsesquioxane;
         public static Material CementedAlluvialPGMSolution;
         public static Material AlluvialPGM;
+        public static Material AmmoniumMetatungstate;
         public static Material Diamminedichloropalladium;
         public static Material NickelIINitrateSolution;
         public static Material FerroniobiumTantalum;
@@ -1359,6 +1360,7 @@ class SuSyMaterials {
         public static Material SodiumAlumSolution;
         public static Material OxidizedManganateSolution;
         public static Material SupportedNickel;
+        public static Material AmmoniumMetatungstateSolution;
         public static Material CobaltNitrateSolution;
         public static Material GalvanizedSteel;
         public static Material ImpureLithiumCarbonateSolution;

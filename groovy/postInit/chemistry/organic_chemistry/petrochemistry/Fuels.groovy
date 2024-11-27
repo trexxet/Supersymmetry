@@ -728,3 +728,6 @@ FBR.recipeBuilder()
     .duration(100)
     .EUt(480)
     .buildAndRegister()
+
+// Diesel * 6000
+mods.gregtech.mixer.removeByInput(120, null, [fluid('light_fuel') * 5000 * 5000, fluid('heavy_fuel') * 1000 * 1000])

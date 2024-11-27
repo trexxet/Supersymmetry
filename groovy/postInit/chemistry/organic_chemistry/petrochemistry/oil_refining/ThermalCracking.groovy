@@ -70,6 +70,7 @@ crackables.each { _, crackable ->
             .fluidOutputs(fractions.light_gas_oil.getCrude(200))
             .fluidOutputs(fractions.naphtha.getCrude(1510))
             .fluidOutputs(fluid('sulfuric_fuel_gas') * 1630)
+            .circuitMeta(2)
             .duration(400)
             .EUt(30)
             .buildAndRegister()

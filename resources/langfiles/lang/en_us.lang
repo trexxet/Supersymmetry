@@ -2061,6 +2061,8 @@ susy.material.hot_hp_fuel_gas=Hot High Pressure Fuel Gas
 susy.material.hp_fuel_gas=High Pressure Fuel Gas
 susy.material.cold_hp_fuel_gas=Cold High Pressure Fuel Gas
 susy.material.rp_one=RP-1
+susy.material.ammonium_metatungstate=Ammonium Metatungstate (AMT)
+susy.material.ammonium_metatungstate_solution=Ammonium Metatungstate Solution
 
 # Graphene Chain
 susy.material.moist_argon=Moist Argon

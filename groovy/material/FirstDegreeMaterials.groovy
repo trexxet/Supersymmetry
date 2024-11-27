@@ -3078,7 +3078,13 @@ public class FirstDegreeMaterials {
                 .colorAverage()
                 .build();
 
-        // FREE ID: 8572
+        AmmoniumMetatungstate = new Material.Builder(8571, SuSyUtility.susyId('ammonium_metatungstate'))
+                .dust()
+                .components(Nitrogen * 6, Hydrogen * 26, Tungsten * 12, Oxygen * 40)
+                .color(0x400959)
+                .build();
+
+        AmmoniumMetatungstate.setFormula("(NH4)6(H2W12O40)", true)
 
         ImpureBariumSulfide = new Material.Builder(8572, SuSyUtility.susyId("impure_barium_sulfide"))
                 .dust()
