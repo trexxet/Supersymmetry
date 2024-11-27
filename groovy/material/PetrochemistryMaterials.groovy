@@ -307,13 +307,13 @@ public class PetrochemistryMaterials {
                 .build()*/
 
         HydrocrackedLightCycleOil = new Material.Builder(20049, SuSyUtility.susyId('hydrocracked_light_cycle_oil'))
-                .gas(new FluidBuilder().temperature(573))
+                .gas(new FluidBuilder().temperature(673))
                 .color(0xdec5a0)
                 .flags(FLAMMABLE)
                 .build()
 
         HydrocrackedHeavyCycleOil = new Material.Builder(20050, SuSyUtility.susyId('hydrocracked_heavy_cycle_oil'))
-                .gas(new FluidBuilder().temperature(573))
+                .gas(new FluidBuilder().temperature(673))
                 .color(0xc4ac8c)
                 .flags(FLAMMABLE)
                 .build()
