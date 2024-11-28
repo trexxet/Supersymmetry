@@ -109,16 +109,15 @@ DT.recipeBuilder()
 
 // FCC light ends treatment
 
-DT.recipeBuilder()
+DT.recipeBuilder() // Mwt: 24.533
     .fluidInputs(fluid('catalytic_overheads') * 1000)
-    .fluidOutputs(fluid('light_naphtha') * 10)
     .fluidOutputs(fluid('catalytic_olefin_rich_mixture') * 830)
-    .fluidOutputs(fluid('hydrogen') * 160)
+    .fluidOutputs(fluid('hydrogen') * 170)
     .duration(100)
     .EUt(30)
     .buildAndRegister()
 
-DT.recipeBuilder()
+DT.recipeBuilder() // Mwt: 29.145 
     .fluidInputs(fluid('catalytic_olefin_rich_mixture') * 830)
     .fluidOutputs(fluid('catalytic_c_four_fraction') * 30)
     .fluidOutputs(fluid('catalytic_c_three_fraction') * 70)
@@ -127,7 +126,7 @@ DT.recipeBuilder()
     .EUt(30)
     .buildAndRegister()
 
-SINGLE_COLUMN_CRYOGENIC_DISTILLATION_PLANT.recipeBuilder()
+SINGLE_COLUMN_CRYOGENIC_DISTILLATION_PLANT.recipeBuilder() // Mwt: 21.8698
     .fluidInputs(fluid('catalytic_light_gases') * 1000)
     .fluidOutputs(fluid('ethane') * 270)
     .fluidOutputs(fluid('ethylene') * 170)
@@ -136,7 +135,7 @@ SINGLE_COLUMN_CRYOGENIC_DISTILLATION_PLANT.recipeBuilder()
     .EUt(30)
     .buildAndRegister()
 
-DT.recipeBuilder()
+DT.recipeBuilder() // Mwt: 42.585
     .fluidInputs(fluid('catalytic_c_three_fraction') * 1000)
     .fluidOutputs(fluid('propane') * 250)
     .fluidOutputs(fluid('propene') * 750)
@@ -144,7 +143,7 @@ DT.recipeBuilder()
     .EUt(30)
     .buildAndRegister()
 
-DT.recipeBuilder()
+DT.recipeBuilder() // Mwt: 57.114
     .fluidInputs(fluid('catalytic_c_four_fraction') * 1000)
     .fluidOutputs(fluid('butane') * 150)
     .fluidOutputs(fluid('catalytic_butene_mixture') * 500)
@@ -153,7 +152,7 @@ DT.recipeBuilder()
     .EUt(30)
     .buildAndRegister()
 
-DT.recipeBuilder()
+DT.recipeBuilder() // Mwt: 56.108
     .fluidInputs(fluid('catalytic_butene_mixture') * 1000)
     .fluidOutputs(fluid('two_butene') * 450)
     .fluidOutputs(fluid('one_butene') * 250)

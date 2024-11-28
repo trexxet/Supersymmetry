@@ -152,14 +152,13 @@ class Petrochemistry {
         light_gas_oil : new OilFraction('light_gas_oil').withTraits(Sulfuric, Heatable, Strippable),
         kerosene : new OilFraction('kerosene').withTraits(Sulfuric, Heatable, Strippable),
         heavy_naphtha : new OilFraction('heavy_naphtha').withTraits(Sulfuric, Heatable),
-        heavy_cycle_oil : new OilFraction('heavy_cycle_oil').withTraits(Sulfuric, Heatable),
         light_cycle_oil : new OilFraction('light_cycle_oil').withTraits(Sulfuric, Heatable),
         naphtha : new OilFraction('naphtha').withTraits(Crude),
         light_naphtha : new OilFraction('light_naphtha').withTraits(Sulfuric, Heatable),
     ]
 
     public static crackables = [
-        vacuum_oil_residue : new Crackable('vacuum_oil_residue').withTraits(CatalyticCrackable, HydroCrackable, ThermalCrackable).tap { hydrogen_consumed = 930, gas_produced = 65},
+        vacuum_oil_residue : new Crackable('vacuum_oil_residue').withTraits(CatalyticCrackable, HydroCrackable, ThermalCrackable).tap { hydrogen_consumed = , gas_produced = },
         atmospheric_oil_residue : new Crackable('atmospheric_oil_residue').withTraits(CatalyticCrackable, HydroCrackable, ThermalCrackable).tap { hydrogen_consumed = , gas_produced = },
         light_gas_oil : new Crackable('light_gas_oil').withTraits(HydroCrackable, SteamCrackable).tap { hydrogen_consumed = , gas_produced = },
         heavy_gas_oil : new Crackable('heavy_gas_oil').withTraits(CatalyticCrackable, HydroCrackable, SteamCrackable).tap { hydrogen_consumed = , gas_produced = },
@@ -168,8 +167,7 @@ class Petrochemistry {
         butane : new Crackable('butane').withTraits(SteamCrackable),
         light_naphtha : new Crackable('light_naphtha').withTraits(SteamCrackable, HydroCrackable).tap { hydrogen_consumed = , gas_produced = },
         heavy_naphtha : new Crackable('heavy_naphtha').withTraits(SteamCrackable, HydroCrackable).tap { hydrogen_consumed = , gas_produced = },
-        light_cycle_oil : new Crackable('light_cycle_oil').withTraits(HydroCrackable).tap { hydrogen_consumed = , gas_produced = },
-        heavy_cycle_oil : new Crackable('heavy_cycle_oil').withTraits(HydroCrackable).tap { hydrogen_consumed = , gas_produced = },
+        light_cycle_oil : new Crackable('light_cycle_oil').withTraits(HydroCrackable).tap { hydrogen_consumed = 930, gas_produced = 65},
         slurry_oil : new Crackable('slurry_oil').withTraits(HydroCrackable).tap { hydrogen_consumed = , gas_produced = },
         deasphalted_oil : new Crackable('deasphalted_oil').withTraits(HydroCrackable).tap { hydrogen_consumed = , gas_produced = }
     ]

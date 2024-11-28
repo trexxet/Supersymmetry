@@ -622,12 +622,6 @@ class SuSyMaterials {
         public static Material TreatedSulfuricLightCycleOil;
         public static Material HydrocrackedLightCycleOil;
 
-        public static Material HeavyCycleOil;
-        public static Material SulfuricHeavyCycleOil;
-        public static Material HeatedHeavyCycleOil;
-        public static Material TreatedSulfuricHeavyCycleOil;
-        public static Material HydrocrackedHeavyCycleOil;
-
         public static Material SlurryOil;
         public static Material HydrocrackedSlurryOil;
 

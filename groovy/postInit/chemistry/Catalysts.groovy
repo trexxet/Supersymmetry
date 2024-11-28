@@ -10,6 +10,7 @@ DT = recipemap('distillation_tower')
 DRYER = recipemap('dryer')
 AUTOCLAVE = recipemap('autoclave')
 ION_EXCHANGE = recipemap('ion_exchange_column')
+FBR = recipemap('fixed_bed_reactor')
 
 // Alumina supports
 
@@ -180,7 +181,7 @@ MIXER.recipeBuilder()
     .EUt(30)
     .buildAndRegister()
 
-// Type Y zeolite (cracking catalyst)
+// Type Y zeolite (FCC catalyst)
 
 AUTOCLAVE.recipeBuilder()
     .fluidInputs(fluid('diluted_sodium_silicate_solution') * 8000)
@@ -207,6 +208,49 @@ ROASTER.recipeBuilder()
     .duration(100)
     .EUt(60)
     .buildAndRegister()
+
+// ZSM-5
+
+FBR.recipeBuilder()
+    .notConsumable(metaitem('catalystBedAlumina'))
+    .fluidInputs(fluid('ammonia') * 50)
+    .fluidInputs(fluid('n_propanol') * 150)
+    .fluidOutputs(fluid('tripropylamine') * 50)
+    .fluidOutputs(fluid('water') * 150)
+    .duration(5)
+    .EUt(120)
+    .buildAndRegister();
+
+BR.recipeBuilder()
+    .notConsumable(metaitem('emitter.lv'))
+    .notConsumable(fluid('hydrogen_peroxide_solution') * 50)
+    .fluidInputs(fluid('hydrobromic_acid') * 1000)
+    .fluidInputs(fluid('propene') * 1000)
+    .fluidOutputs(fluid('n_bromopropane') * 1000)
+    .fluidOutputs(fluid('water') * 1000)
+    .duration(5)
+    .EUt(120)
+    .buildAndRegister();
+
+BR.recipeBuilder()
+    .fluidInputs(fluid('n_bromopropane') * 1000)
+    .fluidInputs(fluid('tripropylamine') * 1000)
+    .outputs(metaitem('dustTetrapropylammoniumBromide'))
+    .duration(5)
+    .EUt(120)
+    .buildAndRegister();
+
+LCR.recipeBuilder()
+    .inputs(ore('dustSiliconDioxide') * 6)
+    .inputs(ore('dustAluminiumSulfate') * 51)
+    .inputs(ore('dustSodiumHydroxide'))
+    .inputs(ore('dustTinyTetrapropylammoniumBromide'))
+    .fluidInputs(fluid('ethanol') * 100)
+    .fluidInputs(fluid('demineralized_water') * 1800)
+    .outputs(metaitem('dustZsmFive'))
+    .duration(500)
+    .EUt(480)
+    .buildAndRegister();
 
 // Olefin condensation catalysts
 
@@ -346,3 +390,27 @@ ROASTER.recipeBuilder()
         .duration(200)
         .EUt(Globals.voltAmps[3])
         .buildAndRegister()
+
+// HZSM-5
+
+FBR.recipeBuilder()
+    .notConsumable(ore('catalystBedAlumina'))
+    .fluidInputs(fluid('n_butanol') * 50)
+    .fluidInputs(fluid('ammonia') * 50)
+    .fluidOutputs(fluid('n_butylamine') * 50)
+    .fluidOutputs(fluid('water') * 50)
+    .duration(3)
+    .EUt(Globals.voltAmps[1])
+    .buildAndRegister()
+
+BR.recipeBuilder()
+    .inputs(ore('dustSiliconDioxide') * 6)
+    .inputs(ore('dustAluminiumSulfate') * 51)
+    .inputs(ore('dustSodiumHydroxide'))
+    .fluidInputs(fluid('ethanol') * 100)
+    .fluidInputs(fluid('demineralized_water') * 1800)
+    .fluidInputs(fluid('n_butylamine') * 100)
+    .outputs(metaitem('dustHzsmFive'))
+    .duration(500)
+    .EUt(480)
+    .buildAndRegister();
