@@ -1994,7 +1994,7 @@ susy.material.monel=Monel 500
 susy.material.stellite_j=Stellite J
 susy.material.stellite_six=Stellite 6
 susy.material.hsla_eighty_x=HSLA 980X
-susy.material.food_grade_stainless_steel=Food Grade Stainless Steel
+susy.material.food_grade_stainless_steel=Food-Grade Stainless Steel
 
 # Graphene Chain
 susy.material.moist_argon=Moist Argon

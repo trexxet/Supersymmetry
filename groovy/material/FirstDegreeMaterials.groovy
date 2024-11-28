@@ -3460,7 +3460,7 @@ public class FirstDegreeMaterials {
                 .ingot().liquid(new FluidBuilder().temperature(1685))
                 .iconSet(SHINY)
                 .flags(GENERATE_PLATE, GENERATE_ROD)
-                .components(Iron * 18, Nickel * 30, Cobalt, Chrome * 3, Manganese, Copper, Aluminium, Titanium * 2, Tungsten, Niobium)
+                .components(Iron * 20, Nickel * 30, Cobalt, Chrome * 3, Aluminium, Titanium * 2, Tungsten, Niobium * 2)
                 .colorAverage()
                 .build()
 
@@ -3468,7 +3468,7 @@ public class FirstDegreeMaterials {
                 .ingot().liquid(new FluidBuilder().temperature(1780))
                 .iconSet(SHINY)
                 .flags(GENERATE_PLATE, GENERATE_ROD)
-                .components(Nickel * 22, Cobalt * 3, Chrome * 3, Aluminium * 3, Tungsten * 2, Hafnium, Rhenium * 2, Tantalum * 3, Molybdenum)
+                .components(Nickel * 22, Cobalt * 4, Chrome * 3, Aluminium * 3, Tungsten * 2, Hafnium, Rhenium * 2, Tantalum * 3)
                 .colorAverage()
                 .build()
 
@@ -3500,10 +3500,10 @@ public class FirstDegreeMaterials {
                 .ingot().liquid(new FluidBuilder().temperature(1770))
                 .iconSet(SHINY)
                 .flags(GENERATE_PLATE, GENERATE_ROD)
-                .components(Iron * 39, Tungsten)
+                .components(Iron * 39, Manganese)
                 .colorAverage()
                 .build()
-                .setFormula("Fe99W", true)
+                .setFormula("Fe99Mn", true)
 
         FoodGradeStainlessSteel = new Material.Builder(8635, SuSyUtility.susyId("food_grade_stainless_steel"))
                 .ingot().liquid(new FluidBuilder().temperature(1780))

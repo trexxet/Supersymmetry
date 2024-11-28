@@ -36,17 +36,15 @@ ABS.recipeBuilder()
 
 ABS.recipeBuilder()
     .circuitMeta(7)
-    .fluidInputs(fluid('aluminium') * 144)
-    .fluidInputs(fluid('cobalt') * 144)
-    .inputs(ore('dustIron') * 18)
+    .inputs(ore('dustAluminium') * 1)
+    .inputs(ore('dustCobalt') * 1)
+    .inputs(ore('dustIron') * 20)
     .inputs(ore('dustNickel') * 30)
     .inputs(ore('dustChrome') * 3)
-    .inputs(ore('dustManganese') * 1)
-    .inputs(ore('dustCopper') * 1)
     .inputs(ore('dustTitanium') * 2)
     .inputs(ore('dustTungsten') * 1)
     .inputs(ore('dustNiobium') * 2)
-    .fluidOutputs(fluid('incoloy_nine_zero_eight') * 7200)
+    .fluidOutputs(fluid('incoloy_nine_zero_eight') * 8640)
         .blastFurnaceTemp(3000)
     .duration(4000)
     .EUt(Globals.voltAmps[4])
@@ -54,15 +52,14 @@ ABS.recipeBuilder()
 
 ABS.recipeBuilder()
     .circuitMeta(7)
-    .fluidInputs(fluid('aluminium') * 432)
-    .fluidInputs(fluid('cobalt') * 432)
+    .inputs(ore('dustAluminium') * 3)
+    .inputs(ore('dustCobalt') * 4)
     .inputs(ore('dustNickel') * 22)
     .inputs(ore('dustChrome') * 3)
     .inputs(ore('dustTungsten') * 2)
     .inputs(ore('dustHafnium') * 1)
     .inputs(ore('dustRhenium') * 2)
     .inputs(ore('dustTantalum') * 3)
-    .inputs(ore('dustMolybdenum') * 1)
     .fluidOutputs(fluid('rene') * 5760)
         .blastFurnaceTemp(3000)
     .duration(4000)
@@ -132,3 +129,48 @@ ABS.recipeBuilder()
     .duration(3000)
     .EUt(Globals.voltAmps[3])
     .buildAndRegister()
+
+static def removeItemsOfAlloy(String itemCategory) {
+    mods.jei.ingredient.removeAndHide(metaitem('ingot' + itemCategory));
+    mods.jei.ingredient.removeAndHide(metaitem('ingotHot' + itemCategory));
+    mods.jei.ingredient.removeAndHide(metaitem('dust' + itemCategory));
+    mods.jei.ingredient.removeAndHide(metaitem('dustSmall' + itemCategory));
+    mods.jei.ingredient.removeAndHide(metaitem('dustTiny' + itemCategory));
+    mods.jei.ingredient.removeAndHide(metaitem('plate' + itemCategory));
+    mods.jei.ingredient.removeAndHide(metaitem('stick' + itemCategory));
+    mods.jei.ingredient.removeAndHide(metaitem('nugget' + itemCategory));
+}
+
+static def removeItemsOfAlloyNoRod(String itemCategory) {
+    mods.jei.ingredient.removeAndHide(metaitem('ingot' + itemCategory));
+    mods.jei.ingredient.removeAndHide(metaitem('ingotHot' + itemCategory));
+    mods.jei.ingredient.removeAndHide(metaitem('dust' + itemCategory));
+    mods.jei.ingredient.removeAndHide(metaitem('dustSmall' + itemCategory));
+    mods.jei.ingredient.removeAndHide(metaitem('dustTiny' + itemCategory));
+    mods.jei.ingredient.removeAndHide(metaitem('plate' + itemCategory));
+    mods.jei.ingredient.removeAndHide(metaitem('nugget' + itemCategory));
+}
+
+removeItemsOfAlloy('HastelloyC276');
+removeItemsOfAlloy('HastelloyX');
+removeItemsOfAlloy('IncoloyMa956');
+removeItemsOfAlloy('MaragingSteel300');
+removeItemsOfAlloy('WatertightSteel');
+removeItemsOfAlloyNoRod('Stellite100');
+removeItemsOfAlloyNoRod('Zeron100');
+
+mods.jei.ingredient.removeAndHide(metaitem('ingotHslaSteel'));
+mods.jei.ingredient.removeAndHide(metaitem('dustHslaSteel'));
+mods.jei.ingredient.removeAndHide(metaitem('dustSmallHslaSteel'));
+mods.jei.ingredient.removeAndHide(metaitem('dustTinyHslaSteel'));
+mods.jei.ingredient.removeAndHide(metaitem('plateHslaSteel'));
+mods.jei.ingredient.removeAndHide(metaitem('stickHslaSteel'));
+mods.jei.ingredient.removeAndHide(metaitem('nuggetHslaSteel'));
+mods.jei.ingredient.removeAndHide(metaitem('springHslaSteel'));
+mods.jei.ingredient.removeAndHide(metaitem('stickLongHslaSteel'));
+mods.jei.ingredient.removeAndHide(metaitem('plateDoubleHslaSteel'));
+
+/*
+    Blocks from GT superalloys need to be removed (block, frame, sheeted frame) and liquids
+    Recipes for GCYM casings need to be changed to use SuSy superalloys, currently they still have recipes with old ones
+ */
