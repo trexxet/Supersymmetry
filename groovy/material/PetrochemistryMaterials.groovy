@@ -210,17 +210,7 @@ public class PetrochemistryMaterials {
                 .flags(FLAMMABLE)
                 .build();
 
-        HydrocrackedLightNaphtha = new Material.Builder(20033, SuSyUtility.susyId('hydrocracked_light_naphtha'))
-                .gas(new FluidBuilder().temperature(573))
-                .color(0xc4bf51)
-                .flags(FLAMMABLE)
-                .build();
-
-        HydrocrackedHeavyNaphtha = new Material.Builder(20034, SuSyUtility.susyId('hydrocracked_heavy_naphtha'))
-                .gas(new FluidBuilder().temperature(573))
-                .color(0xbab65f)
-                .flags(FLAMMABLE)
-                .build();
+        // FREE IDs: 20033-20034
 
         SteamcrackedLightGasOil = new Material.Builder(20035, SuSyUtility.susyId('steamcracked_light_gas_oil'))
                 .gas(new FluidBuilder().temperature(1223))
@@ -312,19 +302,7 @@ public class PetrochemistryMaterials {
                 .flags(FLAMMABLE)
                 .build()
 
-        // FREE ID: 20050
-
-        HydrocrackedDeasphaltedOil = new Material.Builder(20051, SuSyUtility.susyId('hydrocracked_deasphalted_oil'))
-                .liquid(new FluidBuilder().temperature(573))
-                .color(0x24262a)
-                .flags(FLAMMABLE)
-                .build()
-
-        HydrocrackedSlurryOil = new Material.Builder(20052, SuSyUtility.susyId('hydrocracked_slurry_oil'))
-                .liquid(new FluidBuilder().temperature(573))
-                .color(0x29212c)
-                .flags(FLAMMABLE)
-                .build()
+        // FREE ID: 20050-20054
 
         CrudeCatalyticallyCrackedHeavyGasOil = new Material.Builder(20053, SuSyUtility.susyId('crude_catalytically_cracked_heavy_gas_oil'))
                 .gas(new FluidBuilder().temperature(773))
