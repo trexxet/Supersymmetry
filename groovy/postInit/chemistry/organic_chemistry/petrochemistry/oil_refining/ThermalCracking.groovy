@@ -14,15 +14,15 @@ crackables.each { _, crackable ->
         ROASTER.recipeBuilder()
             .fluidInputs(crackable.get(1000))
             .fluidOutputs(crackable.getThermallyCracked(700))
-            .duration(400)
-            .EUt(Globals.voltAmps[3])
+            .duration(600)
+            .EUt(Globals.voltAmps[2])
             .buildAndRegister()
 
         CRACKER.recipeBuilder()
             .fluidInputs(crackable.get(1000))
             .fluidOutputs(crackable.getThermallyCracked(1000))
             .duration(200)
-            .EUt(Globals.voltAmps[3] * 2)
+            .EUt(Globals.voltAmps[2] * 2)
             .buildAndRegister()
 
         // Visbreaking

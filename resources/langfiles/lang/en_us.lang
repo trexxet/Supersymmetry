@@ -1977,7 +1977,7 @@ susy.material.sulfuric_light_naphtha=Sulfuric Light Naphtha
 susy.material.sulfuric_heavy_naphtha=Sulfuric Heavy Naphtha
 susy.material.light_naphtha=Light Naphtha
 susy.material.heavy_naphtha=Heavy Naphtha
-susy.material.fuel_gas=FuelGas
+susy.material.fuel_gas=Fuel Gas
 susy.material.butane_fuel_gas=Butane Fuel Gas
 susy.material.propane_fuel_gas=Propane Fuel Gas
 susy.material.heated_oil_residue=Heated Oil Residue
@@ -2005,7 +2005,7 @@ susy.material.catalytically_cracked_vacuum_oil_residue=Catalytically Cracked Vac
 susy.material.hydrocracked_atmospheric_oil_residue=Hydrocracked Atmospheric Oil Residue
 susy.material.hydrocracked_vacuum_oil_residue=Hydrocracked Vacuum Oil Residue
 susy.material.thermally_cracked_atmospheric_oil_residue=Thermally Cracked Atmospheric Oil Residue
-susy.material.thermally_cracked_vacuum_oil_residue=Thermally Cracked Vacuum Oil Residue=Thermally Cracked Vacuum Oil Residue
+susy.material.thermally_cracked_vacuum_oil_residue=Thermally Cracked Vacuum Oil Residue
 susy.material.hydrocracked_light_cycle_oil=Hydrocracked Light Cycle Oil
 susy.material.hydrocracked_heavy_cycle_oil=Hydrocracked Heavy Cycle Oil
 susy.material.hydrocracked_deasphalted_oil=Hydrocracked Deasphalted Oil
