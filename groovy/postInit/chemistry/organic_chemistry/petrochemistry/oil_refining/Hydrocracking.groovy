@@ -11,6 +11,7 @@ crackables.each { _, crackable ->
             .fluidInputs(fluid('hot_hp_hydrogen') * crackable.hydrogen_consumed)
             .fluidOutputs(crackable.getHydro(1000))
             .fluidOutputs(fluid('fuel_gas') * crackable.gas_produced)
+            .circuitMeta(2)
             .duration(80)
             .EUt(Globals.voltAmps[2])
             .buildAndRegister()  

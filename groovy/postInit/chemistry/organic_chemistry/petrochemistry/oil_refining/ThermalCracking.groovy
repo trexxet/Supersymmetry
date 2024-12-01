@@ -21,6 +21,7 @@ crackables.each { _, crackable ->
         CRACKER.recipeBuilder()
             .fluidInputs(crackable.get(1000))
             .fluidOutputs(crackable.getThermallyCracked(1000))
+            .circuitMeta(1)
             .duration(200)
             .EUt(Globals.voltAmps[2] * 2)
             .buildAndRegister()
