@@ -12,15 +12,7 @@ DT.recipeBuilder()
     .fluidOutputs(fluid('sulfuric_fuel_gas') * 2000)
     .duration(400)
     .EUt(30)
-    .buildAndRegister()
-
-DT.recipeBuilder()
-    .fluidInputs(fractions.naphtha.get(10000))
-    .fluidOutputs(fluid('debutanized_naphtha') * 8000)
-    .fluidOutputs(fluid('fuel_gas') * 2000)
-    .duration(400)
-    .EUt(30)
-    .buildAndRegister()
+    .buildAndRegister() 
 
 // Naphtha hydrotreatment/splitting
 

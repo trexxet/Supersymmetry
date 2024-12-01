@@ -748,7 +748,7 @@ public class PetrochemistryMaterials {
 
         // FREE ID: 20133
 
-        TreatedSulfuricLightCycleOil = new Material.Builder(20134, SuSyUtility.susyId('treated_sulfuric_heavy_cycle_oil'))
+        TreatedSulfuricLightCycleOil = new Material.Builder(20134, SuSyUtility.susyId('treated_sulfuric_light_cycle_oil'))
                 .gas()
                 .color(0xded087)
                 .flags(FLAMMABLE)

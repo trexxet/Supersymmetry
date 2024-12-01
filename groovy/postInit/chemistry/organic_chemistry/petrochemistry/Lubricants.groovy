@@ -939,7 +939,6 @@ def baseOilMap = [
     'seed_oil': 0.5,
     'lubricating_oil': 1,
     'light_cycle_oil' : 1,
-    'heavy_cycle_oil' : 1,
     'polybutene': 1.5,
     'polyalphaolefin': 2.5,
     'ester_base_oil': 3

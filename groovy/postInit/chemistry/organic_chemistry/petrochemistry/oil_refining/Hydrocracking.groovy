@@ -8,7 +8,7 @@ crackables.each { _, crackable ->
     if (crackable.hydro_crackable) {
         CRACKER.recipeBuilder()
             .fluidInputs(crackable.get(1000))
-            .fluidInputs(fluid('hot_hp_hydrogen') * crackable.hydrogen_required)
+            .fluidInputs(fluid('hot_hp_hydrogen') * crackable.hydrogen_consumed)
             .fluidOutputs(crackable.getHydro(1000))
             .fluidOutputs(fluid('fuel_gas') * crackable.gas_produced)
             .duration(80)

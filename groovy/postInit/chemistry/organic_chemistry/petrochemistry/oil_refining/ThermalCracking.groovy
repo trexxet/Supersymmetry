@@ -14,7 +14,7 @@ crackables.each { _, crackable ->
         ROASTER.recipeBuilder()
             .fluidInputs(crackable.get(1000))
             .fluidOutputs(crackable.getThermallyCracked(700))
-            .duration(600)
+            .duration(800)
             .EUt(Globals.voltAmps[2])
             .buildAndRegister()
 

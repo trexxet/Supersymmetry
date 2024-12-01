@@ -24,11 +24,11 @@ crackables.each { _, crackable ->
             .buildAndRegister()
 
         DT.recipeBuilder()
-            .fluidInputs(crackable.getCrudeCatalyticallyCracked(500))
-            .fluidInputs(fluid('dense_steam') * 50)
-            .fluidOutputs(crackable.getCatalyticallyCracked(500))
+            .fluidInputs(crackable.getCrudeCatalyticallyCracked(1000))
+            .fluidInputs(fluid('dense_steam') * 100)
+            .fluidOutputs(crackable.getCatalyticallyCracked(1000))
             .outputs(metaitem('spent_cracking_catalyst'))
-            .duration(100)
+            .duration(200)
             .EUt(Globals.voltAmps[1])
             .buildAndRegister()
     }
