@@ -13,7 +13,6 @@
     "betterquesting:10": {
       "desc:8": "susy.quest.db.665.desc",
       "icon:10": {
-        "Count:3": 1,
         "id:8": "forge:bucketfilled",
         "tag:10": {
           "Amount:3": 1000,
@@ -27,7 +26,6 @@
   "questID:3": 665,
   "tasks:9": {
     "0:10": {
-      "index:3": 0,
       "requiredFluids:9": {
         "0:10": {
           "Amount:3": 1000,
