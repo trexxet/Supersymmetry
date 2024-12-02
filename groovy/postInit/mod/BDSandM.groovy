@@ -24,6 +24,23 @@ crafting.replaceShaped('bdsandm:crate_key_b', item('bdsandm:crate_key'), [
     [item('bdsandm:wood_barrel'), null, null]
 ])
 
+crafting.replaceShapeless("bdsandm:upgrade_ore_dict", item('bdsandm:upgrade:5'), [
+	item('minecraft:item_frame'),
+	ore('chestWood'),
+	metaitem('ore_dictionary_filter')
+])
+
+crafting.replaceShapeless("bdsandm:upgrade_uninstall", item('bdsandm:upgrade:7'), [
+	item('minecraft:item_frame'),
+	ore('chestWood')
+])
+
+crafting.replaceShapeless("bdsandm:upgrade_64", item('bdsandm:upgrade'), [
+	item('minecraft:item_frame'),
+	ore('chestWood'),
+	ore('ingotIron')
+])
+
 crafting.replaceShaped('bdsandm:wood_crate', item('bdsandm:wood_crate'), [
     [ore('plateWood'), ore('plateWood'), ore('plateWood')],
     [ore('plateWood'), ore('chestWood'), ore('plateWood')],
