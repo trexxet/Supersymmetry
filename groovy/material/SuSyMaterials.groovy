@@ -660,6 +660,7 @@ class SuSyMaterials {
         public static Material BTEX;
         public static Material Syngas;
         public static Material ReformedSyngas;
+        public static Material ClarifiedSlurryOil;
         public static Material CrudeLubricatingOil;
         public static Material SolventLubricantMixture;
         public static Material ColdSolventLubricantMixture;

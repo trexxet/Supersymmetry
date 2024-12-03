@@ -77,7 +77,7 @@ crackables.each { _, crackable ->
             .buildAndRegister()
 
         VACUUM_DT.recipeBuilder()
-            .fluidInputs(fluid('slurry_oil') * 1000)
+            .fluidInputs(fluid('clarified_slurry_oil') * 1000)
             .fluidInputs(fluid('coking_effluents') * 470)
             .fluidOutputs(fluid('coking_residue') * 470)
             .fluidOutputs(fractions.heavy_gas_oil.getCrude(325))
@@ -121,7 +121,7 @@ crackables.each { _, crackable ->
             .buildAndRegister()
 
         FLBR.recipeBuilder()
-            .fluidInputs(fluid('slurry_oil') * 1125)
+            .fluidInputs(fluid('clarified_slurry_oil') * 1125)
             .inputs(ore('dustHeatedGreenCoke') * 4)
             .fluidOutputs(fluid('coke_fines') * 1000)
             .duration(50)

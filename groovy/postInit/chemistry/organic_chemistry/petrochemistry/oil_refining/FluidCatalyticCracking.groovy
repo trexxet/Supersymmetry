@@ -5,6 +5,7 @@ BCR = recipemap("bubble_column_reactor")
 CRACKER = recipemap("cracker")
 ROASTER = recipemap("roaster")
 DT = recipemap("sieve_distillation")
+ELECTROSTATIC_SEPARATOR = recipemap('electrostatic_separator')
 
 /* Data:
 - Slurry oil: 40 carbons
@@ -27,7 +28,7 @@ crackables.each { _, crackable ->
             .fluidInputs(crackable.getCrudeCatalyticallyCracked(4000))
             .fluidInputs(fluid('dense_steam') * 400)
             .fluidOutputs(crackable.getCatalyticallyCracked(4000))
-            .outputs(metaitem('spent_cracking_catalyst'))
+            .chancedOutput(metaitem('spent_cracking_catalyst'), 9000, 0)
             .duration(200)
             .EUt(Globals.voltAmps[1])
             .buildAndRegister()
@@ -36,10 +37,10 @@ crackables.each { _, crackable ->
 
 ROASTER.recipeBuilder()
     .fluidInputs(fluid('oxygen') * 1000)
-    .inputs(metaitem('spent_cracking_catalyst') * 4)
+    .inputs(metaitem('spent_cracking_catalyst'))
     .fluidOutputs(fluid('flue_gas') * 1000)
-    .outputs(metaitem('cracking_catalyst') * 4)
-    .duration(50)
+    .outputs(metaitem('cracking_catalyst'))
+    .duration(200)
     .EUt(Globals.voltAmps[1])
     .buildAndRegister()
 
@@ -70,4 +71,12 @@ DT.recipeBuilder()
     .fluidOutputs(fluid('sulfuric_catalytic_overheads') * 1092)
     .duration(50)
     .EUt(Globals.voltAmps[1] * 2)
+    .buildAndRegister()
+
+ELECTROSTATIC_SEPARATOR.recipeBuilder()
+    .fluidInputs(fluid('slurry_oil') * 1000)
+    .fluidOutputs(fluid('clarified_slurry_oil') * 1000)
+    .chancedOutput(metaitem('spent_cracking_catalyst'), 1000, 0)
+    .duration(200)
+    .EUt(Globals.voltAmps[1])
     .buildAndRegister()

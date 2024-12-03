@@ -278,23 +278,7 @@ public class PetrochemistryMaterials {
                 .flags(FLAMMABLE)
                 .build()
 
-        /*SteamcrackedEthane = new Material.Builder(20046, SuSyUtility.susyId('steamcracked_ethane'))
-                .gas(new FluidBuilder().temperature(1223))
-                .color(0xd7d7fc)
-                .flags(FLAMMABLE)
-                .build()
-
-        SteamcrackedPropane = new Material.Builder(20047, SuSyUtility.susyId('steamcracked_propane'))
-                .gas(new FluidBuilder().temperature(1223))
-                .color(0xfcec86)
-                .flags(FLAMMABLE)
-                .build()
-
-        SteamcrackedButane = new Material.Builder(20048, SuSyUtility.susyId('steamcracked_butane'))
-                .gas(new FluidBuilder().temperature(1223))
-                .color(0xcc614b)
-                .flags(FLAMMABLE)
-                .build()*/
+        // FREE IDs: 20046-40048
 
         HydrocrackedLightCycleOil = new Material.Builder(20049, SuSyUtility.susyId('hydrocracked_light_cycle_oil'))
                 .gas(new FluidBuilder().temperature(673))
@@ -302,7 +286,7 @@ public class PetrochemistryMaterials {
                 .flags(FLAMMABLE)
                 .build()
 
-        // FREE ID: 20050-20054
+        // FREE IDs: 20050-20054
 
         CrudeCatalyticallyCrackedHeavyGasOil = new Material.Builder(20053, SuSyUtility.susyId('crude_catalytically_cracked_heavy_gas_oil'))
                 .gas(new FluidBuilder().temperature(773))
@@ -350,7 +334,11 @@ public class PetrochemistryMaterials {
                 .build()
                 .setFormula('(H2)4(CO2)', true);
 
-        // FREE ID: 20063
+        ClarifiedSlurryOil = new Material.Builder(20063, SuSyUtility,susyId('clarified_slurry_oil'))
+                .liquid()
+                .color(0x302618)
+                .flags(FLAMMABLE)
+                .build();
 
         TreatedSulfuricNaphtha = new Material.Builder(20064, SuSyUtility.susyId('treated_sulfuric_naphtha'))
                 .gas()
