@@ -2065,6 +2065,7 @@ metaitem.gun.barrel.steel.name=Стальной ствол
 metaitem.cathode.lead.name=Свинцовый катод
 metaitem.anode.lead.name=Свинцовый анод
 metaitem.battery.lead_acid.name=Свинцово-кислотная батарея
+metaitem.cathode.niooh.name=Никель-оксид-гидроксидный катод
 
 metaitem.steam.piston.name=Паровой поршень
 metaitem.steam.motor.name=Паровой двигатель
