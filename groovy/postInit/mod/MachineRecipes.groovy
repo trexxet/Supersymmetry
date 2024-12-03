@@ -645,6 +645,56 @@ recipemap('assembler').recipeBuilder()
 		.duration(200)
 		.buildAndRegister()
 
+//Extra Quadruple Hatches
+def material = [null				, "Bronze"		, "Steel",
+				"StainlessSteel"	, "Titanium"	, "Tungstensteel",
+				"NiobiumTitanium"	, null			, null,
+				null				, null			, null,
+				null				, null	];
+
+for (i = 1; i <= 3; i++) {
+
+	recipemap('assembler').recipeBuilder()
+		.inputs(metaitem('fluid_hatch.import.' + Globals.voltageTiers[i]))
+		.inputs(ore('pipeQuadrupleFluid' + material[i]))
+		.circuitMeta(4)
+		.fluidInputs(fluid('plastic') * 576)
+		.outputs(metaitem('fluid_hatch.import_4x.' + Globals.voltageTiers[i]))
+		.EUt(Globals.voltAmps[i])
+		.duration(300)
+		.buildAndRegister()
+
+	recipemap('assembler').recipeBuilder()
+		.inputs(metaitem('fluid_hatch.export.' + Globals.voltageTiers[i]))
+		.inputs(ore('pipeQuadrupleFluid' + material[i]))
+		.circuitMeta(4)
+		.fluidInputs(fluid('plastic') * 576)
+		.inputs(metaitem('fluid_hatch.export_4x.' + Globals.voltageTiers[i]))
+		.EUt(Globals.voltAmps[i])
+		.duration(300)
+		.buildAndRegister()
+
+	recipemap('assembler').recipeBuilder()
+		.inputs(metaitem('fluid_hatch.import.' + Globals.voltageTiers[i]))
+		.inputs(ore('pipeNonupleFluid' + material[i]))
+		.circuitMeta(4)
+		.fluidInputs(fluid('plastic') * 1296)
+		.inputs(metaitem('fluid_hatch.import_9x.' + Globals.voltageTiers[i]))
+		.EUt(Globals.voltAmps[i])
+		.duration(600)
+		.buildAndRegister()
+
+	recipemap('assembler').recipeBuilder()
+		.inputs(metaitem('fluid_hatch.export.' + Globals.voltageTiers[i]))
+		.inputs(ore('pipeNonupleFluid' + material[i]))
+		.circuitMeta(4)
+		.fluidInputs(fluid('plastic') * 1296)
+		.inputs(metaitem('fluid_hatch.export_9x.' + Globals.voltageTiers[i]))
+		.EUt(Globals.voltAmps[i])
+		.duration(600)
+		.buildAndRegister()
+}
+
 RecyclingHelper.addShaped("gregtech:ore_sorter", metaitem('ore_sorter'), [
 		[robotArms[1], circuits[2], robotArms[1]],
 		[pumps[1], hulls[1], pumps[1]],
