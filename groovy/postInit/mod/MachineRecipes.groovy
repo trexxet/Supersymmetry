@@ -646,17 +646,17 @@ recipemap('assembler').recipeBuilder()
 		.buildAndRegister()
 
 //Extra Quadruple Hatches
-def material = [null				, "Bronze"		, "Steel",
-				"StainlessSteel"	, "Titanium"	, "Tungstensteel",
-				"NiobiumTitanium"	, null			, null,
-				null				, null			, null,
-				null				, null	];
+def materialPipe = [null				, "Bronze"		, "Steel",
+					"StainlessSteel"	, "Titanium"	, "Tungstensteel",
+					"NiobiumTitanium"	, null			, null,
+					null				, null			, null,
+					null				, null	];
 
 for (i = 1; i <= 3; i++) {
 
 	recipemap('assembler').recipeBuilder()
 		.inputs(metaitem('fluid_hatch.import.' + Globals.voltageTiers[i]))
-		.inputs(ore('pipeQuadrupleFluid' + material[i]))
+		.inputs(ore('pipeQuadrupleFluid' + materialPipe[i]))
 		.circuitMeta(4)
 		.fluidInputs(fluid('plastic') * 576)
 		.outputs(metaitem('fluid_hatch.import_4x.' + Globals.voltageTiers[i]))
@@ -666,7 +666,7 @@ for (i = 1; i <= 3; i++) {
 
 	recipemap('assembler').recipeBuilder()
 		.inputs(metaitem('fluid_hatch.export.' + Globals.voltageTiers[i]))
-		.inputs(ore('pipeQuadrupleFluid' + material[i]))
+		.inputs(ore('pipeQuadrupleFluid' + materialPipe[i]))
 		.circuitMeta(4)
 		.fluidInputs(fluid('plastic') * 576)
 		.inputs(metaitem('fluid_hatch.export_4x.' + Globals.voltageTiers[i]))
@@ -676,7 +676,7 @@ for (i = 1; i <= 3; i++) {
 
 	recipemap('assembler').recipeBuilder()
 		.inputs(metaitem('fluid_hatch.import.' + Globals.voltageTiers[i]))
-		.inputs(ore('pipeNonupleFluid' + material[i]))
+		.inputs(ore('pipeNonupleFluid' + materialPipe[i]))
 		.circuitMeta(4)
 		.fluidInputs(fluid('plastic') * 1296)
 		.inputs(metaitem('fluid_hatch.import_9x.' + Globals.voltageTiers[i]))
@@ -686,7 +686,7 @@ for (i = 1; i <= 3; i++) {
 
 	recipemap('assembler').recipeBuilder()
 		.inputs(metaitem('fluid_hatch.export.' + Globals.voltageTiers[i]))
-		.inputs(ore('pipeNonupleFluid' + material[i]))
+		.inputs(ore('pipeNonupleFluid' + materialPipe[i]))
 		.circuitMeta(4)
 		.fluidInputs(fluid('plastic') * 1296)
 		.inputs(metaitem('fluid_hatch.export_9x.' + Globals.voltageTiers[i]))
