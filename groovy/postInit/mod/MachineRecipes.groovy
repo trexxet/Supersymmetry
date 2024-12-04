@@ -114,7 +114,7 @@ def tieredSprings = [metaitem('springIron'), metaitem('springCopper'), metaitem(
 					 metaitem('springNaquadah'), metaitem('springNaquadahAlloy')]
 
 def rotors = [
-	ore('rotorBronze'),
+	ore('rotorLead'),
 	ore('rotorTin'), 
 	ore('rotorBronze'), 
 	ore('rotorSteel'),
@@ -648,8 +648,8 @@ recipemap('assembler').recipeBuilder()
 //Extra Quadruple Hatches
 def materialPipe = [null				, "Bronze"		, "Steel",
 					"StainlessSteel"	, "Titanium"	, "Tungstensteel",
-					"NiobiumTitanium"	, null			, null,
-					null				, null			, null,
+					"NiobiumTitanium"	, "Iridium"		, "Naquadah",
+					"Neutronium"		, null			, null,
 					null				, null	];
 
 for (i = 1; i <= 3; i++) {
