@@ -37,7 +37,10 @@ mods.jei.ingredient.yeet(
 	metaitem('rotor_holder.zpm'),
 	metaitem('rotor_holder.uv')
 )
-for (i = 1; i <= 8; i++) {
+
+//Add recipes for new chemical reactors, and remove old chemical reactor recipes
+
+for (i = 1; i <= 13; i++) {
 	mods.jei.ingredient.yeet(
 		metaitem('chemical_reactor.' + Globals.voltageTiers[i]),
 		metaitem('world_accelerator.' + Globals.voltageTiers[i])
@@ -315,9 +318,6 @@ for (i = 1; i <= 8; i++) {
 			[tieredPlates[i], tieredPlates[i], tieredPlates[i]]
 	])
 }
-
-//Add recipes for new chemical reactors, and remove old chemical reactor recipes
-
 for (i = 1; i <= 8; i++) {
 
 	RecyclingHelper.addShaped("gregtech:continuous_stirred_tank_reactor." + Globals.voltageTiers[i], metaitem('continuous_stirred_tank_reactor.' + Globals.voltageTiers[i]), [
