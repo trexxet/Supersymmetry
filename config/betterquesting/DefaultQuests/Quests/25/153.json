@@ -9,12 +9,15 @@
         "Damage:2": 14553,
         "id:8": "gregtech:machine"
       },
-      "name:8": "susy.quest.db.153.title"
+      "name:8": "susy.quest.db.153.title",
+      "tasklogic:8": "OR"
     }
   },
   "questID:3": 153,
   "tasks:9": {
     "0:10": {
+      "entryLogic:8": "OR",
+      "ignoreNBT:1": 1,
       "requiredItems:9": {
         "0:10": {
           "Count:3": 1,
@@ -24,6 +27,49 @@
         "1:10": {
           "Count:3": 1,
           "Damage:2": 1617,
+          "id:8": "gregtech:machine"
+        },
+        "2:10": {
+          "Count:3": 1,
+          "Damage:2": 1614,
+          "id:8": "gregtech:machine"
+        },
+        "3:10": {
+          "Count:3": 1,
+          "Damage:2": 1615,
+          "id:8": "gregtech:machine"
+        },
+        "4:10": {
+          "Count:3": 1,
+          "Damage:2": 1616,
+          "id:8": "gregtech:machine"
+        }
+      },
+      "taskID:8": "bq_standard:retrieval"
+    },
+    "1:10": {
+      "entryLogic:8": "OR",
+      "ignoreNBT:1": 1,
+      "index:3": 1,
+      "requiredItems:9": {
+        "0:10": {
+          "Count:3": 1,
+          "Damage:2": 14507,
+          "id:8": "gregtech:machine"
+        },
+        "1:10": {
+          "Count:3": 1,
+          "Damage:2": 14508,
+          "id:8": "gregtech:machine"
+        },
+        "2:10": {
+          "Count:3": 1,
+          "Damage:2": 14509,
+          "id:8": "gregtech:machine"
+        },
+        "3:10": {
+          "Count:3": 1,
+          "Damage:2": 14512,
           "id:8": "gregtech:machine"
         }
       },
