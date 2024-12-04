@@ -860,6 +860,14 @@ RecyclingHelper.addShaped('gregtech:brass_drum', metaitem('drum.brass'), [
 		[metaitem('plateBrass'), metaitem('stickLongBrass'), metaitem('plateBrass')]
 ])
 
+RecyclingHelper.handleRecycling(metaitem('drum.pe'), [metaitem('platePlastic') * 6])
+
+RecyclingHelper.handleRecycling(metaitem('drum.pp'), [metaitem('platePolypropylene') * 6])
+
+RecyclingHelper.handleRecycling(metaitem('drum.pmma'), [metaitem('platePmma') * 6])
+
+RecyclingHelper.handleRecycling(metaitem('drum.ptfe'), [metaitem('platePolytetrafluoroethylene') * 6])
+
 //ModHandler.addShapelessNBTClearingRecipe("drum_nbt_lead", metaitem('drum.lead'),
 //		metaitem('drum.lead')
 //)
@@ -871,8 +879,25 @@ RecyclingHelper.addShaped('gregtech:brass_drum', metaitem('drum.brass'), [
 crafting.addShapeless("drum_nbt_lead", metaitem('drum.lead'), [
 		metaitem('drum.lead').noreturn()
 ]);
+
 crafting.addShapeless("drum_nbt_brass", metaitem('drum.brass'), [
 		metaitem('drum.brass').noreturn()
+]);
+
+crafting.addShapeless("drum_nbt_pe", metaitem('drum.pe'), [
+		metaitem('drum.pe').noreturn()
+]);
+
+crafting.addShapeless("drum_nbt_pp", metaitem('drum.pp'), [
+		metaitem('drum.pp').noreturn()
+]);
+
+crafting.addShapeless("drum_nbt_pmma", metaitem('drum.pmma'), [
+		metaitem('drum.pmma').noreturn()
+]);
+
+crafting.addShapeless("drum_nbt_ptfe", metaitem('drum.ptfe'), [
+		metaitem('drum.ptfe').noreturn()
 ]);
 
 mods.gregtech.assembler.recipeBuilder()
@@ -891,6 +916,38 @@ mods.gregtech.assembler.recipeBuilder()
 		.duration(200)
 		.EUt(16)
 		.circuitMeta(2)
+		.buildAndRegister()
+
+mods.gregtech.extruder.recipeBuilder()
+		.notConsumable(metaitem('shape.extruder.cell'))
+		.inputs(ore('platePlastic') * 6)
+		.outputs(metaitem('drum.pe'))
+		.duration(200)
+		.EUt(16)
+		.buildAndRegister()
+
+mods.gregtech.extruder.recipeBuilder()
+		.notConsumable(metaitem('shape.extruder.cell'))
+		.inputs(ore('platePolypropylene') * 6)
+		.outputs(metaitem('drum.pp'))
+		.duration(200)
+		.EUt(16)
+		.buildAndRegister()
+
+mods.gregtech.extruder.recipeBuilder()
+		.notConsumable(metaitem('shape.extruder.cell'))
+		.inputs(ore('platePmma') * 6)
+		.outputs(metaitem('drum.pmma'))
+		.duration(200)
+		.EUt(16)
+		.buildAndRegister()
+
+mods.gregtech.extruder.recipeBuilder()
+		.notConsumable(metaitem('shape.extruder.cell'))
+		.inputs(ore('platePolytetrafluoroethylene') * 6)
+		.outputs(metaitem('drum.ptfe'))
+		.duration(200)
+		.EUt(16)
 		.buildAndRegister()
 
 // Electrolytic Cell
