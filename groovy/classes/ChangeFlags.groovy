@@ -1,32 +1,23 @@
 package classes
 
-import net.minecraftforge.fml.common.eventhandler.EventPriority
+import gregtech.api.fluids.FluidBuilder
+import gregtech.api.fluids.attribute.FluidAttributes
+import gregtech.api.fluids.store.FluidStorageKey
+import gregtech.api.fluids.store.FluidStorageKeys
+import gregtech.api.recipes.RecipeMaps
+import gregtech.api.unification.material.Material
+import gregtech.api.unification.material.properties.*
+import gregtech.api.unification.material.properties.BlastProperty.GasTier
+import gregtech.api.unification.material.properties.OreProperty
+import gregtech.api.unification.material.properties.PropertyKey
+import supersymmetry.api.fluids.SusyFluidStorageKeys
+import supersymmetry.api.recipes.SuSyRecipeMaps
+import supersymmetry.api.unification.material.properties.FiberProperty
+import supersymmetry.api.unification.material.properties.SuSyPropertyKey
 
-import gregtech.api.unification.material.Material;
-import gregtech.api.GregTechAPI;
-import gregtech.api.GTValues;
-
-import static gregtech.api.unification.material.info.MaterialFlags.*;
-import static gregtech.api.unification.material.Materials.*;
+import static gregtech.api.unification.material.Materials.*
+import static gregtech.api.unification.material.info.MaterialFlags.*
 import static material.SuSyMaterials.*
-
-import gregtech.api.unification.ore.OrePrefix;
-import gregtech.api.unification.material.info.MaterialFlag;
-import gregtech.api.unification.material.properties.*;
-import gregtech.api.unification.material.properties.OreProperty;
-import gregtech.api.unification.material.properties.PropertyKey;
-import gregtech.api.unification.material.properties.BlastProperty.GasTier;
-import gregtech.api.recipes.RecipeMap;
-import gregtech.api.recipes.RecipeMaps;
-import gregtech.api.fluids.FluidBuilder;
-import gregtech.api.fluids.FluidState;
-import gregtech.api.fluids.store.FluidStorageKeys;
-import gregtech.api.fluids.store.FluidStorageKey;
-
-import supersymmetry.api.fluids.SusyFluidStorageKeys;
-import supersymmetry.api.recipes.SuSyRecipeMaps;
-import supersymmetry.api.unification.material.properties.SuSyPropertyKey;
-import supersymmetry.api.unification.material.properties.FiberProperty;
 
 //eventManager.listen(EventPriority.LOWEST)
 class ChangeFlags {
@@ -116,6 +107,11 @@ class ChangeFlags {
         UraniumRhodiumDinaquadide.getProperty(PropertyKey.WIRE).setAmperage(32);
         EnrichedNaquadahTriniumEuropiumDuranide.getProperty(PropertyKey.WIRE).setAmperage(64);
         RutheniumTriniumAmericiumNeutronate.getProperty(PropertyKey.WIRE).setAmperage(96);
+
+        // Allow PE & PTFE to carry acidic/cyro fluids. Used in plastic cans
+        Polyethylene.getProperty(PropertyKey.FLUID_PIPE).setCryoProof(true);
+        Polyethylene.getProperty(PropertyKey.FLUID_PIPE).setCanContain(FluidAttributes.ACID, true);
+        Polytetrafluoroethylene.getProperty(PropertyKey.FLUID_PIPE).setCryoProof(true);
 
         // Flags
 
