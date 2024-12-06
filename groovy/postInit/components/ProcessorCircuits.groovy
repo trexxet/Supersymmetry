@@ -22,3 +22,5 @@ Globals.solders.each { key, val ->
 		.EUt(120)
 		.buildAndRegister();
 }
+
+mods.gregtech.circuit_assembler.removeByInput(16, [metaitem('circuit_board.basic'), metaitem('plate.integrated_logic_circuit'), metaitem('component.resistor') * 2, metaitem('component.diode') * 2, metaitem('wireFineCopper') * 2, metaitem('boltTin') * 2], [fluid('soldering_alloy') * 72])
