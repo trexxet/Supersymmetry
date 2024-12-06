@@ -1339,6 +1339,7 @@ RecyclingHelper.replaceShaped("gregtech:casing_steel_firebox", item('gregtech:bo
 
 // Tapes
 mods.gregtech.assembler.recipeBuilder()
+        .circuitMeta(1)
         .inputs(ore('foilPlastic') * 4)
         .fluidInputs(fluid('glue') * 250)
         .outputs(metaitem('basic_tape') * 8)
@@ -1347,6 +1348,7 @@ mods.gregtech.assembler.recipeBuilder()
         .buildAndRegister()
 
 mods.gregtech.assembler.recipeBuilder()
+        .circuitMeta(1)
         .inputs(ore('foilPolypropylene') * 4)
         .fluidInputs(fluid('glue') * 250)
         .outputs(metaitem('basic_tape') * 16)
