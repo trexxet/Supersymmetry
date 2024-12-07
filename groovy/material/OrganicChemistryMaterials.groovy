@@ -2544,5 +2544,23 @@ public class OrganicChemistryMaterials {
                 .components(Carbon * 2, Hydrogen * 4, Oxygen * 1)
                 .color(0xd4984e)
                 .build();
+
+        CompoundedPolyisoprene = new Material.Builder(15411, SuSyUtility.susyId('compounded_polyisoprene'))
+                .dust()
+                .components(Isoprene)
+                .color(0x121212)
+                .build();
+
+        CompoundedStyreneIsopreneRubber = new Material.Builder(15412, SuSyUtility.susyId('compounded_styrene_isoprene_rubber'))
+                .dust()
+                .components(Isoprene * 3, Styrene * 1)
+                .color(0x260418)
+                .build();
+
+        CompoundedStyreneButadieneRubber = new Material.Builder(15413, SuSyUtility.susyId('compounded_styrene_butadiene_rubber'))
+                .dust()
+                .components(Butadiene * 3, Styrene * 1)
+                .color(0x3b2d2b)
+                .build();
     }
 }

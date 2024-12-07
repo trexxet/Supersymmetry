@@ -2056,6 +2056,10 @@ susy.material.ammonium_metatungstate=Ammonium Metatungstate (AMT)
 susy.material.ammonium_metatungstate_solution=Ammonium Metatungstate Solution
 susy.material.clarified_slurry_oil=Clarified Slurry Oil
 susy.material.pyrolysis_raffinate=Pyrolysis Raffinate
+susy.material.carbon_black=Carbon Black
+susy.material.compounded_polyisoprene=Compounded Polyisoprene
+susy.material.compounded_styrene_isoprene_rubber=Compounded Styrene Isoprene Rubber
+susy.material.compounded_styrene_butadiene_rubber=Compounded Styrene Butadiene Rubber
 
 # Graphene Chain
 susy.material.moist_argon=Moist Argon

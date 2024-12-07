@@ -80,4 +80,26 @@ MIXER.recipeBuilder()
     .EUt(16)
     .buildAndRegister()
 
-// Visbreaking residue treatment
+// Carbon black production
+
+def residues = [
+    'atmospheric_oil_residue',
+    'vacuum_oil_residue',
+    'visbreaking_residue',
+    'deasphalted_oil',
+    'slurry_oil'
+]
+
+for (residue in residues) {
+    ROTARY_KILN.recipeBuilder()
+        .fluidInputs(fluid(residue) * 1000)
+        .fluidInputs(fluid('natural_gas') * 10)
+        .fluidInputs(fluid('oxygen') * 10)
+        .outputs(metaitem('dustCarbonBlack') * 30)
+        .fluidOutputs(fluid('carbon_dioxide') * 10000)
+        .duration(200)
+        .EUt(120)
+        .buildAndRegister()
+}
+
+oreDict.add('dyeBlack', metaitem('dustCarbonBlack'))

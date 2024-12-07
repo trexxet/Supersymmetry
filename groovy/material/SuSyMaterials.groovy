@@ -295,6 +295,7 @@ class SuSyMaterials {
         public static Material WaelzSlag;
         public static Material ReducedZincLeach;
         public static Material WaelzOxide;
+        public static Material CarbonBlack;
         public static Material ZincCementationSlurry;
         public static Material PrecipitatedZincLeach;
         public static Material CopperCadmiumResidue;
@@ -1760,6 +1761,9 @@ class SuSyMaterials {
         public static Material MethylFormateSolution;
         public static Material TriethyleneGlycol;
         public static Material AcidicRichAmine;
+        public static Material CompoundedPolyisoprene;
+        public static Material CompoundedStyreneIsopreneRubber;
+        public static Material CompoundedStyreneButadieneRubber;
 
         // Third Degree Materials
 
