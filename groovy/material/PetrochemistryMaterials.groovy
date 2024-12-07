@@ -630,7 +630,11 @@ public class PetrochemistryMaterials {
                 .flags(FLAMMABLE)
                 .build();
 
-        // FREE IDs: 20114
+        FuelOil = new Material.Builder(20114, SuSyUtility.susyId('fuel_oil'))
+                .liquid()
+                .color(0x544803)
+                .flags(FLAMMABLE)
+                .build();
 
         CatalyticOlefinRichMixture = new Material.Builder(20115, SuSyUtility.susyId('catalytic_olefin_rich_mixture'))
                 .gas()

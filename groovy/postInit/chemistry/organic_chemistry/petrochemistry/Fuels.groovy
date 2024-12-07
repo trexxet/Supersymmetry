@@ -651,6 +651,7 @@ BLENDER.recipeBuilder()
 MIXER.recipeBuilder()
     .fluidInputs(fluid('light_gas_oil') * 1000)
     .fluidOutputs(fluid('diesel') * 1000)
+    .circuitMeta(1)
     .duration(2)
     .EUt(120)
     .buildAndRegister()
@@ -659,6 +660,7 @@ MIXER.recipeBuilder()
     .fluidInputs(fluid('light_gas_oil') * 700)
     .fluidInputs(fluid('light_cycle_oil') * 300)
     .fluidOutputs(fluid('diesel') * 1000)
+    .circuitMeta(2)
     .duration(2)
     .EUt(120)
     .buildAndRegister()
@@ -732,3 +734,32 @@ FBR.recipeBuilder()
 
 // Diesel * 6000
 mods.gregtech.mixer.removeByInput(120, null, [fluid('light_fuel') * 5000 * 5000, fluid('heavy_fuel') * 1000 * 1000])
+
+def residueFeedstocks = [
+    'atmospheric_oil_residue',
+    'vacuum_oil_residue',
+    'visbreaking_residue',
+    'deasphalted_oil',
+    'clarified_slurry_oil'
+]
+
+// Fuel Oil (marine and bunker fuels)
+
+MIXER.recipeBuilder()
+    .fluidInputs(fluid('heavy_gas_oil') * 1000)
+    .fluidOutputs(fluid('fuel_oil') * 1000)
+    .circuitMeta(1)
+    .duration(2)
+    .EUt(120)
+    .buildAndRegister()
+
+for (residue in residueFeedstocks) {
+    MIXER.recipeBuilder()
+        .fluidInputs(fluid('heavy_gas_oil') * 500)
+        .fluidInputs(fluid(residue) * 500)
+        .fluidOutputs(fluid('fuel_oil') * 1000)
+        .circuitMeta(2)
+        .duration(2)
+        .EUt(120)
+        .buildAndRegister()
+}

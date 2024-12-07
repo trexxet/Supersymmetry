@@ -445,11 +445,6 @@ for (refrigerant in Refrigerants) {
             .buildAndRegister();
 }
 
-def Naphtha = new IFluidFuel('naphtha', 'flue_gas');
-Naphtha.setDuration(160);
-Naphtha.setAmountToBurn(10);
-Naphtha.setByproductAmount(1000);
-
 def NaturalGas = new IFluidFuel('natural_gas', 'flue_gas');
 NaturalGas.setDuration(100);
 NaturalGas.setAmountToBurn(160);
@@ -553,11 +548,11 @@ LiquidNaturalGas.setAmountToBurn(10);
 LiquidNaturalGas.setByproductAmount(1250);
 LiquidNaturalGas.setIsRefinedFuel(true);
 
-def HeavyGasOil = new IFluidFuel('heavy_gas_oil', 'flue_gas');
-HeavyGasOil.setDuration(100);
-HeavyGasOil.setAmountToBurn(10);
-HeavyGasOil.setByproductAmount(2000);
-HeavyGasOil.setIsRefinedFuel(true);
+def FuelOil = new IFluidFuel('fuel_oil', 'flue_gas');
+FuelOil.setDuration(150);
+FuelOil.setAmountToBurn(10);
+FuelOil.setByproductAmount(2000);
+FuelOil.setIsRefinedFuel(true);
 
 def BioDiesel = new IFluidFuel('bio_diesel', 'flue_gas');
 BioDiesel.setDuration(75);
@@ -638,7 +633,6 @@ SupremeKerosene.setByproductAmount(5000);
 SupremeKerosene.setIsRefinedFuel(true);
 
 def FluidFuels = [
-        Naphtha,
         NaturalGas,
         Methane,
         Ethane,
@@ -659,7 +653,7 @@ def FluidFuels = [
         Methanol,
         Ethanol,
         LiquidNaturalGas,
-        HeavyGasOil,
+        FuelOil,
         BioDiesel,
         Diesel,
         MidgradeDiesel,
