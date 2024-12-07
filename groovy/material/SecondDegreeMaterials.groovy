@@ -728,14 +728,14 @@ public class SecondDegreeMaterials {
                 .build()
                 .setFormula("(Li2CO3)(H2O)", true);
 
-        AcidicArgonHydrogenMixture = new Material.Builder(8626, SuSyUtility.susyId("acidic_argon_hydrogen_mixture"))
+        AcidicArgonHydrogenMixture = new Material.Builder(13117, SuSyUtility.susyId("acidic_argon_hydrogen_mixture"))
                 .gas(new FluidBuilder().attribute(FluidAttributes.ACID))
                 .components(Argon, Hydrogen * 4, HydrogenChloride)
                 .colorAverage()
                 .build()
                 .setFormula("(Ar)(HCl)(H)", true);
 
-        AmmoniacalArgonHydrogenMixture = new Material.Builder(8627, SuSyUtility.susyId("ammoniacal_argon_hydrogen_mixture"))
+        AmmoniacalArgonHydrogenMixture = new Material.Builder(13118, SuSyUtility.susyId("ammoniacal_argon_hydrogen_mixture"))
                 .gas()
                 .components(Argon, Hydrogen * 4, Ammonia)
                 .colorAverage()

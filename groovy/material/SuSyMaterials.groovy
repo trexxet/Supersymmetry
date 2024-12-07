@@ -1166,6 +1166,15 @@ class SuSyMaterials {
         public static Material DriedGraphene;
         public static Material MoistArgon;
         public static Material ArgonHydrogenMixture;
+        public static Material IncoloyTwenty;
+        public static Material IncoloyEightTwoFive;
+        public static Material IncoloyNineZeroEight;
+        public static Material ReneN;
+        public static Material MonelFiveHundred;
+        public static Material StelliteJ;
+        public static Material StelliteSix;
+        public static Material HSLAEightyX;
+        public static Material FoodGradeStainlessSteel;
 
         // HP Materials
 

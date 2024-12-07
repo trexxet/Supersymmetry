@@ -2061,6 +2061,16 @@ susy.material.compounded_polyisoprene=Compounded Polyisoprene
 susy.material.compounded_styrene_isoprene_rubber=Compounded Styrene Isoprene Rubber
 susy.material.compounded_styrene_butadiene_rubber=Compounded Styrene Butadiene Rubber
 
+susy.material.incoloy_twenty=Incoloy 20
+susy.material.incoloy_eight_two_five=Incoloy 825
+susy.material.incoloy_nine_zero_eight=Incoloy 908
+susy.material.rene=Rene N5
+susy.material.monel=Monel 500
+susy.material.stellite_j=Stellite J
+susy.material.stellite_six=Stellite 6
+susy.material.hsla_eighty_x=HSLA 980X
+susy.material.food_grade_stainless_steel=Food-Grade Stainless Steel
+
 # Graphene Chain
 susy.material.moist_argon=Moist Argon
 susy.material.argon_hydrogen_mixture=Argon Hydrogen Mixture
