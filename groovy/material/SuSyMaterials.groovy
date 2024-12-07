@@ -669,6 +669,7 @@ class SuSyMaterials {
         public static Material CFiveFraction;
         public static Material DimerizedCFiveFraction;
         public static Material PyrolysisGasoline;
+        public static Material PyrolysisRaffinate;
         public static Material VisbreakingResidue;
         public static Material CokingResidue;
         public static Material HeatedCokingResidue;

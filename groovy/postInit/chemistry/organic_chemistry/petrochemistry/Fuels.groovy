@@ -606,7 +606,8 @@ def gasolineFeedstocks = [
     'polymerate',
     'isomerate',
     'alkylate',
-    'pyrolysis_gasoline'
+    'pyrolysis_gasoline',
+    'pyrolysis_raffinate'
 ]
 
 for (feedstock in gasolineFeedstocks) {

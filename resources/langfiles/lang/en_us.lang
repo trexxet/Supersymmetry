@@ -2055,6 +2055,7 @@ susy.material.rp_one=RP-1
 susy.material.ammonium_metatungstate=Ammonium Metatungstate (AMT)
 susy.material.ammonium_metatungstate_solution=Ammonium Metatungstate Solution
 susy.material.clarified_slurry_oil=Clarified Slurry Oil
+susy.material.pyrolysis_raffinate=Pyrolysis Raffinate
 
 # Graphene Chain
 susy.material.moist_argon=Moist Argon

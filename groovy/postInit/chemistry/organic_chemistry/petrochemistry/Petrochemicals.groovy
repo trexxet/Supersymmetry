@@ -2,6 +2,10 @@ import globals.Globals
 
 DT = recipemap('distillation_tower')
 SIEVE_DT = recipemap('sieve_distillation')
+CRYSTALLIZER = recipemap('crystallizer')
+EXTRACTOR = recipemap('extractor')
+REFORMER = recipemap('catalytic_reformer_recipes')
+FLUID_HEATER = recipemap('fluid_heater')
 
 // Aromatics
     SIEVE_DT.recipeBuilder()
@@ -72,32 +76,42 @@ SIEVE_DT = recipemap('sieve_distillation')
             .EUt(Globals.voltAmps[1] * 2)
             .buildAndRegister()
 
-// Steam-cracked naphtha C5-fraction separation
+    // Pyrolysis gasoline separation
 
-    // Dimerization of CPD
-    
-    FLUID_HEATER.recipeBuilder()
-        .fluidInputs(fluid('c_five_fraction') * 1000)
-        .fluidOutputs(fluid('dimerized_c_five_fraction') * 875)
-        .duration(60)
-        .EUt(Globals.voltAmps[1])
-        .buildAndRegister()
+        SIEVE_DT.recipeBuilder()
+            .fluidInputs(fluid('pyrolysis_gasoline') * 1000)
+            .fluidInputs(fluid('furfural') * 50)
+            .fluidOutputs(fluid('btex_extract') * 400)
+            .fluidOutputs(fluid('pyrolysis_raffinate') * 400)
+            .fluidOutputs(fluid('c_five_fraction') * 200)
+            .duration(60)
+            .EUt(Globals.voltAmps[1])
+            .buildAndRegister()
 
-    DT.recipeBuilder()
-        .fluidInputs(fluid('dimerized_c_five_fraction') * 875)
-        .fluidOutputs(fluid('dicyclopentadiene') * 125)
-        .fluidOutputs(fluid('pentane') * 375)
-        .fluidOutputs(fluid('isoprene') * 375)
-        .duration(60)
-        .EUt(Globals.voltAmps[1])
-        .buildAndRegister()
+        // Dimerization of CPD
 
-    FLUID_HEATER.recipeBuilder()
-        .fluidInputs(fluid('dicyclopentadiene') * 1000)
-        .fluidOutputs(fluid('cyclopentadiene') * 2000)
-        .duration(60)
-        .EUt(Globals.voltAmps[1])
-        .buildAndRegister()
+        FLUID_HEATER.recipeBuilder()
+            .fluidInputs(fluid('c_five_fraction') * 1000)
+            .fluidOutputs(fluid('dimerized_c_five_fraction') * 870)
+            .duration(60)
+            .EUt(Globals.voltAmps[1])
+            .buildAndRegister()
+
+        DT.recipeBuilder()
+            .fluidInputs(fluid('dimerized_c_five_fraction') * 870)
+            .fluidOutputs(fluid('dicyclopentadiene') * 130)
+            .fluidOutputs(fluid('pentane') * 380)
+            .fluidOutputs(fluid('isoprene') * 360)
+            .duration(60)
+            .EUt(Globals.voltAmps[1])
+            .buildAndRegister()
+
+        FLUID_HEATER.recipeBuilder()
+            .fluidInputs(fluid('dicyclopentadiene') * 1000)
+            .fluidOutputs(fluid('cyclopentadiene') * 2000)
+            .duration(60)
+            .EUt(Globals.voltAmps[1])
+            .buildAndRegister()
 
 // Butenes separation
 DT.recipeBuilder()
