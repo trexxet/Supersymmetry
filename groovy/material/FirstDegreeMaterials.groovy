@@ -3053,7 +3053,7 @@ public class FirstDegreeMaterials {
 
         NickelHydrotalcite = new Material.Builder(8564, SuSyUtility.susyId('nickel_hydrotalcite'))
                 .dust()
-                .components(Nickel * 6, Aluminium * 2, )
+                .components(Nickel * 3, Aluminium, Oxygen * 8, Hydrogen * 8, Chlorine)
                 .color(0x9fb833)
                 .build();
 
