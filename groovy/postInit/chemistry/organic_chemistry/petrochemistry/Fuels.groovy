@@ -98,11 +98,11 @@ def minor_solvents = [
         .EUt(120)
         .buildAndRegister()
 
-    // 2,4-Dimethyl-6-tert-butylphenol
+    // 2,4/5-Dimethyl-6-tert-butylphenol
 
     CSTR.recipeBuilder()
         .fluidInputs(fluid('isobutylene') * 50)
-        .fluidInputs(fluid('xylenol') * 50)
+        .fluidInputs(fluid('two_four_five_xylenol_mixture') * 50)
         .notConsumable(fluid('sulfuric_acid') * 50)
         .fluidOutputs(fluid('dimethyl_tert_butylphenol') * 50)
         .duration(5)

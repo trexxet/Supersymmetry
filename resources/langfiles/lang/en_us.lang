@@ -1367,7 +1367,7 @@ susy.material.dirty_molecular_sieve=Dirty Molecular Sieve
 susy.material.cold_gaseous_nitrogen=Cold Gaseous Nitrogen
 susy.material.tert_butyl_alcohol=tert-Butyl Alcohol
 susy.material.butylated_hydroxytoluene=Butylated Hydroxytoluene
-susy.material.dimethyl_tert_butylphenol=2,4-Dimethyl-6-tert-butylphenol
+susy.material.dimethyl_tert_butylphenol=2,4/5-Dimethyl-6-tert-butylphenol
 susy.material.aluminium_phenolate=Aluminium Phenolate
 susy.material.di_tert_butylphenol=2,6-Di-tert-butylphenol
 susy.material.isooctane=iso-Octane
@@ -2087,6 +2087,12 @@ susy.material.impure_lithium_carbonate=Impure Lithium Carbonate
 susy.material.washed_graphene=Washed Graphene
 susy.material.distilled_graphene=Distilled Graphene
 susy.material.dried_graphene=Dried Graphene
+susy.material.hexamethylenetetramine_solution=Hexamethylenetetramine Solution
+susy.material.ortho_cresylic_acid_mixture=o-Cresylic Acid Mixture
+susy.material.two_six_xylenol=2,6-Xylenol
+susy.material.two_four_five_xylenol_mixture=2,4/5-Xylenol Mixture
+susy.material.cresol_novolacs_oligomer=Cresol Novolacs Oligomer
+susy.material.epoxy_cresol_novolacs=Epoxy Cresol Novolacs (ECN)
 
 # Isotopes
 
@@ -2473,6 +2479,20 @@ metaitem.stencil.lpic.name=LPIC Stencil
 metaitem.tunnelbore.axle.name=Drilling Axle
 metaitem.tunnelbore.engine.name=Heavy Duty Drilling Engine
 metaitem.tunnelbore.drillhead.name=Tunnel Bore Drill Head
+
+metaitem.op_amp.name=Op Amp
+metaitem.heat_sink.name=Heat Sink
+metaitem.protector_chip.name=Protector Chip
+metaitem.zener_diode.name=Zener Diode
+metaitem.fuse.hv.name=High-Voltage Fuse
+metaitem.voltage_regulator.hv.unsealed.name=Unsealed HV Voltage Regulator
+metaitem.voltage_regulator.mv.name=MV Voltage Regulator
+metaitem.voltage_regulator.hv.name=HV Voltage Regulator
+
+metaitem.circuit.basic_integrated.name=Miniaturized Electronic Circuit
+metaitem.circuit.good_integrated.name=Advanced Electronic Circuit
+metaitem.circuit.advanced_integrated.name=High-Voltage Electronic Circuit
+
 
 # Vanilla MC
 tile.hellsand.name=Mineral-Rich Sand

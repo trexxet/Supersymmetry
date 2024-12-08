@@ -123,7 +123,7 @@ def name_removals = [
 	'gregtech:gregtech.machine.fisher.lv',
 	'gregtech:gregtech.machine.fisher.mv',
 	'gregtech:gregtech.machine.fisher.hv',
-	'gregtech:gregtech.machine.fisher.ev',
+	'gregtech:gregtech.machine.fisher.ev'
 ]
 
 for (name in name_removals) {
@@ -1465,4 +1465,11 @@ crafting.addShaped('gregtech:electric_jetpack_advanced2', metaitem('advanced_ele
     [ore('toolWireCutter'), metaitem('electric_jetpack'), ore('toolScrewdriver')],
     [metaitem('power_thruster_advanced'), metaitem('battery.re.hv.cadmium'), metaitem('power_thruster_advanced')],
     [metaitem('wireGtQuadrupleGold'), ore('circuitHv'), metaitem('wireGtQuadrupleGold')]
+])
+
+// MV Alternate Energy Hatch
+crafting.addShaped('gregtech:energy_hatch.mv2', item('gregtech:machine', 1212), [
+    [null, metaitem('voltage_coil.mv'), null],
+    [ore('cableGtSingleCopper'), item('gregtech:machine', 987), ore('cableGtSingleCopper')],
+    [null, metaitem('voltage_regulator.mv'), null]
 ])

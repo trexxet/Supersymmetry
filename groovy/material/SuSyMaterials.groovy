@@ -521,6 +521,9 @@ class SuSyMaterials {
         public static Material TypeYZeoliteSolution;
         public static Material TypeYZeolite;
         public static Material CobaltMatte;
+        public static Material OrthoCresylicAcidMixture;
+        public static Material CresolNovolacsOligomer;
+        public static Material EpoxyCresolNovolacs;
 
         // Petrochem Materials   
 
@@ -1581,6 +1584,7 @@ class SuSyMaterials {
         public static Material IsoOctane;
         public static Material PurifiedIsoprene;
         public static Material Cyclopentadiene;
+        public static Material HexamethylenetetramineSolution;
         public static Material Ferrocene;
         public static Material Polyisoprene;
         public static Material Chloroethane;
@@ -1774,6 +1778,8 @@ class SuSyMaterials {
         public static Material CompoundedPolyisoprene;
         public static Material CompoundedStyreneIsopreneRubber;
         public static Material CompoundedStyreneButadieneRubber;
+        public static Material TwoSixXylenol;
+        public static Material TwoFourFiveXylenolMixture;
 
         // Third Degree Materials
 
