@@ -87,7 +87,7 @@ def residues = [
     'vacuum_oil_residue',
     'visbreaking_residue',
     'deasphalted_oil',
-    'slurry_oil'
+    'clarified_slurry_oil'
 ]
 
 for (residue in residues) {

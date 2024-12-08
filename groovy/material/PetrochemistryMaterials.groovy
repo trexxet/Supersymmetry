@@ -334,7 +334,7 @@ public class PetrochemistryMaterials {
                 .build()
                 .setFormula('(H2)4(CO2)', true);
 
-        ClarifiedSlurryOil = new Material.Builder(20063, SuSyUtility,susyId('clarified_slurry_oil'))
+        ClarifiedSlurryOil = new Material.Builder(20063, SuSyUtility.susyId('clarified_slurry_oil'))
                 .liquid()
                 .color(0x302618)
                 .flags(FLAMMABLE)
