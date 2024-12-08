@@ -1467,9 +1467,63 @@ crafting.addShaped('gregtech:electric_jetpack_advanced2', metaitem('advanced_ele
     [metaitem('wireGtQuadrupleGold'), ore('circuitHv'), metaitem('wireGtQuadrupleGold')]
 ])
 
-// MV Alternate Energy Hatch
+// MV Alternate Energy Handling
 crafting.addShaped('gregtech:energy_hatch.mv2', item('gregtech:machine', 1212), [
     [null, metaitem('voltage_coil.mv'), null],
     [ore('cableGtSingleCopper'), item('gregtech:machine', 987), ore('cableGtSingleCopper')],
     [null, metaitem('voltage_regulator.mv'), null]
 ])
+
+mods.gregtech.assembler.recipeBuilder()
+        .inputs(metaitem('hull.mv'))
+        .inputs(ore('cableGtSingleCopper') * 2)
+        .inputs(metaitem('voltage_regulator.mv'))
+        .inputs(metaitem('voltage_coil.mv'))
+        .outputs(metaitem('energy_hatch.input.mv'))
+        .duration(200)
+        .EUt(30)
+        .buildAndRegister()
+
+crafting.addShaped('gregtech:dynamo_hatch.mv2', item('gregtech:machine', 1227), [
+    [null, metaitem('voltage_coil.mv'), null],
+    [ore('springCopper'), item('gregtech:machine', 987), ore('springCopper')],
+    [null, metaitem('voltage_regulator.mv'), null]
+])
+
+mods.gregtech.assembler.recipeBuilder()
+        .inputs(metaitem('hull.mv'))
+        .inputs(ore('springCopper') * 2)
+        .inputs(metaitem('voltage_regulator.mv'))
+        .inputs(metaitem('voltage_coil.mv'))
+        .outputs(metaitem('energy_hatch.input.mv'))
+        .duration(200)
+        .EUt(30)
+        .buildAndRegister()
+
+crafting.addShaped('gregtech:transformer.mv2', item('gregtech:machine', 1272), [
+    [metaitem('voltage_regulator.mv'), ore('cableGtSingleCopper'), ore('cableGtSingleCopper')],
+    [ore('cableGtSingleGold'), item('gregtech:machine', 987), null],
+    [metaitem('voltage_regulator.mv'), ore('cableGtSingleCopper'), ore('cableGtSingleCopper')]
+])
+
+mods.gregtech.assembler.recipeBuilder()
+        .inputs(metaitem('transformer.mv'))
+        .inputs(metaitem('energy_hatch.output.mv'))
+        .inputs(metaitem('voltage_regulator.mv'))
+        .inputs(metaitem('voltage_coil.mv'))
+        .inputs(ore('cableGtQuadrupleCopper') * 2)
+        .outputs(metaitem('energy_hatch.output_4a.mv'))
+        .duration(200)
+        .EUt(30)
+        .buildAndRegister()
+
+mods.gregtech.assembler.recipeBuilder()
+        .inputs(metaitem('transformer.adjustable.mv'))
+        .inputs(metaitem('energy_hatch.output_4a.mv'))
+        .inputs(metaitem('voltage_regulator.mv') * 2)
+        .inputs(metaitem('voltage_coil.mv'))
+        .inputs(ore('cableGtOctupleCopper') * 2)
+        .outputs(metaitem('energy_hatch.output_16a.mv'))
+        .duration(200)
+        .EUt(30)
+        .buildAndRegister()
