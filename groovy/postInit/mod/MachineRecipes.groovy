@@ -646,11 +646,7 @@ recipemap('assembler').recipeBuilder()
 		.buildAndRegister()
 
 //Extra Quadruple Hatches
-def materialPipe = [null             , "Bronze"  , "Steel",
-					"StainlessSteel" , "Titanium", "Tungstensteel",
-					"NiobiumTitanium", "Iridium" , "Naquadah",
-					"Neutronium"     , null      , null,
-					null             , null];
+def materialPipe = [null,"Bronze","Steel","StainlessSteel","Titanium","Tungstensteel","NiobiumTitanium","Iridium","Naquadah","Neutronium",null,null,null,null];
 
 for (i = 1; i <= 3; i++) {
 
