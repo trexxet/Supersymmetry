@@ -864,9 +864,9 @@ RecyclingHelper.handleRecycling(metaitem('drum.pe'), [metaitem('platePlastic') *
 
 RecyclingHelper.handleRecycling(metaitem('drum.pp'), [metaitem('platePolypropylene') * 6])
 
-RecyclingHelper.handleRecycling(metaitem('drum.pmma'), [metaitem('platePmma') * 6])
-
 RecyclingHelper.handleRecycling(metaitem('drum.ptfe'), [metaitem('platePolytetrafluoroethylene') * 6])
+
+RecyclingHelper.handleRecycling(metaitem('drum.uhmwpe'), [metaitem('plateUltraHighMolecularWeightPolyethylene') * 6])
 
 //ModHandler.addShapelessNBTClearingRecipe("drum_nbt_lead", metaitem('drum.lead'),
 //		metaitem('drum.lead')
@@ -892,12 +892,12 @@ crafting.addShapeless("drum_nbt_pp", metaitem('drum.pp'), [
 		metaitem('drum.pp').noreturn()
 ]);
 
-crafting.addShapeless("drum_nbt_pmma", metaitem('drum.pmma'), [
-		metaitem('drum.pmma').noreturn()
-]);
-
 crafting.addShapeless("drum_nbt_ptfe", metaitem('drum.ptfe'), [
 		metaitem('drum.ptfe').noreturn()
+]);
+
+crafting.addShapeless("drum_nbt_uhmwpe", metaitem('drum.uhmwpe'), [
+		metaitem('drum.uhmwpe').noreturn()
 ]);
 
 mods.gregtech.assembler.recipeBuilder()
@@ -936,16 +936,16 @@ mods.gregtech.extruder.recipeBuilder()
 
 mods.gregtech.extruder.recipeBuilder()
 		.notConsumable(metaitem('shape.extruder.cell'))
-		.inputs(ore('platePmma') * 6)
-		.outputs(metaitem('drum.pmma'))
+		.inputs(ore('platePolytetrafluoroethylene') * 6)
+		.outputs(metaitem('drum.ptfe'))
 		.duration(200)
 		.EUt(16)
 		.buildAndRegister()
 
 mods.gregtech.extruder.recipeBuilder()
 		.notConsumable(metaitem('shape.extruder.cell'))
-		.inputs(ore('platePolytetrafluoroethylene') * 6)
-		.outputs(metaitem('drum.ptfe'))
+		.inputs(ore('plateUltraHighMolecularWeightPolyethylene') * 6)
+		.outputs(metaitem('drum.uhmwpe'))
 		.duration(200)
 		.EUt(16)
 		.buildAndRegister()
