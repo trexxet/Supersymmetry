@@ -44,6 +44,11 @@
         },
         "1:10": {
           "Count:3": 1,
+          "Damage:2": 14509,
+          "id:8": "gregtech:machine"
+        },
+        "2:10": {
+          "Count:3": 1,
           "Damage:2": 14512,
           "id:8": "gregtech:machine"
         }
