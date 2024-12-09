@@ -10,7 +10,7 @@
         "id:8": "forge:bucketfilled",
         "tag:10": {
           "Amount:3": 1000,
-          "FluidName:8": "iron_iii_chloride"
+          "FluidName:8": "iron_iii_chloride_solution"
         }
       },
       "name:8": "susy.quest.db.489.title",
@@ -24,7 +24,7 @@
       "requiredFluids:9": {
         "0:10": {
           "Amount:3": 1000,
-          "FluidName:8": "iron_iii_chloride"
+          "FluidName:8": "iron_iii_chloride_solution"
         }
       },
       "taskID:8": "bq_standard:fluid"
