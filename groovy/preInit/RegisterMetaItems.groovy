@@ -208,7 +208,7 @@ eventManager.listen {
             .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.MV)
             .setModelAmount(8)
             .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
-        customMetaItems.addItem(4010, "battery.ni_cd")
+        customMetaItems.addItem(4010, "battery.ni_cd.mv")
             .addComponents(ElectricStats.createRechargeableBattery(480000, GTValues.MV))
             .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.MV)
             .setModelAmount(8)
