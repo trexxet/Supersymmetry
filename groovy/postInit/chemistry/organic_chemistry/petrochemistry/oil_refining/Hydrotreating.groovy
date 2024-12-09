@@ -51,3 +51,14 @@ BCR.recipeBuilder()
     .duration(10)
     .EUt(120)
     .buildAndRegister()
+
+// Sulfuric overheads
+
+BCR.recipeBuilder()
+    .fluidInputs(fluid('sulfuric_catalytic_overheads') * 4000)
+    .fluidInputs(fluid('ethanolamine_mix') * 1000)
+    .fluidOutputs(fluid('catalytic_overheads') * 4000)
+    .fluidOutputs(fluid('rich_amine') * 1000)
+    .duration(40)
+    .EUt(120)
+    .buildAndRegister()

@@ -178,7 +178,8 @@ class ChangeFlags {
         Lepidolite.setFormula("(K,Rb)AlLi2Si4O10(OH,F)2", true);
         Tetrahedrite.setFormula("Cu12Sb4S13", true);
         IndiumGalliumPhosphide.setFormula("InGaP2", true);
-        NetherAir.setFormula("(N78O21Ar9)24(CO2)2(H2S)(SO2)", true)
+        NetherAir.setFormula("(N78O21Ar9)24(CO2)2(H2S)(SO2)", true);
+        Diatomite.setFormula("(SiO2)8(Fe2O3)(Al2O3)", true);
 
         // Ore Processing
         

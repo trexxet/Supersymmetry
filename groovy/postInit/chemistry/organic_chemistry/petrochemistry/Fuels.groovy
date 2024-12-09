@@ -614,6 +614,7 @@ for (feedstock in gasolineFeedstocks) {
     MIXER.recipeBuilder()
         .fluidInputs(fluid(feedstock) * 1000)
         .fluidOutputs(fluid('gasoline') * 1000)
+        .circuitMeta(10)
         .duration(2)
         .EUt(120)
         .buildAndRegister()
