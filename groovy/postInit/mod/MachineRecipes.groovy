@@ -4,19 +4,47 @@ import globals.RecyclingHelper
 import static gregtech.api.unification.material.Materials.*
 
 def name_removals = [
-		'gregtech:steam_turbine_mv',
-		'gregtech:steam_turbine_hv',
-		'gregtech:gas_turbine_lv',
-		'gregtech:gas_turbine_mv',
-		'gregtech:gas_turbine_hv',
-		'gregtech:diesel_generator_lv',
-		'gregtech:diesel_generator_mv',
-		'gregtech:diesel_generator_hv',
-		'gcym:steam_engine'
+	'gregtech:gregtech.machine.fisher.lv',
+	'gregtech:gregtech.machine.fisher.mv',
+	'gregtech:gregtech.machine.fisher.hv',
+	'gregtech:gregtech.machine.fisher.ev',
 ]
 
 for (name in name_removals) {
 	crafting.remove(name)
+}
+mods.jei.ingredient.yeet(
+	metaitem('steam_turbine.mv'),
+	metaitem('steam_turbine.hv'),
+	metaitem('gas_turbine.lv'),
+	metaitem('gas_turbine.mv'),
+	metaitem('gas_turbine.hv'),
+	metaitem('combustion_generator.lv'),
+	metaitem('combustion_generator.mv'),
+	metaitem('combustion_generator.hv'),
+	metaitem('gcym:steam_engine'),
+	item('gcym:large_multiblock_casing:12'),
+	metaitem('large_turbine.steam'),
+	metaitem('large_turbine.gas'),
+	metaitem('large_turbine.plasma'),
+	metaitem('large_combustion_engine'),
+	metaitem('extreme_combustion_engine'),
+	metaitem('reservoir_hatch'),
+	metaitem('rotor_holder.hv'),
+	metaitem('rotor_holder.ev'),
+	metaitem('rotor_holder.iv'),
+	metaitem('rotor_holder.luv'),
+	metaitem('rotor_holder.zpm'),
+	metaitem('rotor_holder.uv')
+)
+
+//Add recipes for new chemical reactors, and remove old chemical reactor recipes
+
+for (i = 1; i <= 13; i++) {
+	mods.jei.ingredient.yeet(
+		metaitem('chemical_reactor.' + Globals.voltageTiers[i]),
+		metaitem('world_accelerator.' + Globals.voltageTiers[i])
+	)
 }
 
 def circuits = [ore('circuitUlv'), ore('circuitLv'), ore('circuitMv'),
@@ -290,11 +318,7 @@ for (i = 1; i <= 8; i++) {
 			[tieredPlates[i], tieredPlates[i], tieredPlates[i]]
 	])
 }
-
-//Add recipes for new chemical reactors, and remove old chemical reactor recipes
-
 for (i = 1; i <= 8; i++) {
-	crafting.remove('gregtech:gregtech.machine.chemical_reactor.' + Globals.voltageTiers[i])
 
 	RecyclingHelper.addShaped("gregtech:continuous_stirred_tank_reactor." + Globals.voltageTiers[i], metaitem('continuous_stirred_tank_reactor.' + Globals.voltageTiers[i]), [
 			[chemicalReactorParts[i], rotors[i], chemicalReactorParts[i]],
