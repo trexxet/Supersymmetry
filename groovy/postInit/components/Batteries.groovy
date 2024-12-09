@@ -299,6 +299,17 @@ ASSEMBLER.recipeBuilder()
 // NiCd Battery
 
 ASSEMBLER.recipeBuilder()
+        .inputs(metaitem('battery.hull.lv'))
+        .inputs(metaitem('anode.cadmium_hydroxide') * 2)
+        .inputs(metaitem('cathode.nioh2') * 2)
+        .inputs(ore('foilPlastic') * 2)
+        .fluidInputs(fluid('potassium_hydroxide_solution') * 500)
+        .outputs(metaitem('battery.ni_cd.mv'))
+        .duration(200)
+        .EUt(120)
+        .buildAndRegister()
+
+ASSEMBLER.recipeBuilder()
         .inputs(metaitem('battery.hull.mv'))
         .inputs(metaitem('anode.cadmium_hydroxide') * 4)
         .inputs(metaitem('cathode.nioh2') * 4)
