@@ -213,6 +213,12 @@ mods.gregtech.assembler.removeByInput(1920, [metaitem('gemLapotron'), metaitem('
 //CONSUMES IRON BUCKET ONLY BECAUSE THE OUTPUT IS IN AN IRON BUCKET
 crafting.addShapeless('gregtech:salt_water_bucket', item('forge:bucketfilled').withNbt(["FluidName": "salt_water", "Amount": 1000]), [item('minecraft:water_bucket').noreturn(), metaitem('dustSalt'), metaitem('dustSalt')])
 
+RecyclingHelper.replaceShaped('gregtech:large_steel_boiler_rework', metaitem('large_boiler.steel'), [
+		[ore('cableGtSingleCopper'), ore('circuitMv'), ore('cableGtSingleCopper')],
+		[ore('circuitMv'), item('gregtech:boiler_firebox_casing', 1), ore('circuitMv')],
+		[ore('cableGtSingleCopper'), ore('circuitMv'), ore('cableGtSingleCopper')]
+])
+
 RecyclingHelper.replaceShaped('gregtech:bronze_primitive_blast_furnace', metaitem('primitive_blast_furnace.bronze'), [
     [ore('craftingToolHardHammer'), ore('stickBronze'), ore('screwBronze')],
     [ore('plateBronze'), item('gregtech:metal_casing:1'), ore('stickBronze')],
