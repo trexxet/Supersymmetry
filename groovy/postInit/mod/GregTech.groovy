@@ -1123,7 +1123,9 @@ Globals.solders.each { key, val ->
                 .duration(10)
                 .EUt(16)
                 .buildAndRegister();
+}
 
+Globals.solders.each { key, val ->
         mods.gregtech.assembler.recipeBuilder()
                 .inputs(metaitem('circuit_board.plastic'))
                 .inputs(metaitem('plate.integrated_logic_circuit'))

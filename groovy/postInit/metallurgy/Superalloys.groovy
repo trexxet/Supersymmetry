@@ -108,7 +108,7 @@ ABS.recipeBuilder()
     .buildAndRegister()
 
 ABS.recipeBuilder()
-    .circuitMeta(14)
+    .circuitMeta(16)
     .inputs(ore('dustIron') * 39)
     .inputs(ore('dustManganese') * 1)
     .fluidOutputs(fluid('hsla_eighty_x') * 5760)
