@@ -1895,7 +1895,6 @@ susy.material.c_five_fraction=Фракция C5
 susy.material.dimerized_c_five_fraction=Димеризованная фракция C5
 susy.material.dicyclopentadiene=Дициклопентадиен
 susy.material.ethylene_carbonate=Карбонат этилена
-susy.material.lithium_hexafluorophosphate_electrolyte=Электролит гексафторфосфата лития
 susy.material.polyvinyl_alcohol=Поливиниловый спирт
 susy.material.impure_thallium_sulfate_solution=Неочищенный раствор сульфата таллия
 susy.material.thallium_i_chloride=Хлорид таллия I
@@ -1989,6 +1988,7 @@ susy.material.cadmium_nitrate_tetrahydrate=Тетрагидрат нитрата
 susy.material.raw_cadmium_hydroxide=Сырой гидроксид кадмия
 susy.material.cadmium_hydroxide=Гидроксид кадмия
 susy.material.cobalt_two_three_oxide=Оксид кобальта (II, III)
+susy.material.electrolyte_lp_40=Электролит LP40
 
 # Изотопы
 

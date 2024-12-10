@@ -1783,7 +1783,7 @@ class SuSyMaterials {
         public static Material CrotonaldehydeMixture;
         public static Material GaseousMethacrylicAcidMixture;
         public static Material MethacrylicAcidSolution;
-        public static Material LithiumHexafluorophosphateElectrolyte;
+        public static Material ElectrolyteLPForty;
         public static Material AcidicChlorodifluoromethane;
         public static Material TNTSlurry;
         public static Material SaltyNMethylTwoPyrrolidone;
@@ -1796,6 +1796,7 @@ class SuSyMaterials {
         public static Material OxalicAcidSolution;
         public static Material GalliumSulfateSolution;
         public static Material FormicAcidWaterAzeotrope;
+
         // Thermodynamics Materials
 
         public static Material EarthlikeAir;

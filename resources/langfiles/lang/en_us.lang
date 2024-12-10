@@ -1903,7 +1903,6 @@ susy.material.c_five_fraction=C5 Fraction
 susy.material.dimerized_c_five_fraction=Dimerized C5 Fraction
 susy.material.dicyclopentadiene=Dicyclopentadiene
 susy.material.ethylene_carbonate=Ethylene Carbonate
-susy.material.lithium_hexafluorophosphate_electrolyte=Lithium Hexafluorophosphate Electrolyte
 susy.material.polyvinyl_alcohol=Polyvinyl Alcohol
 susy.material.impure_thallium_sulfate_solution=Impure Thallium Sulfate Solution
 susy.material.thallium_i_chloride=Thallium I Chloride
@@ -2001,6 +2000,7 @@ susy.material.cadmium_nitrate_tetrahydrate=Cadmium Nitrate Tetrahydrate
 susy.material.raw_cadmium_hydroxide=Raw Cadmium Hydroxide
 susy.material.cadmium_hydroxide=Cadmium Hydroxide
 susy.material.cobalt_two_three_oxide=Cobalt (II, III) Oxide
+susy.material.electrolyte_lp_40=LP40 Electrolyte
 
 susy.material.incoloy_twenty=Incoloy 20
 susy.material.incoloy_eight_two_five=Incoloy 825

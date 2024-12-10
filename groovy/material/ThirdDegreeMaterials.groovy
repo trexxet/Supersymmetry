@@ -67,9 +67,9 @@ public class ThirdDegreeMaterials {
                 .colorAverage()
                 .build();
 
-        LithiumHexafluorophosphateElectrolyte = new Material.Builder(24008, SuSyUtility.susyId("lithium_hexafluorophosphate_electrolyte"))
+        ElectrolyteLPForty = new Material.Builder(24008, SuSyUtility.susyId('electrolyte_lp_40'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
-                .components(LithiumHexafluorophosphate * 1, EthyleneCarbonate * 1)
+                .components(LithiumHexafluorophosphate * 2, EthyleneCarbonate * 11, DimethylCarbonate * 11)
                 .colorAverage()
                 .build();
 
