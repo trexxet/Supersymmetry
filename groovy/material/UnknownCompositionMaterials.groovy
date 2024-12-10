@@ -846,11 +846,7 @@ public class UnknownCompositionMaterials {
                 .iconSet(DULL)
                 .build()
 
-        HydrocrackingCatalyst = new Material.Builder(4161, SuSyUtility.susyId('hydrocracking_catalyst'))
-                .dust()
-                .color(0x5884db)
-                .flags(GENERATE_CATALYST_BED)
-                .build()
+        // FREE ID: 4161
 
         ZincLeach = new Material.Builder(4162, SuSyUtility.susyId('zinc_leach'))
                 .liquid()
