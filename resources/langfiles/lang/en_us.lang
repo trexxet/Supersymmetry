@@ -2142,6 +2142,7 @@ metaitem.cathode.licoo2.name=Lithium Cobalt Oxide Cathode
 metaitem.cathode.nmc532.name=NMC532 Cathode
 metaitem.battery.liion_lco.name=Li-ion Battery (LCO)
 metaitem.battery.liion_nmc.hv.name=Li-ion HV Battery (NMC)
+metaitem.battery.liion_nmc.ev.name=Li-ion EV Battery (NMC)
 
 metaitem.battery.primitivehull.lv.name=Primitive LV Battery Hull
 metaitem.battery.primitivehull.mv.name=Primitive MV Battery Hull

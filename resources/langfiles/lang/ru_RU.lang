@@ -2104,6 +2104,7 @@ metaitem.cathode.licoo2.name=Литий-кобальт-оксидный като
 metaitem.cathode.nmc532.name=Катод NMC532
 metaitem.battery.liion_lco.name=Li-ion аккумулятор (LCO)
 metaitem.battery.liion_nmc.hv.name=Li-ion HV аккумулятор (NMC)
+metaitem.battery.liion_nmc.ev.name=Li-ion EV аккумулятор (NMC)
 
 metaitem.battery.primitivehull.lv.name=Примитивный корпус LV-батареи
 metaitem.battery.primitivehull.mv.name=Примитивный корпус MV-батареи

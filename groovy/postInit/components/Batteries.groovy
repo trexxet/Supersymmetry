@@ -473,6 +473,32 @@ ASSEMBLER.recipeBuilder()
         .EUt(480)
         .buildAndRegister()
 
+// Li-ion NMC Battery
+
+ASSEMBLER.recipeBuilder()
+        .inputs(metaitem('battery.hull.hv'))
+        .inputs(metaitem('anode.graphite') * 4)
+        .inputs(metaitem('cathode.nmc532') * 4)
+        .inputs(metaitem('separator.polyolefin') * 4)
+        .inputs(metaitem('plate.low_power_integrated_circuit'))
+        .fluidInputs(fluid('electrolyte_lp_40') * 2000)
+        .outputs(metaitem('battery.liion_nmc.hv'))
+        .duration(400)
+        .EUt(480)
+        .buildAndRegister()
+
+ASSEMBLER.recipeBuilder()
+        .inputs(metaitem('battery.hull.ev'))
+        .inputs(metaitem('anode.graphite') * 8)
+        .inputs(metaitem('cathode.nmc532') * 8)
+        .inputs(metaitem('separator.polyolefin') * 8)
+        .inputs(metaitem('plate.low_power_integrated_circuit'))
+        .fluidInputs(fluid('electrolyte_lp_40') * 4000)
+        .outputs(metaitem('battery.liion_nmc.ev'))
+        .duration(600)
+        .EUt(480)
+        .buildAndRegister()
+
 /*
  * Hulls
  */
