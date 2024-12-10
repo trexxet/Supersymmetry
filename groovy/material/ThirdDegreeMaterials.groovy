@@ -625,5 +625,12 @@ public class ThirdDegreeMaterials {
                 .components(FormicAcid * 6, Water * 4)
                 .color(0xbf3983)
                 .build();
+        
+        NMCSulfateSlurry = new Material.Builder(24100, SuSyUtility.susyId('nmc_sulfate_slurry'))
+                .liquid()
+                .components(AnhydrousNickelSulfate * 5, ManganeseIISulfate * 3, AnhydrousCobaltSulfate * 2, Water * 10)
+                .colorAverage()
+                .build()
+                .setFormula("((Ni0.5Mn0.3Co0.2)(SO4))(H2O)", true);
     }
 }

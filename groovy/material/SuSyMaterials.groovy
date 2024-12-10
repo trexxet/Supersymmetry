@@ -1101,6 +1101,7 @@ class SuSyMaterials {
         public static Material AnhydrousCobaltSulfate;
         public static Material CobaltSulfateHeptahydrate;
         public static Material CobaltSulfateHeptahydrateSolution;
+        public static Material LithiumNitrate;
 
         // HP Materials
 
@@ -1294,6 +1295,9 @@ class SuSyMaterials {
         public static Material DioxideCoatedLead;
         public static Material ManganeseDioxideCathode;
         public static Material CalciumZincateSuspension;
+        public static Material NMCHydroxide;
+        public static Material RawNMCHydroxide;
+        public static Material NMCFiveThreeTwo;
 
         // Organic Chemistry Materials
 
@@ -1801,6 +1805,7 @@ class SuSyMaterials {
         public static Material OxalicAcidSolution;
         public static Material GalliumSulfateSolution;
         public static Material FormicAcidWaterAzeotrope;
+        public static Material NMCSulfateSlurry;
 
         // Thermodynamics Materials
 

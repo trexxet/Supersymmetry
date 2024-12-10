@@ -3605,5 +3605,11 @@ public class FirstDegreeMaterials {
                 .color(0xdc3e1a)
                 .build()
                 .setFormula("((CoSO4)(H2O)7)(H2O)", true)
+
+        LithiumNitrate = new Material.Builder(8648, SuSyUtility.susyId('lithium_nitrate'))
+                .dust()
+                .components(Lithium * 1, Nitrogen * 1, Oxygen * 3)
+                .color(0xffffff)
+                .build()
     }
 }

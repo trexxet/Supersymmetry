@@ -747,5 +747,26 @@ public class SecondDegreeMaterials {
                 .color(0xfffefa)
                 .build()
                 .setFormula("Ca[Zn(OH)3]2(H2O)2", true);
+
+        NMCHydroxide = new Material.Builder(13123, SuSyUtility.susyId('nmc_hydroxide'))
+                .dust()
+                .components(Nickel * 5, Manganese * 3, Cobalt * 2, Oxygen * 20, Hydrogen * 20)
+                .colorAverage().iconSet(SHINY)
+                .build()
+                .setFormula("(Ni0.5Mn0.3Co0.2)(OH)2", true);
+
+        RawNMCHydroxide = new Material.Builder(13124, SuSyUtility.susyId('raw_nmc_hydroxide'))
+                .dust()
+                .components(Nickel * 5, Manganese * 3, Cobalt * 2, Oxygen * 20, Hydrogen * 20)
+                .colorAverage()
+                .build()
+                .setFormula("(?)((Ni0.5Mn0.3Co0.2)(OH)2)", true);
+
+        NMCFiveThreeTwo = new Material.Builder(13125, SuSyUtility.susyId('nmc_five_three_two'))
+                .dust()
+                .components(Lithium * 10, Nickel * 5, Manganese * 3, Cobalt * 2, Oxygen * 20)
+                .colorAverage()
+                .build()
+                .setFormula("LiNi0.5Mn0.3Co0.2O2", true);
     }
 }

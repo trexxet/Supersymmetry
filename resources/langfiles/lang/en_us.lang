@@ -2006,6 +2006,11 @@ susy.material.electrolyte_lp_40=LP40 Electrolyte
 susy.material.anhydrous_cobalt_sulfate=Anhydrous Cobalt Sulfate
 susy.material.cobalt_sulfate_heptahydrate=Cobalt Sulfate Heptahydrate
 susy.material.cobalt_sulfate_heptahydrate_solution=Cobalt Sulfate Heptahydrate Solution
+susy.material.lithium_nitrate=Lithium Nitrate
+susy.material.nmc_sulfate_slurry=NMC Sulfate Slurry
+susy.material.nmc_hydroxide=NMC Hydroxide
+susy.material.raw_nmc_hydroxide=Raw NMC Hydroxide
+susy.material.nmc_five_three_two=NMC532
 
 susy.material.incoloy_twenty=Incoloy 20
 susy.material.incoloy_eight_two_five=Incoloy 825

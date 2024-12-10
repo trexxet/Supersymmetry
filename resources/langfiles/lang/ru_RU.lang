@@ -1994,6 +1994,11 @@ susy.material.electrolyte_lp_40=Электролит LP40
 susy.material.anhydrous_cobalt_sulfate=Безводный сульфат кобальта
 susy.material.cobalt_sulfate_heptahydrate=Гептагидрат сульфата кобальта
 susy.material.cobalt_sulfate_heptahydrate_solution=Раствор гептагидрата сульфата кобальта
+susy.material.lithium_nitrate=Нитрат лития
+susy.material.nmc_sulfate_slurry=Раствор сульфатов NMC
+susy.material.nmc_hydroxide=Гидроксид NMC
+susy.material.raw_nmc_hydroxide=Сырой гидроксид NMC
+susy.material.nmc_five_three_two=NMC532
 
 # Изотопы
 
