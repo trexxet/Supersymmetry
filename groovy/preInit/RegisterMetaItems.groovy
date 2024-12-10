@@ -241,8 +241,14 @@ eventManager.listen {
         customMetaItems.addItem(4016, "separator.polyolefin");
         customMetaItems.addItem(4017, "anode.graphite");
         customMetaItems.addItem(4018, "cathode.licoo2");
-        customMetaItems.addItem(4019, "battery.lco")
-            .addComponents(ElectricStats.createRechargeableBattery(1440000, GTValues.HV))
+        customMetaItems.addItem(4019, "cathode.nmc532");
+        customMetaItems.addItem(4020, "battery.liion_lco")
+            .addComponents(ElectricStats.createRechargeableBattery(1200000, GTValues.HV))
+            .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.HV)
+            .setModelAmount(8)
+            .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        customMetaItems.addItem(4021, "battery.liion_nmc.hv")
+            .addComponents(ElectricStats.createRechargeableBattery(1800000, GTValues.HV))
             .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.HV)
             .setModelAmount(8)
             .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);

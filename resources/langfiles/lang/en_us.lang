@@ -2129,7 +2129,9 @@ metaitem.battery.ni_zn.hv.name=NiZn HV Battery
 metaitem.separator.polyolefin.name=Polyolefin Separator
 metaitem.anode.graphite.name=Graphite Anode
 metaitem.cathode.licoo2.name=Lithium Cobalt Oxide Cathode
-metaitem.battery.lco.name=Li-ion Battery (LCO)
+metaitem.cathode.nmc532.name=NMC532 Cathode
+metaitem.battery.liion_lco.name=Li-ion Battery (LCO)
+metaitem.battery.liion_nmc.hv.name=Li-ion HV Battery (NMC)
 
 metaitem.battery.primitivehull.lv.name=Primitive LV Battery Hull
 metaitem.battery.primitivehull.mv.name=Primitive MV Battery Hull
