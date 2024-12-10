@@ -1476,6 +1476,8 @@ susy.material.copper_concentrate=Медный концентрат
 susy.material.octyl_hydroxamic_acid=Октилгидроксамовая кислота
 susy.material.potassium_octyl_hydroxamate=Октилгидроксамат калия
 susy.material.diluted_copper_sulfate_solution=Разбавленный раствор медного купороса
+susy.material.anhydrous_nickel_sulfate=Безводный сульфат никеля
+susy.material.nickel_sulfate_hexahydrate=Гексагидрат сульфата никеля
 susy.material.nickel_sulfate_solution=Раствор сульфата никеля
 susy.material.palladium_containing_solution=Раствор, содержащий палладий
 susy.material.aluminium_nitride=Нитрид алюминия
@@ -1983,12 +1985,15 @@ susy.material.manganese_dioxide_cathode=Диоксид-марганцевый к
 susy.material.calcium_zincate=Цинкат кальция
 susy.material.calcium_zincate_suspension=Суспензия цинката кальция
 susy.material.cadmium_oxide=Оксид кадмия
-susy.material.anhydrous_cadmium_nitrate=Ангидрид нитрата кадмия
+susy.material.anhydrous_cadmium_nitrate=Безводный нитрат кадмия
 susy.material.cadmium_nitrate_tetrahydrate=Тетрагидрат нитрата кадмия
 susy.material.raw_cadmium_hydroxide=Сырой гидроксид кадмия
 susy.material.cadmium_hydroxide=Гидроксид кадмия
 susy.material.cobalt_two_three_oxide=Оксид кобальта (II, III)
 susy.material.electrolyte_lp_40=Электролит LP40
+susy.material.anhydrous_cobalt_sulfate=Безводный сульфат кобальта
+susy.material.cobalt_sulfate_heptahydrate=Гептагидрат сульфата кобальта
+susy.material.cobalt_sulfate_heptahydrate_solution=Раствор гептагидрата сульфата кобальта
 
 # Изотопы
 

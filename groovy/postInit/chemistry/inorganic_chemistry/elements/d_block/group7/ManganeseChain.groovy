@@ -11,6 +11,8 @@ import static globals.CarbonGlobals.*
 EBF = recipemap('electric_blast_furnace')
 ROASTER = recipemap('roaster')
 BATCH_REACTOR = recipemap('batch_reactor')
+MIXER = recipemap('mixer')
+DISTILLERY = recipemap('distillery')
 REACTION_FURNACE = recipemap('reaction_furnace')
 ELECTROLYTIC_CELL = recipemap('electrolytic_cell')
 
@@ -131,6 +133,33 @@ ELECTROLYTIC_CELL.recipeBuilder()
     .EUt(Globals.voltAmps[2])
     .buildAndRegister()
 
+// MnSO4
+
+MIXER.recipeBuilder()
+    .inputs(ore('dustManganeseIiSulfate') * 6)
+    .fluidInputs(fluid('water') * 1000)
+    .fluidOutputs(fluid('manganese_ii_sulfate_solution') * 1000)
+    .duration(160)
+    .EUt(Globals.voltAmps[1])
+    .buildAndRegister()
+
+DISTILLERY.recipeBuilder()
+    .fluidInputs(fluid('manganese_ii_sulfate_solution') * 1000)
+    .fluidOutputs(fluid('water') * 1000)
+    .outputs(metaitem('dustManganeseIiSulfate') * 6)
+    .duration(160)
+    .EUt(30)
+    .buildAndRegister()
+
+BR.recipeBuilder()
+    .inputs(ore('dustAnyPurityManganese'))
+    .fluidInputs(fluid('sulfuric_acid') * 1000)
+    .outputs(metaitem('dustManganeseIiSulfate') * 6)
+    .fluidOutputs(fluid('hydrogen') * 1000)
+    .duration(100)
+    .EUt(30)
+    .buildAndRegister()
+
 // MnCl2
 
 BR.recipeBuilder()
@@ -173,6 +202,8 @@ DISTILLERY.recipeBuilder()
     .duration(20)
     .EUt(30)
     .buildAndRegister()
+
+// TODO: review MnO2 - it's not a pure chemical!
 
 // MnO2
 

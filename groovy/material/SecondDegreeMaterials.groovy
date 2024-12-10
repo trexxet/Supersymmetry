@@ -743,7 +743,7 @@ public class SecondDegreeMaterials {
 
         CalciumZincateSuspension = new Material.Builder(13122, SuSyUtility.susyId('calcium_zincate_suspension'))
                 .liquid()
-                .components(Calcium, Zinc * 2, Oxygen * 6, Hydrogen * 6, Water * 2)
+                .components(Calcium * 1, Zinc * 2, Oxygen * 6, Hydrogen * 6, Water * 2)
                 .color(0xfffefa)
                 .build()
                 .setFormula("Ca[Zn(OH)3]2(H2O)2", true);

@@ -3572,5 +3572,38 @@ public class FirstDegreeMaterials {
                 .components(Cobalt * 3, Oxygen * 4)
                 .color(0x242424)
                 .build()
+
+        AnhydrousNickelSulfate = new Material.Builder(8643, SuSyUtility.susyId('anhydrous_nickel_sulfate'))
+                .dust()
+                .components(Nickel * 1, Sulfur * 1, Oxygen * 4)
+                .color(0xcad3a7)
+                .build()
+
+        NickelSulfateHexahydrate = new Material.Builder(8644, SuSyUtility.susyId('nickel_sulfate_hexahydrate'))
+                .dust()
+                .components(Nickel * 1, Sulfur * 1, Oxygen * 4, Water * 6)
+                .color(0x1f9aa1).iconSet(SHINY)
+                .build()
+                .setFormula("(NiSO4)(H2O)6", true);
+
+        AnhydrousCobaltSulfate = new Material.Builder(8645, SuSyUtility.susyId('anhydrous_cobalt_sulfate'))
+                .dust()
+                .components(Cobalt * 1, Sulfur * 1, Oxygen * 4)
+                .color(0xbb7694)
+                .build()
+
+        CobaltSulfateHeptahydrate = new Material.Builder(8646, SuSyUtility.susyId('cobalt_sulfate_heptahydrate'))
+                .dust()
+                .components(Cobalt * 1, Sulfur * 1, Oxygen * 4, Water * 7)
+                .color(0xdc3e1a).iconSet(SHINY)
+                .build()
+                .setFormula("(CoSO4)(H2O)7", true)
+
+        CobaltSulfateHeptahydrateSolution = new Material.Builder(8647, SuSyUtility.susyId('cobalt_sulfate_heptahydrate_solution'))
+                .liquid()
+                .components(Cobalt * 1, Sulfur * 1, Oxygen * 4, Water * 8)
+                .color(0xdc3e1a)
+                .build()
+                .setFormula("((CoSO4)(H2O)7)(H2O)", true)
     }
 }
