@@ -1988,6 +1988,7 @@ susy.material.anhydrous_cadmium_nitrate=Ангидрид нитрата кадм
 susy.material.cadmium_nitrate_tetrahydrate=Тетрагидрат нитрата кадмия
 susy.material.raw_cadmium_hydroxide=Сырой гидроксид кадмия
 susy.material.cadmium_hydroxide=Гидроксид кадмия
+susy.material.cobalt_two_three_oxide=Оксид кобальта (II, III)
 
 # Изотопы
 
@@ -2088,6 +2089,9 @@ metaitem.battery.ni_mh.hv.name=NiMH HV аккумулятор
 metaitem.battery.ni_zn.mv.name=NiZn MV аккумулятор
 metaitem.battery.ni_zn.hv.name=NiZn HV аккумулятор
 metaitem.separator.polyolefin.name=Полиолефиновый разделитель
+metaitem.anode.graphite.name=Графитовый анод
+metaitem.cathode.licoo2.name=Литий-кобальт-оксидный катод
+metaitem.battery.lco.name=Li-ion аккумулятор (LCO)
 
 metaitem.battery.primitivehull.lv.name=Примитивный корпус LV-батареи
 metaitem.battery.primitivehull.mv.name=Примитивный корпус MV-батареи
@@ -2436,6 +2440,7 @@ item.susy.material.ultra_high_molecular_weight_polyethylene.plate=Тканый �
 item.susy.material.kevlar.plate=Woven Kevlar
 item.gregtech.material.polytetrafluoroethylene.fiber=Расширенное политетрафторэтиленовое волокно
 item.gregtech.material.polytetrafluoroethylene.thread=Расширенная политетрафторэтиленовая нить
+gregtech.material.cobalt_oxide=Оксид кобальта II
 
 # Resin Logs
 gregtech.block_group_members.extractable_logs_1.name=Бревно из березы, джунглей, дуба и ели

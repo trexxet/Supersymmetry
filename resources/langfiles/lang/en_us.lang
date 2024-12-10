@@ -2000,6 +2000,7 @@ susy.material.anhydrous_cadmium_nitrate=Anhydrous Cadmium Nitrate
 susy.material.cadmium_nitrate_tetrahydrate=Cadmium Nitrate Tetrahydrate
 susy.material.raw_cadmium_hydroxide=Raw Cadmium Hydroxide
 susy.material.cadmium_hydroxide=Cadmium Hydroxide
+susy.material.cobalt_two_three_oxide=Cobalt (II, III) Oxide
 
 susy.material.incoloy_twenty=Incoloy 20
 susy.material.incoloy_eight_two_five=Incoloy 825
@@ -2125,7 +2126,10 @@ metaitem.battery.ni_mh.mv.name=NiMH MV Battery
 metaitem.battery.ni_mh.hv.name=NiMH HV Battery
 metaitem.battery.ni_zn.mv.name=NiZn MV Battery
 metaitem.battery.ni_zn.hv.name=NiZn HV Battery
-metaitem.separator.polyolefin.name=Polyolefin separator
+metaitem.separator.polyolefin.name=Polyolefin Separator
+metaitem.anode.graphite.name=Graphite Anode
+metaitem.cathode.licoo2.name=Lithium Cobalt Oxide Cathode
+metaitem.battery.lco.name=Li-ion Battery (LCO)
 
 metaitem.battery.primitivehull.lv.name=Primitive LV Battery Hull
 metaitem.battery.primitivehull.mv.name=Primitive MV Battery Hull
@@ -2477,6 +2481,7 @@ item.susy.material.ultra_high_molecular_weight_polyethylene.plate=Woven Ultra Hi
 item.susy.material.kevlar.plate=Woven Kevlar
 item.gregtech.material.polytetrafluoroethylene.fiber=Expanded Polytetrafluoroethylene Fiber
 item.gregtech.material.polytetrafluoroethylene.thread=Expanded Polytetrafluoroethylene Thread
+gregtech.material.cobalt_oxide=Cobalt II Oxide
 
 # Resin Logs
 gregtech.block_group_members.extractable_logs_1.name=Birch, Jungle, Oak, and Spruce Log

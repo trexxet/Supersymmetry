@@ -1095,6 +1095,7 @@ class SuSyMaterials {
         public static Material CadmiumNitrateTetrahydrate;
         public static Material RawCadmiumHydroxide;
         public static Material CadmiumHydroxide;
+        public static Material CobaltTwoThreeOxide;
 
         // HP Materials
 

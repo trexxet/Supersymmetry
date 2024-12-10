@@ -251,3 +251,15 @@ CRYSTALLIZER.recipeBuilder()
         .duration(120)
         .EUt(200)
         .buildAndRegister()
+
+// LiF
+
+ROASTER.recipeBuilder()
+        .inputs(ore('dustLithiumCarbonate') * 6)
+        .fluidInputs(fluid('hydrofluoric_acid') * 2000)
+        .outputs(metaitem('dustLithiumFluoride') * 4)
+        .fluidOutputs(fluid('carbon_dioxide') * 1000)
+        .fluidOutputs(fluid('dense_steam') * 1000)
+        .duration(140)
+        .EUt(30)
+        .buildAndRegister()

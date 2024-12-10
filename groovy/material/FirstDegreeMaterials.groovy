@@ -1296,7 +1296,7 @@ public class FirstDegreeMaterials {
         LithiumCobaltOxide = new Material.Builder(8287, SuSyUtility.susyId('lithium_cobalt_oxide'))
                 .dust()
                 .components(Lithium, Cobalt, Oxygen * 2)
-                .colorAverage()
+                .color(0x2d3d29)
                 .build();
 
         SodiumCathodeAlloy = new Material.Builder(8288, SuSyUtility.susyId('sodium_cathode_alloy'))
@@ -3566,5 +3566,11 @@ public class FirstDegreeMaterials {
                 .color(0xededeb).iconSet(SHINY)
                 .build()
                 .setFormula("Cd(OH)2", true)
+
+        CobaltTwoThreeOxide = new Material.Builder(8642, SuSyUtility.susyId('cobalt_two_three_oxide'))
+                .dust()
+                .components(Cobalt * 3, Oxygen * 4)
+                .color(0x242424)
+                .build()
     }
 }

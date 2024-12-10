@@ -23,7 +23,7 @@ CRYSTALLIZER = recipemap('crystallizer')
 EXTRUDER = recipemap('extruder')
 ELECTROLYTIC_CELL = recipemap('electrolytic_cell')
 
-MIXER_RECIPES.recipeBuilder()
+MIXER.recipeBuilder()
         .fluidInputs(Materials.SulfurTrioxide.getFluid(1000))
         .fluidInputs(Materials.Water.getFluid(1000))
         .fluidOutputs(Materials.SulfuricAcid.getFluid(1000))
@@ -211,6 +211,36 @@ BENDER.recipeBuilder()
         .EUt(24)
         .buildAndRegister()
 
+// LiCoO2 cathode line
+
+ROASTER.recipeBuilder()
+        .inputs(ore('dustLithiumCarbonate') * 18)
+        .inputs(ore('dustCobaltTwoThreeOxide') * 14)
+        .fluidInputs(fluid('oxygen') * 500)
+        .outputs(metaitem('dustLithiumCobaltOxide') * 24)
+        .fluidOutputs(fluid('carbon_dioxide') * 3000)
+        .duration(240)
+        .EUt(120)
+        .buildAndRegister()
+
+BENDER.recipeBuilder()
+        .inputs(ore('foilAluminium'))
+        .inputs(ore('dustLithiumCobaltOxide'))
+        .outputs(metaitem('cathode.licoo2'))
+        .duration(200)
+        .EUt(24)
+        .buildAndRegister()
+
+// Graphite anode line
+
+BENDER.recipeBuilder()
+        .inputs(ore('foilCopper'))
+        .inputs(ore('dustGraphite'))
+        .outputs(metaitem('anode.graphite'))
+        .duration(200)
+        .EUt(24)
+        .buildAndRegister()
+
 // Calcium Zincate anode line
 
 MIXER.recipeBuilder()
@@ -235,6 +265,26 @@ EXTRUDER.recipeBuilder()
         .outputs(metaitem('anode.calcium_zincate') * 4)
         .duration(100)
         .EUt(120)
+        .buildAndRegister()
+
+// LiPF6 electrolyte
+
+BR.recipeBuilder()
+        .inputs(ore('dustLithiumFluoride') * 2)
+        .inputs(ore('dustPhosphorusPentachloride') * 6)
+        .fluidInputs(fluid('hydrofluoric_acid') * 5000)
+        .fluidOutputs(fluid('hydrochloric_acid') * 5000)
+        .outputs(metaitem('dustLithiumHexafluorophosphate') * 8)
+        .duration(140)
+        .EUt(30)
+        .buildAndRegister()
+
+MIXER.recipeBuilder()
+        .inputs(ore('dustLithiumHexafluorophosphate') * 8)
+        .fluidInputs(fluid('ethylene_carbonate') * 1000)
+        .fluidOutputs(fluid('lithium_hexafluorophosphate_electrolyte') * 1000)
+        .duration(400)
+        .EUt(30)
         .buildAndRegister()
 
 // Polyolefin separator
@@ -304,7 +354,7 @@ ASSEMBLER.recipeBuilder()
         .inputs(metaitem('cathode.nioh2') * 2)
         .inputs(ore('foilPlastic') * 2)
         .fluidInputs(fluid('potassium_hydroxide_solution') * 500)
-        .outputs(metaitem('battery.ni_cd.mv'))
+        .outputs(metaitem('battery.ni_cd.lv'))
         .duration(200)
         .EUt(120)
         .buildAndRegister()
@@ -366,6 +416,20 @@ ASSEMBLER.recipeBuilder()
         .inputs(ore('foilPlastic') * 8)
         .fluidInputs(fluid('potassium_hydroxide_solution') * 2000)
         .outputs(GroovyUtils.makeCharged(metaitem('battery.ni_zn.hv')))
+        .duration(400)
+        .EUt(480)
+        .buildAndRegister()
+
+// Li-ion LCO Battery
+
+ASSEMBLER.recipeBuilder()
+        .inputs(metaitem('battery.hull.hv'))
+        .inputs(metaitem('anode.graphite') * 4)
+        .inputs(metaitem('cathode.licoo2') * 4)
+        .inputs(metaitem('separator.polyolefin') * 4)
+        .inputs(metaitem('plate.ultra_low_power_integrated_circuit'))
+        .fluidInputs(fluid('lithium_hexafluorophosphate_electrolyte') * 1000)
+        .outputs(metaitem('battery.lco'))
         .duration(400)
         .EUt(480)
         .buildAndRegister()
