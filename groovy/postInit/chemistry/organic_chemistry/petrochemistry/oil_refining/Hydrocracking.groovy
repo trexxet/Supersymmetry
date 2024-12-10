@@ -7,6 +7,7 @@ DT = recipemap('sieve_distillation')
 crackables.each { _, crackable ->
     if (crackable.hydro_crackable) {
         CRACKER.recipeBuilder()
+            .notConsumable(metaitem('hydrocracking_catalyst'))
             .fluidInputs(crackable.get(4000))
             .fluidInputs(fluid('hot_hp_hydrogen') * (4 * crackable.hydrogen_consumed))
             .fluidOutputs(crackable.getHydro(4000))

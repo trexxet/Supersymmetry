@@ -285,7 +285,6 @@ class SuSyMaterials {
         public static Material CrudeZinc;
         public static Material CadmiumRichZinc;
         public static Material AmorphousSilicaAlumina;
-        public static Material HydrocrackingCatalyst;
         public static Material ImpureSmithsoniteSlurry;
         public static Material SmithsoniteSlurry;
         public static Material ZincLeach;
