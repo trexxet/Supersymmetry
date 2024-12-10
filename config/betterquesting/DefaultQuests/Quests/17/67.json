@@ -3,6 +3,7 @@
     "betterquesting:10": {
       "desc:8": "susy.quest.db.67.desc",
       "icon:10": {
+        "Count:3": 1,
         "id:8": "biomesoplenty:earth"
       },
       "name:8": "susy.quest.db.67.title"
@@ -11,6 +12,7 @@
   "questID:3": 67,
   "tasks:9": {
     "0:10": {
+      "index:3": 0,
       "name:8": "Earth",
       "taskID:8": "bq_standard:location"
     }

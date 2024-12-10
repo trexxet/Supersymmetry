@@ -6,6 +6,7 @@
     "betterquesting:10": {
       "desc:8": "susy.quest.db.69.desc",
       "icon:10": {
+        "Count:3": 1,
         "id:8": "minecraft:netherrack"
       },
       "name:8": "susy.quest.db.69.title"
@@ -15,6 +16,7 @@
   "tasks:9": {
     "0:10": {
       "dimension:3": -1,
+      "index:3": 0,
       "name:8": "The Nether",
       "taskID:8": "bq_standard:location"
     }

@@ -9,6 +9,7 @@
       "desc:8": "susy.quest.db.878.desc",
       "frame:8": "GATE",
       "icon:10": {
+        "Count:3": 1,
         "Damage:2": 427,
         "id:8": "gregtech:wire_single"
       },

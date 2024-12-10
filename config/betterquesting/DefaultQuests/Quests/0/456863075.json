@@ -7,6 +7,7 @@
       "desc:8": "susy.quest.db.456863075.desc",
       "frame:8": "GATE",
       "icon:10": {
+        "Count:3": 1,
         "id:8": "pyrotech:campfire"
       },
       "name:8": "susy.quest.db.456863075.title"
@@ -15,6 +16,7 @@
   "questID:3": 456863075,
   "tasks:9": {
     "0:10": {
+      "index:3": 0,
       "requiredItems:9": {
         "0:10": {
           "Count:3": 1,

@@ -6,6 +6,7 @@
     "betterquesting:10": {
       "desc:8": "susy.quest.db.536.desc",
       "icon:10": {
+        "Count:3": 1,
         "OreDict:8": "drawerBasic",
         "id:8": "storagedrawers:basicdrawers",
         "tag:10": {
@@ -18,6 +19,7 @@
   "questID:3": 536,
   "tasks:9": {
     "0:10": {
+      "index:3": 0,
       "requiredItems:9": {
         "0:10": {
           "Count:3": 1,

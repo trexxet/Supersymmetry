@@ -10,6 +10,7 @@
       "desc:8": "susy.quest.db.394.desc",
       "frame:8": "GATE",
       "icon:10": {
+        "Count:3": 1,
         "id:8": "susy:turbine_rotor"
       },
       "ismain:1": 1,
@@ -19,6 +20,7 @@
   "questID:3": 394,
   "tasks:9": {
     "0:10": {
+      "index:3": 0,
       "taskID:8": "bq_standard:checkbox"
     }
   }

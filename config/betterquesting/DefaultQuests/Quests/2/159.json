@@ -6,6 +6,7 @@
     "betterquesting:10": {
       "desc:8": "susy.quest.db.159.desc",
       "icon:10": {
+        "Count:3": 1,
         "id:8": "techguns:steam_helmet",
         "tag:10": {
           "power:3": 0
@@ -17,6 +18,7 @@
   "questID:3": 159,
   "tasks:9": {
     "0:10": {
+      "index:3": 0,
       "requiredItems:9": {
         "0:10": {
           "Count:3": 1,
