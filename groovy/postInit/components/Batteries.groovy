@@ -12,24 +12,14 @@ import gregtech.api.unification.material.Materials;
 import gregtech.api.unification.ore.OrePrefix;
 import gregtech.api.unification.stack.UnificationEntry;
 
-CSTR = recipemap('continuous_stirred_tank_reactor')
 ROASTER = recipemap('roaster')
 MIXER = recipemap('mixer')
 BR = recipemap('batch_reactor')
-BCR = recipemap('bubble_column_reactor')
 BENDER = recipemap('bender')
 ASSEMBLER = recipemap('assembler')
 CRYSTALLIZER = recipemap('crystallizer')
 EXTRUDER = recipemap('extruder')
 ELECTROLYTIC_CELL = recipemap('electrolytic_cell')
-
-MIXER.recipeBuilder()
-        .fluidInputs(Materials.SulfurTrioxide.getFluid(1000))
-        .fluidInputs(Materials.Water.getFluid(1000))
-        .fluidOutputs(Materials.SulfuricAcid.getFluid(1000))
-        .EUt(7)
-        .duration(40)
-        .buildAndRegister()
 
 mods.gregtech.electric_blast_furnace.recipeBuilder()
         .inputs(ore('dustSodium') * 4)
@@ -276,7 +266,7 @@ BR.recipeBuilder()
         .fluidOutputs(fluid('hydrochloric_acid') * 5000)
         .outputs(metaitem('dustLithiumHexafluorophosphate') * 8)
         .duration(140)
-        .EUt(30)
+        .EUt(120)
         .buildAndRegister()
 
 MIXER.recipeBuilder()
