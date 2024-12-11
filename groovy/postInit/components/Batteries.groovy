@@ -339,6 +339,8 @@ MIXER.recipeBuilder()
         .EUt(480)
         .buildAndRegister()
 
+mods.gregtech.compressor.removeByInput(2, [metaitem('dustGelPolymerElectrolyte')], null)
+
 FLUID_SOLIDIFIER.recipeBuilder()
         .notConsumable(metaitem('shape.mold.plate'))
         .fluidInputs(fluid('gel_polymer_electrolyte') * 144)
@@ -350,7 +352,7 @@ FLUID_SOLIDIFIER.recipeBuilder()
 BENDER.recipeBuilder()
         .circuitMeta(1)
         .inputs(ore('plateGelPolymerElectrolyte'))
-        .outputs(metaitem('foilGelPolymerElectrolyte'))
+        .outputs(metaitem('foilGelPolymerElectrolyte') * 4)
         .duration(200)
         .EUt(24)
         .buildAndRegister()
@@ -526,6 +528,19 @@ ASSEMBLER.recipeBuilder()
         .outputs(metaitem('battery.liion_nmc.ev'))
         .duration(600)
         .EUt(480)
+        .buildAndRegister()
+
+// Li-pol NMC Battery
+
+ASSEMBLER.recipeBuilder()
+        .inputs(metaitem('battery.hull.ev'))
+        .inputs(metaitem('anode.graphite') * 8)
+        .inputs(metaitem('cathode.nmc532') * 8)
+        .inputs(ore('foilGelPolymerElectrolyte') * 8)
+        .inputs(metaitem('plate.low_power_integrated_circuit'))
+        .outputs(metaitem('battery.lipol_nmc.ev'))
+        .duration(400)
+        .EUt(1920)
         .buildAndRegister()
 
 /*

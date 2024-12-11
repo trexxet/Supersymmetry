@@ -2106,6 +2106,7 @@ metaitem.cathode.nmc532.name=Катод NMC532
 metaitem.battery.liion_lco.name=Li-ion аккумулятор (LCO)
 metaitem.battery.liion_nmc.hv.name=Li-ion HV аккумулятор (NMC)
 metaitem.battery.liion_nmc.ev.name=Li-ion EV аккумулятор (NMC)
+metaitem.battery.lipol_nmc.ev.name=Li-pol EV аккумулятор (NMC)
 
 metaitem.battery.primitivehull.lv.name=Примитивный корпус LV-батареи
 metaitem.battery.primitivehull.mv.name=Примитивный корпус MV-батареи
@@ -2455,6 +2456,7 @@ item.susy.material.kevlar.plate=Woven Kevlar
 item.gregtech.material.polytetrafluoroethylene.fiber=Расширенное политетрафторэтиленовое волокно
 item.gregtech.material.polytetrafluoroethylene.thread=Расширенная политетрафторэтиленовая нить
 gregtech.material.cobalt_oxide=Оксид кобальта II
+item.susy.material.gel_polymer_electrolyte.plate=Застывший гель-полимерный электролит
 
 # Resin Logs
 gregtech.block_group_members.extractable_logs_1.name=Бревно из березы, джунглей, дуба и ели
