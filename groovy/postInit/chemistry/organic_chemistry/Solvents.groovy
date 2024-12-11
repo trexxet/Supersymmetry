@@ -3,7 +3,7 @@ import globals.Globals
 CSTR = recipemap('continuous_stirred_tank_reactor')
 BCR = recipemap('bubble_column_reactor')
 
-// TODO: move other organic solvents (THF, EDC, TCE etc.) here
+// TODO: move other organic solvents (THF, TCE etc.) here
 
 // DMC (dimethyl carbonate)
 
@@ -31,7 +31,7 @@ BCR.recipeBuilder()
  */
 
 // 1,2-DCE (1,2-dichloroethane)
-
+// direct chlorination
 FBR.recipeBuilder()
     .fluidInputs(fluid('chlorine') * 100)
     .fluidInputs(fluid('ethylene') * 50)
@@ -40,7 +40,7 @@ FBR.recipeBuilder()
     .EUt(30)
     .duration(10)
     .buildAndRegister()
-
+// oxychlorination
 FBR.recipeBuilder()
     .fluidInputs(fluid('ethylene') * 50)
     .fluidInputs(fluid('hydrochloric_acid') * 100)
