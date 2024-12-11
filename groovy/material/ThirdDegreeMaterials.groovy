@@ -632,5 +632,12 @@ public class ThirdDegreeMaterials {
                 .colorAverage()
                 .build()
                 .setFormula("((Ni0.5Mn0.3Co0.2)(SO4))(H2O)", true);
+
+        GelPolymerElectrolyte = new Material.Builder(24101, SuSyUtility.susyId('gel_polymer_electrolyte'))
+                .dust().flags(GENERATE_PLATE, GENERATE_FOIL)
+                .liquid(new FluidBuilder().temperature(353).attribute(FluidAttributes.ACID))
+                .components(ElectrolyteLPForty, PolyethyleneGlycol, SilicaGel)
+                .colorAverage()
+                .build();
     }
 }

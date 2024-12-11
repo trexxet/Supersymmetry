@@ -2011,6 +2011,7 @@ susy.material.nmc_sulfate_slurry=NMC Sulfate Slurry
 susy.material.nmc_hydroxide=NMC Hydroxide
 susy.material.raw_nmc_hydroxide=Raw NMC Hydroxide
 susy.material.nmc_five_three_two=NMC532
+susy.material.gel_polymer_electrolyte=Gel Polymer Electrolyte
 
 susy.material.incoloy_twenty=Incoloy 20
 susy.material.incoloy_eight_two_five=Incoloy 825

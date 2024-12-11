@@ -1806,6 +1806,7 @@ class SuSyMaterials {
         public static Material GalliumSulfateSolution;
         public static Material FormicAcidWaterAzeotrope;
         public static Material NMCSulfateSlurry;
+        public static Material GelPolymerElectrolyte;
 
         // Thermodynamics Materials
 

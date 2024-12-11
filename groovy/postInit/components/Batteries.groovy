@@ -20,6 +20,7 @@ ASSEMBLER = recipemap('assembler')
 CRYSTALLIZER = recipemap('crystallizer')
 EXTRUDER = recipemap('extruder')
 DRYER = recipemap("dryer")
+FLUID_SOLIDIFIER = recipemap('fluid_solidifier')
 ELECTROLYTIC_CELL = recipemap('electrolytic_cell')
 
 mods.gregtech.electric_blast_furnace.recipeBuilder()
@@ -324,6 +325,34 @@ MIXER.recipeBuilder()
         .fluidOutputs(fluid('electrolyte_lp_40') * 11000)
         .duration(100)
         .EUt(480)
+        .buildAndRegister()
+
+// Gel Polymer electrolyte
+
+MIXER.recipeBuilder()
+        .circuitMeta(3)
+        .inputs(ore('dustSilicaGel') * 3)
+        .fluidInputs(fluid('polyethylene_glycol') * 1000)
+        .fluidInputs(fluid('electrolyte_lp_40') * 1000)
+        .fluidOutputs(fluid('gel_polymer_electrolyte') * 432)
+        .duration(120)
+        .EUt(480)
+        .buildAndRegister()
+
+FLUID_SOLIDIFIER.recipeBuilder()
+        .notConsumable(metaitem('shape.mold.plate'))
+        .fluidInputs(fluid('gel_polymer_electrolyte') * 144)
+        .outputs(metaitem('plateGelPolymerElectrolyte'))
+        .EUt(7)
+        .duration(20)
+        .buildAndRegister()
+
+BENDER.recipeBuilder()
+        .circuitMeta(1)
+        .inputs(ore('plateGelPolymerElectrolyte'))
+        .outputs(metaitem('foilGelPolymerElectrolyte'))
+        .duration(200)
+        .EUt(24)
         .buildAndRegister()
 
 // Polyolefin separator
