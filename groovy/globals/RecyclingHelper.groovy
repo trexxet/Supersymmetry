@@ -71,23 +71,23 @@ class RecyclingHelper {
 
     static final void handleRecycling(ItemStack output, List<?> inputs) {
         RecyclingRecipes.registerRecyclingRecipes(output.withAmount(1),
-                getRecyclingIngredients(output.getAmount(), inputs.flatten()).getMaterials(),
-                false, /*OreDictUnifier.getPrefix(output)*/ null) // See the comment at the top of this class
+                getRecyclingIngredients(output.getAmount(), inputs.flatten()),
+                false, OreDictUnifier.getPrefix(output)) // See the comment at the top of this class
     }
 
-    private static final ItemMaterialInfo getRecyclingIngredients(int outputCount, List<IIngredient> inputs) {
+    private static final List<MaterialStack> getRecyclingIngredients(int outputCount, List<IIngredient> inputs) {
 
         Object2LongMap<Material> materialStacksExploded = new Object2LongOpenHashMap<>();
 
         for (IIngredient input : inputs) {
             if (input == null || input.isEmpty()) continue
-            addItemStackToMaterialStacks(input.getMatchingStacks()[0], materialStacksExploded, input.getAmount())
+            addItemStackToMaterialStacks(input.withAmount(1).getMatchingStacks()[0], materialStacksExploded, input.getAmount())
         }
 
-        return new ItemMaterialInfo(materialStacksExploded.entrySet().stream()
+        return materialStacksExploded.entrySet().stream()
                 .map(e -> new MaterialStack(e.getKey(), e.getValue().intdiv(outputCount)))
                 .sorted(Comparator.comparingLong(m -> -m.amount))
-                .collect(Collectors.toList()));
+                .collect(Collectors.toList());
     }
 
     private static final void addItemStackToMaterialStacks(ItemStack itemStack, Object2LongMap<Material> materialStacksExploded, int inputCount) {

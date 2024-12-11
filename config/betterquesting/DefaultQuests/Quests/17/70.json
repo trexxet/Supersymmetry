@@ -6,7 +6,6 @@
     "betterquesting:10": {
       "desc:8": "susy.quest.db.70.desc",
       "icon:10": {
-        "Count:3": 1,
         "id:8": "tardis:moon_dirt"
       },
       "name:8": "susy.quest.db.70.title"
@@ -16,7 +15,6 @@
   "tasks:9": {
     "0:10": {
       "dimension:3": 8,
-      "index:3": 0,
       "name:8": "Luna",
       "range:3": 0,
       "taskID:8": "bq_standard:location"
