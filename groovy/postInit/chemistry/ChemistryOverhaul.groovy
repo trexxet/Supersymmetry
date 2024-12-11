@@ -1766,28 +1766,6 @@ DISTILLATION_TOWER.recipeBuilder()
 .duration(300)
 .buildAndRegister()
 
-//1,2-dichloroethane
-
-FBR.recipeBuilder()
-.fluidInputs(fluid('chlorine') * 100)
-.fluidInputs(fluid('ethylene') * 50)
-.notConsumable(ore('catalystBedIronIiiOxide'))
-.fluidOutputs(fluid('dichloroethane') * 50)
-.EUt(30)
-.duration(10)
-.buildAndRegister()
-
-FBR.recipeBuilder()
-.fluidInputs(fluid('ethylene') * 50)
-.fluidInputs(fluid('hydrochloric_acid') * 100)
-.fluidInputs(fluid('oxygen') * 50)
-.notConsumable(ore('catalystBedCopperIiChloride'))
-.fluidOutputs(fluid('dichloroethane') * 50)
-.fluidOutputs(fluid('water') * 150)
-.EUt(30)
-.duration(10)
-.buildAndRegister()
-
 //tri/methyl/dimethylamine
 
 FLUIDIZEDBR.recipeBuilder()
