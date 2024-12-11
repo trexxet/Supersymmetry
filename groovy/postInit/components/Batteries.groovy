@@ -101,36 +101,6 @@ mods.gregtech.assembler.recipeBuilder()
         .EUt(16)
         .buildAndRegister()
 
-mods.gregtech.assembler.recipeBuilder()
-        .inputs(metaitem('battery.hull.lv'))
-        .inputs(ore('dustGraphite'))
-        .inputs(ore('dustLithiumCobaltOxide'))
-        .fluidInputs(fluid('electrolyte_lp_40') * 100)
-        .outputs(metaitem('battery.re.lv.lithium'))
-        .duration(100)
-        .EUt(16)
-        .buildAndRegister()
-
-mods.gregtech.assembler.recipeBuilder()
-        .inputs(metaitem('battery.hull.mv'))
-        .inputs(ore('dustGraphite') * 2)
-        .inputs(ore('dustLithiumCobaltOxide') * 2)
-        .fluidInputs(fluid('electrolyte_lp_40') * 200)
-        .outputs(metaitem('battery.re.mv.lithium'))
-        .duration(200)
-        .EUt(16)
-        .buildAndRegister()
-
-mods.gregtech.assembler.recipeBuilder()
-        .inputs(metaitem('battery.hull.hv'))
-        .inputs(ore('dustGraphite') * 4)
-        .inputs(ore('dustLithiumCobaltOxide') * 4)
-        .fluidInputs(fluid('electrolyte_lp_40') * 500)
-        .outputs(metaitem('battery.re.hv.lithium'))
-        .duration(400)
-        .EUt(16)
-        .buildAndRegister()
-
 /*
  * Components
  */
@@ -701,6 +671,9 @@ mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.hv'), metaitem('du
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.lv'), metaitem('dustLithium') * 2], null)
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.mv'), metaitem('dustLithium') * 8], null)
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.hv'), metaitem('dustLithium') * 16], null)
+mods.jei.ingredient.removeAndHide(metaitem('battery.re.lv.lithium'))
+mods.jei.ingredient.removeAndHide(metaitem('battery.re.mv.lithium'))
+mods.jei.ingredient.removeAndHide(metaitem('battery.re.hv.lithium'))
 // Cadmium Battery
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.lv'), metaitem('dustCadmium') * 2], null)
 mods.gregtech.canner.removeByInput(2, [metaitem('battery.hull.mv'), metaitem('dustCadmium') * 8], null)
