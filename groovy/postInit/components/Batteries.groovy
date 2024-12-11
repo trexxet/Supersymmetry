@@ -513,6 +513,17 @@ ASSEMBLER.recipeBuilder()
         .EUt(1920)
         .buildAndRegister()
 
+ASSEMBLER.recipeBuilder()
+        .inputs(metaitem('battery.hull.iv'))
+        .inputs(metaitem('anode.graphite') * 16)
+        .inputs(metaitem('cathode.nmc532') * 16)
+        .inputs(ore('foilGelPolymerElectrolyte') * 16)
+        .inputs(metaitem('plate.low_power_integrated_circuit'))
+        .outputs(metaitem('battery.lipol_nmc.iv'))
+        .duration(800)
+        .EUt(1920)
+        .buildAndRegister()
+
 /*
  * Hulls
  */

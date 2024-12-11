@@ -262,6 +262,11 @@ eventManager.listen {
             .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.EV)
             .setModelAmount(8)
             .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
+        customMetaItems.addItem(4024, "battery.lipol_nmc.iv")
+            .addComponents(ElectricStats.createRechargeableBattery(19200000, GTValues.IV))
+            .setUnificationData(OrePrefix.battery, MarkerMaterials.Tier.IV)
+            .setModelAmount(8)
+            .setCreativeTabs(GregTechAPI.TAB_GREGTECH_TOOLS);
         // Hulls 4090-4100
         customMetaItems.addItem(4090, "battery.primitivehull.lv");
         customMetaItems.addItem(4091, "battery.primitivehull.mv");
