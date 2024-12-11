@@ -2,6 +2,7 @@ import globals.Globals
 
 CSTR = recipemap('continuous_stirred_tank_reactor')
 BCR = recipemap('bubble_column_reactor')
+FBR = recipemap('fixed_bed_reactor')
 
 // TODO: move other organic solvents (THF, TCE etc.) here
 
@@ -30,24 +31,35 @@ BCR.recipeBuilder()
  * Organochlorines
  */
 
-// 1,2-DCE (1,2-dichloroethane)
+// EDC (ethylene dichloride / 1,2-dichloroethane / Freon 150)
 // direct chlorination
 FBR.recipeBuilder()
-    .fluidInputs(fluid('chlorine') * 100)
-    .fluidInputs(fluid('ethylene') * 50)
-    .notConsumable(ore('catalystBedIronIiiOxide'))
-    .fluidOutputs(fluid('dichloroethane') * 50)
-    .EUt(30)
-    .duration(10)
-    .buildAndRegister()
+        .fluidInputs(fluid('chlorine') * 100)
+        .fluidInputs(fluid('ethylene') * 50)
+        .notConsumable(ore('catalystBedIronIiiOxide'))
+        .fluidOutputs(fluid('dichloroethane') * 50)
+        .EUt(30)
+        .duration(10)
+        .buildAndRegister()
 // oxychlorination
 FBR.recipeBuilder()
-    .fluidInputs(fluid('ethylene') * 50)
-    .fluidInputs(fluid('hydrochloric_acid') * 100)
-    .fluidInputs(fluid('oxygen') * 50)
-    .notConsumable(ore('catalystBedCopperIiChloride'))
-    .fluidOutputs(fluid('dichloroethane') * 50)
-    .fluidOutputs(fluid('water') * 150)
-    .EUt(30)
-    .duration(10)
-    .buildAndRegister()
+        .fluidInputs(fluid('ethylene') * 50)
+        .fluidInputs(fluid('hydrochloric_acid') * 100)
+        .fluidInputs(fluid('oxygen') * 50)
+        .notConsumable(ore('catalystBedCopperIiChloride'))
+        .fluidOutputs(fluid('dichloroethane') * 50)
+        .fluidOutputs(fluid('water') * 150)
+        .EUt(30)
+        .duration(10)
+        .buildAndRegister()
+
+// TeCA (1,1,2,2-tetrachloroethane / R130 / acetylene tetrachloride)
+
+CSTR.recipeBuilder()
+        .fluidInputs(fluid('dichloroethane') * 50)
+        .fluidInputs(fluid('chlorine') * 200)
+        .fluidOutputs(fluid('one_one_two_two_tetrachloroethane') * 50)
+        .fluidOutputs(fluid('hydrogen_chloride') * 100)
+        .duration(5)
+        .EUt(30)
+        .buildAndRegister()

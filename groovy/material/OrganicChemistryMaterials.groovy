@@ -326,7 +326,11 @@ public class OrganicChemistryMaterials {
                 .colorAverage()
                 .build();
 
-        //FREE ID: 15053
+        OneOneTwoTwoTetrachloroethane = new Material.Builder(15053, SuSyUtility.susyId('one_one_two_two_tetrachloroethane'))
+                .liquid()
+                .components(Carbon * 2, Hydrogen * 2, Chlorine * 4)
+                .colorAverage()
+                .build();
 
         PBIFoam = new Material.Builder(15054, SuSyUtility.susyId('pbi_foam'))
                 .dust()

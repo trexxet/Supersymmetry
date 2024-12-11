@@ -45,6 +45,7 @@ susy.material.para_xylene=p-Xylene
 susy.material.meta_para_xylene_mixture=m/p-Xylene Mixture
 susy.material.phosgene=Phosgene
 susy.material.dichloroethane=Dichloroethane
+susy.material.one_one_two_two_tetrachloroethane=1,1,2,2-Tetrachloroethane
 susy.material.isophthalic_acid=Isophthalic Acid
 susy.material.isophthalic_acid_slurry=Isophthalic Acid Slurry
 susy.material.dichloroethane_isophthalic_acid_solution=Dichloroethane Isophthalic Acid Solution

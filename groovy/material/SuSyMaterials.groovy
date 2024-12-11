@@ -1319,6 +1319,7 @@ class SuSyMaterials {
         public static Material PhthaloylDichlorideSolution;
         public static Material DiphenylIsophthalateSolution;
         public static Material DiaminobenzidineSolution;
+        public static Material OneOneTwoTwoTetrachloroethane;
         public static Material PBIFoam;
         public static Material PBIPrepolymer;
         public static Material PBISolution;
