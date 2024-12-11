@@ -4,7 +4,7 @@ CSTR = recipemap('continuous_stirred_tank_reactor')
 BCR = recipemap('bubble_column_reactor')
 FBR = recipemap('fixed_bed_reactor')
 
-// TODO: move other organic solvents (THF, TCE etc.) here
+// TODO: move other organic solvents (THF etc.) here
 
 // DMC (dimethyl carbonate)
 
@@ -53,7 +53,7 @@ FBR.recipeBuilder()
         .duration(10)
         .buildAndRegister()
 
-// TeCA (1,1,2,2-tetrachloroethane / R130 / acetylene tetrachloride)
+// TeCA (1,1,2,2-tetrachloroethane / R130)
 
 CSTR.recipeBuilder()
         .fluidInputs(fluid('dichloroethane') * 50)
@@ -62,4 +62,16 @@ CSTR.recipeBuilder()
         .fluidOutputs(fluid('hydrogen_chloride') * 100)
         .duration(5)
         .EUt(30)
+        .buildAndRegister()
+
+// TCE (trichloroethylene)
+
+CSTR.recipeBuilder()
+        .notConsumable(ore('springKanthal'))
+        .fluidInputs(fluid('dichloroethane') * 50)
+        .fluidInputs(fluid('chlorine') * 200)
+        .fluidOutputs(fluid('trichloroethylene') * 50)
+        .fluidOutputs(fluid('hydrogen_chloride') * 150)
+        .duration(10)
+        .EUt(120)
         .buildAndRegister()
