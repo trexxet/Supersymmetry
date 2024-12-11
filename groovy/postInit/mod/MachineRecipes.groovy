@@ -646,7 +646,7 @@ recipemap('assembler').recipeBuilder()
 		.buildAndRegister()
 
 //Extra Quadruple Hatches
-def materialPipe = [null,"Bronze","Steel","StainlessSteel","Titanium","Tungstensteel","NiobiumTitanium","Iridium","Naquadah","Neutronium",null,null,null,null];
+def materialPipe = [null, "Bronze", "Steel", "StainlessSteel", "Titanium", "Tungstensteel", "NiobiumTitanium", "Iridium", "Naquadah", "Neutronium", null, null, null, null];
 
 for (i = 1; i <= 3; i++) {
 
@@ -665,7 +665,7 @@ for (i = 1; i <= 3; i++) {
 		.inputs(ore('pipeQuadrupleFluid' + materialPipe[i]))
 		.circuitMeta(4)
 		.fluidInputs(fluid('plastic') * 576)
-		.inputs(metaitem('fluid_hatch.export_4x.' + Globals.voltageTiers[i]))
+		.outputs(metaitem('fluid_hatch.export_4x.' + Globals.voltageTiers[i]))
 		.EUt(Globals.voltAmps[i])
 		.duration(300)
 		.buildAndRegister()
@@ -675,7 +675,7 @@ for (i = 1; i <= 3; i++) {
 		.inputs(ore('pipeNonupleFluid' + materialPipe[i]))
 		.circuitMeta(4)
 		.fluidInputs(fluid('plastic') * 1296)
-		.inputs(metaitem('fluid_hatch.import_9x.' + Globals.voltageTiers[i]))
+		.outputs(metaitem('fluid_hatch.import_9x.' + Globals.voltageTiers[i]))
 		.EUt(Globals.voltAmps[i])
 		.duration(600)
 		.buildAndRegister()
@@ -685,10 +685,34 @@ for (i = 1; i <= 3; i++) {
 		.inputs(ore('pipeNonupleFluid' + materialPipe[i]))
 		.circuitMeta(4)
 		.fluidInputs(fluid('plastic') * 1296)
-		.inputs(metaitem('fluid_hatch.export_9x.' + Globals.voltageTiers[i]))
+		.outputs(metaitem('fluid_hatch.export_9x.' + Globals.voltageTiers[i]))
 		.EUt(Globals.voltAmps[i])
 		.duration(600)
 		.buildAndRegister()
+
+	// Interconversion
+	crafting.addShaped("susy:fluid_hatch.import_to_export.4x." + Globals.voltageTiers[i], 
+		metaitem('fluid_hatch.import_4x.' + Globals.voltageTiers[i]), [
+    	    [ore('craftingToolScrewdriver')],
+    	    [metaitem('fluid_hatch.export_4x.' + Globals.voltageTiers[i])]
+	])
+	crafting.addShaped("susy:fluid_hatch.export_to_import.4x." + Globals.voltageTiers[i], 
+		metaitem('fluid_hatch.export_4x.' + Globals.voltageTiers[i]), [
+    	    [ore('craftingToolScrewdriver')],
+    	    [metaitem('fluid_hatch.import_4x.' + Globals.voltageTiers[i])]
+	])
+
+	crafting.addShaped("susy:fluid_hatch.import_to_export.9x." + Globals.voltageTiers[i], 
+		metaitem('fluid_hatch.import_9x.' + Globals.voltageTiers[i]), [
+    	    [ore('craftingToolScrewdriver')],
+    	    [metaitem('fluid_hatch.export_9x.' + Globals.voltageTiers[i])]
+	])
+	crafting.addShaped("susy:fluid_hatch.export_to_import.9x." + Globals.voltageTiers[i], 
+		metaitem('fluid_hatch.export_9x.' + Globals.voltageTiers[i]), [
+    	    [ore('craftingToolScrewdriver')],
+    	    [metaitem('fluid_hatch.import_9x.' + Globals.voltageTiers[i])]
+	])
+
 }
 
 RecyclingHelper.addShaped("gregtech:ore_sorter", metaitem('ore_sorter'), [
