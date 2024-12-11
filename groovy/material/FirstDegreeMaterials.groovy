@@ -710,7 +710,7 @@ public class FirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .colorAverage()
                 .build()
-                .setFormula("(Ni,Co)Cl2(H2O)4", true)
+                .setFormula("[(Ni,Co)Cl2](H2O)4", true)
 
         AcidicCopperSolution = new Material.Builder(8194, SuSyUtility.susyId('acidic_copper_solution'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
@@ -1778,7 +1778,13 @@ public class FirstDegreeMaterials {
                 .colorAverage()
                 .build();
 
-        //FREE ID: 8360
+        ImpureCobaltOxide = new Material.Builder(8360, SuSyUtility.susyId('impure_cobalt_oxide'))
+                .dust()
+                .components(CobaltOxide)
+                .color(0xd6e600)
+                .build();
+
+        ImpureCobaltOxide.setFormula("(CoO)(?)", true)
 
         CrudeTin = new Material.Builder(8361, SuSyUtility.susyId('crude_tin'))
                 .liquid(new FluidBuilder().temperature(600))
@@ -3250,7 +3256,13 @@ public class FirstDegreeMaterials {
 
         ThalliumSulfateSolution.setFormula("(Tl2SO4)(H2O)", true)
 
-        //FREE ID: 8597
+        ImpureCobaltSulfateSolution = new Material.Builder(8597, SuSyUtility.susyId("impure_cobalt_sulfate_solution"))
+                .liquid()
+                .components(Cobalt, Sulfur, Oxygen * 4, Water)
+                .colorAverage()
+                .build();
+
+        ImpureCobaltSulfateSolution.setFormula("(CoSO4)(?)(H2O)", true)
 
         //FREE ID: 8598
 
