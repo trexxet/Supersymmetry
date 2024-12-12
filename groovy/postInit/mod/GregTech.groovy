@@ -1113,7 +1113,7 @@ mods.gregtech.circuit_assembler.removeByInput(600, [metaitem('circuit_board.plas
 mods.gregtech.circuit_assembler.removeByInput(600, [metaitem('circuit_board.plastic'), metaitem('plate.system_on_chip'), metaitem('wireFineCopper') * 2, metaitem('boltTin') * 2], [fluid('tin') * 144])
 
 Globals.solders.each { key, val ->
-        mods.gregtech.assembler.recipeBuilder()
+        mods.gregtech.circuit_assembler.recipeBuilder()
                 .inputs(metaitem('circuit_board.good'))
                 .inputs(metaitem('plate.integrated_logic_circuit'))
                 .inputs(ore('boltRedAlloy') * 2)
@@ -1126,7 +1126,7 @@ Globals.solders.each { key, val ->
 }
 
 Globals.solders.each { key, val ->
-        mods.gregtech.assembler.recipeBuilder()
+        mods.gregtech.circuit_assembler.recipeBuilder()
                 .inputs(metaitem('circuit_board.plastic'))
                 .inputs(metaitem('plate.integrated_logic_circuit'))
                 .inputs(ore('boltRedAlloy') * 2)
