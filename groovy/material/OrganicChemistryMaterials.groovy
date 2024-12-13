@@ -484,7 +484,11 @@ public class OrganicChemistryMaterials {
                 .colorAverage()
                 .build();
 
-        //FREE ID: 15080
+        OneOneDichloroethane = new Material.Builder(15080, SuSyUtility.susyId('one_one_dichloroethane'))
+                .liquid()
+                .components(Carbon * 2, Hydrogen * 4, Chlorine * 2)
+                .colorAverage()
+                .build();
 
         Butyllithium = new Material.Builder(15081, SuSyUtility.susyId('butyllithium'))
                 .liquid()

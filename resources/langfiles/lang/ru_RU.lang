@@ -44,6 +44,7 @@ susy.material.meta_xylene=м-ксилол
 susy.material.para_xylene=п-ксилол
 susy.material.meta_para_xylene_mixture=Смесь м/п-ксилола
 susy.material.phosgene=Фосген
+susy.material.one_one_dichloroethane=1,1-Дихлорэтан
 susy.material.one_two_dichloroethane=1,2-Дихлорэтан (EDC)
 susy.material.cracked_one_two_dichloroethane_mix=Смесь продуктов крекинга дихлорэтана
 susy.material.one_one_two_two_tetrachloroethane=1,1,2,2-Тетрахлорэтан (TeCA)

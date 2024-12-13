@@ -1341,6 +1341,7 @@ class SuSyMaterials {
         public static Material StyreneButadieneSolution;
         public static Material DiethylEther;
         public static Material OneBromobutane;
+        public static Material OneOneDichloroethane;
         public static Material Butyllithium;
         public static Material PolymerizedStyreneButadieneSolution;
         public static Material Acetylene;

@@ -41,7 +41,10 @@ DISTILLATION_TOWER.recipeBuilder()
     .fluidInputs(fluid('cracked_one_two_dichloroethane_mix') * 2000)
     .fluidOutputs(fluid('hydrogen_chloride') * 1000)
     .fluidOutputs(fluid('vinyl_chloride') * 500)
-    // add other: 1,2-DCE; C2H2; 1,1-EDC
+    .fluidOutputs(fluid('acetylene') * 200)
+    .fluidOutputs(fluid('one_one_dichloroethane') * 200)
+    .fluidOutputs(fluid('ethylene') * 50)
+    // add 50 mB of 1,2-DCE
     .duration(80)
     .EUt(30)
     .buildAndRegister()
