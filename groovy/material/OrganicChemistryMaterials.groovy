@@ -296,7 +296,7 @@ public class OrganicChemistryMaterials {
                 .colorAverage()
                 .build();
 
-        Dichloroethane = new Material.Builder(15048, SuSyUtility.susyId('dichloroethane'))
+        OneTwoDichloroethane = new Material.Builder(15048, SuSyUtility.susyId('one_two_dichloroethane'))
                 .liquid()
                 .components(Carbon * 2, Hydrogen * 4, Chlorine * 2)
                 .colorAverage()
@@ -316,7 +316,7 @@ public class OrganicChemistryMaterials {
 
         DiphenylIsophthalateSolution = new Material.Builder(15051, SuSyUtility.susyId('diphenyl_isophthalate_solution'))
                 .liquid()
-                .components(DiphenylIsophtalate * 1, Dichloroethane * 1)
+                .components(DiphenylIsophtalate * 1, OneTwoDichloroethane * 1)
                 .colorAverage()
                 .build();
 

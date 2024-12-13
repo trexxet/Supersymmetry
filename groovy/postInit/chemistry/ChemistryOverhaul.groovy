@@ -2750,7 +2750,7 @@ DISTILLATION_TOWER.recipeBuilder()
 // Amine oligomerization
 
 BR.recipeBuilder()
-        .fluidInputs(fluid('dichloroethane') * 1525)
+        .fluidInputs(fluid('one_two_dichloroethane') * 1525)
         .fluidInputs(fluid('ammonia') * 2425)
         .fluidOutputs(fluid('aminated_ethylene_mixture') * 1000)
         .duration(300)

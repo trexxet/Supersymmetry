@@ -1287,7 +1287,7 @@ class SuSyMaterials {
         public static Material ParaPhenylenediamine;
         public static Material SodiumPhenoxide;
         public static Material PhthaloylDichloride;
-        public static Material Dichloroethane;
+        public static Material OneTwoDichloroethane;
         public static Material Dimethylacetamide;
         public static Material CaprolactamOxime;
         public static Material TNT;

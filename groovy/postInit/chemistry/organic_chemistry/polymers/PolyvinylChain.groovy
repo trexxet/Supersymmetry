@@ -31,7 +31,7 @@ TBR.recipeBuilder()
 
 // Dehydrochlorination
 PYROLYSE_OVEN.recipeBuilder()
-    .fluidInputs(fluid('dichloroethane') * 1000)
+    .fluidInputs(fluid('one_two_dichloroethane') * 1000)
     .fluidOutputs(fluid('cracked_one_two_dichloroethane_mix') * 2000)
     .duration(80)
     .EUt(30)

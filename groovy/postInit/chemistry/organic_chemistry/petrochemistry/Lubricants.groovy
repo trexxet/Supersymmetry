@@ -39,7 +39,7 @@ PHASE_SEPARATOR = recipemap('phase_separator')
     // Straight run lubricating oil
 
     MIXER.recipeBuilder()
-        .fluidInputs(fluid('dichloroethane') * 1000)
+        .fluidInputs(fluid('one_two_dichloroethane') * 1000)
         .fluidInputs(fluid('dichloromethane') * 1000)
         .fluidOutputs(fluid('dewaxing_solvent') * 2000)
         .duration(20)
