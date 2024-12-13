@@ -4,19 +4,47 @@ import globals.RecyclingHelper
 import static gregtech.api.unification.material.Materials.*
 
 def name_removals = [
-		'gregtech:steam_turbine_mv',
-		'gregtech:steam_turbine_hv',
-		'gregtech:gas_turbine_lv',
-		'gregtech:gas_turbine_mv',
-		'gregtech:gas_turbine_hv',
-		'gregtech:diesel_generator_lv',
-		'gregtech:diesel_generator_mv',
-		'gregtech:diesel_generator_hv',
-		'gcym:steam_engine'
+	'gregtech:gregtech.machine.fisher.lv',
+	'gregtech:gregtech.machine.fisher.mv',
+	'gregtech:gregtech.machine.fisher.hv',
+	'gregtech:gregtech.machine.fisher.ev',
 ]
 
 for (name in name_removals) {
 	crafting.remove(name)
+}
+mods.jei.ingredient.yeet(
+	metaitem('steam_turbine.mv'),
+	metaitem('steam_turbine.hv'),
+	metaitem('gas_turbine.lv'),
+	metaitem('gas_turbine.mv'),
+	metaitem('gas_turbine.hv'),
+	metaitem('combustion_generator.lv'),
+	metaitem('combustion_generator.mv'),
+	metaitem('combustion_generator.hv'),
+	metaitem('gcym:steam_engine'),
+	item('gcym:large_multiblock_casing:12'),
+	metaitem('large_turbine.steam'),
+	metaitem('large_turbine.gas'),
+	metaitem('large_turbine.plasma'),
+	metaitem('large_combustion_engine'),
+	metaitem('extreme_combustion_engine'),
+	metaitem('reservoir_hatch'),
+	metaitem('rotor_holder.hv'),
+	metaitem('rotor_holder.ev'),
+	metaitem('rotor_holder.iv'),
+	metaitem('rotor_holder.luv'),
+	metaitem('rotor_holder.zpm'),
+	metaitem('rotor_holder.uv')
+)
+
+//Add recipes for new chemical reactors, and remove old chemical reactor recipes
+
+for (i = 1; i <= 13; i++) {
+	mods.jei.ingredient.yeet(
+		metaitem('chemical_reactor.' + Globals.voltageTiers[i]),
+		metaitem('world_accelerator.' + Globals.voltageTiers[i])
+	)
 }
 
 def circuits = [ore('circuitUlv'), ore('circuitLv'), ore('circuitMv'),
@@ -114,7 +142,7 @@ def tieredSprings = [metaitem('springIron'), metaitem('springCopper'), metaitem(
 					 metaitem('springNaquadah'), metaitem('springNaquadahAlloy')]
 
 def rotors = [
-	ore('rotorBronze'),
+	ore('rotorLead'),
 	ore('rotorTin'), 
 	ore('rotorBronze'), 
 	ore('rotorSteel'),
@@ -290,11 +318,7 @@ for (i = 1; i <= 8; i++) {
 			[tieredPlates[i], tieredPlates[i], tieredPlates[i]]
 	])
 }
-
-//Add recipes for new chemical reactors, and remove old chemical reactor recipes
-
 for (i = 1; i <= 8; i++) {
-	crafting.remove('gregtech:gregtech.machine.chemical_reactor.' + Globals.voltageTiers[i])
 
 	RecyclingHelper.addShaped("gregtech:continuous_stirred_tank_reactor." + Globals.voltageTiers[i], metaitem('continuous_stirred_tank_reactor.' + Globals.voltageTiers[i]), [
 			[chemicalReactorParts[i], rotors[i], chemicalReactorParts[i]],
@@ -644,6 +668,76 @@ recipemap('assembler').recipeBuilder()
 		.EUt(480)
 		.duration(200)
 		.buildAndRegister()
+
+//Extra Quadruple Hatches
+def materialPipe = [null, "Bronze", "Steel", "StainlessSteel", "Titanium", "Tungstensteel", "NiobiumTitanium", "Iridium", "Naquadah", "Neutronium", null, null, null, null];
+
+for (i = 1; i <= 3; i++) {
+
+	recipemap('assembler').recipeBuilder()
+		.inputs(metaitem('fluid_hatch.import.' + Globals.voltageTiers[i]))
+		.inputs(ore('pipeQuadrupleFluid' + materialPipe[i]))
+		.circuitMeta(4)
+		.fluidInputs(fluid('plastic') * 576)
+		.outputs(metaitem('fluid_hatch.import_4x.' + Globals.voltageTiers[i]))
+		.EUt(Globals.voltAmps[i])
+		.duration(300)
+		.buildAndRegister()
+
+	recipemap('assembler').recipeBuilder()
+		.inputs(metaitem('fluid_hatch.export.' + Globals.voltageTiers[i]))
+		.inputs(ore('pipeQuadrupleFluid' + materialPipe[i]))
+		.circuitMeta(4)
+		.fluidInputs(fluid('plastic') * 576)
+		.outputs(metaitem('fluid_hatch.export_4x.' + Globals.voltageTiers[i]))
+		.EUt(Globals.voltAmps[i])
+		.duration(300)
+		.buildAndRegister()
+
+	recipemap('assembler').recipeBuilder()
+		.inputs(metaitem('fluid_hatch.import.' + Globals.voltageTiers[i]))
+		.inputs(ore('pipeNonupleFluid' + materialPipe[i]))
+		.circuitMeta(4)
+		.fluidInputs(fluid('plastic') * 1296)
+		.outputs(metaitem('fluid_hatch.import_9x.' + Globals.voltageTiers[i]))
+		.EUt(Globals.voltAmps[i])
+		.duration(600)
+		.buildAndRegister()
+
+	recipemap('assembler').recipeBuilder()
+		.inputs(metaitem('fluid_hatch.export.' + Globals.voltageTiers[i]))
+		.inputs(ore('pipeNonupleFluid' + materialPipe[i]))
+		.circuitMeta(4)
+		.fluidInputs(fluid('plastic') * 1296)
+		.outputs(metaitem('fluid_hatch.export_9x.' + Globals.voltageTiers[i]))
+		.EUt(Globals.voltAmps[i])
+		.duration(600)
+		.buildAndRegister()
+
+	// Interconversion
+	crafting.addShaped("susy:fluid_hatch.import_to_export.4x." + Globals.voltageTiers[i], 
+		metaitem('fluid_hatch.import_4x.' + Globals.voltageTiers[i]), [
+    	    [ore('craftingToolScrewdriver')],
+    	    [metaitem('fluid_hatch.export_4x.' + Globals.voltageTiers[i])]
+	])
+	crafting.addShaped("susy:fluid_hatch.export_to_import.4x." + Globals.voltageTiers[i], 
+		metaitem('fluid_hatch.export_4x.' + Globals.voltageTiers[i]), [
+    	    [ore('craftingToolScrewdriver')],
+    	    [metaitem('fluid_hatch.import_4x.' + Globals.voltageTiers[i])]
+	])
+
+	crafting.addShaped("susy:fluid_hatch.import_to_export.9x." + Globals.voltageTiers[i], 
+		metaitem('fluid_hatch.import_9x.' + Globals.voltageTiers[i]), [
+    	    [ore('craftingToolScrewdriver')],
+    	    [metaitem('fluid_hatch.export_9x.' + Globals.voltageTiers[i])]
+	])
+	crafting.addShaped("susy:fluid_hatch.export_to_import.9x." + Globals.voltageTiers[i], 
+		metaitem('fluid_hatch.export_9x.' + Globals.voltageTiers[i]), [
+    	    [ore('craftingToolScrewdriver')],
+    	    [metaitem('fluid_hatch.import_9x.' + Globals.voltageTiers[i])]
+	])
+
+}
 
 RecyclingHelper.addShaped("gregtech:ore_sorter", metaitem('ore_sorter'), [
 		[robotArms[1], circuits[2], robotArms[1]],
