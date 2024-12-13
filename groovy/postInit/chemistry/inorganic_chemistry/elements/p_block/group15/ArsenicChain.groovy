@@ -47,21 +47,6 @@ CLARIFIER.recipeBuilder()
         .duration(20)
         .buildAndRegister()
 
-//ROAST RECOVERY OF As2O3 (75% EFFICIENCY)
-//COBALTITE MODIFICATION
-mods.gregtech.electric_blast_furnace.removeByInput(120, [metaitem('dustCobaltite')], [fluid('oxygen') * 3000])
-
-EBF.recipeBuilder()
-    .inputs(ore('dustCobaltite') * 2)
-    .fluidInputs(fluid('oxygen') * (3000 + 4000 + 2000))
-    .outputs(metaitem('dustCobaltOxide') * 4)
-    .chancedOutput(metaitem('dustArsenicTrioxide') * 5, 7500, 0)
-    .fluidOutputs(fluid('sulfur_dioxide') * 2000)
-    .blastFurnaceTemp(1200)
-    .duration(120)
-    .EUt(Globals.voltAmps[2])
-    .buildAndRegister()
-
 //SPERRYLITE ROASTING
 EBF.recipeBuilder()
     .inputs(ore('dustSperrylite'))
