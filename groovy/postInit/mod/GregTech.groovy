@@ -1147,7 +1147,7 @@ Globals.solders.each { key, val ->
 		.inputs(ore('componentTransistor') * 2)
 		.inputs(ore('wireFineCopper') * 2)
 		.fluidInputs(fluid(key) * val)
-		.outputs(metaitem('circuit.microprocessor') * 5)
+		.outputs(metaitem('circuit.microprocessor') * 8)
 		.duration(200)
 		.EUt(60)
 		.buildAndRegister();
@@ -1160,7 +1160,7 @@ Globals.solders.each { key, val ->
 		.inputs(ore('wireFineCopper') * 2)
 		.inputs(ore('boltTin') * 2)
 		.fluidInputs(fluid(key) * val)
-		.outputs(metaitem('circuit.microprocessor') * 10)
+		.outputs(metaitem('circuit.microprocessor') * 12)
 		.duration(50)
 		.EUt(600)
 		.buildAndRegister();
