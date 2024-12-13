@@ -1298,6 +1298,7 @@ class SuSyMaterials {
         public static Material ChlorinatedChloromethaneMixture;
         public static Material ChlorinatedDichloromethaneMixture;
         public static Material ChloromethaneSolution;
+        public static Material OneTwoDichloroethylene;
         public static Material AcidicTetrafluoroethylene;
         public static Material TrinitromethaneSolution;
         public static Material TetranitronmethaneSolution;

@@ -44,7 +44,7 @@ DISTILLATION_TOWER.recipeBuilder()
     .fluidOutputs(fluid('acetylene') * 200)
     .fluidOutputs(fluid('one_one_dichloroethane') * 200)
     .fluidOutputs(fluid('ethylene') * 50)
-    // add 50 mB of 1,2-DCE
+    .fluidOutputs(fluid('one_two_dichloroethylene') * 50)
     .duration(80)
     .EUt(30)
     .buildAndRegister()

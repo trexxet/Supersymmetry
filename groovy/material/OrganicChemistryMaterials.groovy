@@ -174,7 +174,11 @@ public class OrganicChemistryMaterials {
                 .colorAverage()
                 .build();
         
-        //FREE ID: 15025
+        OneTwoDichloroethylene = new Material.Builder(15025, SuSyUtility.susyId('one_two_dichloroethylene'))
+                .liquid()
+                .components(Carbon * 2, Hydrogen * 2, Chlorine * 2)
+                .colorAverage()
+                .build();
 
         AcidicTetrafluoroethylene = new Material.Builder(15026, SuSyUtility.susyId('acidic_tetrafluoroethylene'))
                 .gas(new FluidBuilder().attribute(FluidAttributes.ACID))
