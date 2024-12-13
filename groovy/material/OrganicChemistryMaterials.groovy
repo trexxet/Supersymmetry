@@ -407,7 +407,10 @@ public class OrganicChemistryMaterials {
 
         Methyltrichlorosilane.setFormula("CH3SiCl3", true)
 
-        //FREE ID: 15066
+        CrackedOneTwoDichloroethaneMix = new Material.Builder(15066, SuSyUtility.susyId('cracked_one_two_dichloroethane_mix'))
+                .liquid()
+                .color(0x72afad)
+                .build();
 
         VinylChlorideSuspension = new Material.Builder(15067, SuSyUtility.susyId('vinyl_chloride_suspension'))
                 .liquid()

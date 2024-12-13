@@ -3,6 +3,7 @@ TBR = recipemap('trickle_bed_reactor')
 BR = recipemap('batch_reactor')
 POLYMERIZATION = recipemap('polymerization_tank')
 PYROLYSE_OVEN = recipemap('pyrolyse_oven')
+DISTILLATION_TOWER = recipemap('distillation_tower');
 MIXER = recipemap('mixer')
 DRYER = recipemap('dryer')
 AUTOCLAVE = recipemap('autoclave')
@@ -31,9 +32,17 @@ TBR.recipeBuilder()
 // Dehydrochlorination
 PYROLYSE_OVEN.recipeBuilder()
     .fluidInputs(fluid('dichloroethane') * 1000)
-    .fluidOutputs(fluid('vinyl_chloride') * 1000)
+    .fluidOutputs(fluid('cracked_one_two_dichloroethane_mix') * 2000)
+    .duration(80)
+    .EUt(30)
+    .buildAndRegister()
+
+DISTILLATION_TOWER.recipeBuilder()
+    .fluidInputs(fluid('cracked_one_two_dichloroethane_mix') * 2000)
     .fluidOutputs(fluid('hydrogen_chloride') * 1000)
-    .duration(100)
+    .fluidOutputs(fluid('vinyl_chloride') * 500)
+    // add other: 1,2-DCE; C2H2; 1,1-EDC
+    .duration(80)
     .EUt(30)
     .buildAndRegister()
 

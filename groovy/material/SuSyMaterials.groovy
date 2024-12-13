@@ -1327,6 +1327,7 @@ class SuSyMaterials {
         public static Material Hydroxylamine;
         public static Material Cyclohexanone;
         public static Material CaprolactamSolution;
+        public static Material CrackedOneTwoDichloroethaneMix;
         public static Material VinylChlorideSuspension;
         public static Material PolyvinylChlorideSuspension;
         public static Material StyreneSuspension;
