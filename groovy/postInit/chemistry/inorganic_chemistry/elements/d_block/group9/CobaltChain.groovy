@@ -14,7 +14,7 @@ mods.gregtech.electric_blast_furnace.removeByInput(120, [metaitem('dustCobaltite
 
 
 EBF.recipeBuilder()
-        .inputs(ore('dustCobaltite'))
+        .inputs(ore('dustCobaltite') * 2)
         .fluidInputs(fluid('oxygen') * 9000)
         .outputs(metaitem('dustImpureCobaltOxide') * 2)
         .chancedOutput(metaitem('dustArsenicTrioxide') * 5, 7500, 0)
@@ -25,9 +25,9 @@ EBF.recipeBuilder()
         .buildAndRegister()
 
 FLUIDIZEDBR.recipeBuilder()
-        .inputs(ore('dustCobaltite'))
+        .inputs(ore('dustCobaltite') * 2)
         .fluidInputs(fluid('oxygen') * 9000)
-        .outputs(metaitem('dustImpureCobaltOxide') * 2)
+        .outputs(metaitem('dustImpureCobaltOxide') * 4)
         .chancedOutput(metaitem('dustArsenicTrioxide') * 5, 9000, 0)
         .fluidOutputs(fluid('sulfur_dioxide') * 2000)
         .EUt(Globals.voltAmps[2])
