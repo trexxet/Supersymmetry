@@ -46,7 +46,7 @@ DISTILLATION_TOWER.recipeBuilder()
     .fluidOutputs(fluid('ethylene') * 50)
     .fluidOutputs(fluid('one_two_dichloroethylene') * 50)
     .duration(80)
-    .EUt(30)
+    .EUt(120)
     .buildAndRegister()
 
 // PVC
