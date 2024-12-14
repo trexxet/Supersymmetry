@@ -2486,8 +2486,8 @@ metaitem.protector_chip.name=Protector Chip
 metaitem.zener_diode.name=Zener Diode
 metaitem.fuse.hv.name=High-Voltage Fuse
 metaitem.voltage_regulator.hv.unsealed.name=Unsealed HV Voltage Regulator
-metaitem.voltage_regulator.mv.name=MV Voltage Regulator
-metaitem.voltage_regulator.hv.name=HV Voltage Regulator
+metaitem.voltage_regulator.mv.name=Medium Voltage Regulator
+metaitem.voltage_regulator.hv.name=High Voltage Regulator
 
 metaitem.circuit.basic_integrated.name=Miniaturized Electronic Circuit
 metaitem.circuit.good_integrated.name=Advanced Electronic Circuit
