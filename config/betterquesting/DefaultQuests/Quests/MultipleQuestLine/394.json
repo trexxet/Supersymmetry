@@ -1,0 +1,25 @@
+{
+  "preRequisites:11": [
+    374,
+    373,
+    369,
+    370
+  ],
+  "properties:10": {
+    "betterquesting:10": {
+      "desc:8": "susy.quest.db.394.desc",
+      "frame:8": "GATE",
+      "icon:10": {
+        "id:8": "susy:turbine_rotor"
+      },
+      "ismain:1": 1,
+      "name:8": "susy.quest.db.394.title"
+    }
+  },
+  "questID:3": 394,
+  "tasks:9": {
+    "0:10": {
+      "taskID:8": "bq_standard:checkbox"
+    }
+  }
+}

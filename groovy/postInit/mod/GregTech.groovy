@@ -1,18 +1,12 @@
-import gregtech.api.recipes.recipeproperties.RecipeProperty;
-import gregtech.api.recipes.RecipeBuilder;
+import globals.Globals
+import globals.GroovyUtils
+import globals.RecyclingHelper
+import gregtech.api.recipes.category.RecipeCategories
+import gregtech.common.blocks.MetaBlocks
+import gregtech.common.blocks.MetaBlocks.*
+import net.minecraft.init.Blocks
 
-import gregtech.api.recipes.ModHandler;
-import gregtech.api.unification.material.Materials;
-import gregtech.api.unification.ore.OrePrefix;
-import gregtech.api.unification.stack.UnificationEntry;
-import gregtech.common.blocks.MetaBlocks;
-import gregtech.common.blocks.MetaBlocks.*;
-
-import supersymmetry.api.capability.impl.PseudoMultiRecipeLogic;
-import supersymmetry.api.recipes.builders.PseudoMultiRecipeBuilder;
-import net.minecraft.init.Blocks;
-
-println("Running GregTech.groovy...")
+log.infoMC("Running GregTech.groovy...")
 
 //REMOVALS
 
@@ -94,14 +88,6 @@ def name_removals = [
 	'gregtech:fluid_filter_sodalite',
 	'gregtech:fluid_filter_lazurite',
 	'gregtech:comparator_certus',
-	'gregtech:gregtech.machine.world_accelerator.lv',
-	'gregtech:gregtech.machine.world_accelerator.mv',
-	'gregtech:gregtech.machine.world_accelerator.hv',
-	'gregtech:gregtech.machine.world_accelerator.ev',
-	'gregtech:gregtech.machine.world_accelerator.iv',
-	'gregtech:gregtech.machine.world_accelerator.luv',
-	'gregtech:gregtech.machine.world_accelerator.zpm',
-	'gregtech:gregtech.machine.world_accelerator.uv',
 	'gregtech:nano_helmet',
 	'gregtech:nano_chestplate',
 	'gregtech:nano_leggings',
@@ -124,12 +110,6 @@ def name_removals = [
 	'gregtech:quantum_tank_zpm',
 	'gregtech:quantum_tank_uv',
 	'gregtech:quantum_tank_uhv',
-	'gregtech:large_combustion_engine',
-	'gregtech:extreme_combustion_engine',
-	'gregtech:gregtech.machine.fisher.lv',
-	'gregtech:gregtech.machine.fisher.mv',
-	'gregtech:gregtech.machine.fisher.hv',
-	'gregtech:gregtech.machine.fisher.ev',
 ]
 
 for (name in name_removals) {
@@ -179,6 +159,10 @@ for (name in ore_smelting_removals) {
     furnace.removeByInput(item('gregtech:ore_' + name + '_0', 2))
 }
 
+// Malachite Ore
+furnace.removeByInput(item('gregtech:ore_malachite_0', 0))
+furnace.add(item('gregtech:ore_malachite_0', 0), metaitem('ingotCopper') * 2, 0.5)
+
 // Polycaprolactam Bar * 1
 mods.gregtech.electric_blast_furnace.removeByInput(120, [metaitem('dustCaprolactam')], [fluid('nitrogen') * 1000])
 // Monocrystalline Silicon Boule * 1
@@ -215,31 +199,37 @@ mods.gregtech.assembler.removeByInput(1920, [metaitem('gemLapotron'), metaitem('
 //CONSUMES IRON BUCKET ONLY BECAUSE THE OUTPUT IS IN AN IRON BUCKET
 crafting.addShapeless('gregtech:salt_water_bucket', item('forge:bucketfilled').withNbt(["FluidName": "salt_water", "Amount": 1000]), [item('minecraft:water_bucket').noreturn(), metaitem('dustSalt'), metaitem('dustSalt')])
 
-crafting.addShaped('gregtech:pbf_bronze', metaitem('primitive_blast_furnace.bronze'), [
+RecyclingHelper.replaceShaped('gregtech:large_steel_boiler', metaitem('large_boiler.steel'), [
+		[ore('cableGtSingleCopper'), ore('circuitMv'), ore('cableGtSingleCopper')],
+		[ore('circuitMv'), item('gregtech:boiler_firebox_casing', 1), ore('circuitMv')],
+		[ore('cableGtSingleCopper'), ore('circuitMv'), ore('cableGtSingleCopper')]
+])
+
+RecyclingHelper.replaceShaped('gregtech:bronze_primitive_blast_furnace', metaitem('primitive_blast_furnace.bronze'), [
     [ore('craftingToolHardHammer'), ore('stickBronze'), ore('screwBronze')],
     [ore('plateBronze'), item('gregtech:metal_casing:1'), ore('stickBronze')],
     [ore('craftingToolScrewdriver'), ore('stickBronze'), ore('screwBronze')]
 ])
 
-crafting.addShaped('gregtech:high_pressure_latex_extractor', metaitem('latex_collector.steel'), [
+RecyclingHelper.addShaped('gregtech:high_pressure_latex_extractor', metaitem('latex_collector.steel'), [
         [metaitem('pipeSmallFluidSteel'), metaitem('susy:pump.steam'), metaitem('pipeSmallFluidSteel')],
         [metaitem('plateSteel'), metaitem('latex_collector.bronze'), metaitem('plateSteel')],
         [metaitem('plateWroughtIron'), metaitem('plateWroughtIron'), metaitem('plateWroughtIron')]
 ])
 
-crafting.addShaped('gregtech:steam_macerator', metaitem('steam_macerator_bronze'), [
+RecyclingHelper.replaceShaped('gregtech:steam_macerator_bronze', metaitem('steam_macerator_bronze'), [
     [metaitem('toolHeadBuzzSawSteel'), metaitem('pipeSmallFluidBronze'), metaitem('toolHeadBuzzSawSteel')],
     [metaitem('pipeSmallFluidBronze'), item('gregtech:steam_casing'), metaitem('pipeSmallFluidBronze')],
     [metaitem('steam.piston'), metaitem('pipeSmallFluidBronze'), metaitem('steam.piston')]
 ])
 
-crafting.addShaped('gregtech:co_bronze', metaitem('coke_oven'), [
+RecyclingHelper.replaceShaped('gregtech:coke_oven', metaitem('coke_oven'), [
     [item('gregtech:metal_casing:8'), ore('plateBronze'), item('gregtech:metal_casing:8')],
     [ore('plateBronze'), ore('craftingToolWrench'), ore('plateBronze')],
     [item('gregtech:metal_casing:8'), ore('plateBronze'), item('gregtech:metal_casing:8')]
 ])
 
-crafting.addShaped('gregtech:drum_wood', metaitem('drum.wood'), [
+RecyclingHelper.replaceShaped('gregtech:wooden_barrel', metaitem('drum.wood'), [
     [ore('craftingToolSoftHammer'), metaitem('rubber_drop'), ore('craftingToolSaw')],
     [ore('plankWood'), ore('stickLongBronze'), ore('plankWood')],
     [ore('plankWood'), ore('stickLongBronze'), ore('plankWood')]
@@ -252,7 +242,7 @@ crafting.addShaped("pig_iron_tiny_pile_manual", metaitem('dustTinyPigIron'), [
 
 //Steam Piston
 
-crafting.addShaped("gregtech:steam_piston", metaitem('steam.piston'), [
+RecyclingHelper.addShaped("gregtech:steam_piston", metaitem('steam.piston'), [
     [ore('plateBronze'), ore('plateBronze'), ore('plateBronze')],
     [ore('pipeTinyFluidBronze'), ore('stickBronze'), ore('stickBronze')],
     [ore('pipeTinyFluidBronze'), ore('craftingToolHardHammer'), ore('gearSmallBronze')]
@@ -270,13 +260,13 @@ mods.gregtech.assembler.recipeBuilder()
 
 //Steam Motor
 
-crafting.addShaped("gregtech:steam_motor", metaitem('steam.motor'), [
+RecyclingHelper.addShaped("gregtech:steam_motor", metaitem('steam.motor'), [
     [ore('plateBronze'), ore('stickBronze'), ore('plateBronze')],
     [metaitem('gearSmallBronze'), ore('stickBronze'), metaitem('gearSmallBronze')],
     [metaitem('steam.piston'), ore('stickBronze'), metaitem('steam.piston')]
 ]);
 
-crafting.addShaped("gregtech:steam_conveyor", metaitem('susy:conveyor.steam'), [
+RecyclingHelper.addShaped("gregtech:steam_conveyor", metaitem('susy:conveyor.steam'), [
     [ore('plateRubber'), ore('plateRubber'), ore('plateRubber')],
     [metaitem('steam.motor'), ore('gearSmallBronze'), metaitem('steam.motor')],
     [ore('plateRubber'), ore('plateRubber'), ore('plateRubber')]
@@ -292,16 +282,10 @@ mods.gregtech.assembler.recipeBuilder()
         .EUt(30)
         .buildAndRegister();
 
-crafting.addShaped("gregtech:steam_pump_iron", metaitem('susy:pump.steam'), [
+RecyclingHelper.addShaped("gregtech:steam_pump", metaitem('susy:pump.steam'), [
     [ore('screwBronze'), ore('rotorBronze'), ore('ringIron')],
     [ore('toolScrewdriver'), ore('pipeTinyFluidBronze'), ore('toolWrench')],
     [ore('ringIron'), metaitem('steam.motor'), ore('pipeTinyFluidBronze')]
-])
-
-crafting.addShaped("gregtech:steam_pump_brass", metaitem('susy:pump.steam'), [
-    [ore('screwBronze'), ore('rotorBronze'), ore('ringBrass')],
-    [ore('toolScrewdriver'), ore('pipeTinyFluidBronze'), ore('toolWrench')],
-    [ore('ringBrass'), metaitem('steam.motor'), ore('pipeTinyFluidBronze')]
 ])
 
 mods.gregtech.assembler.recipeBuilder()
@@ -314,86 +298,112 @@ mods.gregtech.assembler.recipeBuilder()
         .duration(100)
         .EUt(30)
         .buildAndRegister();
-		
+
 //Steam Conveyor (no recipe for now)
 
 
-crafting.replaceShaped("gregtech:steam_extractor_bronze", metaitem('steam_extractor_bronze'), [
+RecyclingHelper.replaceShaped("gregtech:steam_extractor_bronze", metaitem('steam_extractor_bronze'), [
     [ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze')],
     [metaitem('steam.piston'), item('gregtech:steam_casing'), ore('blockGlass')],
     [ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze')]
 ])
 
-crafting.replaceShaped("gregtech:steam_vacuum_chamber", metaitem('vacuum_chamber.bronze'), [
+RecyclingHelper.replaceShaped("gregtech:steam_vacuum_chamber", metaitem('vacuum_chamber.bronze'), [
     [ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze')],
     [metaitem('susy:pump.steam'), item('gregtech:steam_casing'), ore('blockGlass')],
     [ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze')]
 ])
 
-crafting.replaceShaped('gregtech:steam_macerator_bronze', metaitem('steam_macerator_bronze'), [
-    [ore('gemDiamond'), metaitem('pipeSmallFluidBronze'), ore('gemDiamond')],
-    [metaitem('pipeSmallFluidBronze'), item('gregtech:steam_casing'), metaitem('pipeSmallFluidBronze')],
-    [metaitem('steam.piston'), metaitem('pipeSmallFluidBronze'), metaitem('steam.piston')]
-])
-
-crafting.replaceShaped("gregtech:steam_compressor_bronze", metaitem('steam_compressor_bronze'), [
+RecyclingHelper.replaceShaped("gregtech:steam_compressor_bronze", metaitem('steam_compressor_bronze'), [
     [ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze')],
     [metaitem('steam.piston'), item('gregtech:steam_casing'), metaitem('steam.piston')],
     [ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze')]
 ])
 
-crafting.replaceShaped("gregtech:steam_hammer_bronze", metaitem('steam_hammer_bronze'), [
+RecyclingHelper.replaceShaped("gregtech:steam_hammer_bronze", metaitem('steam_hammer_bronze'), [
     [ore('pipeSmallFluidBronze'), metaitem('steam.piston'), ore('pipeSmallFluidBronze')],
     [ore('pipeSmallFluidBronze'), item('gregtech:steam_casing'), ore('pipeSmallFluidBronze')],
     [ore('pipeSmallFluidBronze'), ore('craftingAnvil'), ore('pipeSmallFluidBronze')]
 ])
 
-crafting.replaceShaped("gregtech:steam_rock_breaker_bronze", metaitem('steam_rock_breaker_bronze'), [
+RecyclingHelper.replaceShaped("gregtech:steam_rock_breaker_bronze", metaitem('steam_rock_breaker_bronze'), [
     [metaitem('steam.piston'), ore('pipeSmallFluidBronze'), metaitem('steam.piston')],
     [ore('pipeSmallFluidBronze'), item('gregtech:steam_casing'), ore('pipeSmallFluidBronze')],
     [ore('gemDiamond'), ore('pipeSmallFluidBronze'), ore('gemDiamond')]
 ])
 
-crafting.replaceShaped("gregtech:gregtech.machine.lathe.lv", metaitem('gregtech:lathe.lv'), [
+RecyclingHelper.replaceShaped("gregtech:gregtech.machine.lathe.lv", metaitem('gregtech:lathe.lv'), [
     [metaitem('cableGtSingleTin'),  ore('circuitLv'), metaitem('cableGtSingleTin')],
     [metaitem('electric.motor.lv'), metaitem('gregtech:hull.lv'), metaitem('toolHeadDrillSteel')],
     [ore('circuitLv'), metaitem('cableGtSingleTin'), metaitem('electric.piston.lv')]
 ])
 
-crafting.replaceShaped("gregtech:gregtech.machine.macerator.lv", metaitem('gregtech:macerator.lv'), [
+RecyclingHelper.replaceShaped("gregtech:gregtech.machine.macerator.lv", metaitem('gregtech:macerator.lv'), [
     [metaitem('electric.piston.lv'), metaitem('electric.motor.lv') , metaitem('toolHeadBuzzSawSteel')],
     [metaitem('cableGtSingleTin'), metaitem('cableGtSingleTin'), metaitem('gregtech:hull.lv')],
     [ore('circuitLv'), ore('circuitLv'), metaitem('cableGtSingleTin')]
 ])
 
-crafting.replaceShaped("gregtech:gregtech.machine.cutter.lv", metaitem('gregtech:cutter.lv'), [
-    [metaitem('cableGtSingleTin'), ore('circuitLv'), item('minecraft:glass')],
+RecyclingHelper.replaceShaped("gregtech:gregtech.machine.cutter.lv", metaitem('gregtech:cutter.lv'), [
+    [metaitem('cableGtSingleTin'), ore('circuitLv'), ore('blockGlass')],
 	[metaitem('conveyor.module.lv'), metaitem('gregtech:hull.lv'), metaitem('toolHeadBuzzSawSteel')],
 	[ore('circuitLv'), metaitem('cableGtSingleTin'), metaitem('electric.motor.lv')]
 ])
 
-crafting.replaceShaped("gregtech:gregtech.machine.cutter.mv", metaitem('gregtech:cutter.mv'), [
-    [metaitem('cableGtSingleCopper'), ore('circuitMv'), item('minecraft:glass')],
+RecyclingHelper.replaceShaped("gregtech:gregtech.machine.cutter.mv", metaitem('gregtech:cutter.mv'), [
+    [metaitem('cableGtSingleCopper'), ore('circuitMv'), ore('blockGlass')],
 	[metaitem('conveyor.module.mv'), metaitem('gregtech:hull.mv'), metaitem('toolHeadBuzzSawAluminium')],
 	[ore('circuitMv'), metaitem('cableGtSingleCopper'), metaitem('electric.motor.mv')]
 ])
 
-crafting.replaceShaped("gregtech:gregtech.machine.cutter.hv", metaitem('gregtech:cutter.hv'), [
+RecyclingHelper.replaceShaped("gregtech:gregtech.machine.cutter.hv", metaitem('gregtech:cutter.hv'), [
     [metaitem('cableGtSingleGold'), ore('circuitHv'), item('gregtech:transparent_casing')],
 	[metaitem('conveyor.module.hv'), metaitem('gregtech:hull.hv'), metaitem('toolHeadBuzzSawVanadiumSteel')],
 	[ore('circuitHv'), metaitem('cableGtSingleGold'), metaitem('electric.motor.hv')]
 ])
 
-crafting.replaceShaped("gregtech:gregtech.machine.electrolyzer.lv", metaitem('gregtech:electrolyzer.lv'), [
-		[metaitem('wireGtSingleSilver'), item('minecraft:glass'), metaitem('wireGtSingleSilver')],
+RecyclingHelper.replaceShaped("gregtech:gregtech.machine.electrolyzer.lv", metaitem('gregtech:electrolyzer.lv'), [
+		[metaitem('wireGtSingleSilver'), ore('blockGlass'), metaitem('wireGtSingleSilver')],
 		[metaitem('wireGtSingleSilver'), metaitem('gregtech:hull.lv'), metaitem('wireGtSingleSilver')],
 		[ore('circuitLv'), metaitem('cableGtSingleTin'), ore('circuitLv')]
 ])
 
-crafting.replaceShaped("gregtech:gregtech.machine.electrolyzer.mv", metaitem('gregtech:electrolyzer.mv'), [
-		[metaitem('wireGtSingleGold'), item('minecraft:glass'), metaitem('wireGtSingleGold')],
+RecyclingHelper.replaceShaped("gregtech:gregtech.machine.electrolyzer.mv", metaitem('gregtech:electrolyzer.mv'), [
+		[metaitem('wireGtSingleGold'), ore('blockGlass'), metaitem('wireGtSingleGold')],
 		[metaitem('wireGtSingleGold'), metaitem('gregtech:hull.mv'), metaitem('wireGtSingleGold')],
 		[ore('circuitMv'), metaitem('cableGtSingleCopper'), ore('circuitMv')]
+])
+
+// Steam machine recipes (due to furnace removal)
+RecyclingHelper.replaceShaped("gregtech:steam_boiler_coal_bronze", item('gregtech:machine', 1), [
+        [ore('plateBronze'), ore('plateBronze'), ore('plateBronze')],
+        [ore('plateBronze'), ore('toolWrench'), ore('plateBronze')],
+        [ore('blockBrick'), ore('blockBrick'), ore('blockBrick')]
+])
+
+RecyclingHelper.replaceShaped("gregtech:steam_boiler_coal_steel", item('gregtech:machine', 2), [
+        [ore('plateSteel'), ore('plateSteel'), ore('plateSteel')],
+        [ore('plateSteel'), ore('toolWrench'), ore('plateSteel')],
+        [ore('blockBrick'), ore('blockBrick'), ore('blockBrick')]
+])
+
+RecyclingHelper.replaceShaped("gregtech:steam_furnace_bronze", item('gregtech:machine', 15), [
+        [ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze')],
+        [ore('pipeSmallFluidBronze'), ore('plateBronze'), ore('pipeSmallFluidBronze')],
+        [ore('pipeSmallFluidBronze'), item('gregtech:steam_casing', 1), ore('pipeSmallFluidBronze')]
+])
+
+RecyclingHelper.replaceShaped("gregtech:steam_alloy_smelter_bronze", item('gregtech:machine', 17), [
+        [ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze')],
+        [ore('plateBronze'), item('gregtech:steam_casing', 1),  ore('plateBronze')],
+		[ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze'), ore('pipeSmallFluidBronze')]
+])
+
+// Multi smelter recipe (due to furnace removal)
+RecyclingHelper.replaceShaped("gregtech:multi_furnace", item('gregtech:machine', 1006), [
+		[ore('frameGtInvar'), ore('frameGtInvar'), ore('frameGtInvar')],
+		[ore('circuitHv'), item('gregtech:metal_casing', 2),  ore('circuitHv')],
+		[ore('cableGtSingleCopper'), ore('circuitHv'), ore('cableGtSingleCopper')]
 ])
 
 // crafting.addShaped("rubber_rod_manual", metaitem('stickRubber'), [
@@ -415,10 +425,8 @@ crafting.replaceShaped("gregtech:gregtech.machine.electrolyzer.mv", metaitem('gr
 //         .inputs(ore('dustSulfur'))
 //         .outputs(metaitem('dustRubber'))
 //         .duration(400)
-//         .EUt(8)
+//         .EUt(7)
 //         .buildAndRegister();
-
-furnace.add(metaitem('dustLimestone'), metaitem('dustQuicklime'))
 
 //TechGuns carbon plate removal
 // Carbon Plate * 1
@@ -447,8 +455,9 @@ mods.gregtech.assembler.removeByInput(480, [metaitem('plateEnderPearl') * 9, met
 
 crafting.addShapeless('convert_old_slaked_lime', metaitem('dustCalciumHydroxide'), [metaitem('slaked_lime')])
 
-mods.gregtech.chemical_bath.recipeBuilder()
+mods.gregtech.mixer.recipeBuilder()
         .inputs(ore('dustQuicklime') * 2)
+        .circuitMeta(1)
         .fluidInputs(fluid('water') * 1000)
         .outputs(metaitem('dustCalciumHydroxide') * 5)
         .duration(20)
@@ -527,13 +536,13 @@ mods.gregtech.assembler.recipeBuilder()
 mods.gregtech.assembler.recipeBuilder()
         .inputs(ore('plateSteel') * 4)
         .inputs(ore('foilAluminium') * 8)
-        .inputs(ore('foilPolypropylene') * 16)
+        .inputs(ore('foilPolypropylene') * 8)
         .outputs(metaitem('hepa_filter'))
         .duration(80)
         .EUt(120)
         .buildAndRegister();
 
-crafting.replaceShaped('gregtech:filter_casing', item('gregtech:cleanroom_casing', 1) * 2, [
+RecyclingHelper.replaceShaped('gregtech:filter_casing', item('gregtech:cleanroom_casing', 1) * 2, [
         [item('minecraft:iron_bars'), item('minecraft:iron_bars'), item('minecraft:iron_bars')],
         [metaitem('electric.motor.mv'), metaitem('rotorSteel'), metaitem('electric.pump.mv')],
         [metaitem('frameSteel'), metaitem('hepa_filter'), metaitem('frameSteel')]
@@ -593,9 +602,10 @@ mods.gregtech.fluid_solidifier.recipeBuilder()
         .EUt(4)
         .buildAndRegister();
 
+// Home block
 crafting.replaceShaped('susy:home_block', item('susy:home_block'), [
-        [null, ore('craftingToolFile'), null],
-        [null, ore('stoneSmooth'), null],
+        [null, null, null],
+        [ore('toolHammer'), ore('stoneSmooth'), null],
         [null, null, null]
 ])
 
@@ -603,6 +613,13 @@ crafting.addShapeless('susy:home_block_1', item('susy:home_block', 4), [item('su
 crafting.addShapeless('susy:home_block_2', item('susy:home_block', 8), [item('susy:home_block', 4)])
 crafting.addShapeless('susy:home_block_3', item('susy:home_block', 12), [item('susy:home_block', 8)])
 crafting.addShapeless('susy:home_block_4', item('susy:home_block', 0), [item('susy:home_block', 12)])
+
+// Inter-conversion using Chisel
+mods.chisel.carving.addGroup("home_blocks")
+mods.chisel.carving.addVariation("home_blocks", item('susy:home_block', 0))
+mods.chisel.carving.addVariation("home_blocks", item('susy:home_block', 4))
+mods.chisel.carving.addVariation("home_blocks", item('susy:home_block', 8))
+mods.chisel.carving.addVariation("home_blocks", item('susy:home_block', 12))
 
 // Acetone * 200
 mods.gregtech.fluid_heater.removeByInput(30, [metaitem('circuit.integrated').withNbt(["Configuration": 1])], [fluid('dissolved_calcium_acetate') * 200])
@@ -721,6 +738,41 @@ mods.gregtech.macerator.recipeBuilder()
 		.EUt(7)
 		.buildAndRegister();
 
+mods.gregtech.macerator.recipeBuilder()
+		.inputs(item('susy:resource_block', 15))
+		.outputs(metaitem('dustCoal') * 8)
+		.duration(240)
+		.EUt(7)
+		.buildAndRegister();
+
+mods.gregtech.forge_hammer.recipeBuilder()
+		.inputs(item('susy:resource_block', 15))
+		.outputs(item('minecraft:coal') * 8)
+		.duration(10)
+		.EUt(16)
+		.buildAndRegister();
+
+mods.gregtech.macerator.recipeBuilder()
+		.inputs(item('susy:resource_block_1'))
+		.outputs(metaitem('dustCopper') * 8)
+		.duration(240)
+		.EUt(7)
+		.buildAndRegister();
+
+mods.gregtech.macerator.recipeBuilder()
+		.inputs(metaitem('native_copper'))
+		.outputs(metaitem('dustCopper'))
+		.duration(30)
+		.EUt(7)
+		.buildAndRegister();
+
+mods.gregtech.forge_hammer.recipeBuilder()
+		.inputs(item('susy:resource_block_1'))
+		.outputs(metaitem('native_copper') * 8)
+		.duration(10)
+		.EUt(16)
+		.buildAndRegister();
+
 mods.gregtech.sifter.recipeBuilder()
         .inputs(ore('dustNonMarineEvaporite'))
         .chancedOutput(metaitem('dustSalt'), 8000, 500)
@@ -776,20 +828,69 @@ mods.gregtech.packer.recipeBuilder()
         .EUt(7)
         .buildAndRegister();
 
-crafting.addShaped('gregtech:fluid_filter_brass', metaitem('fluid_filter'), [
+mods.gregtech.packer.recipeBuilder()
+        .inputs(metaitem('sand.dust') * 4)
+        .outputs(item('minecraft:sand'))
+        .duration(20)
+        .EUt(7)
+        .buildAndRegister();
+
+RecyclingHelper.removeRecyclingRecipes(metaitem('fluid_filter'))
+
+RecyclingHelper.addShaped('gregtech:fluid_filter_brass', metaitem('fluid_filter'), [
         [ore('foilZinc'), ore('foilZinc'), ore('foilZinc')],
         [ore('foilZinc'), ore('plateBrass'), ore('foilZinc')],
         [ore('foilZinc'), ore('foilZinc'), ore('foilZinc')]
 ])
 
-crafting.addShaped('gregtech:brass_drum', metaitem('drum.brass'), [
-        [null, ore('craftingToolHardHammer'), null],
-        [metaitem('plateBrass'), metaitem('stickLongBrass'), metaitem('plateBrass')],
-        [metaitem('plateBrass'), metaitem('stickLongBrass'), metaitem('plateBrass')]
+// SuSy drums
+RecyclingHelper.addShaped("drum_lead", metaitem('drum.lead'), [
+		[null,ore('craftingToolHardHammer'),null],
+		[metaitem('plateLead'),metaitem('stickLongLead'),metaitem('plateLead')],
+		[metaitem('plateLead'),metaitem('stickLongLead'),metaitem('plateLead')]
 ])
 
+RecyclingHelper.addShaped('gregtech:brass_drum', metaitem('drum.brass'), [
+		[null, ore('craftingToolHardHammer'), null],
+		[metaitem('plateBrass'), metaitem('stickLongBrass'), metaitem('plateBrass')],
+		[metaitem('plateBrass'), metaitem('stickLongBrass'), metaitem('plateBrass')]
+])
+
+//ModHandler.addShapelessNBTClearingRecipe("drum_nbt_lead", metaitem('drum.lead'),
+//		metaitem('drum.lead')
+//)
+//ModHandler.addShapelessNBTClearingRecipe("drum_nbt_brass", metaitem('drum.brass'),
+//		metaitem('drum.brass')
+//)
+
+// ModHandler.addShapelessNBTClearingRecipe() is not reloadable, just using these seems fine, and we indeed have tooltips.
+crafting.addShapeless("drum_nbt_lead", metaitem('drum.lead'), [
+		metaitem('drum.lead').noreturn()
+]);
+crafting.addShapeless("drum_nbt_brass", metaitem('drum.brass'), [
+		metaitem('drum.brass').noreturn()
+]);
+
+mods.gregtech.assembler.recipeBuilder()
+		.inputs(ore('stickLongLead') * 2)
+		.inputs(ore('plateLead') * 4)
+		.outputs(metaitem('drum.lead'))
+		.duration(200)
+		.EUt(16)
+		.circuitMeta(2)
+		.buildAndRegister()
+
+mods.gregtech.assembler.recipeBuilder()
+		.inputs(ore('stickLongBrass') * 2)
+		.inputs(ore('plateBrass') * 4)
+		.outputs(metaitem('drum.brass'))
+		.duration(200)
+		.EUt(16)
+		.circuitMeta(2)
+		.buildAndRegister()
+
 // Electrolytic Cell
-crafting.addShaped('gregtech:electrolytic_cell', metaitem('electrolytic_cell'), [
+RecyclingHelper.addShaped('gregtech:electrolytic_cell', metaitem('electrolytic_cell'), [
         [ore('plateSteel'), ore('circuitLv'), ore('plateSteel')],
         [ore('wireGtQuadrupleTin'), metaitem('hull.lv'), ore('wireGtQuadrupleTin')],
         [ore('circuitLv'), ore('cableGtSingleTin'), ore('circuitLv')]
@@ -882,11 +983,19 @@ CENTRIFUGE.recipeBuilder()
         .duration(40)
         .EUt(30)
         .buildAndRegister();
-		
+
+CENTRIFUGE.recipeBuilder()
+        .inputs(ore('dustMagnalium') * 3)
+        .outputs(metaitem('dustMagnesium'))
+        .outputs(metaitem('dustAluminium') * 2)
+        .duration(72)
+        .EUt(30)
+        .buildAndRegister();
+
 // Fix distillation tower being too difficult (4 EV circuits? Seriously?)
 
 
-crafting.replaceShaped('gregtech:distillation_tower', metaitem('distillation_tower'), [
+RecyclingHelper.replaceShaped('gregtech:distillation_tower', metaitem('distillation_tower'), [
         [ore('circuitHv'), metaitem('pipeLargeFluidStainlessSteel'), ore('circuitHv')],
         [metaitem('electric.pump.hv'), metaitem('hull.mv'), metaitem('electric.pump.hv')],
         [ore('circuitHv'), metaitem('pipeLargeFluidStainlessSteel'), ore('circuitHv')]
@@ -1004,52 +1113,61 @@ mods.gregtech.circuit_assembler.removeByInput(60, [metaitem('circuit_board.plast
 mods.gregtech.circuit_assembler.removeByInput(600, [metaitem('circuit_board.plastic'), metaitem('plate.system_on_chip'), metaitem('wireFineCopper') * 2, metaitem('boltTin') * 2], [fluid('soldering_alloy') * 72])
 // Microprocessor * 6
 mods.gregtech.circuit_assembler.removeByInput(600, [metaitem('circuit_board.plastic'), metaitem('plate.system_on_chip'), metaitem('wireFineCopper') * 2, metaitem('boltTin') * 2], [fluid('tin') * 144])
+	
+Globals.solders.each { key, val ->
+	mods.gregtech.assembler.recipeBuilder()
+		.inputs(metaitem('circuit_board.good'))
+		.inputs(metaitem('plate.integrated_logic_circuit'))
+		.inputs(ore('boltRedAlloy') * 2)
+		.inputs(ore('wireFineTin') * 2)
+		.fluidInputs(fluid(key) * val)
+		.outputs(metaitem('circuit.nand_chip') * 16)
+		.duration(10)
+		.EUt(16)
+		.buildAndRegister();
+}
 
-mods.gregtech.assembler.recipeBuilder()
-        .inputs(metaitem('circuit_board.good'))
-        .inputs(metaitem('plate.integrated_logic_circuit'))
-        .inputs(ore('boltRedAlloy') * 2)
-        .inputs(ore('wireFineTin') * 2)
-        .fluidInputs(fluid('soldering_alloy') * 72)
-        .outputs(metaitem('circuit.nand_chip') * 16)
-        .duration(10)
-        .EUt(16)
-        .buildAndRegister();
+Globals.solders.each { key, val ->
+	mods.gregtech.assembler.recipeBuilder()
+		.inputs(metaitem('circuit_board.plastic'))
+		.inputs(metaitem('plate.integrated_logic_circuit'))
+		.inputs(ore('boltRedAlloy') * 2)
+		.inputs(ore('wireFineTin') * 2)
+		.fluidInputs(fluid(key) * val)
+		.outputs(metaitem('circuit.nand_chip') * 24)
+		.duration(10)
+		.EUt(16)
+		.buildAndRegister();
+}
 
-mods.gregtech.assembler.recipeBuilder()
-        .inputs(metaitem('circuit_board.plastic'))
-        .inputs(metaitem('plate.integrated_logic_circuit'))
-        .inputs(ore('boltRedAlloy') * 2)
-        .inputs(ore('wireFineTin') * 2)
-        .fluidInputs(fluid('soldering_alloy') * 72)
-        .outputs(metaitem('circuit.nand_chip') * 24)
-        .duration(10)
-        .EUt(16)
-        .buildAndRegister();
+Globals.solders.each { key, val ->
+	mods.gregtech.circuit_assembler.recipeBuilder()
+		.inputs(metaitem('circuit_board.plastic'))
+		.inputs(metaitem('plate.central_processing_unit'))
+		.inputs(ore('componentResistor') * 2)
+		.inputs(ore('componentCapacitor') * 2)
+		.inputs(ore('componentTransistor') * 2)
+		.inputs(ore('wireFineCopper') * 2)
+		.fluidInputs(fluid(key) * val)
+		.outputs(metaitem('circuit.microprocessor') * 5)
+		.duration(200)
+		.EUt(60)
+		.buildAndRegister();
+}
 
-mods.gregtech.circuit_assembler.recipeBuilder()
-        .inputs(metaitem('circuit_board.plastic'))
-        .inputs(metaitem('plate.central_processing_unit'))
-        .inputs(ore('componentResistor') * 2)
-        .inputs(ore('componentCapacitor') * 2)
-        .inputs(ore('componentTransistor') * 2)
-        .inputs(ore('wireFineCopper') * 2)
-        .fluidInputs(fluid('soldering_alloy') * 72)
-        .outputs(metaitem('circuit.microprocessor') * 5)
-        .duration(200)
-        .EUt(60)
-        .buildAndRegister();
+Globals.solders.each { key, val ->
+	mods.gregtech.circuit_assembler.recipeBuilder()
+		.inputs(metaitem('circuit_board.plastic'))
+		.inputs(metaitem('plate.system_on_chip'))
+		.inputs(ore('wireFineCopper') * 2)
+		.inputs(ore('boltTin') * 2)
+		.fluidInputs(fluid(key) * val)
+		.outputs(metaitem('circuit.microprocessor') * 10)
+		.duration(50)
+		.EUt(600)
+		.buildAndRegister();
+}
 
-mods.gregtech.circuit_assembler.recipeBuilder()
-        .inputs(metaitem('circuit_board.plastic'))
-        .inputs(metaitem('plate.system_on_chip'))
-        .inputs(ore('wireFineCopper') * 2)
-        .inputs(ore('boltTin') * 2)
-        .fluidInputs(fluid('soldering_alloy') * 72)
-        .outputs(metaitem('circuit.microprocessor') * 10)
-        .duration(50)
-        .EUt(600)
-        .buildAndRegister();
 
 mods.gregtech.centrifuge.recipeBuilder()
 		.fluidInputs(fluid('gtfo_soybean_oil') * 1000)
@@ -1172,7 +1290,7 @@ mods.gregtech.macerator.recipeBuilder()
         .outputs(metaitem('dustSteel') * 6)
         .outputs(metaitem('dustConcrete'))
         .duration(150)
-        .EUt(8)
+        .EUt(7)
         .buildAndRegister();
         
 // Wireless Digital Interface * 1
@@ -1190,7 +1308,7 @@ mods.gregtech.arc_furnace.removeByInput(30, [item('gregtech:turbine_casing', 8)]
 // Solid Steel Machine Casing * 2
 mods.gregtech.assembler.removeByInput(16, [metaitem('plateSteel') * 6, metaitem('frameSteel'), metaitem('circuit.integrated').withNbt(["Configuration": 6])], null)
 
-crafting.replaceShaped("gregtech:casing_steel_solid", item('gregtech:metal_casing', 4) * 4, [
+RecyclingHelper.replaceShaped("gregtech:casing_steel_solid", item('gregtech:metal_casing', 4) * 4, [
         [ore('plateSteel'), ore('craftingToolHardHammer'), ore('plateSteel')],
         [ore('plateSteel'), ore('frameGtSteel'), ore('plateSteel')],
         [ore('plateSteel'), ore('craftingToolWrench'), ore('plateSteel')]
@@ -1205,123 +1323,19 @@ mods.gregtech.assembler.recipeBuilder()
         .duration(50)
         .buildAndRegister()
 
-// Steel Frame Box * 1
-mods.gregtech.assembler.removeByInput(7, [metaitem('stickSteel') * 4, metaitem('circuit.integrated').withNbt(["Configuration": 4])], null)
-
-crafting.replaceShaped("gregtech:frame_steel", metaitem('frameSteel') * 4, [
-        [ore('stickSteel'), ore('stickSteel'), ore('stickSteel')],
-        [ore('stickSteel'), ore('craftingToolWrench'), ore('stickSteel')],
-        [ore('stickSteel'), ore('stickSteel'), ore('stickSteel')]
-])
-
-mods.gregtech.assembler.recipeBuilder()
-        .circuitMeta(4)
-        .inputs(ore('stickSteel') * 4)
-        .outputs(metaitem('frameSteel') * 2)
-        .EUt(7)
-        .duration(60)
-        .buildAndRegister()
-
 //Steel Pipe Casing
-crafting.replaceShaped("gregtech:casing_steel_pipe", item('gregtech:boiler_casing', 1) * 4, [
+RecyclingHelper.replaceShaped("gregtech:casing_steel_pipe", item('gregtech:boiler_casing', 1) * 4, [
         [ore('plateSteel'), ore('pipeNormalFluidSteel'), ore('plateSteel')],
         [ore('pipeNormalFluidSteel'), ore('frameGtSteel'), ore('pipeNormalFluidSteel')],
         [ore('plateSteel'), ore('pipeNormalFluidSteel'), ore('plateSteel')]
 ])
 
 //Steel Firebox Casing
-crafting.replaceShaped("gregtech:casing_steel_firebox", item('gregtech:boiler_firebox_casing', 1) * 4, [
+RecyclingHelper.replaceShaped("gregtech:casing_steel_firebox", item('gregtech:boiler_firebox_casing', 1) * 4, [
         [ore('plateSteel'), ore('stickSteel'), ore('plateSteel')],
         [ore('stickSteel'), ore('frameGtSteel'), ore('stickSteel')],
         [ore('plateSteel'), ore('stickSteel'), ore('plateSteel')]
 ])
-
-//Steel components recycling
-
-// Steel Dust * 4
-mods.gregtech.macerator.removeByInput(8, [item('gregtech:metal_casing', 4)], null)
-// Steel Ingot * 4
-mods.gregtech.arc_furnace.removeByInput(30, [item('gregtech:metal_casing', 4)], [fluid('oxygen') * 224])
-
-// Steel Dust * 9
-mods.gregtech.macerator.removeByInput(8, [item('gregtech:boiler_casing', 1)], null)
-// Block of Steel * 1
-mods.gregtech.arc_furnace.removeByInput(30, [item('gregtech:boiler_casing', 1)], [fluid('oxygen') * 504])
-
-// Steel Dust * 4
-mods.gregtech.macerator.removeByInput(8, [item('gregtech:boiler_firebox_casing', 1)], null)
-// Steel Ingot * 4
-mods.gregtech.arc_furnace.removeByInput(30, [item('gregtech:boiler_firebox_casing', 1)], [fluid('oxygen') * 224])
-
-// Steel Dust * 2
-mods.gregtech.macerator.removeByInput(8, [metaitem('frameSteel')], null)
-// Steel Ingot * 2
-mods.gregtech.arc_furnace.removeByInput(30, [metaitem('frameSteel')], [fluid('oxygen') * 112])
-// Steel * 288
-mods.gregtech.extractor.removeByInput(120, [metaitem('frameSteel')], null)
-
-//Solid Steel Casing
-mods.gregtech.macerator.recipeBuilder()
-        .inputs(item('gregtech:metal_casing', 4))
-        .outputs(metaitem('dustSteel') * 2)
-        .duration(220)
-        .EUt(8)
-        .buildAndRegister()
-
-mods.gregtech.arc_furnace.recipeBuilder()
-        .inputs(item('gregtech:metal_casing', 4))
-        .fluidInputs(fluid('oxygen') * 224)
-        .outputs(metaitem('ingotSteel') * 2)
-        .duration(220)
-        .EUt(30)
-        .buildAndRegister()
-
-//Steel Pipe Casing
-mods.gregtech.macerator.recipeBuilder()
-        .inputs(item('gregtech:boiler_casing', 1))
-        .outputs(metaitem('dustSteel') * 4)
-        .duration(220)
-        .EUt(8)
-        .buildAndRegister()
-
-mods.gregtech.arc_furnace.recipeBuilder()
-        .inputs(item('gregtech:boiler_casing', 1))
-        .fluidInputs(fluid('oxygen') * 504)
-        .outputs(metaitem('ingotSteel') * 4)
-        .duration(220)
-        .EUt(30)
-        .buildAndRegister()
-
-//Steel Fireboxes
-mods.gregtech.macerator.recipeBuilder()
-        .inputs(item('gregtech:boiler_firebox_casing', 1))
-        .outputs(metaitem('dustSteel') * 2)
-        .duration(220)
-        .EUt(8)
-        .buildAndRegister()
-
-mods.gregtech.arc_furnace.recipeBuilder()
-        .inputs(item('gregtech:boiler_firebox_casing', 1))
-        .fluidInputs(fluid('oxygen') * 224)
-        .outputs(metaitem('ingotSteel') * 2)
-        .duration(220)
-        .EUt(30)
-        .buildAndRegister()
-
-mods.gregtech.macerator.recipeBuilder()
-        .inputs(metaitem('frameSteel'))
-        .outputs(metaitem('dustSteel') * 1)
-        .duration(220)
-        .EUt(8)
-        .buildAndRegister()
-
-mods.gregtech.arc_furnace.recipeBuilder()
-        .inputs(metaitem('frameSteel'))
-        .fluidInputs(fluid('oxygen') * 112)
-        .outputs(metaitem('ingotSteel') * 1)
-        .duration(220)
-        .EUt(30)
-        .buildAndRegister()
 
 // Tapes
 mods.gregtech.assembler.recipeBuilder()
@@ -1373,7 +1387,7 @@ mods.gregtech.assembler.removeByInput(7, [metaitem('hull.ulv'), item('minecraft:
 mods.gregtech.assembler.removeByInput(7, [metaitem('hull.ulv'), item('minecraft:glass'), metaitem('circuit.integrated').withNbt(["Configuration": 1])], [fluid('polybenzimidazole') * 4])
 
 crafting.addShaped("gregtech:fluid_hatch.import.ulv", metaitem('fluid_hatch.import.ulv'), [
-		[null, item('minecraft:glass'), null],
+		[null, ore('blockGlass'), null],
 		[null, metaitem('hull.ulv'), null],
 		[null, null, null]
 ])
@@ -1387,7 +1401,7 @@ mods.gregtech.assembler.removeByInput(7, [metaitem('hull.ulv'), item('minecraft:
 crafting.addShaped("gregtech:fluid_hatch.export.ulv", metaitem('fluid_hatch.export.ulv'), [
 		[null, null, null],
 		[null, metaitem('hull.ulv'), null],
-		[null, item('minecraft:glass'), null]
+		[null, ore('blockGlass'), null]
 ])
 
 // Black Granite Dust * 1
@@ -1412,10 +1426,58 @@ mods.gregtech.macerator.recipeBuilder()
 
 // Multiblock Builder
 
-crafting.replaceShaped("gregtech:multiblock_builder", metaitem('tool.multiblock_builder'), [
+RecyclingHelper.replaceShaped("gregtech:multiblock_builder", metaitem('tool.multiblock_builder'), [
         [ore('craftingToolWrench'), metaitem('robot.arm.ev'), metaitem('field.generator.hv')],
         [ore('screwStainlessSteel'), ore('stickPolytetrafluoroethylene'), metaitem('robot.arm.ev')],
         [ore('stickPolytetrafluoroethylene'), ore('screwStainlessSteel'), ore('craftingToolScrewdriver')]
 ])
-//
 
+// Glue * 2500
+mods.gregtech.mixer.removeByInput(7, null, [fluid('polyvinyl_acetate') * 1000, fluid('methyl_acetate') * 1500])
+mods.gregtech.blender.removeByInput(7, null, [fluid('polyvinyl_acetate') * 1000, fluid('methyl_acetate') * 1500])
+// Glue * 2500
+mods.gregtech.mixer.removeByInput(7, null, [fluid('polyvinyl_acetate') * 1000, fluid('acetone') * 1500])
+mods.gregtech.blender.removeByInput(7, null, [fluid('polyvinyl_acetate') * 1000, fluid('acetone') * 1500])
+
+MIXER.recipeBuilder()
+        .fluidInputs(fluid('polyvinyl_acetate') * 144)
+        .fluidInputs(fluid('methyl_acetate') * 1500)
+        .fluidOutputs(fluid('glue') * 1500)
+        .duration(50)
+        .EUt(7)
+        .buildAndRegister();
+
+GroovyUtils.removeRecipesContainingFluid(mods.gregtech.assembler, fluid('polybenzimidazole'))
+GroovyUtils.removeRecipesContainingFluid(mods.gregtech.autoclave, fluid('polybenzimidazole'))
+GroovyUtils.removeRecipesContainingFluid(mods.gregtech.fluid_solidifier, fluid('polybenzimidazole'))
+GroovyUtils.removeRecipesContainingFluid(mods.gregtech.assembly_line, fluid('polybenzimidazole'))
+
+crafting.addShaped('gregtech:electric_jetpack1', metaitem('gregtech:electric_jetpack'), [
+    [ore('toolWireCutter'), ore('circuitMv'), ore('toolScrewdriver')],
+    [metaitem('power_thruster'), metaitem('battery.re.mv.cadmium'), metaitem('power_thruster')],
+    [ore('wireGtDoubleAnnealedCopper'), null, ore('wireGtDoubleAnnealedCopper')]
+])
+
+crafting.addShaped('gregtech:electric_jetpack2', metaitem('gregtech:electric_jetpack'), [
+    [ore('toolWireCutter'), ore('circuitMv'), ore('toolScrewdriver')],
+    [metaitem('power_thruster'), metaitem('battery.re.mv.sodium'), metaitem('power_thruster')],
+    [ore('wireGtDoubleAnnealedCopper'), null, ore('wireGtDoubleAnnealedCopper')]
+])
+
+crafting.replaceShaped('gregtech:electric_jetpack_advanced', metaitem('advanced_electric_jetpack'), [
+    [ore('toolWireCutter'), metaitem('electric_jetpack'), ore('toolScrewdriver')],
+    [metaitem('power_thruster_advanced'), metaitem('battery.re.hv.sodium'), metaitem('power_thruster_advanced')],
+    [metaitem('wireGtQuadrupleGold'), ore('circuitHv'), metaitem('wireGtQuadrupleGold')]
+])
+
+crafting.addShaped('gregtech:electric_jetpack_advanced1', metaitem('advanced_electric_jetpack'), [
+    [ore('toolWireCutter'), metaitem('electric_jetpack'), ore('toolScrewdriver')],
+    [metaitem('power_thruster_advanced'), metaitem('battery.re.hv.lithium'), metaitem('power_thruster_advanced')],
+    [metaitem('wireGtQuadrupleGold'), ore('circuitHv'), metaitem('wireGtQuadrupleGold')]
+])
+
+crafting.addShaped('gregtech:electric_jetpack_advanced2', metaitem('advanced_electric_jetpack'), [
+    [ore('toolWireCutter'), metaitem('electric_jetpack'), ore('toolScrewdriver')],
+    [metaitem('power_thruster_advanced'), metaitem('battery.re.hv.cadmium'), metaitem('power_thruster_advanced')],
+    [metaitem('wireGtQuadrupleGold'), ore('circuitHv'), metaitem('wireGtQuadrupleGold')]
+])

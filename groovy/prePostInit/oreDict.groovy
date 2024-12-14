@@ -1,3 +1,5 @@
+package prePostInit;
+
 import static globals.Globals.*
 
 import supersymmetry.common.blocks.SuSyBlocks
@@ -89,6 +91,8 @@ ore('dyeGreen').add(metaitem('gregtechfoodoption:cupric_hydrogen_arsenite_dust')
 
 ore('oreBauxite').add(item('susy:resource_block:0'))
 ore('oreSulfur').add(item('susy:resource_block:14'))
+ore('oreCoalDeposit').add(item('susy:resource_block:15'))
+ore('oreNativeCopperDeposit').add(item('susy:resource_block_1:0'))
 
 ore('oreOrthomagmaticDeposit').add(item('susy:deposit_block:0'))
 ore('oreMetamorphicDeposit').add(item('susy:deposit_block:1'))
@@ -136,7 +140,7 @@ def unify (ore, p) {
             ItemStack item = ore.getAt(i)
             if (item.getItem().getRegistryName().getNamespace() != Globals.mod_priority[pos]) {
                 ore.remove(item)
-                mods.jei.hide(item)
+                mods.jei.ingredient.hide(item)
             }
         }
     } else if (pos < Globals.mod_priority.size() - 1) {
@@ -186,7 +190,7 @@ oreDictRemovals = [
 
 oreDictRemovals.each { key, val ->
     ore(val).remove(item(key))
-    mods.jei.hide(item(key))
+    mods.jei.ingredient.hide(item(key))
 }
 
 susycobble = SuSyBlocks.SUSY_STONE_BLOCKS.get(SusyStoneVariantBlock.StoneVariant.COBBLE)
@@ -221,18 +225,6 @@ for (type in StoneVariantBlock.StoneType.values()) {
     OreDictionary.registerOre('stone', variant)
 }
 
-//Saw oredict
-
-ore('toolSaw').remove(item('notreepunching:saw/iron'))
-ore('toolSaw').remove(item('notreepunching:saw/gold'))
-ore('toolSaw').remove(item('notreepunching:saw/diamond'))
-
-//No tree punching knife fixes
-
-ore('toolKnife').remove(item('notreepunching:knife/iron'))
-ore('toolKnife').remove(item('notreepunching:knife/gold'))
-ore('toolKnife').remove(item('notreepunching:knife/diamond'))
-
 //Manual Fixes
 ore('stickWood').add(item('minecraft:stick'))
 ore('stickIron').remove(item('industrialrenewal:stick_iron'))
@@ -246,21 +238,21 @@ ore('dustCinnabar').remove(item('tardis:cinnabar'))
 ore('dustSaltpeter').remove(item('icbmclassic:saltpeter'))
 
 //Hide ALL TechGuns recipes, they are impossible anyways since the machines needed are uncraftable
-mods.jei.hideCategory('minecraft.brewing')
-mods.jei.hideCategory('techguns.ammopress')
-mods.jei.hideCategory('techguns.metalpress')
-mods.jei.hideCategory('techguns.chemlab')
-mods.jei.hideCategory('techguns.fabricator')
-mods.jei.hideCategory('techguns.chargingstation')
-mods.jei.hideCategory('techguns.reactionchamber')
-mods.jei.hideCategory('techguns.oredrill')
-mods.jei.hideCategory('techguns.blastfurnace')
-mods.jei.hideCategory('techguns.grinder')
-mods.jei.hideCategory('techguns.camobench')
+mods.jei.category.hideCategory('minecraft.brewing')
+mods.jei.category.hideCategory('techguns.ammopress')
+mods.jei.category.hideCategory('techguns.metalpress')
+mods.jei.category.hideCategory('techguns.chemlab')
+mods.jei.category.hideCategory('techguns.fabricator')
+mods.jei.category.hideCategory('techguns.chargingstation')
+mods.jei.category.hideCategory('techguns.reactionchamber')
+mods.jei.category.hideCategory('techguns.oredrill')
+mods.jei.category.hideCategory('techguns.blastfurnace')
+mods.jei.category.hideCategory('techguns.grinder')
+mods.jei.category.hideCategory('techguns.camobench')
 
-mods.jei.hideCategory('gregtech:combustion_generator')
+mods.jei.category.hideCategory('gregtech:combustion_generator')
 
-mods.jei.hideCategory('minecraft.anvil')
+mods.jei.category.hideCategory('minecraft.anvil')
 
 //Dust oredicting
 elements = [

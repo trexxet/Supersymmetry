@@ -43,8 +43,12 @@ def compressed_fireclay_ingredients = [
     [metaitem('dustFireclay'),metaitem('dustFireclay'),metaitem('dustFireclay')]
 ]
 
-furnace.add(ore('stoneLimestone'), item('gregtech:meta_dust', 360))
+furnace.add(ore('dustLimestone'), item('gregtech:meta_dust', 360))
 crafting.addShapeless('ManualFineSandPile',metaitem('sand.dust') * 4, [item('minecraft:sand')]) 
+crafting.addShaped('ManualSandBlock', item('minecraft:sand'), [
+    [metaitem('sand.dust'),metaitem('sand.dust')],
+    [metaitem('sand.dust'),metaitem('sand.dust')]
+])
 
 crafting.addShapeless('ManualFireclay',metaitem('dustFireclay') * 2, fireclay_ingredients) 
 
@@ -65,13 +69,11 @@ CompressBrickRecipes('dustFireclay', 'compressed.fireclay')
 def mudbrick_mix_ingredients = [
     item('biomesoplenty:mudball'),
     metaitem("sand.dust"),
-    metaitem('straw'),
+    item('pyrotech:material', 2),
     item('minecraft:clay_ball')
 ]
 
 crafting.addShapeless('ManualMudbrickMix',metaitem('mudbrick_mix') * 2, mudbrick_mix_ingredients)
-
-crafting.addShapeless('StrawCutting',metaitem('straw') * 2, [ore('toolKnife'), item('notreepunching:grass_fiber')])
 
 def damage = { 
     stack -> 

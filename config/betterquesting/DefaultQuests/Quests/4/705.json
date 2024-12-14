@@ -1,0 +1,38 @@
+{
+  "preRequisites:11": [
+    703
+  ],
+  "properties:10": {
+    "betterquesting:10": {
+      "desc:8": "susy.quest.db.705.desc",
+      "icon:10": {
+        "Damage:2": 2,
+        "id:8": "icbmclassic:launcherscreen"
+      },
+      "name:8": "susy.quest.db.705.title"
+    }
+  },
+  "questID:3": 705,
+  "tasks:9": {
+    "0:10": {
+      "requiredItems:9": {
+        "0:10": {
+          "Count:3": 1,
+          "Damage:2": 2,
+          "id:8": "icbmclassic:launcherframe"
+        },
+        "1:10": {
+          "Count:3": 1,
+          "Damage:2": 2,
+          "id:8": "icbmclassic:launcherbase"
+        },
+        "2:10": {
+          "Count:3": 1,
+          "Damage:2": 2,
+          "id:8": "icbmclassic:launcherscreen"
+        }
+      },
+      "taskID:8": "bq_standard:retrieval"
+    }
+  }
+}
