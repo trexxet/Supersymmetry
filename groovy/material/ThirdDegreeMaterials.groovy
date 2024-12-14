@@ -279,19 +279,19 @@ public class ThirdDegreeMaterials {
 
         IsophthaloylChlorideSolution = new Material.Builder(24043, SuSyUtility.susyId('isophthaloyl_chloride_solution'))
                 .liquid()
-                .components(Dichloroethane * 1, IsophthaloylChloride * 1)
+                .components(OneTwoDichloroethane * 1, IsophthaloylChloride * 1)
                 .colorAverage()
                 .build();
 
         IsophthalicAcidSlurry = new Material.Builder(24044, SuSyUtility.susyId('isophthalic_acid_slurry'))
                 .liquid()
-                .components(Water * 1, Dichloroethane * 1, IsophthalicAcid * 1)
+                .components(Water * 1, OneTwoDichloroethane * 1, IsophthalicAcid * 1)
                 .colorAverage()
                 .build()
 
         DichloroethaneIsophthalicAcidSolution = new Material.Builder(24045, SuSyUtility.susyId('dichloroethane_isophthalic_acid_solution'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
-                .components(Dichloroethane * 1, IsophthalicAcid * 1)
+                .components(OneTwoDichloroethane * 1, IsophthalicAcid * 1)
                 .colorAverage()
                 .build()
 
@@ -356,7 +356,7 @@ public class ThirdDegreeMaterials {
 
         TetrabromobisphenolASolution = new Material.Builder(24055, SuSyUtility.susyId('tetrabromobisphenol_a_solution'))
                 .liquid()
-                .components(TetrabromobisphenolA * 1, Dichloroethane * 6)
+                .components(TetrabromobisphenolA * 1, OneTwoDichloroethane * 6)
                 .colorAverage()
                 .build();
 
@@ -492,7 +492,7 @@ public class ThirdDegreeMaterials {
 
         DewaxingSolvent = new Material.Builder(24077, SuSyUtility.susyId('dewaxing_solvent'))
                 .liquid()
-                .components(Dichloroethane * 1, Dichloromethane * 1)
+                .components(OneTwoDichloroethane * 1, Dichloromethane * 1)
                 .colorAverage()
                 .build();
 

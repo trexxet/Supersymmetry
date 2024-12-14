@@ -1289,7 +1289,7 @@ class SuSyMaterials {
         public static Material ParaPhenylenediamine;
         public static Material SodiumPhenoxide;
         public static Material PhthaloylDichloride;
-        public static Material Dichloroethane;
+        public static Material OneTwoDichloroethane;
         public static Material Dimethylacetamide;
         public static Material CaprolactamOxime;
         public static Material TNT;
@@ -1300,6 +1300,7 @@ class SuSyMaterials {
         public static Material ChlorinatedChloromethaneMixture;
         public static Material ChlorinatedDichloromethaneMixture;
         public static Material ChloromethaneSolution;
+        public static Material OneTwoDichloroethylene;
         public static Material AcidicTetrafluoroethylene;
         public static Material TrinitromethaneSolution;
         public static Material TetranitronmethaneSolution;
@@ -1321,6 +1322,7 @@ class SuSyMaterials {
         public static Material PhthaloylDichlorideSolution;
         public static Material DiphenylIsophthalateSolution;
         public static Material DiaminobenzidineSolution;
+        public static Material OneOneTwoTwoTetrachloroethane;
         public static Material PBIFoam;
         public static Material PBIPrepolymer;
         public static Material PBISolution;
@@ -1328,6 +1330,7 @@ class SuSyMaterials {
         public static Material Hydroxylamine;
         public static Material Cyclohexanone;
         public static Material CaprolactamSolution;
+        public static Material CrackedOneTwoDichloroethaneMix;
         public static Material VinylChlorideSuspension;
         public static Material PolyvinylChlorideSuspension;
         public static Material StyreneSuspension;
@@ -1341,6 +1344,7 @@ class SuSyMaterials {
         public static Material StyreneButadieneSolution;
         public static Material DiethylEther;
         public static Material OneBromobutane;
+        public static Material OneOneDichloroethane;
         public static Material Butyllithium;
         public static Material PolymerizedStyreneButadieneSolution;
         public static Material Acetylene;
