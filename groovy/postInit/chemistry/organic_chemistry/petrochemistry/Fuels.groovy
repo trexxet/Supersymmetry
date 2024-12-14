@@ -598,26 +598,30 @@ log.infoMC("Registered oxygenate pairs")
 
 // Gasoline final blending
 
-def gasolineFeedstocks = [
-    'naphtha',
-    'light_naphtha',
-    'reformate',
-    'reformate_raffinate',
-    'polymerate',
-    'isomerate',
-    'alkylate',
-    'pyrolysis_gasoline',
-    'pyrolysis_raffinate'
+def GasolineFeedstocks = [
+    'naphtha' : 1,
+    'light_naphtha' : 1,
+    'reformate' : 3,
+    'reformate_raffinate' : 2.5,
+    'polymerate' : 2,
+    'isomerate' : 3,
+    'alkylate' : 2.5,
+    'pyrolysis_gasoline' : 1.5,
+    'pyrolysis_raffinate' : 1
 ]
 
-for (feedstock in gasolineFeedstocks) {
+
+GasolineFeedstocks.each { key, val ->
     MIXER.recipeBuilder()
-        .fluidInputs(fluid(feedstock) * 1000)
-        .fluidOutputs(fluid('gasoline') * 1000)
+        .fluidInputs(fluid(key) * 1000)
+        .fluidOutputs(fluid('gasoline') * (int(1000 * val)))
         .circuitMeta(10)
         .duration(2)
         .EUt(120)
         .buildAndRegister()
+        }
+for (feedstock in gasolineFeedstocks) {
+    
 }
 
 BLENDER.recipeBuilder()
