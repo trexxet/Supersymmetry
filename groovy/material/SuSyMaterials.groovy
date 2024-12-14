@@ -952,6 +952,7 @@ class SuSyMaterials {
         public static Material SodiumHexachloroplatinateSolution;
         public static Material AmmoniumHexachloroplatinate;
         public static Material DilutedCopperSulfateSolution;
+        public static Material NickelSulfate;
         public static Material NickelSulfateSolution;
         public static Material AluminiumNitride;
         public static Material AluminiumOxynitride;
@@ -1096,11 +1097,8 @@ class SuSyMaterials {
         public static Material RawCadmiumHydroxide;
         public static Material CadmiumHydroxide;
         public static Material CobaltTwoThreeOxide;
-        public static Material AnhydrousNickelSulfate;
-        public static Material NickelSulfateHexahydrate;
-        public static Material AnhydrousCobaltSulfate;
-        public static Material CobaltSulfateHeptahydrate;
-        public static Material CobaltSulfateHeptahydrateSolution;
+        public static Material CobaltSulfate;
+        public static Material CobaltSulfateSolution;
         public static Material LithiumNitrate;
 
         // HP Materials

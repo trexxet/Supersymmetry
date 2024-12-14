@@ -2097,8 +2097,12 @@ public class FirstDegreeMaterials {
                 .build();
 
         TreatedSamariumAlloy.getProperty(PropertyKey.INGOT).setMagneticMaterial(SamariumAlloyMagnetic);
-
-        //FREE ID: 8406
+        
+        NickelSulfate = new Material.Builder(8406, SuSyUtility.susyId('nickel_sulfate'))
+                .dust()
+                .components(Nickel * 1, Sulfur * 1, Oxygen * 4)
+                .color(0xcad3a7)
+                .build()
 
         Dichlorosilane = new Material.Builder(8407, SuSyUtility.susyId('dichlorosilane'))
                 .gas()
@@ -2694,10 +2698,9 @@ public class FirstDegreeMaterials {
 
         NickelSulfateSolution = new Material.Builder(8505, SuSyUtility.susyId('nickel_sulfate_solution'))
                 .liquid()
-                .components(Nickel, Sulfur, Oxygen * 4, Water)
-                .color(0x38add1)
+                .components(NickelSulfate, Water)
+                .colorAverage()
                 .build();
-        NickelSulfateSolution.setFormula("(NiSO4)(H2O)", true)
 
         DisulfurDichloride = new Material.Builder(8506, SuSyUtility.susyId('disulfur_dichloride'))
                 .liquid()
@@ -3572,41 +3575,20 @@ public class FirstDegreeMaterials {
                 .components(Cobalt * 3, Oxygen * 4)
                 .color(0x242424)
                 .build()
-
-        AnhydrousNickelSulfate = new Material.Builder(8643, SuSyUtility.susyId('anhydrous_nickel_sulfate'))
-                .dust()
-                .components(Nickel * 1, Sulfur * 1, Oxygen * 4)
-                .color(0xcad3a7)
-                .build()
-
-        NickelSulfateHexahydrate = new Material.Builder(8644, SuSyUtility.susyId('nickel_sulfate_hexahydrate'))
-                .dust()
-                .components(Nickel * 1, Sulfur * 1, Oxygen * 4, Water * 6)
-                .color(0x1f9aa1).iconSet(SHINY)
-                .build()
-                .setFormula("(NiSO4)(H2O)6", true);
-
-        AnhydrousCobaltSulfate = new Material.Builder(8645, SuSyUtility.susyId('anhydrous_cobalt_sulfate'))
+        
+        CobaltSulfate = new Material.Builder(8643, SuSyUtility.susyId('cobalt_sulfate'))
                 .dust()
                 .components(Cobalt * 1, Sulfur * 1, Oxygen * 4)
                 .color(0xbb7694)
                 .build()
 
-        CobaltSulfateHeptahydrate = new Material.Builder(8646, SuSyUtility.susyId('cobalt_sulfate_heptahydrate'))
-                .dust()
-                .components(Cobalt * 1, Sulfur * 1, Oxygen * 4, Water * 7)
-                .color(0xdc3e1a).iconSet(SHINY)
-                .build()
-                .setFormula("(CoSO4)(H2O)7", true)
-
-        CobaltSulfateHeptahydrateSolution = new Material.Builder(8647, SuSyUtility.susyId('cobalt_sulfate_heptahydrate_solution'))
+        CobaltSulfateSolution = new Material.Builder(8644, SuSyUtility.susyId('cobalt_sulfate_solution'))
                 .liquid()
-                .components(Cobalt * 1, Sulfur * 1, Oxygen * 4, Water * 8)
-                .color(0xdc3e1a)
+                .components(CobaltSulfate * 1, Water * 1)
+                .color(0xbb7694)
                 .build()
-                .setFormula("((CoSO4)(H2O)7)(H2O)", true)
 
-        LithiumNitrate = new Material.Builder(8648, SuSyUtility.susyId('lithium_nitrate'))
+        LithiumNitrate = new Material.Builder(8645, SuSyUtility.susyId('lithium_nitrate'))
                 .dust()
                 .components(Lithium * 1, Nitrogen * 1, Oxygen * 3)
                 .color(0xffffff)

@@ -628,7 +628,7 @@ public class ThirdDegreeMaterials {
         
         NMCSulfateSlurry = new Material.Builder(24100, SuSyUtility.susyId('nmc_sulfate_slurry'))
                 .liquid()
-                .components(AnhydrousNickelSulfate * 5, ManganeseIISulfate * 3, AnhydrousCobaltSulfate * 2, Water * 10)
+                .components(NickelSulfate * 5, ManganeseIISulfate * 3, CobaltSulfate * 2, Water * 10)
                 .colorAverage()
                 .build()
                 .setFormula("((Ni0.5Mn0.3Co0.2)(SO4))(H2O)", true);
