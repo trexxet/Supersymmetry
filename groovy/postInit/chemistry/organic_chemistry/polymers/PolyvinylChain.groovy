@@ -37,6 +37,7 @@ PYROLYSE_OVEN.recipeBuilder()
     .EUt(30)
     .buildAndRegister()
 
+// https://koreascience.kr/article/JAKO200211920879285.pdf
 DISTILLATION_TOWER.recipeBuilder()
     .fluidInputs(fluid('cracked_one_two_dichloroethane_mix') * 2000)
     .fluidOutputs(fluid('hydrogen_chloride') * 1000)
