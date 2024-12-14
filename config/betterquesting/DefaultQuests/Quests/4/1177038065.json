@@ -1,11 +1,10 @@
 {
   "preRequisites:11": [
-    173,
-    179
+    175
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "susy.quest.db.175.desc",
+      "desc:8": "",
       "frame:8": "GATE",
       "icon:10": {
         "Count:3": 1,
@@ -15,18 +14,18 @@
           "FluidName:8": "desalted_oil_light"
         }
       },
-      "name:8": "susy.quest.db.175.title",
+      "name:8": "Heated Oil",
       "tasklogic:8": "OR"
     }
   },
-  "questID:3": 175,
+  "questID:3": 1177038065,
   "tasks:9": {
     "0:10": {
       "index:3": 0,
       "requiredFluids:9": {
         "0:10": {
           "Amount:3": 1000,
-          "FluidName:8": "desalted_oil_light"
+          "FluidName:8": "heated_oil_light"
         }
       },
       "taskID:8": "bq_standard:fluid"
@@ -36,7 +35,7 @@
       "requiredFluids:9": {
         "0:10": {
           "Amount:3": 1000,
-          "FluidName:8": "desalted_oil"
+          "FluidName:8": "heated_oil"
         }
       },
       "taskID:8": "bq_standard:fluid"
@@ -46,7 +45,7 @@
       "requiredFluids:9": {
         "0:10": {
           "Amount:3": 1000,
-          "FluidName:8": "desalted_oil_heavy"
+          "FluidName:8": "heated_oil_heavy"
         }
       },
       "taskID:8": "bq_standard:fluid"

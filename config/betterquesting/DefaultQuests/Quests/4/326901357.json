@@ -1,0 +1,23 @@
+{
+  "preRequisites:11": [
+    647,
+    1837809262
+  ],
+  "properties:10": {
+    "betterquesting:10": {
+      "desc:8": "§8§o§o§rSteam cracking is a form of §cthermal cracking §rthat allows you to produce alkenes such as ethylene, propylene, etc. from lighter fractions and molecules such as naphtha.\n\nAdditionally, pyrolysis gasoline can be used as a gasoline blending component or as a source of §l§l§r§6BTEX§r.",
+      "icon:10": {
+        "Count:3": 1,
+        "id:8": "industrialrenewal:steam"
+      },
+      "name:8": "Steam Cracking"
+    }
+  },
+  "questID:3": 326901357,
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:checkbox"
+    }
+  }
+}

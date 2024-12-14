@@ -1,27 +1,26 @@
 {
   "preRequisites:11": [
-    823,
-    550
+    1056118460
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "susy.quest.db.824.desc",
+      "desc:8": "Carbon black is an important component of synthetic rubber manufacturing, strengthening the product. It can be produced by partially combusting residues and heavy fractions in a rotary kiln.",
       "icon:10": {
         "Count:3": 1,
-        "Damage:2": 15008,
+        "Damage:2": 4169,
         "id:8": "gregtech:meta_dust"
       },
-      "name:8": "susy.quest.db.824.title"
+      "name:8": "Carbon Black"
     }
   },
-  "questID:3": 824,
+  "questID:3": 618527753,
   "tasks:9": {
     "0:10": {
       "index:3": 0,
       "requiredItems:9": {
         "0:10": {
-          "Count:3": 1,
-          "Damage:2": 15008,
+          "Count:3": 16,
+          "Damage:2": 4169,
           "id:8": "gregtech:meta_dust"
         }
       },

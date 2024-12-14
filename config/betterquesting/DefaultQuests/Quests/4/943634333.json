@@ -1,20 +1,19 @@
 {
   "preRequisites:11": [
-    641,
-    466
+    647
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "susy.quest.db.688.desc",
+      "desc:8": "§9Hydrocracking§r is a costly process that uses hydrogen to break heavier fractions into lighter fractions at high efficiency. It is best used in combination with §6catalytic cracking§r to convert cycle oil into aromatics (BTEX) and lighter fractions.",
       "icon:10": {
         "Count:3": 1,
         "Damage:2": 159,
         "id:8": "gregtech:meta_item_2"
       },
-      "name:8": "susy.quest.db.688.title"
+      "name:8": "Hydrocracking"
     }
   },
-  "questID:3": 688,
+  "questID:3": 943634333,
   "tasks:9": {
     "0:10": {
       "index:3": 0,

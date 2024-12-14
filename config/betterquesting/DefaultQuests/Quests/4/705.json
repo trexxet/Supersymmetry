@@ -4,11 +4,18 @@
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "susy.quest.db.705.desc",
+      "desc:8": "Now that you are at HV, you can make more advanced types of §cexplosives §rand §cmissiles §rby putting HV power on a Weapons Factory.\n\nThere are 3 new types of explosives\n§eEndothermic explosives§r, made with cryogenics\n§3Exothermic explosives§r, made with ethylene oxide\n§aEMP explosives§r, made with superconductors\n\nYou can get most of the ingredients for these at HV.",
       "icon:10": {
         "Count:3": 1,
-        "Damage:2": 2,
-        "id:8": "icbmclassic:launcherscreen"
+        "Damage:2": 17,
+        "ForgeCaps:10": {
+          "Parent:10": {
+            "explosive:10": {
+              "customizations:9": {}
+            }
+          }
+        },
+        "id:8": "icbmclassic:explosive_missile"
       },
       "name:8": "susy.quest.db.705.title"
     }
@@ -17,24 +24,7 @@
   "tasks:9": {
     "0:10": {
       "index:3": 0,
-      "requiredItems:9": {
-        "0:10": {
-          "Count:3": 1,
-          "Damage:2": 2,
-          "id:8": "icbmclassic:launcherframe"
-        },
-        "1:10": {
-          "Count:3": 1,
-          "Damage:2": 2,
-          "id:8": "icbmclassic:launcherbase"
-        },
-        "2:10": {
-          "Count:3": 1,
-          "Damage:2": 2,
-          "id:8": "icbmclassic:launcherscreen"
-        }
-      },
-      "taskID:8": "bq_standard:retrieval"
+      "taskID:8": "bq_standard:checkbox"
     }
   }
 }

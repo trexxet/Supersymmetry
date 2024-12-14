@@ -1,11 +1,12 @@
 {
   "preRequisites:11": [
-    688,
-    719
+    719,
+    1056118460,
+    22127543
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "susy.quest.db.751.desc",
+      "desc:8": "Asphalt can be extracted from vacuum oil residue using supercritical propane in the ROSE process. The propane extracts the asphalt from the residue, which can be later separated. The leftover deasphalted oil can be used to produce carbon black, mixed into fuel oil, or used as a lubricant feedstock.",
       "icon:10": {
         "Count:3": 1,
         "Damage:2": 4001,

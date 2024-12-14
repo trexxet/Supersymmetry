@@ -1,11 +1,11 @@
 {
   "preRequisites:11": [
-    688,
-    683
+    683,
+    1837809262
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "susy.quest.db.691.desc",
+      "desc:8": "There are two forms of coking, fluid and delayed coking. Delayed coking is a slower process that produces more naphtha but is more energy intensive. It requires a vacuum distillation tower, coking tower, and a tube furnace. In fluid coking, the coke produced is converted to syngas, which can be used for chemical synthesis or steel production. Fluid coking is also a faster process, but requires some more infrastructure.",
       "icon:10": {
         "Count:3": 1,
         "Damage:2": 8116,

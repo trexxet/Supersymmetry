@@ -1,0 +1,23 @@
+{
+  "preRequisites:11": [
+    647,
+    1056118460
+  ],
+  "properties:10": {
+    "betterquesting:10": {
+      "desc:8": "§cThermal cracking§r is a process that converts residues into lighter fractions using heat. It can be carried out in a roaster at lower efficiency and longer duration or in a cracker. There are three forms of this process: steam cracking, visbreaking, and coking.\n\n- Visbreaking is a milder form of thermal cracking which does not produce pure coke, but leaves behind a residue that can be used as a fuel oil blending component.\n\n- Coking is a severe form of thermal cracking that removes carbon from the fractions as coke, which can be used for metallurgy or as a fuel source.\n\n- Steam cracking is used mainly for lighter fractions to produce olefins (alkenes).",
+      "icon:10": {
+        "Count:3": 1,
+        "id:8": "industrialrenewal:fire"
+      },
+      "name:8": "Thermal Cracking"
+    }
+  },
+  "questID:3": 1837809262,
+  "tasks:9": {
+    "0:10": {
+      "index:3": 0,
+      "taskID:8": "bq_standard:checkbox"
+    }
+  }
+}

@@ -1,10 +1,11 @@
 {
   "preRequisites:11": [
-    647
+    326901357,
+    823
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "susy.quest.db.714.desc",
+      "desc:8": "Steam cracking oil fractions and distilling it gives you §aButadiene.§f This, along with styrene made from §aEthylbenzene,§f will allow you to make §9Styrene-Butadiene Rubber.§f\n\nIt can do all the things that Rubber can in recipes, but at a lower cost in assembling recipes.\n\nIn case you missed it, §6Silicone Rubber§f is the other higher tier rubber available at HV.\n\nYou will need §3n-Butyllithium§f in the first place as a catalyst to make this.\n\nn-Butyllithium requires a solution of Lithium and Diethyl Ether, and also Bromobutane, which is made by combining Hydrobromic Acid and n-Butanol from the Ziegler Process.\n\nHydrobromic Acid is made in a CSTR by combining Sulfur Dioxide, Water and Bromine.",
       "frame:8": "GATE",
       "icon:10": {
         "Count:3": 1,

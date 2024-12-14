@@ -1,6 +1,7 @@
 {
   "preRequisites:11": [
-    791
+    791,
+    1529184698
   ],
   "properties:10": {
     "betterquesting:10": {
@@ -15,7 +16,8 @@
         }
       },
       "ismain:1": 1,
-      "name:8": "susy.quest.db.874.title"
+      "name:8": "susy.quest.db.874.title",
+      "questlogic:8": "OR"
     }
   },
   "questID:3": 874,
