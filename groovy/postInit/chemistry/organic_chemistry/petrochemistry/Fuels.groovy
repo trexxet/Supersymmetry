@@ -610,18 +610,14 @@ def GasolineFeedstocks = [
     'pyrolysis_raffinate' : 1
 ]
 
-
 GasolineFeedstocks.each { key, val ->
     MIXER.recipeBuilder()
         .fluidInputs(fluid(key) * 1000)
-        .fluidOutputs(fluid('gasoline') * (int(1000 * val)))
+        .fluidOutputs(fluid('gasoline') * ((int)(1000 * val)))
         .circuitMeta(10)
         .duration(2)
         .EUt(120)
         .buildAndRegister()
-        }
-for (feedstock in gasolineFeedstocks) {
-    
 }
 
 BLENDER.recipeBuilder()
