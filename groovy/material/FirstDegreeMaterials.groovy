@@ -3561,7 +3561,7 @@ public class FirstDegreeMaterials {
         CobaltSulfateSolution = new Material.Builder(8644, SuSyUtility.susyId('cobalt_sulfate_solution'))
                 .liquid()
                 .components(CobaltSulfate * 1, Water * 1)
-                .color(0xbb7694)
+                .colorAverage()
                 .build()
     }
 }
