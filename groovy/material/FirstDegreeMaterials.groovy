@@ -1155,7 +1155,6 @@ public class FirstDegreeMaterials {
                 .dust()
                 .components(Manganese, Oxygen)
                 .color(0x472400)
-                .iconSet(SAND)
                 .build()
 
         RaneyCobalt = new Material.Builder(8266, SuSyUtility.susyId('raney_cobalt'))
@@ -2548,7 +2547,13 @@ public class FirstDegreeMaterials {
 
         AmmoniumDihydrogenPhosphate.setFormula("NH4H2PO4", true)
 
-        //FREE ID: 8474
+        CrudeManganeseIIOxide = new Material.Builder(8474, SuSyUtility.susyId('crude_manganese_ii_oxide'))
+                .dust()
+                .components(Manganese, Oxygen)
+                .color(0x472400)
+                .iconSet(SAND)
+                .build()
+                .setFormula("(?)(MnO)", true)
 
         IronCarbonate = new Material.Builder(8475, SuSyUtility.susyId('iron_carbonate'))
                 .dust()
@@ -3549,16 +3554,14 @@ public class FirstDegreeMaterials {
                 .components(Iron * 24, Nickel * 5, Chrome * 8, Manganese, Molybdenum * 2)
                 .colorAverage()
                 .build()
-        
-        // 8636-8642 reserved for batteries
 
-        CobaltSulfate = new Material.Builder(8643, SuSyUtility.susyId('cobalt_sulfate'))
+        CobaltSulfate = new Material.Builder(8636, SuSyUtility.susyId('cobalt_sulfate'))
                 .dust()
                 .components(Cobalt * 1, Sulfur * 1, Oxygen * 4)
                 .color(0xbb7694)
                 .build()
 
-        CobaltSulfateSolution = new Material.Builder(8644, SuSyUtility.susyId('cobalt_sulfate_solution'))
+        CobaltSulfateSolution = new Material.Builder(8637, SuSyUtility.susyId('cobalt_sulfate_solution'))
                 .liquid()
                 .components(CobaltSulfate * 1, Water * 1)
                 .colorAverage()

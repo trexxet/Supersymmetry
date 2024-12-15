@@ -834,6 +834,7 @@ class SuSyMaterials {
         public static Material IronThioantimonite;
         public static Material AntimonyIIISulfide;
         public static Material IronThioarsenite;
+        public static Material CrudeManganeseIIOxide;
         public static Material ManganeseIIOxide;
         public static Material IronIIIHydroxide;
         public static Material Cellulose;

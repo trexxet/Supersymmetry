@@ -10,7 +10,7 @@ import static globals.CarbonGlobals.*
 
 EBF = recipemap('electric_blast_furnace')
 ROASTER = recipemap('roaster')
-BATCH_REACTOR = recipemap('batch_reactor')
+BR = recipemap('batch_reactor')
 MIXER = recipemap('mixer')
 DISTILLERY = recipemap('distillery')
 REACTION_FURNACE = recipemap('reaction_furnace')
@@ -33,7 +33,7 @@ for (combustible in combustibles()) {
 
 ROASTER.recipeBuilder()
     .inputs(ore('dustRhodochrosite'))
-    .outputs(metaitem('dustManganeseIiOxide') * 2)
+    .outputs(metaitem('dustCrudeManganeseIiOxide') * 2)
     .fluidOutputs(fluid('carbon_dioxide') * 1000)
     .duration(120)
     .EUt(Globals.voltAmps[1])
@@ -41,7 +41,7 @@ ROASTER.recipeBuilder()
 
 for (highPurityCombustible in highPurityCombustibles()) {
     ROASTER.recipeBuilder()
-        .inputs(ore('dustManganeseIiOxide') * 2)
+        .inputs(ore('dustCrudeManganeseIiOxide') * 2)
         .inputs(ore(highPurityCombustible.name) * highPurityCombustible.equivalent(1))
         .chancedOutput(metaitem('dustManganese'), 8500, 0)
         .chancedOutput(metaitem(highPurityCombustible.byproduct), 1000, 0)
@@ -86,7 +86,7 @@ for (reductant in hydrocarbonReductants) {
     REACTION_FURNACE.recipeBuilder()
         .inputs(ore('dustPyrolusite'))
         .fluidInputs(fluid(reductant.name) * reductant.amount_required)
-        .outputs(metaitem('dustManganeseIiOxide') * 2)
+        .outputs(metaitem('dustCrudeManganeseIiOxide') * 2)
         .fluidOutputs(fluid(reductant.byproduct) * reductant.byproduct_amount)
         .fluidOutputs(fluid('dense_steam') * (1000 - reductant.byproduct_amount))
         .duration(120)
@@ -98,7 +98,7 @@ for (reductant in reductants) {
     REACTION_FURNACE.recipeBuilder()
         .inputs(ore('dustPyrolusite'))
         .fluidInputs(fluid(reductant.name) * reductant.amount_required)
-        .outputs(metaitem('dustManganeseIiOxide') * 2)
+        .outputs(metaitem('dustCrudeManganeseIiOxide') * 2)
         .fluidOutputs(fluid(reductant.byproduct) * reductant.byproduct_amount)
         .duration(120)
         .EUt(Globals.voltAmps[3])
@@ -106,15 +106,15 @@ for (reductant in reductants) {
 }
 
 //HYDROMETALLURGICAL MANGANESE PROCESSING
-BATCH_REACTOR.recipeBuilder()
-    .inputs(ore('dustManganeseIiOxide'))
+BR.recipeBuilder()
+    .inputs(ore('dustCrudeManganeseIiOxide') * 2)
     .fluidInputs(fluid('sulfuric_acid') * 1000)
     .fluidOutputs(fluid('crude_manganese_ii_sulfate_solution') * 1000)
     .duration(120)
     .EUt(Globals.voltAmps[2])
     .buildAndRegister()
 
-BATCH_REACTOR.recipeBuilder()
+BR.recipeBuilder()
     .inputs(ore('dustTinySodiumHydroxide') * 2)
     .fluidInputs(fluid('crude_manganese_ii_sulfate_solution') * 4000)
     .chancedOutput(metaitem('dustIronIiiHydroxide') * 7, 500, 0)
