@@ -69,7 +69,6 @@ CSTR.recipeBuilder()
 
 CSTR.recipeBuilder()
         .circuitMeta(2)
-        .notConsumable(ore('springKanthal'))
         .fluidInputs(fluid('one_two_dichloroethane') * 50)
         .fluidInputs(fluid('chlorine') * 200)
         .fluidOutputs(fluid('trichloroethylene') * 50)
