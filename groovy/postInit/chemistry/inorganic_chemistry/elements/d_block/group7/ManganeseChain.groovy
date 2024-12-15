@@ -33,7 +33,7 @@ for (combustible in combustibles()) {
 
 ROASTER.recipeBuilder()
     .inputs(ore('dustRhodochrosite'))
-    .outputs(metaitem('dustCrudeManganeseIiOxide') * 2)
+    .outputs(metaitem('dustManganeseIiOxide') * 2)
     .fluidOutputs(fluid('carbon_dioxide') * 1000)
     .duration(120)
     .EUt(Globals.voltAmps[1])
