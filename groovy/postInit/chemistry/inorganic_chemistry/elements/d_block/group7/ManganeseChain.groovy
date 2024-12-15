@@ -249,6 +249,15 @@ BR.recipeBuilder()
     .EUt(120)
     .buildAndRegister()
 
+ROASTER.recipeBuilder()
+    .circuitMeta(2)
+    .inputs(ore('dustManganese') * 1)
+    .fluidInputs(fluid('oxygen') * 2000)
+    .outputs(metaitem('dustManganeseDioxide') * 3)
+    .duration(100)
+    .EUt(30)
+    .buildAndRegister()
+
 // MnO
 
 ROASTER.recipeBuilder()
@@ -256,6 +265,15 @@ ROASTER.recipeBuilder()
     .fluidOutputs(fluid('dense_steam') * 1000)
     .outputs(metaitem('dustManganeseIiOxide') * 2)
     .duration(200)
+    .EUt(30)
+    .buildAndRegister()
+
+ROASTER.recipeBuilder()
+    .circuitMeta(1)
+    .inputs(ore('dustManganese') * 1)
+    .fluidInputs(fluid('oxygen') * 1000)
+    .outputs(metaitem('dustManganeseIiOxide') * 2)
+    .duration(100)
     .EUt(30)
     .buildAndRegister()
 
