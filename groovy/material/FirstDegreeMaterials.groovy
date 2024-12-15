@@ -2009,7 +2009,7 @@ public class FirstDegreeMaterials {
                 .dust()
                 .iconSet('SHINY')
                 .components(Manganese, Oxygen * 2)
-                .colorAverage()
+                .color(0x38251e)
                 .build()
 
         BariumTitanate = new Material.Builder(8396, SuSyUtility.susyId('barium_titanate'))
@@ -2594,8 +2594,15 @@ public class FirstDegreeMaterials {
                 .components(Carbon)
                 .flags(FLAMMABLE, NO_SMELTING, NO_SMASHING, MORTAR_GRINDABLE)
                 .build();
-      
-        //FREE IDs: 8482-8485
+
+        CrudeManganeseIINitrateSolution = new Material.Builder(8482, SuSyUtility.susyId('crude_manganese_ii_nitrate_solution'))
+                .liquid()
+                .components(Manganese * 1, Nitrogen * 3, Oxygen * 6, Water)
+                .colorAverage()
+                .build()
+                .setFormula("(?)(Mn(NO3)2)(H2O)", true)
+
+        //FREE IDs: 8483-8485
 
         UltramaficTailingSlurry = new Material.Builder(8486, SuSyUtility.susyId('ultramafic_tailing_slurry'))
                 .liquid()
@@ -2793,7 +2800,7 @@ public class FirstDegreeMaterials {
         ManganeseIIHydroxide = new Material.Builder(8520, SuSyUtility.susyId('manganese_ii_hydroxide'))
                 .dust()
                 .components(Manganese, Oxygen * 2, Hydrogen * 2)
-                .colorAverage()
+                .color(0xe4cfb1)
                 .build();
 
         ManganeseIIHydroxide.setFormula("Mn(OH)2", true)

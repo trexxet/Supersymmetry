@@ -202,10 +202,30 @@ DISTILLERY.recipeBuilder()
     .EUt(30)
     .buildAndRegister()
 
-// MnO2
+// MnO2 & Mn(NO3)2
+// Manganese Nitrate process developed by IG Farbenindustrie
+// doi:10.1002/14356007.a16_123
 
 BR.recipeBuilder()
     .inputs(ore('dustPyrolusite') * 3)
+    .fluidInputs(fluid('nitrogen_dioxide') * 2000)
+    .fluidInputs(fluid('water') * 1000)
+    .fluidOutputs(fluid('crude_manganese_ii_nitrate_solution') * 1000)
+    .duration(100)
+    .EUt(120)
+    .buildAndRegister()
+
+ROASTER.recipeBuilder()
+    .fluidInputs(fluid('crude_manganese_ii_nitrate_solution') * 1000)
+    .outputs(metaitem('dustManganeseDioxide') * 3)
+    .fluidOutputs(fluid('nitrogen_dioxide') * 2000)
+    .fluidOutputs(fluid('dense_steam') * 1000)
+    .duration(100)
+    .EUt(120)
+    .buildAndRegister()
+
+BR.recipeBuilder()
+    .inputs(ore('dustManganeseDioxide') * 3)
     .fluidInputs(fluid('nitrogen_dioxide') * 2000)
     .outputs(metaitem('dustManganeseIiNitrate') * 9)
     .duration(100)
@@ -220,7 +240,16 @@ ROASTER.recipeBuilder()
     .EUt(120)
     .buildAndRegister()
 
-// Manganese hydroxide calcination
+BR.recipeBuilder()
+    .inputs(ore('dustManganeseIiOxide') * 2)
+    .fluidInputs(fluid('nitric_acid') * 2000)
+    .outputs(metaitem('dustManganeseIiNitrate') * 9)
+    .fluidOutputs(fluid('water') * 1000)
+    .duration(100)
+    .EUt(120)
+    .buildAndRegister()
+
+// MnO
 
 ROASTER.recipeBuilder()
     .inputs(ore('dustManganeseIiHydroxide') * 5)
@@ -228,6 +257,24 @@ ROASTER.recipeBuilder()
     .outputs(metaitem('dustManganeseIiOxide') * 2)
     .duration(200)
     .EUt(30)
+    .buildAndRegister()
+
+REACTION_FURNACE.recipeBuilder()
+    .inputs(ore('dustManganeseDioxide') * 3)
+    .fluidInputs(fluid('hydrogen') * 2000)
+    .outputs(metaitem('dustManganeseIiOxide') * 2)
+    .fluidOutputs(fluid('dense_steam') * 1000)
+    .duration(100)
+    .EUt(120)
+    .buildAndRegister()
+
+REACTION_FURNACE.recipeBuilder()
+    .inputs(ore('dustManganeseDioxide') * 3)
+    .fluidInputs(fluid('carbon_monoxide') * 1000)
+    .outputs(metaitem('dustManganeseIiOxide') * 2)
+    .fluidOutputs(fluid('carbon_dioxide') * 1000)
+    .duration(100)
+    .EUt(120)
     .buildAndRegister()
 
 // Potassium permanganate
