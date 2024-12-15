@@ -67,14 +67,6 @@ for (combustible in combustibles()) {
         .buildAndRegister()
 }
 
-ROASTER.recipeBuilder()
-        .inputs(ore('dustCobalt'))
-        .fluidInputs(fluid('oxygen') * 1000)
-        .outputs(metaitem('dustCobaltOxide') * 2)
-        .EUt(Globals.voltAmps[1])
-        .duration(120)
-        .buildAndRegister()
-
 // Primitive ways for getting impure cobalt (cobalt matte) for Kovar.
 def cobalt_matte_recipes = [
         ["oreCobaltite", 1],
@@ -93,6 +85,16 @@ cobalt_matte_recipes.forEach { recipe ->
                 .buildAndRegister()
     }
 }
+
+// CoO
+
+ROASTER.recipeBuilder()
+        .inputs(ore('dustCobalt'))
+        .fluidInputs(fluid('oxygen') * 1000)
+        .outputs(metaitem('dustCobaltOxide') * 2)
+        .duration(120)
+        .EUt(30)
+        .buildAndRegister()
 
 // CoSO4
 
