@@ -235,7 +235,7 @@ mods.gregtech.circuit_assembler.removeByInput(30, [metaitem('circuit.good_integr
 
 
 CIRCUIT_ASSEMBLER.recipeBuilder()
-        .inputs(metaitem('circuit.good_integrated') * 2, metaitem('component.resistor') * 2, metaitem('component.diode') * 2, metaitem('boltElectrum') * 8)
+        .inputs(metaitem('circuit.good_integrated') * 2, metaitem('component.inductor') * 2, metaitem('component.diode') * 2, metaitem('boltElectrum') * 8)
         .inputs(metaitem('voltage_regulator.hv'))
         .fluidInputs(fluid('soldering_alloy') * 72)
         .outputs(metaitem('circuit.advanced_integrated') * 2)
