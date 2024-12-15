@@ -2660,7 +2660,13 @@ public class FirstDegreeMaterials {
                 .color(0x887866)
                 .build();
 
-        //FREE IDs: 8496-8498
+        //FREE IDs: 8496-8497
+
+        NickelSulfate = new Material.Builder(8498, SuSyUtility.susyId('nickel_sulfate'))
+                .dust()
+                .components(Nickel * 1, Sulfur * 1, Oxygen * 4)
+                .color(0xcad3a7)
+                .build()
 
         SodiumNitrite = new Material.Builder(8499, SuSyUtility.susyId('sodium_nitrite'))
                 .dust().liquid(new FluidBuilder().temperature(544))
@@ -2706,10 +2712,9 @@ public class FirstDegreeMaterials {
 
         NickelSulfateSolution = new Material.Builder(8505, SuSyUtility.susyId('nickel_sulfate_solution'))
                 .liquid()
-                .components(Nickel, Sulfur, Oxygen * 4, Water)
+                .components(NickelSulfate, Water)
                 .color(0x38add1)
                 .build();
-        NickelSulfateSolution.setFormula("(NiSO4)(H2O)", true)
 
         DisulfurDichloride = new Material.Builder(8506, SuSyUtility.susyId('disulfur_dichloride'))
                 .liquid()
@@ -3543,6 +3548,20 @@ public class FirstDegreeMaterials {
                 .flags(GENERATE_ROD, GENERATE_PLATE, GENERATE_RING, GENERATE_LONG_ROD)
                 .components(Iron * 24, Nickel * 5, Chrome * 8, Manganese, Molybdenum * 2)
                 .colorAverage()
+                .build()
+        
+        // 8636-8642 reserved for batteries
+
+        CobaltSulfate = new Material.Builder(8643, SuSyUtility.susyId('cobalt_sulfate'))
+                .dust()
+                .components(Cobalt * 1, Sulfur * 1, Oxygen * 4)
+                .color(0xbb7694)
+                .build()
+
+        CobaltSulfateSolution = new Material.Builder(8644, SuSyUtility.susyId('cobalt_sulfate_solution'))
+                .liquid()
+                .components(CobaltSulfate * 1, Water * 1)
+                .color(0xbb7694)
                 .build()
     }
 }

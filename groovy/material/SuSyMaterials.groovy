@@ -1044,6 +1044,7 @@ class SuSyMaterials {
         public static Material SodiumHexachloroplatinateSolution;
         public static Material AmmoniumHexachloroplatinate;
         public static Material DilutedCopperSulfateSolution;
+        public static Material NickelSulfate;
         public static Material NickelSulfateSolution;
         public static Material AluminiumNitride;
         public static Material AluminiumOxynitride;
@@ -1182,6 +1183,8 @@ class SuSyMaterials {
         public static Material StelliteSix;
         public static Material HSLAEightyX;
         public static Material FoodGradeStainlessSteel;
+        public static Material CobaltSulfate;
+        public static Material CobaltSulfateSolution;
 
         // HP Materials
 
