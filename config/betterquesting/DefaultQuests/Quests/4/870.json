@@ -1,37 +1,28 @@
 {
-  "preRequisiteTypes:7": [
-    0,
-    1,
-    1
-  ],
   "preRequisites:11": [
-    864,
-    652,
-    685
+    454
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "susy.quest.db.869.desc",
+      "desc:8": "susy.quest.db.870.desc",
       "icon:10": {
-        "Count:3": 1,
         "id:8": "forge:bucketfilled",
         "tag:10": {
           "Amount:3": 1000,
-          "FluidName:8": "trimethylolpropane_triacrylate"
+          "FluidName:8": "benzene"
         }
       },
-      "name:8": "susy.quest.db.869.title",
+      "name:8": "susy.quest.db.870.title",
       "tasklogic:8": "OR"
     }
   },
-  "questID:3": 869,
+  "questID:3": 870,
   "tasks:9": {
     "0:10": {
-      "index:3": 0,
       "requiredFluids:9": {
         "0:10": {
           "Amount:3": 1000,
-          "FluidName:8": "trimethylolpropane_triacrylate"
+          "FluidName:8": "benzene"
         }
       },
       "taskID:8": "bq_standard:fluid"

@@ -13,10 +13,9 @@
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "There are a variety of petrochemical productions that can be blended into gasoline. Below is an overview:\n\n- §e§e§6Naphtha §rand §eLight Naphtha§r, produced directly from the distillation of oil can be used at a low efficiency.\n- §6§cReformate§r and §cReformate Raffinate §rare produced by reforming heavy naphtha into aromatics. These are high performance and have high gasoline yields. Raffinate produces less gasoline, but allows for the extraction of BTEX for petrochemicals.\n- §aPolymerate §rcan be produced from catalytic cracking byproducts in a simple process, with a medium yield.\n- §4Isomerate§r is produced from light na§6§rphtha and a small quantity of hydrogen. This is a high performance feedstock with high yields.\n- §6Alkylate§r is produced from catalytic cracking byproducts, isobutane, and hydrofluoric acid in a slightly more complex process than polymerate. It has a higher performance and thus yields more gasoline, however.\n- §6Pyrolysis Gasoline §rand §6Pyrolysis Raffinate §rare byproducts of steam cracking and yield relatively low amounts of gasoline. Raffinate allows for the production of BTEX, similar to refomrate.\n\nDiesel can be produced from Light Gas Oil (LGO) and Light Cycle Oil (LCO), however light cycle oil typically lowers performance and can only be added in small amounts. As such, LCO is better used with hydrocracking to produce BTEX.\n\nFuel oils are heavier, energy dense fuels that are produced from heavier fractions and residues. These are best used for off-site power generation and marine applications due to the low yields of residua from oils and their high density, allowing for ease of transport.",
+      "desc:8": "susy.quest.db.2096017803.desc",
       "frame:8": "GATE",
       "icon:10": {
-        "Count:3": 1,
         "id:8": "forge:bucketfilled",
         "tag:10": {
           "Amount:3": 1000,
@@ -24,7 +23,7 @@
         }
       },
       "ismain:1": 1,
-      "name:8": "Fuel Feedstocks"
+      "name:8": "susy.quest.db.2096017803.title"
     }
   },
   "questID:3": 2096017803,

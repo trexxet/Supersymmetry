@@ -4,24 +4,22 @@
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "",
+      "desc:8": "susy.quest.db.1177038065.desc",
       "frame:8": "GATE",
       "icon:10": {
-        "Count:3": 1,
         "id:8": "forge:bucketfilled",
         "tag:10": {
           "Amount:3": 1000,
           "FluidName:8": "desalted_oil_light"
         }
       },
-      "name:8": "Heated Oil",
+      "name:8": "susy.quest.db.1177038065.title",
       "tasklogic:8": "OR"
     }
   },
   "questID:3": 1177038065,
   "tasks:9": {
     "0:10": {
-      "index:3": 0,
       "requiredFluids:9": {
         "0:10": {
           "Amount:3": 1000,

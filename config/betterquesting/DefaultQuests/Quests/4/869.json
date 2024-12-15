@@ -1,30 +1,30 @@
 {
   "preRequisites:11": [
-    110
+    864,
+    652,
+    685
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "susy.quest.db.490.desc",
+      "desc:8": "susy.quest.db.869.desc",
       "icon:10": {
-        "Count:3": 1,
         "id:8": "forge:bucketfilled",
         "tag:10": {
           "Amount:3": 1000,
-          "FluidName:8": "sodium_bisulfate_solution"
+          "FluidName:8": "trimethylolpropane_triacrylate"
         }
       },
-      "name:8": "susy.quest.db.490.title",
+      "name:8": "susy.quest.db.869.title",
       "tasklogic:8": "OR"
     }
   },
-  "questID:3": 490,
+  "questID:3": 869,
   "tasks:9": {
     "0:10": {
-      "index:3": 0,
       "requiredFluids:9": {
         "0:10": {
           "Amount:3": 1000,
-          "FluidName:8": "sodium_bisulfate_solution"
+          "FluidName:8": "trimethylolpropane_triacrylate"
         }
       },
       "taskID:8": "bq_standard:fluid"

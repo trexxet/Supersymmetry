@@ -4,23 +4,21 @@
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "§6§lLubricating oil§r is a useful feedstock for lubricant production, derived from residue distillation. It can either be produced by directly hydrotreating the crude feedstock or dewaxed with §bMIBK§r and §1§3Butanone§r to improve yield. The slack wax can be turned into more lubricating oil, turned into resin, or produce treated wood.",
+      "desc:8": "susy.quest.db.1529184698.desc",
       "icon:10": {
-        "Count:3": 1,
         "id:8": "forge:bucketfilled",
         "tag:10": {
           "Amount:3": 1000,
           "FluidName:8": "lubricating_oil"
         }
       },
-      "name:8": "Lubricating Oil",
+      "name:8": "susy.quest.db.1529184698.title",
       "tasklogic:8": "OR"
     }
   },
   "questID:3": 1529184698,
   "tasks:9": {
     "0:10": {
-      "index:3": 0,
       "requiredFluids:9": {
         "0:10": {
           "Amount:3": 1000,

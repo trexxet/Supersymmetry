@@ -7,23 +7,21 @@
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "Supercritical fluids can be produced by compressing an already compressed gas in a HV-tier fluid compressor.",
+      "desc:8": "susy.quest.db.22127543.desc",
       "icon:10": {
-        "Count:3": 1,
         "id:8": "forge:bucketfilled",
         "tag:10": {
           "Amount:3": 1000,
           "FluidName:8": "supercritical_propane"
         }
       },
-      "name:8": "Going Supercritical",
+      "name:8": "susy.quest.db.22127543.title",
       "tasklogic:8": "OR"
     }
   },
   "questID:3": 22127543,
   "tasks:9": {
     "0:10": {
-      "index:3": 0,
       "requiredFluids:9": {
         "0:10": {
           "Amount:3": 300,

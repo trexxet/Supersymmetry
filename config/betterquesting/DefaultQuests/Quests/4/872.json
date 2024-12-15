@@ -1,14 +1,12 @@
 {
   "preRequisites:11": [
     865,
-    864,
     873
   ],
   "properties:10": {
     "betterquesting:10": {
       "desc:8": "susy.quest.db.872.desc",
       "icon:10": {
-        "Count:3": 1,
         "Damage:2": 15289,
         "id:8": "gregtech:meta_dust"
       },
@@ -18,7 +16,6 @@
   "questID:3": 872,
   "tasks:9": {
     "0:10": {
-      "index:3": 0,
       "requiredItems:9": {
         "0:10": {
           "Count:3": 1,

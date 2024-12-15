@@ -5,23 +5,21 @@
   ],
   "properties:10": {
     "betterquesting:10": {
-      "desc:8": "No Description",
+      "desc:8": "susy.quest.db.1056118460.desc",
       "icon:10": {
-        "Count:3": 1,
         "id:8": "forge:bucketfilled",
         "tag:10": {
           "Amount:3": 1000,
           "FluidName:8": "vacuum_oil_residue"
         }
       },
-      "name:8": "Residues",
+      "name:8": "susy.quest.db.1056118460.title",
       "tasklogic:8": "OR"
     }
   },
   "questID:3": 1056118460,
   "tasks:9": {
     "0:10": {
-      "index:3": 0,
       "requiredFluids:9": {
         "0:10": {
           "Amount:3": 1000,
