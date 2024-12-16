@@ -14,7 +14,6 @@
           "FluidName:8": "desalted_oil_light"
         }
       },
-      "ismain:1": 1,
       "name:8": "susy.quest.db.175.title",
       "tasklogic:8": "OR"
     }

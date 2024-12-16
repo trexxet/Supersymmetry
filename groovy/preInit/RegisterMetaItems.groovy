@@ -46,7 +46,7 @@ eventManager.listen {
         customMetaItems.addItem(155, "sugar_cane_dust");
 
         customMetaItems.addItem(156, "bitumen");
-        customMetaItems.addItem(157, "bituminous_residue");
+        customMetaItems.addItem(157, "hydrocracking_catalyst")
         customMetaItems.addItem(158, "paraffin_wax");
         customMetaItems.addItem(159, "spent_cracking_catalyst");
 
@@ -239,6 +239,16 @@ eventManager.listen {
         customMetaItems.addItem(5305, "etched.silicon_dioxide");
         customMetaItems.addItem(5306, "etched.polysilicon");
         customMetaItems.addItem(5307, "etched.silicon_nitride");
+        
+        //Good Circuit Components 5900-6000
+        customMetaItems.addItem(5900, "op_amp");
+        customMetaItems.addItem(5901, "heat_sink");
+        customMetaItems.addItem(5902, "protector_chip");
+        customMetaItems.addItem(5903, "zener_diode");
+        customMetaItems.addItem(5904, "fuse.hv");
+        customMetaItems.addItem(5905, "voltage_regulator.hv.unsealed");
+        customMetaItems.addItem(5906, "voltage_regulator.mv");
+        customMetaItems.addItem(5907, "voltage_regulator.hv");
 
         //Light Sources 6000-6100
         customMetaItems.addItem(6000, "carbon_arc_lamp");
