@@ -1,7 +1,6 @@
 import globals.Globals
 import globals.GroovyUtils
 import globals.RecyclingHelper
-import gregtech.api.recipes.category.RecipeCategories
 import gregtech.common.blocks.MetaBlocks
 import gregtech.common.blocks.MetaBlocks.*
 import net.minecraft.init.Blocks
@@ -887,6 +886,137 @@ mods.gregtech.assembler.recipeBuilder()
 		.duration(200)
 		.EUt(16)
 		.circuitMeta(2)
+		.buildAndRegister()
+
+// Logistics
+RecyclingHelper.addShaped('gregtech:extender.inv', metaitem('extender.inv'), [
+		[null, ore('craftingToolHardHammer'), metaitem('pipeNormalItemNickel')],
+		[null, metaitem('hull.lv'), null],
+		[metaitem('pipeNormalItemNickel'), ore('craftingToolWrench'), null]
+])
+
+RecyclingHelper.addShaped('gregtech:extender.tank', metaitem('extender.tank'), [
+		[metaitem('pipeNormalFluidSteel'), ore('craftingToolHardHammer'), null],
+		[null, metaitem('hull.lv'), null],
+		[null, ore('craftingToolWrench'), metaitem('pipeNormalFluidSteel')]
+])
+
+RecyclingHelper.addShaped('gregtech:extender.inv_tank', metaitem('extender.inv_tank'), [
+		[metaitem('pipeNormalFluidSteel'), ore('craftingToolHardHammer'), metaitem('pipeNormalItemNickel')],
+		[null, metaitem('hull.lv'), null],
+		[metaitem('pipeNormalItemNickel'), ore('craftingToolWrench'), metaitem('pipeNormalFluidSteel')]
+])
+
+RecyclingHelper.addShaped('gregtech:extender.universal', metaitem('extender.universal'), [
+		[metaitem('pipeNormalFluidAluminium'), ore('rotorAluminium'), metaitem('pipeNormalItemElectrum')],
+		[ore('circuitLv'), metaitem('hull.mv'), ore('gearAluminium')],
+		[metaitem('pipeNormalItemElectrum'), ore('springAluminium'), metaitem('pipeNormalFluidAluminium')]
+])
+
+RecyclingHelper.addShaped('gregtech:bridge.inv', metaitem('bridge.inv'), [
+		[ore('craftingToolHardHammer'), metaitem('pipeNormalItemNickel'), null],
+		[null, metaitem('hull.lv'), null],
+		[null, metaitem('pipeNormalItemNickel'), ore('craftingToolWrench')]
+])
+
+RecyclingHelper.addShaped('gregtech:bridge.tank', metaitem('bridge.tank'), [
+		[ore('craftingToolHardHammer'), null, null],
+		[metaitem('pipeNormalFluidSteel'), metaitem('hull.lv'), metaitem('pipeNormalFluidSteel')],
+		[null, null, ore('craftingToolWrench')]
+])
+
+RecyclingHelper.addShaped('gregtech:bridge.inv_tank', metaitem('bridge.inv_tank'), [
+		[ore('craftingToolHardHammer'), metaitem('pipeNormalItemNickel'), null],
+		[metaitem('pipeNormalFluidSteel'), metaitem('hull.lv'), metaitem('pipeNormalFluidSteel')],
+		[null, metaitem('pipeNormalItemNickel'), ore('craftingToolWrench')]
+])
+
+RecyclingHelper.addShaped('gregtech:bridge.universal', metaitem('bridge.universal'), [
+		[ore('springAluminium'), metaitem('pipeNormalItemElectrum'), ore('rotorAluminium')],
+		[metaitem('pipeNormalFluidAluminium'), metaitem('hull.mv'), metaitem('pipeNormalFluidAluminium')],
+		[ore('circuitLv'), metaitem('pipeNormalItemElectrum'), ore('gearAluminium')]
+])
+
+mods.gregtech.assembler.recipeBuilder()
+		.inputs(metaitem('pipeNormalItemNickel') * 2)
+		.inputs(metaitem('hull.lv'))
+		.outputs(metaitem('extender.inv'))
+		.duration(200)
+		.EUt(16)
+		.circuitMeta(2)
+		.buildAndRegister()
+
+mods.gregtech.assembler.recipeBuilder()
+		.inputs(metaitem('pipeNormalFluidSteel') * 2)
+		.inputs(metaitem('hull.lv'))
+		.outputs(metaitem('extender.tank'))
+		.duration(200)
+		.EUt(16)
+		.circuitMeta(2)
+		.buildAndRegister()
+
+mods.gregtech.assembler.recipeBuilder()
+		.inputs(metaitem('pipeNormalItemNickel') * 2)
+		.inputs(metaitem('pipeNormalFluidSteel') * 2)
+		.inputs(metaitem('hull.lv'))
+		.outputs(metaitem('extender.inv_tank'))
+		.duration(200)
+		.EUt(16)
+		.circuitMeta(3)
+		.buildAndRegister()
+
+mods.gregtech.assembler.recipeBuilder()
+		.inputs(metaitem('pipeNormalItemElectrum') * 2)
+		.inputs(metaitem('pipeNormalFluidAluminium') * 2)
+		.inputs(ore('rotorAluminium'))
+		.inputs(ore('gearAluminium'))
+		.inputs(ore('springAluminium'))
+		.inputs(metaitem('hull.mv'))
+		.outputs(metaitem('extender.universal'))
+		.duration(200)
+		.EUt(64)
+		.circuitMeta(3)
+		.buildAndRegister()
+
+mods.gregtech.assembler.recipeBuilder()
+		.inputs(metaitem('pipeNormalItemNickel') * 2)
+		.inputs(metaitem('hull.lv'))
+		.outputs(metaitem('bridge.inv'))
+		.duration(200)
+		.EUt(16)
+		.circuitMeta(4)
+		.buildAndRegister()
+
+mods.gregtech.assembler.recipeBuilder()
+		.inputs(metaitem('pipeNormalFluidSteel') * 2)
+		.inputs(metaitem('hull.lv'))
+		.outputs(metaitem('bridge.tank'))
+		.duration(200)
+		.EUt(16)
+		.circuitMeta(4)
+		.buildAndRegister()
+
+mods.gregtech.assembler.recipeBuilder()
+		.inputs(metaitem('pipeNormalItemNickel') * 2)
+		.inputs(metaitem('pipeNormalFluidSteel') * 2)
+		.inputs(metaitem('hull.lv'))
+		.outputs(metaitem('bridge.inv_tank'))
+		.duration(200)
+		.EUt(16)
+		.circuitMeta(5)
+		.buildAndRegister()
+
+mods.gregtech.assembler.recipeBuilder()
+		.inputs(metaitem('pipeNormalItemElectrum') * 2)
+		.inputs(metaitem('pipeNormalFluidAluminium') * 2)
+		.inputs(ore('rotorAluminium'))
+		.inputs(ore('gearAluminium'))
+		.inputs(ore('springAluminium'))
+		.inputs(metaitem('hull.mv'))
+		.outputs(metaitem('bridge.universal'))
+		.duration(200)
+		.EUt(64)
+		.circuitMeta(5)
 		.buildAndRegister()
 
 // Electrolytic Cell
