@@ -94,6 +94,9 @@ class ChangeFlags {
         setupFluidType(Selenium, FluidStorageKeys.LIQUID, 494)
         //setupFluidType(Iron3Chloride, FluidStorageKeys.GAS, 590) 
 
+        setupFluidType(CarbonDioxide, SusyFluidStorageKeys.SUPERCRITICAL, 304)
+        setupFluidType(Propane, SusyFluidStorageKeys.SUPERCRITICAL, 370)
+
         Polybenzimidazole.setProperty(SuSyPropertyKey.FIBER, new FiberProperty(false, true, true))
         Polytetrafluoroethylene.setProperty(SuSyPropertyKey.FIBER, new FiberProperty(false, true, false))
         Polydimethylsiloxane.setProperty(PropertyKey.FLUID, new FluidProperty(FluidStorageKeys.LIQUID, new FluidBuilder()));
@@ -124,8 +127,8 @@ class ChangeFlags {
         Steel.addFlags("generate_spring", "generate_spring_small");
         Titanium.addFlags("generate_foil", "generate_spring", "generate_spring_small");
         Lead.addFlags("generate_round");
+        Nickel.addFlags("generate_rod", "generate_foil");
         Aluminium.addFlags("generate_round", "generate_rotor");
-        Nickel.addFlags("generate_rod");
         Tungsten.addFlags("generate_fine_wire");
         Molybdenum.addFlags("generate_fine_wire");
         Tantalum.addFlags("generate_rod");
@@ -138,6 +141,7 @@ class ChangeFlags {
         Alumina.addFlags("generate_catalyst_bed");
         Silver.addFlags("generate_catalyst_bed");
         Nickel.addFlags("generate_catalyst_bed");
+        Magnesia.addFlags("generate_catalyst_bed");
         Brass.addFlags("generate_ring");
         Indium.addFlags("generate_plate");
         BisphenolA.addFlags("no_unification");
@@ -174,7 +178,8 @@ class ChangeFlags {
         Lepidolite.setFormula("(K,Rb)AlLi2Si4O10(OH,F)2", true);
         Tetrahedrite.setFormula("Cu12Sb4S13", true);
         IndiumGalliumPhosphide.setFormula("InGaP2", true);
-        NetherAir.setFormula("(N78O21Ar9)24(CO2)2(H2S)(SO2)", true)
+        NetherAir.setFormula("(N78O21Ar9)24(CO2)2(H2S)(SO2)", true);
+        Diatomite.setFormula("(SiO2)8(Fe2O3)(Al2O3)", true);
 
         // Ore Processing
         

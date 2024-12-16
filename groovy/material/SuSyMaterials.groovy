@@ -131,6 +131,7 @@ class SuSyMaterials {
         public static Material RawMolecularSieve;
         public static Material MolecularSieve;
         public static Material WetMolecularSieve;
+        public static Material ChloridedAlumina;
         public static Material FlueGas;
         public static Material ExhaustSteam;
         public static Material SmokeBombMix;
@@ -159,7 +160,7 @@ class SuSyMaterials {
         public static Material CativaCatalystSolution;
         public static Material AcidicCumene;
         public static Material RearrangedCumene;
-        public static Material AlkylatedButane;
+        public static Material SulfatedMetalOxide;
         public static Material ImpureKaptonK;
         public static Material KaptonEPreparation;
         public static Material ImpureKaptonE;
@@ -217,8 +218,8 @@ class SuSyMaterials {
         public static Material PolyhaliteLeach;
         public static Material CarnalliteLeach;
         public static Material KainiteLeach;
-        public static Material Zeolite13XSolution;
-        public static Material Zeolite13X;
+        public static Material TypeXZeoliteSolution;
+        public static Material TypeXZeolite;
         public static Material LTSCatalyst;
         public static Material HTSCatalyst;
         public static Material SpentBismuthCatalyst;
@@ -228,6 +229,7 @@ class SuSyMaterials {
         public static Material AluminiumSilicateLeach;
         public static Material AlkaliAlumMix;
         public static Material AmblygoniteLeach;
+        public static Material SolidPhosphoricAcid;
         public static Material LepidoliteLeach;
         public static Material NeutralizedLepidoliteLeach;
         public static Material AluminiumFreeLepidoliteLeach;
@@ -282,6 +284,7 @@ class SuSyMaterials {
         public static Material ZincFlue;
         public static Material CrudeZinc;
         public static Material CadmiumRichZinc;
+        public static Material AmorphousSilicaAlumina;
         public static Material ImpureSmithsoniteSlurry;
         public static Material SmithsoniteSlurry;
         public static Material ZincLeach;
@@ -291,6 +294,7 @@ class SuSyMaterials {
         public static Material WaelzSlag;
         public static Material ReducedZincLeach;
         public static Material WaelzOxide;
+        public static Material CarbonBlack;
         public static Material ZincCementationSlurry;
         public static Material PrecipitatedZincLeach;
         public static Material CopperCadmiumResidue;
@@ -510,74 +514,148 @@ class SuSyMaterials {
         public static Material CocoAmineAcetate;
         public static Material PolluciteLeach;
         public static Material CaesiumRubidiumAlumMixture;
+        public static Material HydratedTriethyleneGlycol;
         public static Material NetherMolecularSieve;
+        public static Material HydrotreatingCatalyst;
+        public static Material SourWater;
+        public static Material TypeYZeoliteSolution;
+        public static Material TypeYZeolite;
         public static Material CobaltMatte;
+        public static Material OrthoCresylicAcidMixture;
+        public static Material CresolNovolacsOligomer;
+        public static Material EpoxyCresolNovolacs;
 
-        // Petrochem Materials
+        // Petrochem Materials   
 
         public static Material DilutedOil;
         public static Material DesaltedOil;
+        public static Material HeatedOil;
 
         public static Material DilutedOilLight;
         public static Material DesaltedOilLight;
+        public static Material HeatedOilLight;
 
         public static Material DilutedOilHeavy;
         public static Material DesaltedOilHeavy;
-
-        public static Material FuelOil;
-        public static Material SulfuricFuelOil;
-        public static Material TreatedSulfuricFuelOil;
-        public static Material UpgradedFuelOilMix;
+        public static Material HeatedOilHeavy;
 
         public static Material CrudeNaturalGas;
         public static Material SulfuricNaturalGas;
         public static Material TreatedSulfuricNaturalGas;
-        public static Material AlkylatedNaturalGas;
 
         public static Material SulfuricRefineryGas;
         public static Material TreatedSulfuricRefineryGas;
-        public static Material AlkylatedRefineryGas;
 
-        public static Material SulfuricDiesel;
-        public static Material TreatedSulfuricDiesel;
-        public static Material UpgradedDieselMix;
+        public static Material LightNaphtha;
+        public static Material SulfuricLightNaphtha;
+        public static Material HeatedLightNaphtha;
+        public static Material TreatedSulfuricLightNaphtha;
+        public static Material SteamcrackedLightNaphtha;
+
+        public static Material HeavyNaphtha;
+        public static Material SulfuricHeavyNaphtha;
+        public static Material HeatedHeavyNaphtha;
+        public static Material TreatedSulfuricHeavyNaphtha;
+        public static Material SteamcrackedHeavyNaphtha;
+        public static Material NaphthaReformate;
 
         public static Material Kerosene;
+        public static Material CrudeKerosene;
         public static Material SulfuricKerosene;
+        public static Material HeatedKerosene;
         public static Material TreatedSulfuricKerosene;
-        public static Material LightlySteamcrackedKerosene;
-        public static Material SeverelySteamcrackedKerosene;
-        public static Material LightlyHydrocrackedKerosene;
-        public static Material SeverelyHydrocrackedKerosene;
-        public static Material UpgradedKeroseneMix;
 
-        public static Material SulfuricGasoline;
-        public static Material TreatedSulfuricGasoline;
-        public static Material LightlySteamcrackedGasoline;
-        public static Material SeverelySteamcrackedGasoline;
-        public static Material LightlyHydrocrackedGasoline;
-        public static Material SeverelyHydrocrackedGasoline;
+        public static Material LightGasOil;
+        public static Material CrudeLightGasOil;
+        public static Material SulfuricLightGasOil;
+        public static Material HeatedLightGasOil;
+        public static Material TreatedSulfuricLightGasOil;
+        public static Material SteamcrackedLightGasOil;
+        public static Material HydrocrackedLightGasOil;
 
+        public static Material HeavyGasOil;
+        public static Material CrudeHeavyGasOil;
+        public static Material SulfuricHeavyGasOil;
+        public static Material HeatedHeavyGasOil;
+        public static Material TreatedSulfuricHeavyGasOil;
+        public static Material CatalyticallyCrackedHeavyGasOil;
+        public static Material CrudeCatalyticallyCrackedHeavyGasOil;
+        public static Material SteamcrackedHeavyGasOil;
+        public static Material HydrocrackedHeavyGasOil;
+
+        public static Material CrudeNaphtha;
         public static Material TreatedSulfuricNaphtha;
-        public static Material LightlySteamcrackedNaphtha;
-        public static Material SeverelySteamcrackedNaphtha;
-        public static Material LightlyHydrocrackedNaphtha;
-        public static Material SeverelyHydrocrackedNaphtha;
-        public static Material NaphthaReformate;
-        public static Material UpgradedNaphthaMix;
+        public static Material DebutanizedNaphtha;
+        public static Material SulfuricDebutanizedNaphtha;
+
+        public static Material AtmosphericOilResidue;
+        public static Material SulfuricAtmosphericOilResidue;
+        public static Material CatalyticallyCrackedAtmosphericOilResidue;
+        public static Material CrudeCatalyticallyCrackedAtmosphericOilResidue;
+        public static Material HydrocrackedAtmosphericOilResidue;
+        public static Material ThermallyCrackedAtmosphericOilResidue;
+        public static Material QuenchedAtmosphericOilResidue;
+
+        public static Material VacuumOilResidue;
+        public static Material SulfuricVacuumOilResidue;
+        public static Material CatalyticallyCrackedVacuumOilResidue;
+        public static Material CrudeCatalyticallyCrackedVacuumOilResidue;
+        public static Material HydrocrackedVacuumOilResidue;
+        public static Material ThermallyCrackedVacuumOilResidue;
+        public static Material QuenchedVacuumOilResidue;
+
+        public static Material FuelGas;
+        public static Material SulfuricFuelGas;
+        public static Material SulfuricButaneFuelGas;
+        public static Material SulfuricPropaneFuelGas;
+        public static Material ButaneFuelGas;
+        public static Material PropaneFuelGas;
+
+        public static Material AtmosphericOverheads;
+        public static Material HeavyAtmosphericOverheads;
+        public static Material LightAtmosphericOverheads;
 
         public static Material LubricatingOil;
-        public static Material UpgradedLubricatingOilMix;
+        public static Material TreatedSulfuricLubricatingOil;
+
+        public static Material LightCycleOil;
+        public static Material SulfuricLightCycleOil;
+        public static Material HeatedLightCycleOil;
+        public static Material TreatedSulfuricLightCycleOil;
+        public static Material HydrocrackedLightCycleOil;
+
+        public static Material SlurryOil;
+        public static Material DeasphaltedOil;
+
+        public static Material CatalyticOverheads;
+        public static Material SulfuricCatalyticOverheads;
+        public static Material CatalyticOlefinRichMixture;
+        public static Material CatalyticCFourFraction;
+        public static Material CatalyticCThreeFraction;
+        public static Material CatalyticLightGases;
+        public static Material CatalyticButeneMixture;
+
+        public static Material ReformingLiquids;
+        public static Material ReformingEffluent;
+        public static Material Reformate;
+        public static Material ReformateRaffinate;
+
+        public static Material RawIsomerate;
+        public static Material IsohexaneRichStream;
+        public static Material Isomerate;
+
+        public static Material AcidicAlkylateMixture;
+        public static Material AlkylateMixture;
+        public static Material Alkylate;
+        public static Material CrudeIsobutane;
+
+        public static Material RawGasolinePolymerate;
+        public static Material Polymerate;
 
         public static Material OilyBrine;
         public static Material LightOilyBrine;
         public static Material HeavyOilyBrine;
-        public static Material SulfuricOilResidue;
-        public static Material TreatedSulfuricOilResidue;
-        public static Material OilResidue;
-        public static Material LightBitumenSolution;
-        public static Material BitumenSolution;
-        public static Material HeavyBitumenSolution;
+        public static Material AsphalteneExtract;
         public static Material SourGas;
         public static Material SlackWax;
         public static Material Resin;
@@ -586,6 +664,7 @@ class SuSyMaterials {
         public static Material BTEX;
         public static Material Syngas;
         public static Material ReformedSyngas;
+        public static Material ClarifiedSlurryOil;
         public static Material CrudeLubricatingOil;
         public static Material SolventLubricantMixture;
         public static Material ColdSolventLubricantMixture;
@@ -593,6 +672,16 @@ class SuSyMaterials {
         public static Material DewaxedLubricantMixture;
         public static Material CFiveFraction;
         public static Material DimerizedCFiveFraction;
+        public static Material PyrolysisGasoline;
+        public static Material PyrolysisRaffinate;
+        public static Material FuelOil;
+        public static Material VisbreakingResidue;
+        public static Material CokingResidue;
+        public static Material HeatedCokingResidue;
+        public static Material CokeFines;
+        public static Material FluidCrackedVacuumOilResidue;
+        public static Material CokingEffluents;
+        public static Material RPOne;
 
         // First Degree Materials
 
@@ -647,6 +736,7 @@ class SuSyMaterials {
         public static Material Fluix;
         public static Material PigIron;
         public static Material GreenCoke;
+        public static Material HeatedGreenCoke;
         public static Material IronIIISulfate;
         public static Material AluminiumHydroxide;
         public static Material AluminiumTrifluoride;
@@ -993,6 +1083,7 @@ class SuSyMaterials {
         public static Material HydrogenSilsesquioxane;
         public static Material CementedAlluvialPGMSolution;
         public static Material AlluvialPGM;
+        public static Material AmmoniumMetatungstate;
         public static Material Diamminedichloropalladium;
         public static Material NickelIINitrateSolution;
         public static Material FerroniobiumTantalum;
@@ -1274,6 +1365,9 @@ class SuSyMaterials {
         public static Material RubidiumHydroxideSolution;
         public static Material SodiumAlumSolution;
         public static Material OxidizedManganateSolution;
+        public static Material SupportedNickel;
+        public static Material AmmoniumMetatungstateSolution;
+        public static Material CobaltNitrateSolution;
         public static Material GalvanizedSteel;
         public static Material ImpureLithiumCarbonateSolution;
         public static Material LithiumCarbonateSolution;
@@ -1495,6 +1589,7 @@ class SuSyMaterials {
         public static Material IsoOctane;
         public static Material PurifiedIsoprene;
         public static Material Cyclopentadiene;
+        public static Material HexamethylenetetramineSolution;
         public static Material Ferrocene;
         public static Material Polyisoprene;
         public static Material Chloroethane;
@@ -1683,6 +1778,13 @@ class SuSyMaterials {
         public static Material HydrolyzedMethylFormateSolution;
         public static Material FormicAcid;
         public static Material MethylFormateSolution;
+        public static Material TriethyleneGlycol;
+        public static Material AcidicRichAmine;
+        public static Material CompoundedPolyisoprene;
+        public static Material CompoundedStyreneIsopreneRubber;
+        public static Material CompoundedStyreneButadieneRubber;
+        public static Material TwoSixXylenol;
+        public static Material TwoFourFiveXylenolMixture;
 
         // Third Degree Materials
 
@@ -1690,6 +1792,7 @@ class SuSyMaterials {
         public static Material DiethylEtherSolution;
         public static Material LithiumSolution;
         public static Material DimethylacetamideSolution;
+        public static Material AcidicFurfuralSolution;
         public static Material WackerCatalystSolution;
         public static Material TwoEthylanthraquinoneSolution;
         public static Material AcetamideSolution;

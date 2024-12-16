@@ -450,7 +450,20 @@ public class SecondDegreeMaterials {
                 .color(0x70cc6e)
                 .build();
 
-        //FREE IDs: 13072-13074
+        SupportedNickel = new Material.Builder(13072, SuSyUtility.susyId('supported_nickel'))
+                .dust()
+                .components(NickelIINitrate * 1, Alumina * 1)
+                .colorAverage()
+                .flags(GENERATE_CATALYST_BED)
+                .build()
+
+        AmmoniumMetatungstateSolution = new Material.Builder(13073, SuSyUtility.susyId('ammonium_metatungstate_solution'))
+                .liquid()
+                .components(AmmoniumMetatungstate, Ammonia * 4, Water * 4)
+                .color(0x340959)
+                .build()
+
+        //FREE IDs: 13074
 
         DilutedAmmoniumSulfateSolution = new Material.Builder(13075, SuSyUtility.susyId('diluted_ammonium_sulfate_solution'))
                 .liquid()
@@ -559,6 +572,7 @@ public class SecondDegreeMaterials {
         SupportedPlatinum = new Material.Builder(13092, SuSyUtility.susyId('supported_platinum'))
                 .dust()
                 .components(Alumina * 1, Platinum * 1, Chlorine * 4)
+                .colorAverage()
                 .flags(GENERATE_CATALYST_BED)
                 .build()
 

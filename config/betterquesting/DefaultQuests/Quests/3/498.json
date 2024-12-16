@@ -1,6 +1,11 @@
 {
+  "preRequisiteTypes:7": [
+    0,
+    1
+  ],
   "preRequisites:11": [
-    653
+    653,
+    498154717
   ],
   "properties:10": {
     "betterquesting:10": {
@@ -11,7 +16,8 @@
         "id:8": "gregtech:machine"
       },
       "ismain:1": 1,
-      "name:8": "susy.quest.db.498.title"
+      "name:8": "susy.quest.db.498.title",
+      "questlogic:8": "OR"
     }
   },
   "questID:3": 498,
