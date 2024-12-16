@@ -710,7 +710,7 @@ public class FirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .colorAverage()
                 .build()
-                .setFormula("(Ni,Co)Cl2(H2O)4", true)
+                .setFormula("[(Ni,Co)Cl2](H2O)4", true)
 
         AcidicCopperSolution = new Material.Builder(8194, SuSyUtility.susyId('acidic_copper_solution'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
@@ -1778,12 +1778,13 @@ public class FirstDegreeMaterials {
                 .colorAverage()
                 .build();
 
-        HeatedGreenCoke = new Material.Builder(8360, SuSyUtility.susyId('heated_green_coke'))
-                .gem(1, 2000)
-                .color(0x7b8752).iconSet(LIGNITE)
-                .components(Carbon)
-                .flags(FLAMMABLE, NO_SMELTING, NO_SMASHING, MORTAR_GRINDABLE)
+        ImpureCobaltOxide = new Material.Builder(8360, SuSyUtility.susyId('impure_cobalt_oxide'))
+                .dust()
+                .components(CobaltOxide)
+                .color(0xd6e600)
                 .build();
+
+        ImpureCobaltOxide.setFormula("(CoO)(?)", true)
 
         CrudeTin = new Material.Builder(8361, SuSyUtility.susyId('crude_tin'))
                 .liquid(new FluidBuilder().temperature(600))
@@ -2582,7 +2583,14 @@ public class FirstDegreeMaterials {
                 .color(0xcaddfa)
                 .build();
 
-        //FREE IDs: 8481-8485
+        HeatedGreenCoke = new Material.Builder(8481, SuSyUtility.susyId('heated_green_coke'))
+                .gem(1, 2000)
+                .color(0x7b8752).iconSet(LIGNITE)
+                .components(Carbon)
+                .flags(FLAMMABLE, NO_SMELTING, NO_SMASHING, MORTAR_GRINDABLE)
+                .build();
+      
+        //FREE IDs: 8482-8485
 
         UltramaficTailingSlurry = new Material.Builder(8486, SuSyUtility.susyId('ultramafic_tailing_slurry'))
                 .liquid()
@@ -3266,7 +3274,13 @@ public class FirstDegreeMaterials {
 
         ThalliumSulfateSolution.setFormula("(Tl2SO4)(H2O)", true)
 
-        //FREE ID: 8597
+        ImpureCobaltSulfateSolution = new Material.Builder(8597, SuSyUtility.susyId("impure_cobalt_sulfate_solution"))
+                .liquid()
+                .components(Cobalt, Sulfur, Oxygen * 4, Water)
+                .colorAverage()
+                .build();
+
+        ImpureCobaltSulfateSolution.setFormula("(CoSO4)(?)(H2O)", true)
 
         //FREE ID: 8598
 
