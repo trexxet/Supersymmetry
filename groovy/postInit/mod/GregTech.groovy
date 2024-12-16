@@ -1351,7 +1351,7 @@ mods.gregtech.semi_fluid_generator.recipeBuilder()
 		.duration(21)
 		.EUt(-32)
 		.buildAndRegister();
-                
+
 mods.gregtech.semi_fluid_generator.recipeBuilder()
 		.fluidInputs(fluid('sulfuric_natural_gas') * 16)
 		.duration(4)
@@ -1653,3 +1653,104 @@ mods.gregtech.assembler.recipeBuilder()
         .duration(200)
         .EUt(30)
         .buildAndRegister()
+// Jet Wingpack recipes
+// Wing panel
+mods.gregtech.autoclave.recipeBuilder()
+		.notConsumable(metaitem('shape.mold.plate'))
+		.notConsumable(ore('foilPolyethyleneTerephthalate'))
+		.fluidInputs(fluid('reinforced_epoxy_resin') * 288)
+		.outputs(metaitem('wing_panel.fiber_reinforced_epoxy'))
+		.duration(600)
+		.EUt(480)
+		.buildAndRegister()
+
+RecyclingHelper.handleRecycling(metaitem('wing_panel.fiber_reinforced_epoxy'), [
+		ore('ingotReinforcedEpoxyResin') * 2
+])
+
+// Small wing
+mods.gregtech.assembler.recipeBuilder()
+		.inputs(metaitem('wing_panel.fiber_reinforced_epoxy') * 2)
+		.inputs(ore('boltTitanium') * 8)
+		.inputs(ore('plateTitanium') * 2)
+		.circuitMeta(3)
+		.outputs(metaitem('wing.small'))
+		.duration(100)
+		.EUt(480)
+		.buildAndRegister();
+
+RecyclingHelper.handleRecycling(metaitem('wing.small'), [
+		metaitem('wing_panel.fiber_reinforced_epoxy') * 2,
+		ore('boltTitanium') * 8,
+		ore('plateTitanium') * 2
+])
+
+// Small turbojet
+mods.gregtech.assembler.recipeBuilder()
+		.inputs(metaitem('rotorRene') * 4)
+		.inputs(ore('stickLongTitanium'))
+		.inputs(ore('plateTitanium') * 2)
+		.inputs(ore('boltTitanium') * 4)
+		.inputs(metaitem('pipeTinyFluidTitanium') * 8)
+		.circuitMeta(5)
+		.outputs(metaitem('turbojet.small'))
+		.duration(100)
+		.EUt(480)
+		.buildAndRegister();
+
+RecyclingHelper.handleRecycling(metaitem('turbojet.small'), [
+		metaitem('rotorRene') * 4,
+		ore('stickLongTitanium'),
+		ore('plateTitanium') * 2,
+		ore('boltTitanium') * 4,
+		metaitem('pipeTinyFluidTitanium') * 8
+])
+
+// Jet wingpack
+mods.gregtech.assembler.recipeBuilder()
+		.inputs(metaitem('turbojet.small') * 4)
+		.inputs(metaitem('wing.small') * 2)
+		.inputs(metaitem('electric.pump.ev'))
+		.inputs(metaitem('large_fluid_cell.titanium') * 2)
+		.inputs(ore('circuitHv') * 2)
+		.inputs(ore('plateTitanium') * 2)
+		.inputs(ore('boltTitanium') * 8)
+		.outputs(metaitem('susy:jet_wingpack'))
+		.duration(200)
+		.EUt(480)
+		.buildAndRegister();
+
+RecyclingHelper.handleRecycling(metaitem('susy:jet_wingpack'), [
+		metaitem('turbojet.small') * 4,
+		metaitem('wing.small') * 2,
+		metaitem('electric.pump.ev'),
+		metaitem('large_fluid_cell.titanium') * 2,
+		ore('plateTitanium') * 2,
+		ore('boltTitanium') * 8
+])
+
+// Register Jet Wingpack fuels
+JET_WINGPACK = recipemap('jet_wingpack_fuels')
+
+mods.jei.catalyst.add('gregtech:jet_wingpack_fuels', metaitem('susy:jet_wingpack'))
+
+JET_WINGPACK.recipeBuilder()
+		.fluidInputs(fluid('kerosene') * 1)
+		.duration(20)
+		.buildAndRegister()
+
+JET_WINGPACK.recipeBuilder()
+		.fluidInputs(fluid('midgrade_kerosene') * 1)
+		.duration(40)
+		.buildAndRegister()
+
+JET_WINGPACK.recipeBuilder()
+		.fluidInputs(fluid('premium_kerosene') * 1)
+		.duration(60)
+		.buildAndRegister()
+
+JET_WINGPACK.recipeBuilder()
+		.fluidInputs(fluid('supreme_kerosene') * 1)
+		.duration(80)
+		.buildAndRegister()
+

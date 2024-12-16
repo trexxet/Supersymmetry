@@ -3499,7 +3499,7 @@ public class FirstDegreeMaterials {
         ReneN = new Material.Builder(8630, SuSyUtility.susyId("rene"))
                 .ingot().liquid(new FluidBuilder().temperature(1780))
                 .iconSet(SHINY)
-                .flags(GENERATE_PLATE, GENERATE_ROD)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_ROTOR)
                 .components(Nickel * 22, Cobalt * 4, Chrome * 3, Aluminium * 3, Tungsten * 2, Hafnium, Rhenium * 2, Tantalum * 3)
                 .colorAverage()
                 .build()

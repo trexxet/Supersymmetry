@@ -2500,6 +2500,10 @@ metaitem.circuit.good_integrated.name=Advanced Electronic Circuit
 metaitem.circuit.advanced_integrated.name=High-Voltage Electronic Circuit
 
 
+metaitem.turbojet.small.name=Small Turbojet Engine
+metaitem.wing_panel.fiber_reinforced_epoxy.name=Glass Fiber Reinforced Epoxy (GFEP) Wing Panel
+metaitem.wing.small.name=Lightweight Wing
+
 # Vanilla MC
 tile.hellsand.name=Mineral-Rich Sand
 tile.magma.name=Magma-Infused Netherrack
