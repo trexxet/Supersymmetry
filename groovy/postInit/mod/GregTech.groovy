@@ -1481,3 +1481,29 @@ crafting.addShaped('gregtech:electric_jetpack_advanced2', metaitem('advanced_ele
     [metaitem('power_thruster_advanced'), metaitem('battery.re.hv.cadmium'), metaitem('power_thruster_advanced')],
     [metaitem('wireGtQuadrupleGold'), ore('circuitHv'), metaitem('wireGtQuadrupleGold')]
 ])
+
+// Register Jet Wingpack fuels
+JET_WINGPACK = recipemap('jet_wingpack_fuels')
+
+mods.jei.catalyst.add('gregtech:jet_wingpack_fuels', metaitem('susy:jet_wingpack'))
+
+JET_WINGPACK.recipeBuilder()
+		.fluidInputs(fluid('kerosene') * 1)
+		.duration(20)
+		.buildAndRegister()
+
+JET_WINGPACK.recipeBuilder()
+		.fluidInputs(fluid('midgrade_kerosene') * 1)
+		.duration(40)
+		.buildAndRegister()
+
+JET_WINGPACK.recipeBuilder()
+		.fluidInputs(fluid('premium_kerosene') * 1)
+		.duration(60)
+		.buildAndRegister()
+
+JET_WINGPACK.recipeBuilder()
+		.fluidInputs(fluid('supreme_kerosene') * 1)
+		.duration(80)
+		.buildAndRegister()
+
