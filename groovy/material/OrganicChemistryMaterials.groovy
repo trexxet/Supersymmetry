@@ -492,10 +492,6 @@ public class OrganicChemistryMaterials {
                 .liquid(new FluidBuilder().temperature(400))
                 .components(Carbon * 8, Hydrogen * 10, Oxygen * 1)
                 .color(0x6e3632)
-        OneOneDichloroethane = new Material.Builder(15080, SuSyUtility.susyId('one_one_dichloroethane'))
-                .liquid()
-                .components(Carbon * 2, Hydrogen * 4, Chlorine * 2)
-                .colorAverage()
                 .build();
 
         Butyllithium = new Material.Builder(15081, SuSyUtility.susyId('butyllithium'))
@@ -574,8 +570,12 @@ public class OrganicChemistryMaterials {
                 .components(Carbon * 4, Hydrogen * 6, Oxygen * 2)
                 .color(0x4242f5)
                 .build();
-
-        //FREE ID: 15095
+         
+        OneOneDichloroethane = new Material.Builder(15095, SuSyUtility.susyId('one_one_dichloroethane'))
+                .liquid()
+                .components(Carbon * 2, Hydrogen * 4, Chlorine * 2)
+                .colorAverage()
+                .build();
 
         DimethyldichlorosilaneEmulsion = new Material.Builder(15096, SuSyUtility.susyId('dimethyldichlorosilane_emulsion'))
                 .liquid()
