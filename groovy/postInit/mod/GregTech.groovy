@@ -1482,6 +1482,55 @@ crafting.addShaped('gregtech:electric_jetpack_advanced2', metaitem('advanced_ele
     [metaitem('wireGtQuadrupleGold'), ore('circuitHv'), metaitem('wireGtQuadrupleGold')]
 ])
 
+// Jet Wingpack recipes
+// Wing panel
+mods.gregtech.autoclave.recipeBuilder()
+		.notConsumable(metaitem('shape.mold.plate'))
+		.notConsumable(ore('foilPolyethyleneTerephthalate'))
+		.fluidInputs(fluid('reinforced_epoxy_resin') * 288)
+		.outputs(metaitem('wing_panel.fiber_reinforced_epoxy'))
+		.duration(600)
+		.EUt(480)
+		.buildAndRegister()
+
+// Small wing
+mods.gregtech.assembler.recipeBuilder()
+		.inputs(metaitem('wing_panel.fiber_reinforced_epoxy') * 2)
+		.inputs(ore('boltTitanium') * 8)
+		.inputs(ore('plateTitanium') * 2)
+		.circuitMeta(3)
+		.outputs(metaitem('wing.small'))
+		.duration(100)
+		.EUt(480)
+		.buildAndRegister();
+
+// Small turbojet
+mods.gregtech.assembler.recipeBuilder()
+		.inputs(metaitem('rotorRene') * 4)
+		.inputs(ore('stickLongTitanium') * 2)
+		.inputs(ore('plateTitanium') * 2)
+		.inputs(ore('boltTitanium') * 4)
+		.inputs(metaitem('pipeTinyFluidTitanium') * 8)
+		.circuitMeta(5)
+		.outputs(metaitem('turbojet.small'))
+		.duration(100)
+		.EUt(480)
+		.buildAndRegister();
+
+// Jet wingpack
+mods.gregtech.assembler.recipeBuilder()
+		.inputs(metaitem('turbojet.small') * 4)
+		.inputs(metaitem('wing.small') * 2)
+		.inputs(metaitem('electric.pump.ev'))
+		.inputs(metaitem('large_fluid_cell.titanium') * 2)
+		.inputs(ore('wireGtDoubleAluminium') * 4)
+		.inputs(ore('plateTitanium') * 2)
+		.inputs(ore('boltTitanium') * 8)
+		.outputs(metaitem('susy:jet_wingpack'))
+		.duration(200)
+		.EUt(480)
+		.buildAndRegister();
+
 // Register Jet Wingpack fuels
 JET_WINGPACK = recipemap('jet_wingpack_fuels')
 
