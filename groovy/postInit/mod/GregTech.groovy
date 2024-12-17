@@ -764,6 +764,34 @@ mods.gregtech.macerator.recipeBuilder()
 		.EUt(7)
 		.buildAndRegister();
 
+mods.gregtech.forge_hammer.recipeBuilder()
+		.inputs(item('susy:resource_block_1', 1))
+		.outputs(metaitem('gemAnthracite') * 8)
+		.duration(10)
+		.EUt(16)
+		.buildAndRegister();
+
+mods.gregtech.macerator.recipeBuilder()
+		.inputs(item('susy:resource_block_1', 1))
+		.outputs(metaitem('dustAnthracite') * 8)
+		.duration(240)
+		.EUt(7)
+		.buildAndRegister();
+
+mods.gregtech.forge_hammer.recipeBuilder()
+		.inputs(item('susy:resource_block_1', 2))
+		.outputs(metaitem('gemLignite') * 8)
+		.duration(10)
+		.EUt(16)
+		.buildAndRegister();
+
+mods.gregtech.macerator.recipeBuilder()
+		.inputs(item('susy:resource_block_1', 2))
+		.outputs(metaitem('dustLignite') * 8)
+		.duration(240)
+		.EUt(7)
+		.buildAndRegister();
+
 mods.gregtech.macerator.recipeBuilder()
 		.inputs(metaitem('native_copper'))
 		.outputs(metaitem('dustCopper'))
