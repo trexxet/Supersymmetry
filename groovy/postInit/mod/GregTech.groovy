@@ -9,6 +9,10 @@ log.infoMC("Running GregTech.groovy...")
 
 //REMOVALS
 
+// Note Block * 1
+mods.gregtech.assembler.removeByInput(16, [metaitem('plateWood') * 8, item('minecraft:redstone'), metaitem('circuit.integrated').withNbt(['Configuration': 9])], null)
+// Wood Pulp * 8
+mods.gregtech.macerator.removeByInput(2, [item('minecraft:noteblock')], null)
 // Carbon Dust * 2
 mods.gregtech.centrifuge.removeByInput(30, [metaitem('dustCoal')], null)
 // Small Pile of Rare Earth * 1
@@ -1678,6 +1682,26 @@ crafting.addShaped('gregtech:electric_jetpack_advanced2', metaitem('advanced_ele
     [metaitem('wireGtQuadrupleGold'), ore('circuitHv'), metaitem('wireGtQuadrupleGold')]
 ])
 
+mods.gregtech.assembler.recipeBuilder()
+        .inputs(ore('plankWood') * 4)
+        .inputs(ore('stickIronMagnetic') * 1)
+        .inputs(ore('wireFineRedAlloy') * 2)
+        .inputs(item('minecraft:leather') * 2)
+        .circuitMeta(9)
+        .outputs(item('minecraft:noteblock'))
+        .duration(100)
+        .EUt(30)
+        .buildAndRegister();
+
+mods.gregtech.macerator.recipeBuilder()
+        .inputs(item('minecraft:noteblock'))
+        .outputs(metaitem('dustWood') * 4)
+        .outputs(metaitem('dustSmallIron') * 2)
+        .outputs(metaitem('dustSmallRedAlloy'))
+        .duration(869)
+        .EUt(2)
+        .buildAndRegister();
+
 // MV Alternate Energy Handling
 crafting.addShaped('gregtech:energy_hatch.mv2', item('gregtech:machine', 1212), [
     [null, metaitem('voltage_coil.mv'), null],
@@ -1838,4 +1862,3 @@ JET_WINGPACK.recipeBuilder()
 		.fluidInputs(fluid('supreme_kerosene') * 1)
 		.duration(80)
 		.buildAndRegister()
-
