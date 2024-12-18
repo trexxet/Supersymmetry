@@ -9,6 +9,10 @@ log.infoMC("Running GregTech.groovy...")
 
 //REMOVALS
 
+// Note Block * 1
+mods.gregtech.assembler.removeByInput(16, [metaitem('plateWood') * 8, item('minecraft:redstone'), metaitem('circuit.integrated').withNbt(['Configuration': 9])], null)
+// Wood Pulp * 8
+mods.gregtech.macerator.removeByInput(2, [item('minecraft:noteblock')], null)
 // Carbon Dust * 2
 mods.gregtech.centrifuge.removeByInput(30, [metaitem('dustCoal')], null)
 // Small Pile of Rare Earth * 1
@@ -889,6 +893,14 @@ RecyclingHelper.addShaped('gregtech:brass_drum', metaitem('drum.brass'), [
 		[metaitem('plateBrass'), metaitem('stickLongBrass'), metaitem('plateBrass')]
 ])
 
+RecyclingHelper.handleRecycling(metaitem('drum.pe'), [metaitem('platePlastic') * 6])
+
+RecyclingHelper.handleRecycling(metaitem('drum.pp'), [metaitem('platePolypropylene') * 6])
+
+RecyclingHelper.handleRecycling(metaitem('drum.ptfe'), [metaitem('platePolytetrafluoroethylene') * 6])
+
+RecyclingHelper.handleRecycling(metaitem('drum.uhmwpe'), [metaitem('plateUltraHighMolecularWeightPolyethylene') * 6])
+
 //ModHandler.addShapelessNBTClearingRecipe("drum_nbt_lead", metaitem('drum.lead'),
 //		metaitem('drum.lead')
 //)
@@ -900,8 +912,25 @@ RecyclingHelper.addShaped('gregtech:brass_drum', metaitem('drum.brass'), [
 crafting.addShapeless("drum_nbt_lead", metaitem('drum.lead'), [
 		metaitem('drum.lead').noreturn()
 ]);
+
 crafting.addShapeless("drum_nbt_brass", metaitem('drum.brass'), [
 		metaitem('drum.brass').noreturn()
+]);
+
+crafting.addShapeless("drum_nbt_pe", metaitem('drum.pe'), [
+		metaitem('drum.pe').noreturn()
+]);
+
+crafting.addShapeless("drum_nbt_pp", metaitem('drum.pp'), [
+		metaitem('drum.pp').noreturn()
+]);
+
+crafting.addShapeless("drum_nbt_ptfe", metaitem('drum.ptfe'), [
+		metaitem('drum.ptfe').noreturn()
+]);
+
+crafting.addShapeless("drum_nbt_uhmwpe", metaitem('drum.uhmwpe'), [
+		metaitem('drum.uhmwpe').noreturn()
 ]);
 
 mods.gregtech.assembler.recipeBuilder()
@@ -920,6 +949,38 @@ mods.gregtech.assembler.recipeBuilder()
 		.duration(200)
 		.EUt(16)
 		.circuitMeta(2)
+		.buildAndRegister()
+
+mods.gregtech.extruder.recipeBuilder()
+		.notConsumable(metaitem('shape.extruder.cell'))
+		.fluidInputs(fluid('plastic') * 864)
+		.outputs(metaitem('drum.pe'))
+		.duration(200)
+		.EUt(16)
+		.buildAndRegister()
+
+mods.gregtech.extruder.recipeBuilder()
+		.notConsumable(metaitem('shape.extruder.cell'))
+		.fluidInputs(fluid('polypropylene') * 864)
+		.outputs(metaitem('drum.pp'))
+		.duration(200)
+		.EUt(16)
+		.buildAndRegister()
+
+mods.gregtech.extruder.recipeBuilder()
+		.notConsumable(metaitem('shape.extruder.cell'))
+		.fluidInputs(fluid('polytetrafluoroethylene') * 864)
+		.outputs(metaitem('drum.ptfe'))
+		.duration(200)
+		.EUt(16)
+		.buildAndRegister()
+
+mods.gregtech.extruder.recipeBuilder()
+		.notConsumable(metaitem('shape.extruder.cell'))
+		.fluidInputs(fluid('ultra_high_molecular_weight_polyethylene') * 864)
+		.outputs(metaitem('drum.uhmwpe'))
+		.duration(200)
+		.EUt(16)
 		.buildAndRegister()
 
 // Logistics
@@ -1621,6 +1682,26 @@ crafting.addShaped('gregtech:electric_jetpack_advanced2', metaitem('advanced_ele
     [metaitem('wireGtQuadrupleGold'), ore('circuitHv'), metaitem('wireGtQuadrupleGold')]
 ])
 
+mods.gregtech.assembler.recipeBuilder()
+        .inputs(ore('plankWood') * 4)
+        .inputs(ore('stickIronMagnetic') * 1)
+        .inputs(ore('wireFineRedAlloy') * 2)
+        .inputs(item('minecraft:leather') * 2)
+        .circuitMeta(9)
+        .outputs(item('minecraft:noteblock'))
+        .duration(100)
+        .EUt(30)
+        .buildAndRegister();
+
+mods.gregtech.macerator.recipeBuilder()
+        .inputs(item('minecraft:noteblock'))
+        .outputs(metaitem('dustWood') * 4)
+        .outputs(metaitem('dustSmallIron') * 2)
+        .outputs(metaitem('dustSmallRedAlloy'))
+        .duration(869)
+        .EUt(2)
+        .buildAndRegister();
+
 // MV Alternate Energy Handling
 crafting.addShaped('gregtech:energy_hatch.mv2', item('gregtech:machine', 1212), [
     [null, metaitem('voltage_coil.mv'), null],
@@ -1781,4 +1862,3 @@ JET_WINGPACK.recipeBuilder()
 		.fluidInputs(fluid('supreme_kerosene') * 1)
 		.duration(80)
 		.buildAndRegister()
-
