@@ -1,6 +1,6 @@
 {
   "preRequisites:11": [
-    181
+    121
   ],
   "properties:10": {
     "betterquesting:10": {
@@ -9,7 +9,12 @@
       "icon:10": {
         "Damage:2": 2,
         "id:8": "gregtech:gt_armor",
-        "tag:10": {}
+        "tag:10": {
+          "Fluid:10": {
+            "Amount:3": 16000,
+            "FluidName:8": "diesel"
+          }
+        }
       },
       "ismain:1": 1,
       "name:8": "susy.quest.db.638.title"

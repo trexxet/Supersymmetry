@@ -710,7 +710,7 @@ public class FirstDegreeMaterials {
                 .flags(DISABLE_DECOMPOSITION)
                 .colorAverage()
                 .build()
-                .setFormula("(Ni,Co)Cl2(H2O)4", true)
+                .setFormula("[(Ni,Co)Cl2](H2O)4", true)
 
         AcidicCopperSolution = new Material.Builder(8194, SuSyUtility.susyId('acidic_copper_solution'))
                 .liquid(new FluidBuilder().attribute(FluidAttributes.ACID))
@@ -1778,7 +1778,13 @@ public class FirstDegreeMaterials {
                 .colorAverage()
                 .build();
 
-        //FREE ID: 8360
+        ImpureCobaltOxide = new Material.Builder(8360, SuSyUtility.susyId('impure_cobalt_oxide'))
+                .dust()
+                .components(CobaltOxide)
+                .color(0xd6e600)
+                .build();
+
+        ImpureCobaltOxide.setFormula("(CoO)(?)", true)
 
         CrudeTin = new Material.Builder(8361, SuSyUtility.susyId('crude_tin'))
                 .liquid(new FluidBuilder().temperature(600))
@@ -2092,7 +2098,12 @@ public class FirstDegreeMaterials {
 
         TreatedSamariumAlloy.getProperty(PropertyKey.INGOT).setMagneticMaterial(SamariumAlloyMagnetic);
 
-        //FREE ID: 8406
+        CobaltNitrateSolution = new Material.Builder(8406, SuSyUtility.susyId('cobalt_nitrate_solution'))
+                .liquid()
+                .components(Cobalt, Nitrogen * 2, Oxygen * 6, Water)
+                .colorAverage()
+                .build()
+                .setFormula("(Co(NO3)2)(H2O)", true)
 
         Dichlorosilane = new Material.Builder(8407, SuSyUtility.susyId('dichlorosilane'))
                 .gas()
@@ -2572,7 +2583,14 @@ public class FirstDegreeMaterials {
                 .color(0xcaddfa)
                 .build();
 
-        //FREE IDs: 8481-8485
+        HeatedGreenCoke = new Material.Builder(8481, SuSyUtility.susyId('heated_green_coke'))
+                .gem(1, 2000)
+                .color(0x7b8752).iconSet(LIGNITE)
+                .components(Carbon)
+                .flags(FLAMMABLE, NO_SMELTING, NO_SMASHING, MORTAR_GRINDABLE)
+                .build();
+      
+        //FREE IDs: 8482-8485
 
         UltramaficTailingSlurry = new Material.Builder(8486, SuSyUtility.susyId('ultramafic_tailing_slurry'))
                 .liquid()
@@ -3043,7 +3061,7 @@ public class FirstDegreeMaterials {
 
         NickelHydrotalcite = new Material.Builder(8564, SuSyUtility.susyId('nickel_hydrotalcite'))
                 .dust()
-                .components(Nickel * 6, Aluminium * 2, )
+                .components(Nickel * 3, Aluminium, Oxygen * 8, Hydrogen * 8, Chlorine)
                 .color(0x9fb833)
                 .build();
 
@@ -3074,7 +3092,13 @@ public class FirstDegreeMaterials {
                 .colorAverage()
                 .build();
 
-        // FREE ID: 8572
+        AmmoniumMetatungstate = new Material.Builder(8571, SuSyUtility.susyId('ammonium_metatungstate'))
+                .dust()
+                .components(Nitrogen * 6, Hydrogen * 26, Tungsten * 12, Oxygen * 40)
+                .color(0x400959)
+                .build();
+
+        AmmoniumMetatungstate.setFormula("(NH4)6(H2W12O40)", true)
 
         ImpureBariumSulfide = new Material.Builder(8572, SuSyUtility.susyId("impure_barium_sulfide"))
                 .dust()
@@ -3250,7 +3274,13 @@ public class FirstDegreeMaterials {
 
         ThalliumSulfateSolution.setFormula("(Tl2SO4)(H2O)", true)
 
-        //FREE ID: 8597
+        ImpureCobaltSulfateSolution = new Material.Builder(8597, SuSyUtility.susyId("impure_cobalt_sulfate_solution"))
+                .liquid()
+                .components(Cobalt, Sulfur, Oxygen * 4, Water)
+                .colorAverage()
+                .build();
+
+        ImpureCobaltSulfateSolution.setFormula("(CoSO4)(?)(H2O)", true)
 
         //FREE ID: 8598
 
@@ -3395,9 +3425,10 @@ public class FirstDegreeMaterials {
         Kovar = new Material.Builder(8619, SuSyUtility.susyId('kovar'))
                 .ingot()
                 .iconSet(SHINY)
-                .flags(GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_RING, GENERATE_PLATE, NO_UNIFICATION)
+                .flags(GENERATE_ROD, GENERATE_LONG_ROD, GENERATE_RING, GENERATE_PLATE, DISABLE_DECOMPOSITION)
                 .components(Iron * 2, Nickel * 1, Cobalt * 1)
                 .colorAverage()
+                .blastTemp(1723, GasTier.LOW, 120, 24)
                 .build();
 
         Kovar.setFormula("Fe10Ni5Co3", true)
@@ -3468,7 +3499,7 @@ public class FirstDegreeMaterials {
         ReneN = new Material.Builder(8630, SuSyUtility.susyId("rene"))
                 .ingot().liquid(new FluidBuilder().temperature(1780))
                 .iconSet(SHINY)
-                .flags(GENERATE_PLATE, GENERATE_ROD)
+                .flags(GENERATE_PLATE, GENERATE_ROD, GENERATE_ROTOR)
                 .components(Nickel * 22, Cobalt * 4, Chrome * 3, Aluminium * 3, Tungsten * 2, Hafnium, Rhenium * 2, Tantalum * 3)
                 .colorAverage()
                 .build()
