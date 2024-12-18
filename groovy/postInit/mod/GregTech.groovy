@@ -889,6 +889,14 @@ RecyclingHelper.addShaped('gregtech:brass_drum', metaitem('drum.brass'), [
 		[metaitem('plateBrass'), metaitem('stickLongBrass'), metaitem('plateBrass')]
 ])
 
+RecyclingHelper.handleRecycling(metaitem('drum.pe'), [metaitem('platePlastic') * 6])
+
+RecyclingHelper.handleRecycling(metaitem('drum.pp'), [metaitem('platePolypropylene') * 6])
+
+RecyclingHelper.handleRecycling(metaitem('drum.ptfe'), [metaitem('platePolytetrafluoroethylene') * 6])
+
+RecyclingHelper.handleRecycling(metaitem('drum.uhmwpe'), [metaitem('plateUltraHighMolecularWeightPolyethylene') * 6])
+
 //ModHandler.addShapelessNBTClearingRecipe("drum_nbt_lead", metaitem('drum.lead'),
 //		metaitem('drum.lead')
 //)
@@ -900,8 +908,25 @@ RecyclingHelper.addShaped('gregtech:brass_drum', metaitem('drum.brass'), [
 crafting.addShapeless("drum_nbt_lead", metaitem('drum.lead'), [
 		metaitem('drum.lead').noreturn()
 ]);
+
 crafting.addShapeless("drum_nbt_brass", metaitem('drum.brass'), [
 		metaitem('drum.brass').noreturn()
+]);
+
+crafting.addShapeless("drum_nbt_pe", metaitem('drum.pe'), [
+		metaitem('drum.pe').noreturn()
+]);
+
+crafting.addShapeless("drum_nbt_pp", metaitem('drum.pp'), [
+		metaitem('drum.pp').noreturn()
+]);
+
+crafting.addShapeless("drum_nbt_ptfe", metaitem('drum.ptfe'), [
+		metaitem('drum.ptfe').noreturn()
+]);
+
+crafting.addShapeless("drum_nbt_uhmwpe", metaitem('drum.uhmwpe'), [
+		metaitem('drum.uhmwpe').noreturn()
 ]);
 
 mods.gregtech.assembler.recipeBuilder()
@@ -920,6 +945,38 @@ mods.gregtech.assembler.recipeBuilder()
 		.duration(200)
 		.EUt(16)
 		.circuitMeta(2)
+		.buildAndRegister()
+
+mods.gregtech.extruder.recipeBuilder()
+		.notConsumable(metaitem('shape.extruder.cell'))
+		.fluidInputs(fluid('plastic') * 864)
+		.outputs(metaitem('drum.pe'))
+		.duration(200)
+		.EUt(16)
+		.buildAndRegister()
+
+mods.gregtech.extruder.recipeBuilder()
+		.notConsumable(metaitem('shape.extruder.cell'))
+		.fluidInputs(fluid('polypropylene') * 864)
+		.outputs(metaitem('drum.pp'))
+		.duration(200)
+		.EUt(16)
+		.buildAndRegister()
+
+mods.gregtech.extruder.recipeBuilder()
+		.notConsumable(metaitem('shape.extruder.cell'))
+		.fluidInputs(fluid('polytetrafluoroethylene') * 864)
+		.outputs(metaitem('drum.ptfe'))
+		.duration(200)
+		.EUt(16)
+		.buildAndRegister()
+
+mods.gregtech.extruder.recipeBuilder()
+		.notConsumable(metaitem('shape.extruder.cell'))
+		.fluidInputs(fluid('ultra_high_molecular_weight_polyethylene') * 864)
+		.outputs(metaitem('drum.uhmwpe'))
+		.duration(200)
+		.EUt(16)
 		.buildAndRegister()
 
 // Logistics
