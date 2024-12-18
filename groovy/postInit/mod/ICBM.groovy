@@ -270,16 +270,15 @@ WEAPON_FACTORY.recipeBuilder()
 def HV_SC_CriticalTemp = 80;
 
 def cryoLiquids = [
-    'liquid_hydrogen': 14,
-    'liquid_oxygen': 90,
-    'liquid_helium': 4,
-    'liquid_neon': 27,
-    'liquid_argon': 87,
-    'liquid_krypton': 120,
-    'liquid_xenon': 165,
-    'liquid_nitrogen': 77,
-    'liquid_refinery_gas': 80,
-    'liquid_natural_gas': 80
+        'liquid_hydrogen': 14,
+        'liquid_oxygen': 90,
+        'liquid_helium': 4,
+        'liquid_neon': 27,
+        'liquid_argon': 87,
+        'liquid_krypton': 120,
+        'liquid_xenon': 165,
+        'liquid_nitrogen': 77,
+        'liquid_natural_gas': 80
 ];
 
 Globals.solders.each { key, val ->

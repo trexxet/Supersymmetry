@@ -11,7 +11,7 @@
   "manifestType": "minecraftModpack",
   "manifestVersion": 1,
   "name": "Supersymmetry",
-  "version": "0.1.13.4",
+  "version": "0.1.13.5",
   "author": "SymmetricDevs",
   "externalDeps": [],
   "files": [
@@ -287,7 +287,7 @@
     },
     {
       "projectID": 477021,
-      "fileID": 5910187,
+      "fileID": 5994740,
       "required": true
     },
     {
@@ -397,7 +397,7 @@
     },
     {
       "projectID": 846224,
-      "fileID": 5954805,
+      "fileID": 5994779,
       "required": true
     },
     {
