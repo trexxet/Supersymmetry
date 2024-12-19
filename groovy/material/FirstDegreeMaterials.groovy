@@ -2595,14 +2595,21 @@ public class FirstDegreeMaterials {
                 .flags(FLAMMABLE, NO_SMELTING, NO_SMASHING, MORTAR_GRINDABLE)
                 .build();
 
-        CrudeManganeseIINitrateSolution = new Material.Builder(8482, SuSyUtility.susyId('crude_manganese_ii_nitrate_solution'))
+        ManganeseIINitrateSolution = new Material.Builder(8482, SuSyUtility.susyId('manganese_ii_nitrate_solution'))
                 .liquid()
-                .components(Manganese * 1, Nitrogen * 3, Oxygen * 6, Water)
+                .components(Manganese, Nitrogen * 2, Oxygen * 6, Water)
+                .colorAverage()
+                .build()
+                .setFormula("(Mn(NO3)2)(H2O)", true)
+
+        CrudeManganeseIINitrateSolution = new Material.Builder(8483, SuSyUtility.susyId('crude_manganese_ii_nitrate_solution'))
+                .liquid()
+                .components(Manganese, Nitrogen * 2, Oxygen * 6, Water)
                 .colorAverage()
                 .build()
                 .setFormula("(?)(Mn(NO3)2)(H2O)", true)
 
-        //FREE IDs: 8483-8485
+        //FREE IDs: 8484-8485
 
         UltramaficTailingSlurry = new Material.Builder(8486, SuSyUtility.susyId('ultramafic_tailing_slurry'))
                 .liquid()

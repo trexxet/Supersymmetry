@@ -963,8 +963,9 @@ class SuSyMaterials {
         public static Material IridiumTrichloride;
         public static Material SodiumBismuthate;
         public static Material BismuthIIIOxide;
-        public static Material CrudeManganeseIINitrateSolution;
         public static Material ManganeseIINitrate;
+        public static Material ManganeseIINitrateSolution;
+        public static Material CrudeManganeseIINitrateSolution;
         public static Material ManganeseDioxide;
         public static Material BariumTitanate;
         public static Material RawElectrum;

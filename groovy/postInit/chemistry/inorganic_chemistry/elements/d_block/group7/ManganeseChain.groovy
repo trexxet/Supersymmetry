@@ -202,7 +202,6 @@ DISTILLERY.recipeBuilder()
     .EUt(30)
     .buildAndRegister()
 
-// MnO2 & Mn(NO3)2
 // Manganese Nitrate process developed by IG Farbenindustrie
 // doi:10.1002/14356007.a16_123
 
@@ -224,6 +223,8 @@ ROASTER.recipeBuilder()
     .EUt(120)
     .buildAndRegister()
 
+// MnO2 & Mn(NO3)2
+
 BR.recipeBuilder()
     .inputs(ore('dustManganeseDioxide') * 3)
     .fluidInputs(fluid('nitrogen_dioxide') * 2000)
@@ -236,15 +237,6 @@ ROASTER.recipeBuilder()
     .inputs(ore('dustManganeseIiNitrate') * 9)
     .fluidOutputs(fluid('nitrogen_dioxide') * 2000)
     .outputs(metaitem('dustManganeseDioxide') * 3)
-    .duration(100)
-    .EUt(120)
-    .buildAndRegister()
-
-BR.recipeBuilder()
-    .inputs(ore('dustManganeseIiOxide') * 2)
-    .fluidInputs(fluid('nitric_acid') * 2000)
-    .outputs(metaitem('dustManganeseIiNitrate') * 9)
-    .fluidOutputs(fluid('water') * 1000)
     .duration(100)
     .EUt(120)
     .buildAndRegister()
@@ -293,6 +285,24 @@ REACTION_FURNACE.recipeBuilder()
     .fluidOutputs(fluid('carbon_dioxide') * 1000)
     .duration(100)
     .EUt(120)
+    .buildAndRegister()
+
+// MnO & Mn(NO3)2
+
+BR.recipeBuilder()
+    .inputs(ore('dustManganeseIiOxide') * 2)
+    .fluidInputs(fluid('nitric_acid') * 2000)
+    .fluidOutputs(fluid('manganese_ii_nitrate_solution') * 1000)
+    .duration(100)
+    .EUt(120)
+    .buildAndRegister()
+
+DISTILLERY.recipeBuilder()
+    .fluidInputs(fluid('manganese_ii_nitrate_solution') * 1000)
+    .fluidOutputs(fluid('water') * 1000)
+    .outputs(metaitem('dustManganeseIiNitrate') * 9)
+    .duration(80)
+    .EUt(30)
     .buildAndRegister()
 
 // Potassium permanganate
