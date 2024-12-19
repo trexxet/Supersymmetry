@@ -59,24 +59,24 @@ fractions.each { _, fraction ->
 // Overheads processing
 
 PHASE_SEPARATOR.recipeBuilder()
-    .fluidInputs(fluid('atmospheric_overheads') * 5000)
-    .fluidOutputs(fractions.naphtha.getCrude(5000))
-    .fluidOutputs(fluid('sour_water') * 10000)
-    .duration(400)
+    .fluidInputs(fluid('atmospheric_overheads') * 2500)
+    .fluidOutputs(fractions.naphtha.getCrude(2500))
+    .fluidOutputs(fluid('sour_water') * 5000)
+    .duration(200)
     .buildAndRegister()
 
 PHASE_SEPARATOR.recipeBuilder()
-    .fluidInputs(fluid('heavy_atmospheric_overheads') * 3500)
-    .fluidOutputs(fractions.naphtha.getCrude(3500))
-    .fluidOutputs(fluid('sour_water') * 10000)
-    .duration(400)
+    .fluidInputs(fluid('heavy_atmospheric_overheads') * 1750)
+    .fluidOutputs(fractions.naphtha.getCrude(1750))
+    .fluidOutputs(fluid('sour_water') * 5000)
+    .duration(200)
     .buildAndRegister()
 
 PHASE_SEPARATOR.recipeBuilder()
-    .fluidInputs(fluid('light_atmospheric_overheads') * 6000)
-    .fluidOutputs(fractions.naphtha.getCrude(6000))
-    .fluidOutputs(fluid('sour_water') * 10000)
-    .duration(400)
+    .fluidInputs(fluid('light_atmospheric_overheads') * 3000)
+    .fluidOutputs(fractions.naphtha.getCrude(3000))
+    .fluidOutputs(fluid('sour_water') * 5000)
+    .duration(200)
     .buildAndRegister()
 
 // Sour water stripping
