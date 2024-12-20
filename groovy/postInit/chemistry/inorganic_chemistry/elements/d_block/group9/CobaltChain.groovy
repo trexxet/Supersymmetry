@@ -6,6 +6,8 @@ EBF = recipemap('electric_blast_furnace')
 PBF_RECIPES = recipemap("primitive_blast_furnace")
 FLUIDIZEDBR = recipemap('fluidized_bed_reactor')
 BR = recipemap('batch_reactor')
+DISTILLERY = recipemap('distillery')
+MIXER = recipemap('mixer')
 ELECTROLYTIC_CELL = recipemap('electrolytic_cell')
 
 //ROAST RECOVERY OF As2O3
@@ -65,14 +67,6 @@ for (combustible in combustibles()) {
         .buildAndRegister()
 }
 
-ROASTER.recipeBuilder()
-        .inputs(ore('dustCobalt'))
-        .fluidInputs(fluid('oxygen') * 1000)
-        .outputs(metaitem('dustCobaltOxide') * 2)
-        .EUt(Globals.voltAmps[1])
-        .duration(120)
-        .buildAndRegister()
-
 // Primitive ways for getting impure cobalt (cobalt matte) for Kovar.
 def cobalt_matte_recipes = [
         ["oreCobaltite", 1],
@@ -91,3 +85,39 @@ cobalt_matte_recipes.forEach { recipe ->
                 .buildAndRegister()
     }
 }
+
+// CoO
+
+ROASTER.recipeBuilder()
+        .inputs(ore('dustCobalt'))
+        .fluidInputs(fluid('oxygen') * 1000)
+        .outputs(metaitem('dustCobaltOxide') * 2)
+        .duration(120)
+        .EUt(30)
+        .buildAndRegister()
+
+// CoSO4
+
+BR.recipeBuilder()
+        .inputs(ore('dustCobaltOxide') * 2)
+        .fluidInputs(fluid('sulfuric_acid') * 1000)
+        .fluidOutputs(fluid('cobalt_sulfate_solution') * 1000)
+        .duration(80)
+        .EUt(30)
+        .buildAndRegister()
+
+DISTILLERY.recipeBuilder()
+        .fluidInputs(fluid('cobalt_sulfate_solution') * 1000)
+        .outputs(metaitem('dustCobaltSulfate') * 6)
+        .fluidOutputs(fluid('water') * 1000)
+        .duration(80)
+        .EUt(30)
+        .buildAndRegister()
+
+MIXER.recipeBuilder()
+        .inputs(ore('dustCobaltSulfate') * 6)
+        .fluidInputs(fluid('water') * 1000)
+        .fluidOutputs(fluid('cobalt_sulfate_solution') * 1000)
+        .duration(80)
+        .EUt(30)
+        .buildAndRegister()

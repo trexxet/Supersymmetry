@@ -834,6 +834,7 @@ class SuSyMaterials {
         public static Material IronThioantimonite;
         public static Material AntimonyIIISulfide;
         public static Material IronThioarsenite;
+        public static Material CrudeManganeseIIOxide;
         public static Material ManganeseIIOxide;
         public static Material IronIIIHydroxide;
         public static Material Cellulose;
@@ -963,6 +964,8 @@ class SuSyMaterials {
         public static Material SodiumBismuthate;
         public static Material BismuthIIIOxide;
         public static Material ManganeseIINitrate;
+        public static Material ManganeseIINitrateSolution;
+        public static Material CrudeManganeseIINitrateSolution;
         public static Material ManganeseDioxide;
         public static Material BariumTitanate;
         public static Material RawElectrum;
@@ -1044,6 +1047,7 @@ class SuSyMaterials {
         public static Material SodiumHexachloroplatinateSolution;
         public static Material AmmoniumHexachloroplatinate;
         public static Material DilutedCopperSulfateSolution;
+        public static Material NickelSulfate;
         public static Material NickelSulfateSolution;
         public static Material AluminiumNitride;
         public static Material AluminiumOxynitride;
@@ -1182,6 +1186,8 @@ class SuSyMaterials {
         public static Material StelliteSix;
         public static Material HSLAEightyX;
         public static Material FoodGradeStainlessSteel;
+        public static Material CobaltSulfate;
+        public static Material CobaltSulfateSolution;
 
         // HP Materials
 
