@@ -1,3 +1,19 @@
+<blockquote>
+  <details>
+    <summary>
+      <code>あ ←→ A</code>
+    </summary>
+    <!--Head-->
+    &emsp;&ensp;<sub><b>Supersymmetry</b> supports the following languages. </sub>
+    <br />
+    <!--Body-->
+    <br />
+    &emsp;&ensp;English
+    <br />
+    &emsp;&ensp;<a href="/README_PT.md">Português</a>
+  </details>
+</blockquote>
+
 # Supersymmetry
 Supersymmetry is a complex tech-centered modpack based around GregTech that integrates chemical and physical processes from reality into its progression. This means having many different crafting chains that imitate manufacturing processes used in real life.
 
