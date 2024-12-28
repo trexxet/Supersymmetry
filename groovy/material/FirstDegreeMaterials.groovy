@@ -1155,7 +1155,6 @@ public class FirstDegreeMaterials {
                 .dust()
                 .components(Manganese, Oxygen)
                 .color(0x472400)
-                .iconSet(SAND)
                 .build()
 
         RaneyCobalt = new Material.Builder(8266, SuSyUtility.susyId('raney_cobalt'))
@@ -2010,7 +2009,7 @@ public class FirstDegreeMaterials {
                 .dust()
                 .iconSet('SHINY')
                 .components(Manganese, Oxygen * 2)
-                .colorAverage()
+                .color(0x38251e)
                 .build()
 
         BariumTitanate = new Material.Builder(8396, SuSyUtility.susyId('barium_titanate'))
@@ -2548,7 +2547,13 @@ public class FirstDegreeMaterials {
 
         AmmoniumDihydrogenPhosphate.setFormula("NH4H2PO4", true)
 
-        //FREE ID: 8474
+        CrudeManganeseIIOxide = new Material.Builder(8474, SuSyUtility.susyId('crude_manganese_ii_oxide'))
+                .dust()
+                .components(Manganese, Oxygen)
+                .color(0x472400)
+                .iconSet(SAND)
+                .build()
+                .setFormula("(?)(MnO)", true)
 
         IronCarbonate = new Material.Builder(8475, SuSyUtility.susyId('iron_carbonate'))
                 .dust()
@@ -2589,8 +2594,22 @@ public class FirstDegreeMaterials {
                 .components(Carbon)
                 .flags(FLAMMABLE, NO_SMELTING, NO_SMASHING, MORTAR_GRINDABLE)
                 .build();
-      
-        //FREE IDs: 8482-8485
+
+        ManganeseIINitrateSolution = new Material.Builder(8482, SuSyUtility.susyId('manganese_ii_nitrate_solution'))
+                .liquid()
+                .components(Manganese, Nitrogen * 2, Oxygen * 6, Water)
+                .colorAverage()
+                .build()
+                .setFormula("(Mn(NO3)2)(H2O)", true)
+
+        CrudeManganeseIINitrateSolution = new Material.Builder(8483, SuSyUtility.susyId('crude_manganese_ii_nitrate_solution'))
+                .liquid()
+                .components(Manganese, Nitrogen * 2, Oxygen * 6, Water)
+                .colorAverage()
+                .build()
+                .setFormula("(?)(Mn(NO3)2)(H2O)", true)
+
+        //FREE IDs: 8484-8485
 
         UltramaficTailingSlurry = new Material.Builder(8486, SuSyUtility.susyId('ultramafic_tailing_slurry'))
                 .liquid()
@@ -2660,7 +2679,13 @@ public class FirstDegreeMaterials {
                 .color(0x887866)
                 .build();
 
-        //FREE IDs: 8496-8498
+        //FREE IDs: 8496-8497
+
+        NickelSulfate = new Material.Builder(8498, SuSyUtility.susyId('nickel_sulfate'))
+                .dust()
+                .components(Nickel * 1, Sulfur * 1, Oxygen * 4)
+                .color(0xcad3a7)
+                .build()
 
         SodiumNitrite = new Material.Builder(8499, SuSyUtility.susyId('sodium_nitrite'))
                 .dust().liquid(new FluidBuilder().temperature(544))
@@ -2706,10 +2731,9 @@ public class FirstDegreeMaterials {
 
         NickelSulfateSolution = new Material.Builder(8505, SuSyUtility.susyId('nickel_sulfate_solution'))
                 .liquid()
-                .components(Nickel, Sulfur, Oxygen * 4, Water)
+                .components(NickelSulfate, Water)
                 .color(0x38add1)
                 .build();
-        NickelSulfateSolution.setFormula("(NiSO4)(H2O)", true)
 
         DisulfurDichloride = new Material.Builder(8506, SuSyUtility.susyId('disulfur_dichloride'))
                 .liquid()
@@ -2783,7 +2807,7 @@ public class FirstDegreeMaterials {
         ManganeseIIHydroxide = new Material.Builder(8520, SuSyUtility.susyId('manganese_ii_hydroxide'))
                 .dust()
                 .components(Manganese, Oxygen * 2, Hydrogen * 2)
-                .colorAverage()
+                .color(0xe4cfb1)
                 .build();
 
         ManganeseIIHydroxide.setFormula("Mn(OH)2", true)
@@ -3542,6 +3566,32 @@ public class FirstDegreeMaterials {
                 .iconSet(SHINY)
                 .flags(GENERATE_ROD, GENERATE_PLATE, GENERATE_RING, GENERATE_LONG_ROD)
                 .components(Iron * 24, Nickel * 5, Chrome * 8, Manganese, Molybdenum * 2)
+                .colorAverage()
+                .build()
+
+        CobaltSulfate = new Material.Builder(8636, SuSyUtility.susyId('cobalt_sulfate'))
+                .dust()
+                .components(Cobalt * 1, Sulfur * 1, Oxygen * 4)
+                .color(0xbb7694)
+                .build()
+
+        CobaltSulfateSolution = new Material.Builder(8637, SuSyUtility.susyId('cobalt_sulfate_solution'))
+                .liquid()
+                .components(CobaltSulfate * 1, Water * 1)
+                .colorAverage()
+                .build()
+
+        // 8638: Co3O4
+
+        LithiumNitrate = new Material.Builder(8639, SuSyUtility.susyId('lithium_nitrate'))
+                .dust()
+                .components(Lithium * 1, Nitrogen * 1, Oxygen * 3)
+                .color(0xffffff)
+                .build()
+
+        LithiumNitrateSolution = new Material.Builder(8640, SuSyUtility.susyId('lithium_nitrate_solution'))
+                .liquid()
+                .components(LithiumNitrate * 2, Water * 1)
                 .colorAverage()
                 .build()
     }

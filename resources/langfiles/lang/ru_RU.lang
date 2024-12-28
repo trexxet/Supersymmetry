@@ -673,6 +673,7 @@ susy.material.arsine=Арсин
 susy.material.sodium_bromide_solution=Раствор бромида натрия
 susy.material.sperrylite_waste=Сперрилитовые отходы
 susy.material.gallium_trichloride=Трихлорид галлия
+susy.material.crude_manganese_ii_oxide=Сырой оксид марганца II
 susy.material.manganese_ii_oxide=Оксид марганца II
 susy.material.crude_manganese_ii_sulfate_solution=Раствор сырого сульфата марганца II
 susy.material.manganese_ii_sulfate_solution=Раствор сульфата марганца II
@@ -1172,6 +1173,8 @@ susy.material.bismuth_iridate=Иридат висмута
 susy.material.sodium_bismuthate=Висмутат натрия
 susy.material.bismuth_iii_oxide=Оксид висмута III
 susy.material.manganese_ii_nitrate=Нитрат марганца II
+susy.material.manganese_ii_nitrate_solution=Раствор нитрата марганца II
+susy.material.crude_manganese_ii_nitrate_solution=Раствор сырого нитрата марганца II
 susy.material.manganese_dioxide=Диоксид марганца
 susy.material.borax_electrolyte=Электролит буры
 susy.material.ferroelectric_ceramic_binding=Сегнетоэлектрическая керамическая связка
@@ -1476,6 +1479,7 @@ susy.material.copper_concentrate=Медный концентрат
 susy.material.octyl_hydroxamic_acid=Октилгидроксамовая кислота
 susy.material.potassium_octyl_hydroxamate=Октилгидроксамат калия
 susy.material.diluted_copper_sulfate_solution=Разбавленный раствор медного купороса
+susy.material.nickel_sulfate=Сульфат никеля
 susy.material.nickel_sulfate_solution=Раствор сульфата никеля
 susy.material.palladium_containing_solution=Раствор, содержащий палладий
 susy.material.aluminium_nitride=Нитрид алюминия
@@ -1979,6 +1983,10 @@ susy.material.potassium_manganate=Манганат калия
 susy.material.lead_free_solder=Припой без свинца
 susy.material.cryogenic_solder=Криогенный припой
 susy.material.oxidized_manganate_solution=Раствор окисленного манганата
+susy.material.cobalt_sulfate=Сульфат кобальта
+susy.material.cobalt_sulfate_solution=Раствор сульфата кобальта
+susy.material.lithium_nitrate=Нитрат лития
+susy.material.lithium_nitrate_solution=Раство нитрата лития
 
 # Изотопы
 
