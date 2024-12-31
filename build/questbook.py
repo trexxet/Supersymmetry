@@ -139,6 +139,15 @@ def delIconCount(entry: dict):
         del entry["properties:10"]["betterquesting:10"]["icon:10"]["Count:3"]
     except:
         pass
+    
+def replaceBucketIcons(entry: dict):
+    """replaces fluid buckets in icons with ae2 dummy fluid items"""
+    try:
+        if (entry["properties:10"]["betterquesting:10"]["icon:10"]["id:8"] == "forge:bucketfilled"):
+            entry["properties:10"]["betterquesting:10"]["icon:10"]["id:8"] = "appliedenergistics2:dummy_fluid_item"
+            del entry["properties:10"]["betterquesting:10"]["icon:10"]["tag:10"]["Amount:3"]
+    except:
+        pass
 
 
 def key(entry):
@@ -174,6 +183,8 @@ def build(args):
                 nest(currentquest)
 
                 delIconCount(currentquest)
+                
+                replaceBucketIcons(currentquest)
                 
                 if root.endswith("QuestLines"): 
                     knowKeys += i18n(output=questKeys, id=entryid, entry=currentquest, place="ql", prefix=args.prefix)
