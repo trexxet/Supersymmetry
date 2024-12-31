@@ -6,9 +6,8 @@
     "betterquesting:10": {
       "desc:8": "susy.quest.db.407.desc",
       "icon:10": {
-        "id:8": "forge:bucketfilled",
+        "id:8": "appliedenergistics2:dummy_fluid_item",
         "tag:10": {
-          "Amount:3": 1000,
           "FluidName:8": "glycerol"
         }
       },
