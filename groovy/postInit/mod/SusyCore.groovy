@@ -102,6 +102,28 @@ mods.gregtech.assembler.recipeBuilder()
     .EUt(Globals.voltAmps[1])
     .buildAndRegister()
 
+
+// Restrictive Filters
+mods.gregtech.assembler.recipeBuilder()
+    .inputs(ore('foilSteel') * 8)
+    .inputs(metaitem('item_filter'))
+    .circuitMeta(1)
+    .fluidInputs(fluid('soldering_alloy') * 72)
+    .duration(200)
+    .outputs(item('susy:meta_item', 6))
+    .EUt(Globals.voltAmps[1])
+    .buildAndRegister()
+
+mods.gregtech.assembler.recipeBuilder()
+    .inputs(ore('foilSteel') * 8)
+    .inputs(metaitem('item_filter'))
+    .circuitMeta(1)
+    .fluidInputs(fluid('tin') * 144)
+    .outputs(item('susy:meta_item', 6))
+    .duration(200)
+    .EUt(Globals.voltAmps[1])
+    .buildAndRegister()
+
 //Deposit stuff
 // Crushed Sulfur Ore * 1
 mods.gregtech.forge_hammer.removeByInput(16, [item('gregtech:ore_sulfur_0')], null)
