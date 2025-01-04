@@ -197,7 +197,7 @@ BATCH_REACTOR.recipeBuilder()
 	.buildAndRegister()
 
 REACTION_FURNACE.recipeBuilder()
-		.fluidInputs(fluid('boron_trioxide') * 1000)
+		.fluidInputs(fluid('boron_trioxide') * 720)
 		.fluidInputs(fluid('chlorine') * 6000)
 		.inputs(metaitem('dustCarbon') * 3)
 		.fluidOutputs(fluid('boron_trichloride') * 2000)
